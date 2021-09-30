@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TradingAFReportDs" targetNamespace="http://tempuri.org/TradingAFReportDs.xsd" xmlns:mstns="http://tempuri.org/TradingAFReportDs.xsd" xmlns="http://tempuri.org/TradingAFReportDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TradingAFReportTableAdapter" GeneratorDataComponentClassName="TradingAFReportTableAdapter" Name="TradingAFReport" UserDataComponentName="TradingAFReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select o.OfficeCode, dbo.fn_formatInvoiceNo(i.InvoicePrefix, i.InvoiceSeq, i.InvoiceYear) As InvoiceId, CONVERT(VARCHAR(10), i.InvoiceDate, 103) As InvoiceDate, v.Name As SupplierName,
+          CONVERT(VARCHAR(10), s.CustomerAtWarehouseDate, 103) As CustomerAtWarehouseDate, p.ItemNo, c.ContractNo, s.DeliveryNo, sm.ShipmentMethodDesc, s.TotalOrderQty, s.TotalShippedQty,
+          ISNULL((s.TradingAFEstimationCost*g.exchangerate/h.exchangerate), 0) as TradingAFEstimationCost, ISNULL((s.TradingAFActualCost*g.exchangerate/h.exchangerate), 0) As TradingAFActualCost
+          from Contract c, Shipment s, Invoice i, Product p, [NSLDB].[dbo].[Office] o, [nslindustry].[dbo].[vendor] v,
+          ShipmentMethod sm, ExchangeRate g, ExchangeRate h
+          where s.ContractId = c.ContractId and s.IsTradingAF = 1 and i.ShipmentId = s.ShipmentId and c.ProductId = p.ProductId and c.OfficeId = o.OfficeId and s.VendorId = v.VendorId
+          and c.Status = 1 AND s.Status = 1
+          and s.ShipmentMethodId = sm.ShipmentMethodId and g.exchangeratetypeid = 1 and g.currencyid = s.sellcurrencyid and isnull(i.invoicedate, s.customeratwarehousedate) between g.effectivedatefrom and g.effectivedateto AND g.Status = 1
+          and h.exchangeratetypeid = 1 and h.currencyid = 3 and isnull(i.invoicedate, s.customeratwarehousedate) between h.effectivedatefrom and h.effectivedateto AND h.Status = 1
+          Order By o.OfficeCode, c.ContractNo, i.ShipmentId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OfficeCode" DataSetColumn="OfficeCode" />
+              <Mapping SourceColumn="InvoiceId" DataSetColumn="InvoiceId" />
+              <Mapping SourceColumn="InvoiceDate" DataSetColumn="InvoiceDate" />
+              <Mapping SourceColumn="SupplierName" DataSetColumn="SupplierName" />
+              <Mapping SourceColumn="CustomerAtWarehouseDate" DataSetColumn="CustomerAtWarehouseDate" />
+              <Mapping SourceColumn="ItemNo" DataSetColumn="ItemNo" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="ShipmentMethodDesc" DataSetColumn="ShipmentMethodDesc" />
+              <Mapping SourceColumn="TotalOrderQty" DataSetColumn="TotalOrderQty" />
+              <Mapping SourceColumn="TotalShippedQty" DataSetColumn="TotalShippedQty" />
+              <Mapping SourceColumn="TradingAFEstimationCost" DataSetColumn="TradingAFEstimationCost" />
+              <Mapping SourceColumn="TradingAFActualCost" DataSetColumn="TradingAFActualCost" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TradingAFReportDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="TradingAFReportDs" msprop:Generator_UserDSName="TradingAFReportDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TradingAFReport" msprop:Generator_TableClassName="TradingAFReportDataTable" msprop:Generator_TableVarName="tableTradingAFReport" msprop:Generator_TablePropName="TradingAFReport" msprop:Generator_RowDeletingName="TradingAFReportRowDeleting" msprop:Generator_RowChangingName="TradingAFReportRowChanging" msprop:Generator_RowEvHandlerName="TradingAFReportRowChangeEventHandler" msprop:Generator_RowDeletedName="TradingAFReportRowDeleted" msprop:Generator_UserTableName="TradingAFReport" msprop:Generator_RowChangedName="TradingAFReportRowChanged" msprop:Generator_RowEvArgName="TradingAFReportRowChangeEvent" msprop:Generator_RowClassName="TradingAFReportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OfficeCode" msprop:Generator_ColumnVarNameInTable="columnOfficeCode" msprop:Generator_ColumnPropNameInRow="OfficeCode" msprop:Generator_ColumnPropNameInTable="OfficeCodeColumn" msprop:Generator_UserColumnName="OfficeCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInvoiceId" msprop:Generator_ColumnPropNameInRow="InvoiceId" msprop:Generator_ColumnPropNameInTable="InvoiceIdColumn" msprop:Generator_UserColumnName="InvoiceId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInvoiceDate" msprop:Generator_ColumnPropNameInRow="InvoiceDate" msprop:Generator_ColumnPropNameInTable="InvoiceDateColumn" msprop:Generator_UserColumnName="InvoiceDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SupplierName" msprop:Generator_ColumnVarNameInTable="columnSupplierName" msprop:Generator_ColumnPropNameInRow="SupplierName" msprop:Generator_ColumnPropNameInTable="SupplierNameColumn" msprop:Generator_UserColumnName="SupplierName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerAtWarehouseDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCustomerAtWarehouseDate" msprop:Generator_ColumnPropNameInRow="CustomerAtWarehouseDate" msprop:Generator_ColumnPropNameInTable="CustomerAtWarehouseDateColumn" msprop:Generator_UserColumnName="CustomerAtWarehouseDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemNo" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" msprop:Generator_UserColumnName="ItemNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" type="xs:int" />
+              <xs:element name="ShipmentMethodDesc" msprop:Generator_ColumnVarNameInTable="columnShipmentMethodDesc" msprop:Generator_ColumnPropNameInRow="ShipmentMethodDesc" msprop:Generator_ColumnPropNameInTable="ShipmentMethodDescColumn" msprop:Generator_UserColumnName="ShipmentMethodDesc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalOrderQty" msprop:Generator_ColumnVarNameInTable="columnTotalOrderQty" msprop:Generator_ColumnPropNameInRow="TotalOrderQty" msprop:Generator_ColumnPropNameInTable="TotalOrderQtyColumn" msprop:Generator_UserColumnName="TotalOrderQty" type="xs:int" />
+              <xs:element name="TotalShippedQty" msprop:Generator_ColumnVarNameInTable="columnTotalShippedQty" msprop:Generator_ColumnPropNameInRow="TotalShippedQty" msprop:Generator_ColumnPropNameInTable="TotalShippedQtyColumn" msprop:Generator_UserColumnName="TotalShippedQty" type="xs:int" />
+              <xs:element name="TradingAFEstimationCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTradingAFEstimationCost" msprop:Generator_ColumnPropNameInRow="TradingAFEstimationCost" msprop:Generator_ColumnPropNameInTable="TradingAFEstimationCostColumn" msprop:Generator_UserColumnName="TradingAFEstimationCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TradingAFActualCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTradingAFActualCost" msprop:Generator_ColumnPropNameInRow="TradingAFActualCost" msprop:Generator_ColumnPropNameInTable="TradingAFActualCostColumn" msprop:Generator_UserColumnName="TradingAFActualCost" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

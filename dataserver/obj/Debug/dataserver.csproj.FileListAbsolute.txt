@@ -1,0 +1,15 @@
+D:\MyWorkspace\Isam\dataserver\bin\Debug\com.next.isam.dataserver.dll.config
+D:\MyWorkspace\Isam\dataserver\bin\Debug\com.next.isam.dataserver.dll
+D:\MyWorkspace\Isam\dataserver\bin\Debug\com.next.isam.dataserver.pdb
+D:\MyWorkspace\Isam\dataserver\bin\Debug\com.next.common.dll
+D:\MyWorkspace\Isam\dataserver\bin\Debug\com.next.infra.dll
+D:\MyWorkspace\Isam\dataserver\bin\Debug\com.next.isam.domain.dll
+D:\MyWorkspace\Isam\dataserver\bin\Debug\DocumentFormat.OpenXml.dll
+D:\MyWorkspace\Isam\dataserver\bin\Debug\tallpdf.dll
+D:\MyWorkspace\Isam\dataserver\bin\Debug\nspring.dll
+D:\MyWorkspace\Isam\dataserver\bin\Debug\com.next.isam.domain.pdb
+D:\MyWorkspace\Isam\dataserver\bin\Debug\com.next.common.pdb
+D:\MyWorkspace\Isam\dataserver\bin\Debug\com.next.infra.pdb
+D:\MyWorkspace\Isam\dataserver\obj\Debug\dataserver.csprojResolveAssemblyReference.cache
+D:\MyWorkspace\Isam\dataserver\obj\Debug\com.next.isam.dataserver.dll
+D:\MyWorkspace\Isam\dataserver\obj\Debug\com.next.isam.dataserver.pdb

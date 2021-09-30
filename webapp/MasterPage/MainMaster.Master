@@ -1,0 +1,224 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" EnableTheming="true" CodeBehind="MainMaster.master.cs" Inherits="ISAM.MasterPage.MainMaster" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>NSL</title>
+     <!--<link href="../includes/global.css" type="text/css" rel="stylesheet"/>-->
+    <link href="../includes/RevampStyle.css" type="text/css" rel="stylesheet"/>
+    <script src="../common/jquery-1.7.min.js" type="text/javascript"></script>   
+
+    <script src="../common/common.js" type="text/javascript" ></script>
+
+    <script type="text/javascript" src="../webservices/UclSmartSelection.js" />
+    <script type="text/javascript" language="javascript">
+    // Move an element directly on top of another element (and optionally
+    // make it the same size)
+    function Cover(bottom, top, ignoreSize) {
+        var location = Sys.UI.DomElement.getLocation(bottom);
+        top.style.position = 'absolute';
+        top.style.top = location.y + 'px';
+        top.style.left = location.x + 'px';
+        if (!ignoreSize) {
+            top.style.height = bottom.offsetHeight + 'px';
+            top.style.width = bottom.offsetWidth + 'px';
+        }
+    }
+    function bodyOnLoad() {
+		window.history.forward();
+	}
+    </script>
+</head>
+<body style="margin:0 0 0 0;height:100%;">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+
+        <table ID="tb_MainMasterBanner" width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr id="tr_MainMasterBanner" >
+                <td width="100%" 
+                    background="../images/top_bg.jpg" style="background-position: right;background-repeat: no-repeat">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <!---
+                                <asp:ImageButton ImageUrl="../images/logo.gif" Width="249" runat="server" 
+                                    CommandArgument="http://ns-s15/intranet/main/login.aspx?" ID="ImageButton1" 
+                                    onclick="btnIntranet_Click" />
+                                --->
+                                <img src="../images/logo.gif" alt="next sourcing" width="249" />
+                            </td>
+                            <td width="737" align="right" valign="bottom" style="background-position: right">
+                                <table width="0" border="0" cellspacing="0" cellpadding="0" style="padding-bottom: 5px;">
+                                    <tr>
+                                        <td class="style_content" nowrap align="right">
+                                            User :&nbsp;<asp:Label id="lblDisplayName"  runat="server" />
+                                        </td>
+                                        <td width="40"></td>
+                                        <td>
+                                            <table width="0" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="40" style="text-align:right" class="style_content">
+                                                        <a href="../help/ISAM_HELP.pdf" target="_blank" style="color:Black;" title="Click to open self-training user guide or email to &#13;&#10; Michael Lau&#13;&#10; Cliff Wong">
+                                                            Help
+                                                        </a>
+                                                    </td>
+                                                    <td width="80" align="center" class="style_content" nowrap>
+                                                       &nbsp;|&nbsp;<%--<A href="http://ns-s13/nslhd/default.aspx" target="helpDesk" title="Hotline: (852) 2376 5433"  style="color:Black;">Help Desk</A>--%>
+                                                        <asp:LinkButton id="lnk_HelpDesk" runat="server" title="Hotline: (852) 2376 5433" CommandArgument="http://ns-s13/nslhd/main/login.aspx?" onclick="ApplicationLinkbutton_Click" style="color:Black;">Help Desk</asp:LinkButton>
+                                                    </td>
+                                                    <td width="40" class="style_content" nowrap >
+                                                       &nbsp;|&nbsp;<a href="../main/logout.aspx" style="color:Black;">Logout</a>
+                                                    </td>
+                                                    <td width="10" class="style_content">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr id="tr_MainMasterSystemLinkage">
+                <td colspan="3" align="left" height="28" valign="middle" background="../images/btn_bg.jpg" style="background-repeat: repeat">
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <tr style="height:28px;">
+                        <td class="style_btn">
+			                &nbsp;&nbsp;&nbsp;<asp:LinkButton id="lnk_MenuHelpDesk" runat="server" CommandArgument="http://ns-s13/nslhd/main/login.aspx?" onclick="ApplicationLinkbutton_Click" SkinID="style_btn_font">Help Desk&nbsp;&nbsp;</asp:LinkButton> 
+                        </td>
+                        <td class="style_btn" >
+                            <asp:LinkButton id="lnk_MenuDevelopment" runat="server" CommandArgument="http://nsls13/pds/main/login.aspx?"  onclick="ApplicationLinkbutton_Click" SkinID="style_btn_font">&nbsp;&nbsp;Development&nbsp;&nbsp;</asp:LinkButton>
+                        </td>
+                        <td class="style_btn" >
+                            <asp:LinkButton id="lnk_TrimsLibrary" runat="server" CommandArgument="http://ns-s15/trimslibrary/main/login.aspx?"  onclick="ApplicationLinkbutton_Click" SkinID="style_btn_font">&nbsp;&nbsp;Trims&nbsp;Library&nbsp;&nbsp;</asp:LinkButton>
+                        </td>
+                        <td class="style_btn">
+                            <asp:LinkButton id="lnk_Merchandising" runat="server" CommandArgument="http://nsls06/nss01/main/login.aspx?"  onclick="ApplicationLinkbutton_Click" SkinID="style_btn_font">&nbsp;&nbsp;Merchandising&nbsp;&nbsp;</asp:LinkButton>
+                        </td>
+                        <td class="style_btn" style="background:url(../images/btn_bg_onmouse.jpg);">
+                            <asp:LinkButton id="lnk_ShippingAccount" runat="server" CommandArgument="" SkinID="style_btn_font" >&nbsp;&nbsp;Shipping&nbsp;&nbsp;</asp:LinkButton>
+                        </td>
+                        <td class="style_btn">
+                            <asp:LinkButton id="lnk_MenuVendorProfile" runat="server" CommandArgument="http://NS-S03/VPS/main/login.aspx?"  onclick="ApplicationLinkbutton_Click" SkinID="style_btn_font">&nbsp;&nbsp;Vendor Info&nbsp;&nbsp;</asp:LinkButton>
+                        </td>
+                        <td class="style_btn">
+                            <asp:LinkButton id="lnk_Fabric" runat="server" CommandArgument="http://ns-s03/VPS_Pro/fis-login.asp?" onclick="ApplicationLinkbutton_Click" SkinID="style_btn_font">&nbsp;&nbsp;Fabric Info&nbsp;&nbsp;</asp:LinkButton>
+                        </td>
+                        <td class="style_btn">
+                            <asp:LinkButton id="lnk_MenuQa" runat="server" CommandArgument="http://ns-s02/qais/main/login.aspx?" onclick="ApplicationLinkbutton_Click" SkinID="style_btn_font">&nbsp;&nbsp;Quality Assurance&nbsp;&nbsp;</asp:LinkButton>
+                        </td>
+                        <td class="style_btn">
+                            <asp:LinkButton id="lnk_MenuLMS" runat="server" CommandArgument="http://ns-s04/lms/main/login.aspx?" onclick="ApplicationLinkbutton_Click" SkinID="style_btn_font">&nbsp;&nbsp;Laboratory&nbsp;&nbsp;</asp:LinkButton>
+                        </td>
+                    </tr>
+                </table>                    																		
+                </td>
+            </tr>
+		    <tr Id="tr_MainMasterSystemName" >
+                <td bgcolor="#336699" class="style_white_16" style="padding-left:12px;padding-top:3px;padding-bottom:3px;"><b>Integrated Shipping and Accounts Management System</b></td>
+            </tr>
+	        <tr id="tr_MainMasterBannerBoundary" style="display:none;">
+		        <td colspan="3">
+		            <img src="../images/ruler_green.gif" alt="green_ruler" border="0" width="100%" height="3"/>
+		        </td>
+	        </tr>
+        </table>
+    <table style="height:100%;margin: 0 0 0 0;" cellspacing="0" border="0" >
+        <tr>
+            <!-- 
+            <td width="171" background="../images/space_navigation.gif" align="left" valign="top" nowrap> 
+            -->
+            <td id="td_MainMasterMenuSection" align="left" valign="top" nowrap style="padding-top:2px;">
+                <!--MENU-->
+                <asp:Repeater ID="repMenu" OnItemDataBound="repMenu_ItemDataBound" runat="server" Visible="true">
+                    <ItemTemplate>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr id="tr_MainMasterMenuGroup">
+                                <td>&nbsp;</td> 
+                                <td colspan="3" class="MenuButton" style="height:26px;padding-left:5px;">
+                                    <div style='width:126px;padding-left:22px;background:no-repeat <%# " "+((string)DataBinder.Eval(Container, "DataItem.MenuPath")).Replace(" href=", ";cursor:hand;' onclick='location.href=") %>'> 
+                                        <span class="style_menu_1_white_12"><%# DataBinder.Eval(Container, "DataItem.MenuName") %></span>
+                                    </div> 
+                                </td>
+                                <td >&nbsp;</td> 
+                            </tr>
+                            <tr id="tr_MainMasterSubMenu">
+                                <td>&nbsp;</td> 
+                                <td></td>
+                                <td>
+                                    <asp:Repeater ID="repSubMenu" runat="server">
+                                        <HeaderTemplate>
+                                            <table border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <!-- <img src="../images/_menu_testrequestbox_01_.gif" width="171" alt=""> -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <!-- <img src="../images/menu_testrequestbox_02.gif" width="10" alt=""> -->
+                                                        &nbsp;&nbsp;
+                                                    </td>
+                                                    <td bgcolor="#FFFFFF" valign="top" style="font-size:smaller;">
+                                                        </HeaderTemplate>
+                                                        <ItemTemplate>
+                                                            <%# DataBinder.Eval(Container, "DataItem.Path") %><br>
+                                                        </ItemTemplate>
+                                                        <FooterTemplate>
+                                                    </td>
+                                                    <td> 
+                                                        <!-- <img src="../images/menu_testrequestbox_04.gif" width="11" alt=""> --> 
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <br />
+                                                        <!-- <img src="../images/menu_testrequestbox_05.gif" width="171" alt=""> -->
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </FooterTemplate>
+                                    </asp:Repeater>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </td>
+            <td ID="td_MainMasterMenuBoundary" background="../images/left_bg.jpg" 
+                style="height:100%;background-position: right;background-repeat:repeat-y;  color:White;  " valign="top">
+                &nbsp;
+            </td>
+            <td ID = "td_MainMasterWorkplace" align="left" valign="top" bgcolor="#FFFFFF" width="100%">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+				    <tr>
+					    <td align="left" width="1">
+					        <asp:ContentPlaceHolder ID="cph_ImageHeader" runat="server">        
+                            </asp:ContentPlaceHolder>
+					    </td>
+					    <td class="columnHeading" align="right"><img src="../images/banner_workplace.gif" runat="server" id="imgHeader" visible="false"></td>
+				    </tr>
+			    </table>	
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">        
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>			
+        <tr>
+	        <td ID="td_MainMasterFooterSection" colspan="3" style="vertical-align:top;" width="100%">
+		        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			        <tr style="display:block;" bgcolor="#b5c3ce">
+				        <td height="30">&nbsp;&nbsp;<font color="white">&copy; <i>2009 Integrated Shipping and Accounts Management System. NEXT Sourcing</i></font></td>
+			        </tr>
+			        <tr style="display:none;">
+                        <td height="30" bgcolor="#000000" class="style_cr" style="padding-left:5px;">Next Sourcing System (NSS) 2010. Next Sourcing Limited.</td>
+                    </tr>
+		        </table>
+	        </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

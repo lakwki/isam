@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ILSOrderCopyOriginDs" targetNamespace="http://tempuri.org/ILSOrderCopyOriginDs.xsd" xmlns:mstns="http://tempuri.org/ILSOrderCopyOriginDs.xsd" xmlns="http://tempuri.org/ILSOrderCopyOriginDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAM_20100423" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAM_20100423 (Settings)" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAM_20100423" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAM20100423" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAM20100423 (Settings)" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAM20100423" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ILSOrderCopyOriginTableAdapter" GeneratorDataComponentClassName="ILSOrderCopyOriginTableAdapter" Name="ILSOrderCopyOrigin" UserDataComponentName="ILSOrderCopyOriginTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAM_20100423 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        OrderRefId, OriginContract, OfficeCode, PortCode, RequiredDocs, QuotaCats, OriginCountry
+FROM            a</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OrderRefId" DataSetColumn="OrderRefId" />
+              <Mapping SourceColumn="OriginContract" DataSetColumn="OriginContract" />
+              <Mapping SourceColumn="OfficeCode" DataSetColumn="OfficeCode" />
+              <Mapping SourceColumn="PortCode" DataSetColumn="PortCode" />
+              <Mapping SourceColumn="RequiredDocs" DataSetColumn="RequiredDocs" />
+              <Mapping SourceColumn="QuotaCats" DataSetColumn="QuotaCats" />
+              <Mapping SourceColumn="OriginCountry" DataSetColumn="OriginCountry" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ILSOrderCopyOriginDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ILSOrderCopyOriginDs" msprop:Generator_UserDSName="ILSOrderCopyOriginDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ILSOrderCopyOrigin" msprop:Generator_TableClassName="ILSOrderCopyOriginDataTable" msprop:Generator_RowEvArgName="ILSOrderCopyOriginRowChangeEvent" msprop:Generator_TableVarName="tableILSOrderCopyOrigin" msprop:Generator_TablePropName="ILSOrderCopyOrigin" msprop:Generator_RowDeletingName="ILSOrderCopyOriginRowDeleting" msprop:Generator_UserTableName="ILSOrderCopyOrigin" msprop:Generator_RowChangingName="ILSOrderCopyOriginRowChanging" msprop:Generator_RowDeletedName="ILSOrderCopyOriginRowDeleted" msprop:Generator_RowChangedName="ILSOrderCopyOriginRowChanged" msprop:Generator_RowEvHandlerName="ILSOrderCopyOriginRowChangeEventHandler" msprop:Generator_RowClassName="ILSOrderCopyOriginRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OrderRefId" msprop:Generator_ColumnVarNameInTable="columnOrderRefId" msprop:Generator_ColumnPropNameInRow="OrderRefId" msprop:Generator_ColumnPropNameInTable="OrderRefIdColumn" msprop:Generator_UserColumnName="OrderRefId" type="xs:int" />
+              <xs:element name="OriginContract" msprop:Generator_ColumnVarNameInTable="columnOriginContract" msprop:Generator_ColumnPropNameInRow="OriginContract" msprop:Generator_ColumnPropNameInTable="OriginContractColumn" msprop:Generator_UserColumnName="OriginContract" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OfficeCode" msprop:Generator_ColumnVarNameInTable="columnOfficeCode" msprop:Generator_ColumnPropNameInRow="OfficeCode" msprop:Generator_ColumnPropNameInTable="OfficeCodeColumn" msprop:Generator_UserColumnName="OfficeCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PortCode" msprop:Generator_ColumnVarNameInTable="columnPortCode" msprop:Generator_ColumnPropNameInRow="PortCode" msprop:Generator_ColumnPropNameInTable="PortCodeColumn" msprop:Generator_UserColumnName="PortCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RequiredDocs" msprop:Generator_ColumnVarNameInTable="columnRequiredDocs" msprop:Generator_ColumnPropNameInRow="RequiredDocs" msprop:Generator_ColumnPropNameInTable="RequiredDocsColumn" msprop:Generator_UserColumnName="RequiredDocs" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QuotaCats" msprop:Generator_ColumnVarNameInTable="columnQuotaCats" msprop:Generator_ColumnPropNameInRow="QuotaCats" msprop:Generator_ColumnPropNameInTable="QuotaCatsColumn" msprop:Generator_UserColumnName="QuotaCats" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OriginCountry" msprop:Generator_ColumnVarNameInTable="columnOriginCountry" msprop:Generator_ColumnPropNameInRow="OriginCountry" msprop:Generator_ColumnPropNameInTable="OriginCountryColumn" msprop:Generator_UserColumnName="OriginCountry" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ILSOrderCopyOrigin" />
+      <xs:field xpath="mstns:OrderRefId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

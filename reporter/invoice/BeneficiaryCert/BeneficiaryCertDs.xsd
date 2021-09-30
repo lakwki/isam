@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BeneficiaryCertDs" targetNamespace="http://tempuri.org/BeneficiaryCertDs.xsd" xmlns:mstns="http://tempuri.org/BeneficiaryCertDs.xsd" xmlns="http://tempuri.org/BeneficiaryCertDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BeneficiaryCertDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="BeneficiaryCertDs" msprop:Generator_UserDSName="BeneficiaryCertDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BeneficiaryCert" msprop:Generator_TableClassName="BeneficiaryCertDataTable" msprop:Generator_TableVarName="tableBeneficiaryCert" msprop:Generator_TablePropName="BeneficiaryCert" msprop:Generator_RowDeletingName="BeneficiaryCertRowDeleting" msprop:Generator_RowChangingName="BeneficiaryCertRowChanging" msprop:Generator_RowEvHandlerName="BeneficiaryCertRowChangeEventHandler" msprop:Generator_RowDeletedName="BeneficiaryCertRowDeleted" msprop:Generator_UserTableName="BeneficiaryCert" msprop:Generator_RowChangedName="BeneficiaryCertRowChanged" msprop:Generator_RowEvArgName="BeneficiaryCertRowChangeEvent" msprop:Generator_RowClassName="BeneficiaryCertRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerPONo" msprop:Generator_ColumnVarNameInTable="columnCustomerPONo" msprop:Generator_ColumnPropNameInRow="CustomerPONo" msprop:Generator_ColumnPropNameInTable="CustomerPONoColumn" msprop:Generator_UserColumnName="CustomerPONo" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceDate" msprop:Generator_ColumnVarNameInTable="columnInvoiceDate" msprop:Generator_ColumnPropNameInRow="InvoiceDate" msprop:Generator_ColumnPropNameInTable="InvoiceDateColumn" msprop:Generator_UserColumnName="InvoiceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="InvoiceAmt" msprop:Generator_ColumnVarNameInTable="columnInvoiceAmt" msprop:Generator_ColumnPropNameInRow="InvoiceAmt" msprop:Generator_ColumnPropNameInTable="InvoiceAmtColumn" msprop:Generator_UserColumnName="InvoiceAmt" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

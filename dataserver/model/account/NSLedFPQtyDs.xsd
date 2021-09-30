@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NSLedFPQtyDs" targetNamespace="http://tempuri.org/NSLedFPQtyDs.xsd" xmlns:mstns="http://tempuri.org/NSLedFPQtyDs.xsd" xmlns="http://tempuri.org/NSLedFPQtyDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NSLedFPQtyDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NSLedFPQtyDs" msprop:Generator_UserDSName="NSLedFPQtyDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NSLedFPQty" msprop:Generator_TableClassName="NSLedFPQtyDataTable" msprop:Generator_TableVarName="tableNSLedFPQty" msprop:Generator_TablePropName="NSLedFPQty" msprop:Generator_RowDeletingName="NSLedFPQtyRowDeleting" msprop:Generator_RowChangingName="NSLedFPQtyRowChanging" msprop:Generator_RowEvHandlerName="NSLedFPQtyRowChangeEventHandler" msprop:Generator_RowDeletedName="NSLedFPQtyRowDeleted" msprop:Generator_UserTableName="NSLedFPQty" msprop:Generator_RowChangedName="NSLedFPQtyRowChanged" msprop:Generator_RowEvArgName="NSLedFPQtyRowChangeEvent" msprop:Generator_RowClassName="NSLedFPQtyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LaunchYear" msprop:Generator_ColumnVarNameInTable="columnLaunchYear" msprop:Generator_ColumnPropNameInRow="LaunchYear" msprop:Generator_ColumnPropNameInTable="LaunchYearColumn" msprop:Generator_UserColumnName="LaunchYear" type="xs:int" minOccurs="0" />
+              <xs:element name="LaunchWeek" msprop:Generator_ColumnVarNameInTable="columnLaunchWeek" msprop:Generator_ColumnPropNameInRow="LaunchWeek" msprop:Generator_ColumnPropNameInTable="LaunchWeekColumn" msprop:Generator_UserColumnName="LaunchWeek" type="xs:int" minOccurs="0" />
+              <xs:element name="FPQty" msprop:Generator_ColumnVarNameInTable="columnFPQty" msprop:Generator_ColumnPropNameInRow="FPQty" msprop:Generator_ColumnPropNameInTable="FPQtyColumn" msprop:Generator_UserColumnName="FPQty" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AdvancePaymentSummaryReportDs" targetNamespace="http://tempuri.org/AdvancePaymentSummaryReportDs.xsd" xmlns:mstns="http://tempuri.org/AdvancePaymentSummaryReportDs.xsd" xmlns="http://tempuri.org/AdvancePaymentSummaryReportDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMNSS04" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMNSS04 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMNSS04" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AdvancePaymentSummaryReportDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AdvancePaymentSummaryReportDs" msprop:Generator_UserDSName="AdvancePaymentSummaryReportDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AdvancePaymentSummaryTable" msprop:Generator_TableClassName="AdvancePaymentSummaryTableDataTable" msprop:Generator_TableVarName="tableAdvancePaymentSummaryTable" msprop:Generator_TablePropName="AdvancePaymentSummaryTable" msprop:Generator_RowDeletingName="AdvancePaymentSummaryTableRowDeleting" msprop:Generator_RowChangingName="AdvancePaymentSummaryTableRowChanging" msprop:Generator_RowEvHandlerName="AdvancePaymentSummaryTableRowChangeEventHandler" msprop:Generator_RowDeletedName="AdvancePaymentSummaryTableRowDeleted" msprop:Generator_UserTableName="AdvancePaymentSummaryTable" msprop:Generator_RowChangedName="AdvancePaymentSummaryTableRowChanged" msprop:Generator_RowEvArgName="AdvancePaymentSummaryTableRowChangeEvent" msprop:Generator_RowClassName="AdvancePaymentSummaryTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="officecode" msprop:Generator_ColumnVarNameInTable="columnofficecode" msprop:Generator_ColumnPropNameInRow="officecode" msprop:Generator_ColumnPropNameInTable="officecodeColumn" msprop:Generator_UserColumnName="officecode" type="xs:string" minOccurs="0" />
+              <xs:element name="vendorId" msprop:Generator_ColumnVarNameInTable="columnvendorId" msprop:Generator_ColumnPropNameInRow="vendorId" msprop:Generator_ColumnPropNameInTable="vendorIdColumn" msprop:Generator_UserColumnName="vendorId" type="xs:int" minOccurs="0" />
+              <xs:element name="vendorname" msprop:Generator_ColumnVarNameInTable="columnvendorname" msprop:Generator_ColumnPropNameInRow="vendorname" msprop:Generator_ColumnPropNameInTable="vendornameColumn" msprop:Generator_UserColumnName="vendorname" type="xs:string" minOccurs="0" />
+              <xs:element name="currencycode" msprop:Generator_ColumnVarNameInTable="columncurrencycode" msprop:Generator_ColumnPropNameInRow="currencycode" msprop:Generator_ColumnPropNameInTable="currencycodeColumn" msprop:Generator_UserColumnName="currencycode" type="xs:string" minOccurs="0" />
+              <xs:element name="totaladvanceamt" msprop:Generator_ColumnVarNameInTable="columntotaladvanceamt" msprop:Generator_ColumnPropNameInRow="totaladvanceamt" msprop:Generator_ColumnPropNameInTable="totaladvanceamtColumn" msprop:Generator_UserColumnName="totaladvanceamt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="totaldeduceamt" msprop:Generator_ColumnVarNameInTable="columntotaldeduceamt" msprop:Generator_ColumnPropNameInRow="totaldeduceamt" msprop:Generator_ColumnPropNameInTable="totaldeduceamtColumn" msprop:Generator_UserColumnName="totaldeduceamt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="totaloutstandingamt" msprop:Generator_ColumnVarNameInTable="columntotaloutstandingamt" msprop:Generator_ColumnPropNameInRow="totaloutstandingamt" msprop:Generator_ColumnPropNameInTable="totaloutstandingamtColumn" msprop:Generator_UserColumnName="totaloutstandingamt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="futureordercnt" msprop:Generator_ColumnVarNameInTable="columnfutureordercnt" msprop:Generator_ColumnPropNameInRow="futureordercnt" msprop:Generator_ColumnPropNameInTable="futureordercntColumn" msprop:Generator_UserColumnName="futureordercnt" type="xs:int" minOccurs="0" />
+              <xs:element name="totalsales" msprop:Generator_ColumnVarNameInTable="columntotalsales" msprop:Generator_ColumnPropNameInRow="totalsales" msprop:Generator_ColumnPropNameInTable="totalsalesColumn" msprop:Generator_UserColumnName="totalsales" type="xs:decimal" minOccurs="0" />
+              <xs:element name="totalinterestamt" msprop:Generator_ColumnVarNameInTable="columntotalinterestamt" msprop:Generator_ColumnPropNameInRow="totalinterestamt" msprop:Generator_ColumnPropNameInTable="totalinterestamtColumn" msprop:Generator_UserColumnName="totalinterestamt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="last_cus_awh_date" msprop:Generator_ColumnVarNameInTable="columnlast_cus_awh_date" msprop:Generator_ColumnPropNameInRow="last_cus_awh_date" msprop:Generator_ColumnPropNameInTable="last_cus_awh_dateColumn" msprop:Generator_UserColumnName="last_cus_awh_date" type="xs:string" minOccurs="0" />
+              <xs:element name="BudgetYear" msprop:Generator_ColumnVarNameInTable="columnBudgetYear" msprop:Generator_ColumnPropNameInRow="BudgetYear" msprop:Generator_ColumnPropNameInTable="BudgetYearColumn" msprop:Generator_UserColumnName="BudgetYear" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentAmt" msprop:Generator_ColumnVarNameInTable="columnPaymentAmt" msprop:Generator_ColumnPropNameInRow="PaymentAmt" msprop:Generator_ColumnPropNameInTable="PaymentAmtColumn" msprop:Generator_UserColumnName="PaymentAmt" type="xs:string" minOccurs="0" />
+              <xs:element name="InterestAmt" msprop:Generator_ColumnVarNameInTable="columnInterestAmt" msprop:Generator_ColumnPropNameInRow="InterestAmt" msprop:Generator_ColumnPropNameInTable="InterestAmtColumn" msprop:Generator_UserColumnName="InterestAmt" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalAmt" msprop:Generator_ColumnVarNameInTable="columnTotalAmt" msprop:Generator_ColumnPropNameInRow="TotalAmt" msprop:Generator_ColumnPropNameInTable="TotalAmtColumn" msprop:Generator_UserColumnName="TotalAmt" type="xs:string" minOccurs="0" />
+              <xs:element name="ActualDeductionAmt" msprop:Generator_ColumnVarNameInTable="columnActualDeductionAmt" msprop:Generator_ColumnPropNameInRow="ActualDeductionAmt" msprop:Generator_ColumnPropNameInTable="ActualDeductionAmtColumn" msprop:Generator_UserColumnName="ActualDeductionAmt" type="xs:string" minOccurs="0" />
+              <xs:element name="BalanceAmt" msprop:Generator_ColumnVarNameInTable="columnBalanceAmt" msprop:Generator_ColumnPropNameInRow="BalanceAmt" msprop:Generator_ColumnPropNameInTable="BalanceAmtColumn" msprop:Generator_UserColumnName="BalanceAmt" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

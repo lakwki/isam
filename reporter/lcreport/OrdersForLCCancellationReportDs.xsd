@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OrdersForLCCancellationReportDs" targetNamespace="http://tempuri.org/OrdersForLCCancellationReportDs.xsd" xmlns:mstns="http://tempuri.org/OrdersForLCCancellationReportDs.xsd" xmlns="http://tempuri.org/OrdersForLCCancellationReportDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OrdersForLCCancellationReportDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OrdersForLCCancellationReportDs" msprop:Generator_UserDSName="OrdersForLCCancellationReportDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OrdersForLCCancellation" msprop:Generator_TableClassName="OrdersForLCCancellationDataTable" msprop:Generator_TableVarName="tableOrdersForLCCancellation" msprop:Generator_TablePropName="OrdersForLCCancellation" msprop:Generator_RowDeletingName="OrdersForLCCancellationRowDeleting" msprop:Generator_RowChangingName="OrdersForLCCancellationRowChanging" msprop:Generator_RowEvHandlerName="OrdersForLCCancellationRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdersForLCCancellationRowDeleted" msprop:Generator_UserTableName="OrdersForLCCancellation" msprop:Generator_RowChangedName="OrdersForLCCancellationRowChanged" msprop:Generator_RowEvArgName="OrdersForLCCancellationRowChangeEvent" msprop:Generator_RowClassName="OrdersForLCCancellationRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShipmentId" msprop:Generator_ColumnVarNameInTable="columnShipmentId" msprop:Generator_ColumnPropNameInRow="ShipmentId" msprop:Generator_ColumnPropNameInTable="ShipmentIdColumn" msprop:Generator_UserColumnName="ShipmentId" type="xs:int" minOccurs="0" />
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo" type="xs:string" minOccurs="0" />
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" type="xs:int" minOccurs="0" />
+              <xs:element name="CustomerCode" msprop:Generator_ColumnVarNameInTable="columnCustomerCode" msprop:Generator_ColumnPropNameInRow="CustomerCode" msprop:Generator_ColumnPropNameInTable="CustomerCodeColumn" msprop:Generator_UserColumnName="CustomerCode" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerAtWarehouseDate" msprop:Generator_ColumnVarNameInTable="columnCustomerAtWarehouseDate" msprop:Generator_ColumnPropNameInRow="CustomerAtWarehouseDate" msprop:Generator_ColumnPropNameInTable="CustomerAtWarehouseDateColumn" msprop:Generator_UserColumnName="CustomerAtWarehouseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SupplierAtWarehouseDate" msprop:Generator_ColumnVarNameInTable="columnSupplierAtWarehouseDate" msprop:Generator_ColumnPropNameInRow="SupplierAtWarehouseDate" msprop:Generator_ColumnPropNameInTable="SupplierAtWarehouseDateColumn" msprop:Generator_UserColumnName="SupplierAtWarehouseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LCApprovalDate" msprop:Generator_ColumnVarNameInTable="columnLCApprovalDate" msprop:Generator_ColumnPropNameInRow="LCApprovalDate" msprop:Generator_ColumnPropNameInTable="LCApprovalDateColumn" msprop:Generator_UserColumnName="LCApprovalDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Vendor" msprop:Generator_ColumnVarNameInTable="columnVendor" msprop:Generator_ColumnPropNameInRow="Vendor" msprop:Generator_ColumnPropNameInTable="VendorColumn" msprop:Generator_UserColumnName="Vendor" type="xs:string" minOccurs="0" />
+              <xs:element name="Dept" msprop:Generator_ColumnVarNameInTable="columnDept" msprop:Generator_ColumnPropNameInRow="Dept" msprop:Generator_ColumnPropNameInTable="DeptColumn" msprop:Generator_UserColumnName="Dept" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductTeam" msprop:Generator_ColumnVarNameInTable="columnProductTeam" msprop:Generator_ColumnPropNameInRow="ProductTeam" msprop:Generator_ColumnPropNameInTable="ProductTeamColumn" msprop:Generator_UserColumnName="ProductTeam" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrencyCode" msprop:Generator_ColumnVarNameInTable="columnCurrencyCode" msprop:Generator_ColumnPropNameInRow="CurrencyCode" msprop:Generator_ColumnPropNameInTable="CurrencyCodeColumn" msprop:Generator_UserColumnName="CurrencyCode" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalPOQty" msprop:Generator_ColumnVarNameInTable="columnTotalPOQty" msprop:Generator_ColumnPropNameInRow="TotalPOQty" msprop:Generator_ColumnPropNameInTable="TotalPOQtyColumn" msprop:Generator_UserColumnName="TotalPOQty" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalPOAmt" msprop:Generator_ColumnVarNameInTable="columnTotalPOAmt" msprop:Generator_ColumnPropNameInRow="TotalPOAmt" msprop:Generator_ColumnPropNameInTable="TotalPOAmtColumn" msprop:Generator_UserColumnName="TotalPOAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LCBatchNo" msprop:Generator_ColumnVarNameInTable="columnLCBatchNo" msprop:Generator_ColumnPropNameInRow="LCBatchNo" msprop:Generator_ColumnPropNameInTable="LCBatchNoColumn" msprop:Generator_UserColumnName="LCBatchNo" type="xs:string" minOccurs="0" />
+              <xs:element name="LCNo" msprop:Generator_ColumnVarNameInTable="columnLCNo" msprop:Generator_ColumnPropNameInRow="LCNo" msprop:Generator_ColumnPropNameInTable="LCNoColumn" msprop:Generator_UserColumnName="LCNo" type="xs:string" minOccurs="0" />
+              <xs:element name="LCBillRefNo" msprop:Generator_ColumnVarNameInTable="columnLCBillRefNo" msprop:Generator_ColumnPropNameInRow="LCBillRefNo" msprop:Generator_ColumnPropNameInTable="LCBillRefNoColumn" msprop:Generator_UserColumnName="LCBillRefNo" type="xs:string" minOccurs="0" />
+              <xs:element name="LCIssueDate" msprop:Generator_ColumnVarNameInTable="columnLCIssueDate" msprop:Generator_ColumnPropNameInRow="LCIssueDate" msprop:Generator_ColumnPropNameInTable="LCIssueDateColumn" msprop:Generator_UserColumnName="LCIssueDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LCExpiryDate" msprop:Generator_ColumnVarNameInTable="columnLCExpiryDate" msprop:Generator_ColumnPropNameInRow="LCExpiryDate" msprop:Generator_ColumnPropNameInTable="LCExpiryDateColumn" msprop:Generator_UserColumnName="LCExpiryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LCAmt" msprop:Generator_ColumnVarNameInTable="columnLCAmt" msprop:Generator_ColumnPropNameInRow="LCAmt" msprop:Generator_ColumnPropNameInTable="LCAmtColumn" msprop:Generator_UserColumnName="LCAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="WorkflowStatus" msprop:Generator_ColumnVarNameInTable="columnWorkflowStatus" msprop:Generator_ColumnPropNameInRow="WorkflowStatus" msprop:Generator_ColumnPropNameInTable="WorkflowStatusColumn" msprop:Generator_UserColumnName="WorkflowStatus" type="xs:string" minOccurs="0" />
+              <xs:element name="EbookingCancelled" msprop:Generator_ColumnVarNameInTable="columnEbookingCancelled" msprop:Generator_ColumnPropNameInRow="EbookingCancelled" msprop:Generator_ColumnPropNameInTable="EbookingCancelledColumn" msprop:Generator_UserColumnName="EbookingCancelled" type="xs:string" minOccurs="0" />
+              <xs:element name="UKILSCancelled" msprop:Generator_ColumnVarNameInTable="columnUKILSCancelled" msprop:Generator_ColumnPropNameInRow="UKILSCancelled" msprop:Generator_ColumnPropNameInTable="UKILSCancelledColumn" msprop:Generator_UserColumnName="UKILSCancelled" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

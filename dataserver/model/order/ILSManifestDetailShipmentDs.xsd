@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ILSManifestDetailShipmentDs" targetNamespace="http://tempuri.org/ILSManifestDetailShipmentDs.xsd" xmlns:mstns="http://tempuri.org/ILSManifestDetailShipmentDs.xsd" xmlns="http://tempuri.org/ILSManifestDetailShipmentDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAM3ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAM3ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAM3ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ILSManifestDetailShipmentTableAdapter" GeneratorDataComponentClassName="ILSManifestDetailShipmentTableAdapter" Name="ILSManifestDetailShipment" UserDataComponentName="ILSManifestDetailShipmentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     im.VoyageNo, im.VesselName, im.ContainerNo, ior.ContractNo, ior.DeliveryNo, p.ItemNo, s.VendorId, c.PackingMethodId, ipl.InWarehouseDate,
+          im.TotalVolume, ipl.TotalCartons, s.TotalShippedQty, i.BookingSONo, i.InvoicePrefix, i.InvoiceSeq, i.InvoiceYear, i.InvoiceUploadUserId, s.ShipmentId, imd.ContainerPosition,
+          s.CustomerDestinationId, c.CustomerId, cd.DestinationCode
+          FROM         ILSManifestDetail imd INNER JOIN
+          ILSManifest im ON im.ContainerNo = imd.ContainerNo LEFT OUTER JOIN
+          ILSOrderRef ior ON imd.OrderRefId = ior.OrderRefId LEFT OUTER JOIN
+          Shipment  s ON ior.ShipmentId = s.ShipmentId LEFT OUTER JOIN
+          Contract  c ON s.ContractId = c.ContractId LEFT OUTER JOIN
+          Product  p ON c.ProductId = p.ProductId LEFT OUTER JOIN
+          ILSPackingList  ipl ON ipl.OrderRefId = ior.OrderRefId LEFT OUTER JOIN
+          Invoice  i ON i.ShipmentId = s.ShipmentId LEFT OUTER JOIN
+          CustomerDestination cd ON s.CustomerDestinationId = cd.CustomerDestinationId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="VoyageNo" DataSetColumn="VoyageNo" />
+              <Mapping SourceColumn="VesselName" DataSetColumn="VesselName" />
+              <Mapping SourceColumn="ContainerNo" DataSetColumn="ContainerNo" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="ItemNo" DataSetColumn="ItemNo" />
+              <Mapping SourceColumn="VendorId" DataSetColumn="VendorId" />
+              <Mapping SourceColumn="PackingMethodId" DataSetColumn="PackingMethodId" />
+              <Mapping SourceColumn="InWarehouseDate" DataSetColumn="InWarehouseDate" />
+              <Mapping SourceColumn="TotalVolume" DataSetColumn="TotalVolume" />
+              <Mapping SourceColumn="TotalCartons" DataSetColumn="TotalCartons" />
+              <Mapping SourceColumn="TotalShippedQty" DataSetColumn="TotalShippedQty" />
+              <Mapping SourceColumn="BookingSONo" DataSetColumn="BookingSONo" />
+              <Mapping SourceColumn="InvoicePrefix" DataSetColumn="InvoicePrefix" />
+              <Mapping SourceColumn="InvoiceSeq" DataSetColumn="InvoiceSeq" />
+              <Mapping SourceColumn="InvoiceYear" DataSetColumn="InvoiceYear" />
+              <Mapping SourceColumn="InvoiceUploadUserId" DataSetColumn="InvoiceUploadUserId" />
+              <Mapping SourceColumn="ShipmentId" DataSetColumn="ShipmentId" />
+              <Mapping SourceColumn="ContainerPosition" DataSetColumn="ContainerPosition" />
+              <Mapping SourceColumn="CustomerDestinationId" DataSetColumn="CustomerDestinationId" />
+              <Mapping SourceColumn="CustomerId" DataSetColumn="CustomerId" />
+              <Mapping SourceColumn="DestinationCode" DataSetColumn="DestinationCode" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ILSManifestDetailShipmentDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ILSManifestDetailShipmentDs" msprop:Generator_UserDSName="ILSManifestDetailShipmentDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ILSManifestDetailShipment" msprop:Generator_UserTableName="ILSManifestDetailShipment" msprop:Generator_RowEvArgName="ILSManifestDetailShipmentRowChangeEvent" msprop:Generator_TableVarName="tableILSManifestDetailShipment" msprop:Generator_TablePropName="ILSManifestDetailShipment" msprop:Generator_RowDeletingName="ILSManifestDetailShipmentRowDeleting" msprop:Generator_RowChangingName="ILSManifestDetailShipmentRowChanging" msprop:Generator_RowDeletedName="ILSManifestDetailShipmentRowDeleted" msprop:Generator_RowEvHandlerName="ILSManifestDetailShipmentRowChangeEventHandler" msprop:Generator_TableClassName="ILSManifestDetailShipmentDataTable" msprop:Generator_RowChangedName="ILSManifestDetailShipmentRowChanged" msprop:Generator_RowClassName="ILSManifestDetailShipmentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VoyageNo" msprop:Generator_ColumnVarNameInTable="columnVoyageNo" msprop:Generator_ColumnPropNameInRow="VoyageNo" msprop:Generator_ColumnPropNameInTable="VoyageNoColumn" msprop:Generator_UserColumnName="VoyageNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VesselName" msprop:Generator_ColumnVarNameInTable="columnVesselName" msprop:Generator_ColumnPropNameInRow="VesselName" msprop:Generator_ColumnPropNameInTable="VesselNameColumn" msprop:Generator_UserColumnName="VesselName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContainerNo" msprop:Generator_ColumnVarNameInTable="columnContainerNo" msprop:Generator_ColumnPropNameInRow="ContainerNo" msprop:Generator_ColumnPropNameInTable="ContainerNoColumn" msprop:Generator_UserColumnName="ContainerNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemNo" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" msprop:Generator_UserColumnName="ItemNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VendorId" msprop:Generator_ColumnVarNameInTable="columnVendorId" msprop:Generator_ColumnPropNameInRow="VendorId" msprop:Generator_ColumnPropNameInTable="VendorIdColumn" msprop:Generator_UserColumnName="VendorId" type="xs:int" minOccurs="0" />
+              <xs:element name="PackingMethodId" msprop:Generator_ColumnVarNameInTable="columnPackingMethodId" msprop:Generator_ColumnPropNameInRow="PackingMethodId" msprop:Generator_ColumnPropNameInTable="PackingMethodIdColumn" msprop:Generator_UserColumnName="PackingMethodId" type="xs:int" minOccurs="0" />
+              <xs:element name="InWarehouseDate" msprop:Generator_ColumnVarNameInTable="columnInWarehouseDate" msprop:Generator_ColumnPropNameInRow="InWarehouseDate" msprop:Generator_ColumnPropNameInTable="InWarehouseDateColumn" msprop:Generator_UserColumnName="InWarehouseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TotalVolume" msprop:Generator_ColumnVarNameInTable="columnTotalVolume" msprop:Generator_ColumnPropNameInRow="TotalVolume" msprop:Generator_ColumnPropNameInTable="TotalVolumeColumn" msprop:Generator_UserColumnName="TotalVolume" type="xs:decimal" />
+              <xs:element name="TotalCartons" msprop:Generator_ColumnVarNameInTable="columnTotalCartons" msprop:Generator_ColumnPropNameInRow="TotalCartons" msprop:Generator_ColumnPropNameInTable="TotalCartonsColumn" msprop:Generator_UserColumnName="TotalCartons" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalShippedQty" msprop:Generator_ColumnVarNameInTable="columnTotalShippedQty" msprop:Generator_ColumnPropNameInRow="TotalShippedQty" msprop:Generator_ColumnPropNameInTable="TotalShippedQtyColumn" msprop:Generator_UserColumnName="TotalShippedQty" type="xs:int" minOccurs="0" />
+              <xs:element name="BookingSONo" msprop:Generator_ColumnVarNameInTable="columnBookingSONo" msprop:Generator_ColumnPropNameInRow="BookingSONo" msprop:Generator_ColumnPropNameInTable="BookingSONoColumn" msprop:Generator_UserColumnName="BookingSONo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoicePrefix" msprop:Generator_ColumnVarNameInTable="columnInvoicePrefix" msprop:Generator_ColumnPropNameInRow="InvoicePrefix" msprop:Generator_ColumnPropNameInTable="InvoicePrefixColumn" msprop:Generator_UserColumnName="InvoicePrefix" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceSeq" msprop:Generator_ColumnVarNameInTable="columnInvoiceSeq" msprop:Generator_ColumnPropNameInRow="InvoiceSeq" msprop:Generator_ColumnPropNameInTable="InvoiceSeqColumn" msprop:Generator_UserColumnName="InvoiceSeq" type="xs:int" minOccurs="0" />
+              <xs:element name="InvoiceYear" msprop:Generator_ColumnVarNameInTable="columnInvoiceYear" msprop:Generator_ColumnPropNameInRow="InvoiceYear" msprop:Generator_ColumnPropNameInTable="InvoiceYearColumn" msprop:Generator_UserColumnName="InvoiceYear" type="xs:int" minOccurs="0" />
+              <xs:element name="InvoiceUploadUserId" msprop:Generator_ColumnVarNameInTable="columnInvoiceUploadUserId" msprop:Generator_ColumnPropNameInRow="InvoiceUploadUserId" msprop:Generator_ColumnPropNameInTable="InvoiceUploadUserIdColumn" msprop:Generator_UserColumnName="InvoiceUploadUserId" type="xs:int" minOccurs="0" />
+              <xs:element name="ShipmentId" msprop:Generator_ColumnVarNameInTable="columnShipmentId" msprop:Generator_ColumnPropNameInRow="ShipmentId" msprop:Generator_ColumnPropNameInTable="ShipmentIdColumn" msprop:Generator_UserColumnName="ShipmentId" type="xs:int" minOccurs="0" />
+              <xs:element name="ContainerPosition" msprop:Generator_ColumnVarNameInTable="columnContainerPosition" msprop:Generator_ColumnPropNameInRow="ContainerPosition" msprop:Generator_ColumnPropNameInTable="ContainerPositionColumn" msprop:Generator_UserColumnName="ContainerPosition" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerId" msprop:Generator_ColumnVarNameInTable="columnCustomerId" msprop:Generator_ColumnPropNameInRow="CustomerId" msprop:Generator_ColumnPropNameInTable="CustomerIdColumn" msprop:Generator_UserColumnName="CustomerId" type="xs:int" minOccurs="0" />
+              <xs:element name="CustomerDestinationId" msprop:Generator_ColumnVarNameInTable="columnCustomerDestinationId" msprop:Generator_ColumnPropNameInRow="CustomerDestinationId" msprop:Generator_ColumnPropNameInTable="CustomerDestinationIdColumn" msprop:Generator_UserColumnName="CustomerDestinationId" type="xs:int" minOccurs="0" />
+              <xs:element name="DestinationCode" msprop:Generator_ColumnVarNameInTable="columnDestinationCode" msprop:Generator_ColumnPropNameInRow="DestinationCode" msprop:Generator_ColumnPropNameInTable="DestinationCodeColumn" msprop:Generator_UserColumnName="DestinationCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

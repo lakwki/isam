@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetApprovedProcurementRequestDefByRequestNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="officeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="requestNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApprovedProcurementRequestDefByRequestNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApprovedProcurementRequestDefByRequestNoResult" type="tns:ProcurementRequestDef" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProcurementRequestDef">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DomainData">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="RequestId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="OfficeId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="RequestNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AssetDescriprion" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AssetCatId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AssetSubCatId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DateOfPurchase" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="CurrencyId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="VAT" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="RejectReason" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ReasonOfChoice" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="WorkflowStatus" type="tns:RequestWFS" />
+              <s:element minOccurs="1" maxOccurs="1" name="SubmittedDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="SubmittedUserId" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DomainData" />
+      <s:complexType name="RequestWFS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DomainData" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetProcurementRequestByKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcurementRequestByKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProcurementRequestByKeyResult" type="tns:ProcurementRequestDef" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isAuthenticated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="roleId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="officeId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isAuthenticatedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isAuthenticatedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetApprovedProcurementRequestDefByRequestNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApprovedProcurementRequestDefByRequestNo" />
+  </wsdl:message>
+  <wsdl:message name="GetApprovedProcurementRequestDefByRequestNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApprovedProcurementRequestDefByRequestNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProcurementRequestByKeySoapIn">
+    <wsdl:part name="parameters" element="tns:GetProcurementRequestByKey" />
+  </wsdl:message>
+  <wsdl:message name="GetProcurementRequestByKeySoapOut">
+    <wsdl:part name="parameters" element="tns:GetProcurementRequestByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="isAuthenticatedSoapIn">
+    <wsdl:part name="parameters" element="tns:isAuthenticated" />
+  </wsdl:message>
+  <wsdl:message name="isAuthenticatedSoapOut">
+    <wsdl:part name="parameters" element="tns:isAuthenticatedResponse" />
+  </wsdl:message>
+  <wsdl:portType name="APDSServiceSoap">
+    <wsdl:operation name="GetApprovedProcurementRequestDefByRequestNo">
+      <wsdl:input message="tns:GetApprovedProcurementRequestDefByRequestNoSoapIn" />
+      <wsdl:output message="tns:GetApprovedProcurementRequestDefByRequestNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProcurementRequestByKey">
+      <wsdl:input message="tns:GetProcurementRequestByKeySoapIn" />
+      <wsdl:output message="tns:GetProcurementRequestByKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isAuthenticated">
+      <wsdl:input message="tns:isAuthenticatedSoapIn" />
+      <wsdl:output message="tns:isAuthenticatedSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="APDSServiceSoap" type="tns:APDSServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApprovedProcurementRequestDefByRequestNo">
+      <soap:operation soapAction="http://tempuri.org/GetApprovedProcurementRequestDefByRequestNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcurementRequestByKey">
+      <soap:operation soapAction="http://tempuri.org/GetProcurementRequestByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAuthenticated">
+      <soap:operation soapAction="http://tempuri.org/isAuthenticated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="APDSServiceSoap12" type="tns:APDSServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApprovedProcurementRequestDefByRequestNo">
+      <soap12:operation soapAction="http://tempuri.org/GetApprovedProcurementRequestDefByRequestNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcurementRequestByKey">
+      <soap12:operation soapAction="http://tempuri.org/GetProcurementRequestByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isAuthenticated">
+      <soap12:operation soapAction="http://tempuri.org/isAuthenticated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="APDSService">
+    <wsdl:port name="APDSServiceSoap" binding="tns:APDSServiceSoap">
+      <soap:address location="http://ns-s15/apds/webservices/APDSService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="APDSServiceSoap12" binding="tns:APDSServiceSoap12">
+      <soap12:address location="http://ns-s15/apds/webservices/APDSService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

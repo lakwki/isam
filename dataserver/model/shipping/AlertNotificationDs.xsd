@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AlertNotificationDs" targetNamespace="http://tempuri.org/AlertNotificationDs.xsd" xmlns:mstns="http://tempuri.org/AlertNotificationDs.xsd" xmlns="http://tempuri.org/AlertNotificationDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString2 (Settings)" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ConnectionString2" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AlertNotificationTableAdapter" GeneratorDataComponentClassName="AlertNotificationTableAdapter" Name="AlertNotification" UserDataComponentName="AlertNotificationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString2 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT	ShipmentId=s.ShipmentId+0, ContractId=s.ContractId+0, ContractNo='', DeliveryNo=s.DeliveryNo+0, 
+	VendorId=s.VendorId+0, OfficeId=c.OfficeId+0, ProductId=c.ProductId+0, 
+	WorkflowStatusId=s.WorkflowStatusId+0, MerchandiserId=c.MerchandiserId+0, ActualAtWarehouseDate=i.ActualAtWarehouseDate+null, 
+        CustomerAtWarehouseDate=s.CustomerAtWarehouseDate+null,  SupplierAtWarehouseDate=s.SupplierAtWarehouseDate+null, 
+	InvoiceNo=ii.InvoiceNo+'', InvoiceDate=ii.InvoiceDate+null, 
+        i.InvoiceUploadUserId, ILSInvoiceStatus=ii.Status, 
+	i.ShippingDocReceiptDate, TermOfPurchaseId=s.TermOfPurchaseId+0, 
+	Remark = '', 
+        TotalShippedAmt=s.TotalShippedAmt+0, TotalShippedSupplierGmtAmt=s.TotalShippedSupplierGmtAmt+0, 
+	CurrencyId=s.SellCurrencyId+0,
+	ApprovalDate = (convert(datetime,'')),
+	SupplierInvoiceNo=i.SupplierInvoiceNo+'', 
+	IsUploadDMSDocument=(i.IsUploadDMSDocument &amp; convert(bit,0)), i.ShippingDocCheckedOn, DocumentId=0, UserId=0, Amount=s.TotalShippedAmt+0, Date=convert(datetime, null), AlertType=convert(varchar(10),''), GroupId=0, Description=''
+FROM	Shipment AS s 
+	INNER JOIN ILSOrderRef AS io ON s.ShipmentId = io.ShipmentId 
+	INNER JOIN ILSInvoice AS ii ON io.OrderRefId = ii.OrderRefId 
+	INNER JOIN Contract AS c ON s.ContractId = c.ContractId 
+	INNER JOIN ILSPackingList AS ip ON io.OrderRefId = ip.OrderRefId 
+	INNER JOIN Invoice AS i ON s.ShipmentId = i.ShipmentId
+WHERE 1=0
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ShipmentId" DataSetColumn="ShipmentId" />
+              <Mapping SourceColumn="ContractId" DataSetColumn="ContractId" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="VendorId" DataSetColumn="VendorId" />
+              <Mapping SourceColumn="OfficeId" DataSetColumn="OfficeId" />
+              <Mapping SourceColumn="ProductId" DataSetColumn="ProductId" />
+              <Mapping SourceColumn="WorkflowStatusId" DataSetColumn="WorkflowStatusId" />
+              <Mapping SourceColumn="MerchandiserId" DataSetColumn="MerchandiserId" />
+              <Mapping SourceColumn="CustomerAtWarehouseDate" DataSetColumn="CustomerAtWarehouseDate" />
+              <Mapping SourceColumn="SupplierAtWarehouseDate" DataSetColumn="SupplierAtWarehouseDate" />
+              <Mapping SourceColumn="InvoiceDate" DataSetColumn="InvoiceDate" />
+              <Mapping SourceColumn="InvoiceUploadUserId" DataSetColumn="InvoiceUploadUserId" />
+              <Mapping SourceColumn="ILSInvoiceStatus" DataSetColumn="ILSInvoiceStatus" />
+              <Mapping SourceColumn="ActualAtWarehouseDate" DataSetColumn="ActualAtWarehouseDate" />
+              <Mapping SourceColumn="TermOfPurchaseId" DataSetColumn="TermOfPurchaseId" />
+              <Mapping SourceColumn="TotalShippedAmt" DataSetColumn="TotalShippedAmt" />
+              <Mapping SourceColumn="TotalShippedSupplierGmtAmt" DataSetColumn="TotalShippedSupplierGmtAmt" />
+              <Mapping SourceColumn="ApprovalDate" DataSetColumn="ApprovalDate" />
+              <Mapping SourceColumn="ShippingDocReceiptDate" DataSetColumn="ShippingDocReceiptDate" />
+              <Mapping SourceColumn="ShippingDocCheckedOn" DataSetColumn="ShippingDocCheckedOn" />
+              <Mapping SourceColumn="CurrencyId" DataSetColumn="CurrencyId" />
+              <Mapping SourceColumn="IsUploadDMSDocument" DataSetColumn="IsUploadDMSDocument" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="AlertType" DataSetColumn="AlertType" />
+              <Mapping SourceColumn="GroupId" DataSetColumn="GroupId" />
+              <Mapping SourceColumn="DocumentId" DataSetColumn="DocumentId" />
+              <Mapping SourceColumn="UserId" DataSetColumn="UserId" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="SupplierInvoiceNo" DataSetColumn="SupplierInvoiceNo" />
+              <Mapping SourceColumn="Remark" DataSetColumn="Remark" />
+              <Mapping SourceColumn="InvoiceNo" DataSetColumn="InvoiceNo" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AlertNotificationDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AlertNotificationDs" msprop:Generator_UserDSName="AlertNotificationDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AlertNotification" msprop:Generator_TableClassName="AlertNotificationDataTable" msprop:Generator_TableVarName="tableAlertNotification" msprop:Generator_TablePropName="AlertNotification" msprop:Generator_RowDeletingName="AlertNotificationRowDeleting" msprop:Generator_UserTableName="AlertNotification" msprop:Generator_RowChangingName="AlertNotificationRowChanging" msprop:Generator_RowEvHandlerName="AlertNotificationRowChangeEventHandler" msprop:Generator_RowDeletedName="AlertNotificationRowDeleted" msprop:Generator_RowEvArgName="AlertNotificationRowChangeEvent" msprop:Generator_RowChangedName="AlertNotificationRowChanged" msprop:Generator_RowClassName="AlertNotificationRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShipmentId" msprop:Generator_ColumnVarNameInTable="columnShipmentId" msprop:Generator_ColumnPropNameInRow="ShipmentId" msprop:Generator_ColumnPropNameInTable="ShipmentIdColumn" msprop:Generator_UserColumnName="ShipmentId" type="xs:int" minOccurs="0" />
+              <xs:element name="ContractId" msprop:Generator_ColumnVarNameInTable="columnContractId" msprop:Generator_ColumnPropNameInRow="ContractId" msprop:Generator_ColumnPropNameInTable="ContractIdColumn" msprop:Generator_UserColumnName="ContractId" type="xs:int" minOccurs="0" />
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" type="xs:int" minOccurs="0" />
+              <xs:element name="VendorId" msprop:Generator_ColumnVarNameInTable="columnVendorId" msprop:Generator_ColumnPropNameInRow="VendorId" msprop:Generator_ColumnPropNameInTable="VendorIdColumn" msprop:Generator_UserColumnName="VendorId" type="xs:int" minOccurs="0" />
+              <xs:element name="OfficeId" msprop:Generator_ColumnVarNameInTable="columnOfficeId" msprop:Generator_ColumnPropNameInRow="OfficeId" msprop:Generator_ColumnPropNameInTable="OfficeIdColumn" msprop:Generator_UserColumnName="OfficeId" type="xs:int" minOccurs="0" />
+              <xs:element name="ProductId" msprop:Generator_ColumnVarNameInTable="columnProductId" msprop:Generator_ColumnPropNameInRow="ProductId" msprop:Generator_ColumnPropNameInTable="ProductIdColumn" msprop:Generator_UserColumnName="ProductId" type="xs:int" minOccurs="0" />
+              <xs:element name="WorkflowStatusId" msprop:Generator_ColumnVarNameInTable="columnWorkflowStatusId" msprop:Generator_ColumnPropNameInRow="WorkflowStatusId" msprop:Generator_ColumnPropNameInTable="WorkflowStatusIdColumn" msprop:Generator_UserColumnName="WorkflowStatusId" type="xs:int" minOccurs="0" />
+              <xs:element name="MerchandiserId" msprop:Generator_ColumnVarNameInTable="columnMerchandiserId" msprop:Generator_ColumnPropNameInRow="MerchandiserId" msprop:Generator_ColumnPropNameInTable="MerchandiserIdColumn" msprop:Generator_UserColumnName="MerchandiserId" type="xs:int" minOccurs="0" />
+              <xs:element name="CustomerAtWarehouseDate" msprop:Generator_ColumnVarNameInTable="columnCustomerAtWarehouseDate" msprop:Generator_ColumnPropNameInRow="CustomerAtWarehouseDate" msprop:Generator_ColumnPropNameInTable="CustomerAtWarehouseDateColumn" msprop:Generator_UserColumnName="CustomerAtWarehouseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SupplierAtWarehouseDate" msprop:Generator_ColumnVarNameInTable="columnSupplierAtWarehouseDate" msprop:Generator_ColumnPropNameInRow="SupplierAtWarehouseDate" msprop:Generator_ColumnPropNameInTable="SupplierAtWarehouseDateColumn" msprop:Generator_UserColumnName="SupplierAtWarehouseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="InvoiceDate" msprop:Generator_ColumnVarNameInTable="columnInvoiceDate" msprop:Generator_ColumnPropNameInRow="InvoiceDate" msprop:Generator_ColumnPropNameInTable="InvoiceDateColumn" msprop:Generator_UserColumnName="InvoiceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="InvoiceUploadUserId" msprop:Generator_ColumnVarNameInTable="columnInvoiceUploadUserId" msprop:Generator_ColumnPropNameInRow="InvoiceUploadUserId" msprop:Generator_ColumnPropNameInTable="InvoiceUploadUserIdColumn" msprop:Generator_UserColumnName="InvoiceUploadUserId" type="xs:int" minOccurs="0" />
+              <xs:element name="ILSInvoiceStatus" msprop:Generator_ColumnVarNameInTable="columnILSInvoiceStatus" msprop:Generator_ColumnPropNameInRow="ILSInvoiceStatus" msprop:Generator_ColumnPropNameInTable="ILSInvoiceStatusColumn" msprop:Generator_UserColumnName="ILSInvoiceStatus" type="xs:int" minOccurs="0" />
+              <xs:element name="ActualAtWarehouseDate" msprop:Generator_ColumnVarNameInTable="columnActualAtWarehouseDate" msprop:Generator_ColumnPropNameInRow="ActualAtWarehouseDate" msprop:Generator_ColumnPropNameInTable="ActualAtWarehouseDateColumn" msprop:Generator_UserColumnName="ActualAtWarehouseDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TermOfPurchaseId" msprop:Generator_ColumnVarNameInTable="columnTermOfPurchaseId" msprop:Generator_ColumnPropNameInRow="TermOfPurchaseId" msprop:Generator_ColumnPropNameInTable="TermOfPurchaseIdColumn" msprop:Generator_UserColumnName="TermOfPurchaseId" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalShippedAmt" msprop:Generator_ColumnVarNameInTable="columnTotalShippedAmt" msprop:Generator_ColumnPropNameInRow="TotalShippedAmt" msprop:Generator_ColumnPropNameInTable="TotalShippedAmtColumn" msprop:Generator_UserColumnName="TotalShippedAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalShippedSupplierGmtAmt" msprop:Generator_ColumnVarNameInTable="columnTotalShippedSupplierGmtAmt" msprop:Generator_ColumnPropNameInRow="TotalShippedSupplierGmtAmt" msprop:Generator_ColumnPropNameInTable="TotalShippedSupplierGmtAmtColumn" msprop:Generator_UserColumnName="TotalShippedSupplierGmtAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ApprovalDate" msprop:Generator_ColumnVarNameInTable="columnApprovalDate" msprop:Generator_ColumnPropNameInRow="ApprovalDate" msprop:Generator_ColumnPropNameInTable="ApprovalDateColumn" msprop:Generator_UserColumnName="ApprovalDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ShippingDocReceiptDate" msprop:Generator_ColumnVarNameInTable="columnShippingDocReceiptDate" msprop:Generator_ColumnPropNameInRow="ShippingDocReceiptDate" msprop:Generator_ColumnPropNameInTable="ShippingDocReceiptDateColumn" msprop:Generator_UserColumnName="ShippingDocReceiptDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ShippingDocCheckedOn" msprop:Generator_ColumnVarNameInTable="columnShippingDocCheckedOn" msprop:Generator_ColumnPropNameInRow="ShippingDocCheckedOn" msprop:Generator_ColumnPropNameInTable="ShippingDocCheckedOnColumn" msprop:Generator_UserColumnName="ShippingDocCheckedOn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CurrencyId" msprop:Generator_ColumnVarNameInTable="columnCurrencyId" msprop:Generator_ColumnPropNameInRow="CurrencyId" msprop:Generator_ColumnPropNameInTable="CurrencyIdColumn" msprop:Generator_UserColumnName="CurrencyId" type="xs:int" minOccurs="0" />
+              <xs:element name="IsUploadDMSDocument" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIsUploadDMSDocument" msprop:Generator_ColumnPropNameInRow="IsUploadDMSDocument" msprop:Generator_ColumnPropNameInTable="IsUploadDMSDocumentColumn" msprop:Generator_UserColumnName="IsUploadDMSDocument" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Amount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AlertType" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAlertType" msprop:Generator_ColumnPropNameInRow="AlertType" msprop:Generator_ColumnPropNameInTable="AlertTypeColumn" msprop:Generator_UserColumnName="AlertType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGroupId" msprop:Generator_ColumnPropNameInRow="GroupId" msprop:Generator_ColumnPropNameInTable="GroupIdColumn" msprop:Generator_UserColumnName="GroupId" type="xs:int" minOccurs="0" />
+              <xs:element name="DocumentId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDocumentId" msprop:Generator_ColumnPropNameInRow="DocumentId" msprop:Generator_ColumnPropNameInTable="DocumentIdColumn" msprop:Generator_UserColumnName="DocumentId" type="xs:int" minOccurs="0" />
+              <xs:element name="UserId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId" type="xs:int" minOccurs="0" />
+              <xs:element name="Description" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="SupplierInvoiceNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSupplierInvoiceNo" msprop:Generator_ColumnPropNameInRow="SupplierInvoiceNo" msprop:Generator_ColumnPropNameInTable="SupplierInvoiceNoColumn" msprop:Generator_UserColumnName="SupplierInvoiceNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Remark" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInvoiceNo" msprop:Generator_ColumnPropNameInRow="InvoiceNo" msprop:Generator_ColumnPropNameInTable="InvoiceNoColumn" msprop:Generator_UserColumnName="InvoiceNo" type="xs:string" minOccurs="0" />
+              <xs:element name="ContractNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NssWeeklySalesSummaryDs" targetNamespace="http://tempuri.org/NssWeeklySalesSummaryDs.xsd" xmlns:mstns="http://tempuri.org/NssWeeklySalesSummaryDs.xsd" xmlns="http://tempuri.org/NssWeeklySalesSummaryDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NSSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NSSConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.NSSConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NssWeeklySalesSummaryTableAdapter" GeneratorDataComponentClassName="NssWeeklySalesSummaryTableAdapter" Name="NssWeeklySalesSummary" UserDataComponentName="NssWeeklySalesSummaryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NSSConnectionString (Settings)" DbObjectName="SELECT FiscalYear=0, Period=0, WeekNoParam=0, SnapshotNo=0, NoOfWeek=0, WeekNo=0, wk=0, Shipmentid=0, OfficeCode='HK', ShipmentStatus='OrderBook', Timing='Slippage', SalesAmt=0.00 WHERE 1=0" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+	OfficeCode,
+
+	wk1_Slippage	= sum(case when wk=1 and Timing='Slippage'	then SalesAmt else 0 end),
+	wk1_OnTime		= sum(case when wk=1 and Timing='OnTime'	then SalesAmt else 0 end),
+	wk1_EarlyShip	= sum(case when wk=1 and Timing='Early'		then SalesAmt else 0 end),
+	wk1_Total		= sum(case when wk=1 then SalesAmt else 0 end),
+
+	wk2_Slippage	= sum(case when wk=2 and Timing='Slippage'	then SalesAmt else 0 end),
+	wk2_OnTime		= sum(case when wk=2 and Timing='OnTime'	then SalesAmt else 0 end),
+	wk2_EarlyShip	= sum(case when wk=2 and Timing='Early'		then SalesAmt else 0 end),
+	wk2_Total		= sum(case when wk=2 then SalesAmt else 0 end),
+
+	wk3_Slippage	= sum(case when wk=3 and Timing='Slippage'	then SalesAmt else 0 end),
+	wk3_OnTime		= sum(case when wk=3 and Timing='OnTime'	then SalesAmt else 0 end),
+	wk3_EarlyShip	= sum(case when wk=3 and Timing='Early'		then SalesAmt else 0 end),
+	wk3_Total		= sum(case when wk=3 then SalesAmt else 0 end),
+
+	wk4_Slippage	= sum(case when wk=4 and Timing='Slippage'	then SalesAmt else 0 end),
+	wk4_OnTime		= sum(case when wk=4 and Timing='OnTime'	then SalesAmt else 0 end),
+	wk4_EarlyShip	= sum(case when wk=4 and Timing='Early'		then SalesAmt else 0 end),
+	wk4_Total		= sum(case when wk=4 then SalesAmt else 0 end),
+
+	wk5_Slippage	= sum(case when wk=5 and Timing='Slippage'	then SalesAmt else 0 end),
+	wk5_OnTime		= sum(case when wk=5 and Timing='OnTime'	then SalesAmt else 0 end),
+	wk5_EarlyShip	= sum(case when wk=5 and Timing='Early'		then SalesAmt else 0 end),
+	wk5_Total		= sum(case when wk=5 then SalesAmt else 0 end)
+FROM ( select FiscalYear=0, Period=0, WeekNoParam=0, SnapshotNo=0, NoOfWeek=0, WeekNo=0, 
+		wk=0, Shipmentid=0, OfficeCode='HK', ShipmentStatus='OrderBook', Timing='Slippage', SalesAmt=0.00
+		where 1=0
+	) as d 
+GROUP by OfficeCode, FiscalYear, Period, WeekNoParam
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OfficeCode" DataSetColumn="OfficeCode" />
+              <Mapping SourceColumn="wk1_Slippage" DataSetColumn="wk1_Slippage" />
+              <Mapping SourceColumn="wk1_OnTime" DataSetColumn="wk1_OnTime" />
+              <Mapping SourceColumn="wk1_EarlyShip" DataSetColumn="wk1_EarlyShip" />
+              <Mapping SourceColumn="wk1_Total" DataSetColumn="wk1_Total" />
+              <Mapping SourceColumn="wk2_Slippage" DataSetColumn="wk2_Slippage" />
+              <Mapping SourceColumn="wk2_OnTime" DataSetColumn="wk2_OnTime" />
+              <Mapping SourceColumn="wk2_EarlyShip" DataSetColumn="wk2_EarlyShip" />
+              <Mapping SourceColumn="wk2_Total" DataSetColumn="wk2_Total" />
+              <Mapping SourceColumn="wk3_Slippage" DataSetColumn="wk3_Slippage" />
+              <Mapping SourceColumn="wk3_OnTime" DataSetColumn="wk3_OnTime" />
+              <Mapping SourceColumn="wk3_EarlyShip" DataSetColumn="wk3_EarlyShip" />
+              <Mapping SourceColumn="wk3_Total" DataSetColumn="wk3_Total" />
+              <Mapping SourceColumn="wk4_Slippage" DataSetColumn="wk4_Slippage" />
+              <Mapping SourceColumn="wk4_OnTime" DataSetColumn="wk4_OnTime" />
+              <Mapping SourceColumn="wk4_EarlyShip" DataSetColumn="wk4_EarlyShip" />
+              <Mapping SourceColumn="wk4_Total" DataSetColumn="wk4_Total" />
+              <Mapping SourceColumn="wk5_Slippage" DataSetColumn="wk5_Slippage" />
+              <Mapping SourceColumn="wk5_OnTime" DataSetColumn="wk5_OnTime" />
+              <Mapping SourceColumn="wk5_EarlyShip" DataSetColumn="wk5_EarlyShip" />
+              <Mapping SourceColumn="wk5_Total" DataSetColumn="wk5_Total" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NssWeeklySalesSummaryDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NssWeeklySalesSummaryDs" msprop:Generator_UserDSName="NssWeeklySalesSummaryDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NssWeeklySalesSummary" msprop:Generator_TableClassName="NssWeeklySalesSummaryDataTable" msprop:Generator_TableVarName="tableNssWeeklySalesSummary" msprop:Generator_TablePropName="NssWeeklySalesSummary" msprop:Generator_RowDeletingName="NssWeeklySalesSummaryRowDeleting" msprop:Generator_UserTableName="NssWeeklySalesSummary" msprop:Generator_RowChangingName="NssWeeklySalesSummaryRowChanging" msprop:Generator_RowEvHandlerName="NssWeeklySalesSummaryRowChangeEventHandler" msprop:Generator_RowDeletedName="NssWeeklySalesSummaryRowDeleted" msprop:Generator_RowEvArgName="NssWeeklySalesSummaryRowChangeEvent" msprop:Generator_RowChangedName="NssWeeklySalesSummaryRowChanged" msprop:Generator_RowClassName="NssWeeklySalesSummaryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OfficeCode" msprop:Generator_ColumnVarNameInTable="columnOfficeCode" msprop:Generator_ColumnPropNameInRow="OfficeCode" msprop:Generator_ColumnPropNameInTable="OfficeCodeColumn" msprop:Generator_UserColumnName="OfficeCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="wk1_Slippage" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk1_Slippage" msprop:Generator_ColumnPropNameInRow="wk1_Slippage" msprop:Generator_ColumnPropNameInTable="wk1_SlippageColumn" msprop:Generator_UserColumnName="wk1_Slippage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk1_OnTime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk1_OnTime" msprop:Generator_ColumnPropNameInRow="wk1_OnTime" msprop:Generator_ColumnPropNameInTable="wk1_OnTimeColumn" msprop:Generator_UserColumnName="wk1_OnTime" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk1_EarlyShip" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk1_EarlyShip" msprop:Generator_ColumnPropNameInRow="wk1_EarlyShip" msprop:Generator_ColumnPropNameInTable="wk1_EarlyShipColumn" msprop:Generator_UserColumnName="wk1_EarlyShip" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk1_Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk1_Total" msprop:Generator_ColumnPropNameInRow="wk1_Total" msprop:Generator_ColumnPropNameInTable="wk1_TotalColumn" msprop:Generator_UserColumnName="wk1_Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk2_Slippage" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk2_Slippage" msprop:Generator_ColumnPropNameInRow="wk2_Slippage" msprop:Generator_ColumnPropNameInTable="wk2_SlippageColumn" msprop:Generator_UserColumnName="wk2_Slippage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk2_OnTime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk2_OnTime" msprop:Generator_ColumnPropNameInRow="wk2_OnTime" msprop:Generator_ColumnPropNameInTable="wk2_OnTimeColumn" msprop:Generator_UserColumnName="wk2_OnTime" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk2_EarlyShip" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk2_EarlyShip" msprop:Generator_ColumnPropNameInRow="wk2_EarlyShip" msprop:Generator_ColumnPropNameInTable="wk2_EarlyShipColumn" msprop:Generator_UserColumnName="wk2_EarlyShip" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk2_Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk2_Total" msprop:Generator_ColumnPropNameInRow="wk2_Total" msprop:Generator_ColumnPropNameInTable="wk2_TotalColumn" msprop:Generator_UserColumnName="wk2_Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk3_Slippage" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk3_Slippage" msprop:Generator_ColumnPropNameInRow="wk3_Slippage" msprop:Generator_ColumnPropNameInTable="wk3_SlippageColumn" msprop:Generator_UserColumnName="wk3_Slippage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk3_OnTime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk3_OnTime" msprop:Generator_ColumnPropNameInRow="wk3_OnTime" msprop:Generator_ColumnPropNameInTable="wk3_OnTimeColumn" msprop:Generator_UserColumnName="wk3_OnTime" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk3_EarlyShip" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk3_EarlyShip" msprop:Generator_ColumnPropNameInRow="wk3_EarlyShip" msprop:Generator_ColumnPropNameInTable="wk3_EarlyShipColumn" msprop:Generator_UserColumnName="wk3_EarlyShip" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk3_Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk3_Total" msprop:Generator_ColumnPropNameInRow="wk3_Total" msprop:Generator_ColumnPropNameInTable="wk3_TotalColumn" msprop:Generator_UserColumnName="wk3_Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk4_Slippage" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk4_Slippage" msprop:Generator_ColumnPropNameInRow="wk4_Slippage" msprop:Generator_ColumnPropNameInTable="wk4_SlippageColumn" msprop:Generator_UserColumnName="wk4_Slippage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk4_OnTime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk4_OnTime" msprop:Generator_ColumnPropNameInRow="wk4_OnTime" msprop:Generator_ColumnPropNameInTable="wk4_OnTimeColumn" msprop:Generator_UserColumnName="wk4_OnTime" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk4_EarlyShip" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk4_EarlyShip" msprop:Generator_ColumnPropNameInRow="wk4_EarlyShip" msprop:Generator_ColumnPropNameInTable="wk4_EarlyShipColumn" msprop:Generator_UserColumnName="wk4_EarlyShip" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk4_Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk4_Total" msprop:Generator_ColumnPropNameInRow="wk4_Total" msprop:Generator_ColumnPropNameInTable="wk4_TotalColumn" msprop:Generator_UserColumnName="wk4_Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk5_Slippage" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk5_Slippage" msprop:Generator_ColumnPropNameInRow="wk5_Slippage" msprop:Generator_ColumnPropNameInTable="wk5_SlippageColumn" msprop:Generator_UserColumnName="wk5_Slippage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk5_OnTime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk5_OnTime" msprop:Generator_ColumnPropNameInRow="wk5_OnTime" msprop:Generator_ColumnPropNameInTable="wk5_OnTimeColumn" msprop:Generator_UserColumnName="wk5_OnTime" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk5_EarlyShip" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk5_EarlyShip" msprop:Generator_ColumnPropNameInRow="wk5_EarlyShip" msprop:Generator_ColumnPropNameInTable="wk5_EarlyShipColumn" msprop:Generator_UserColumnName="wk5_EarlyShip" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wk5_Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwk5_Total" msprop:Generator_ColumnPropNameInRow="wk5_Total" msprop:Generator_ColumnPropNameInTable="wk5_TotalColumn" msprop:Generator_UserColumnName="wk5_Total" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

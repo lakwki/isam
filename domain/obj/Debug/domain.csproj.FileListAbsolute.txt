@@ -1,0 +1,12 @@
+D:\MyWorkspace\Isam\domain\bin\Debug\com.next.isam.domain.dll.config
+D:\MyWorkspace\Isam\domain\bin\Debug\com.next.isam.domain.dll
+D:\MyWorkspace\Isam\domain\bin\Debug\com.next.isam.domain.pdb
+D:\MyWorkspace\Isam\domain\bin\Debug\com.next.common.dll
+D:\MyWorkspace\Isam\domain\bin\Debug\com.next.infra.dll
+D:\MyWorkspace\Isam\domain\bin\Debug\DocumentFormat.OpenXml.dll
+D:\MyWorkspace\Isam\domain\bin\Debug\tallpdf.dll
+D:\MyWorkspace\Isam\domain\bin\Debug\nspring.dll
+D:\MyWorkspace\Isam\domain\bin\Debug\com.next.common.pdb
+D:\MyWorkspace\Isam\domain\bin\Debug\com.next.infra.pdb
+D:\MyWorkspace\Isam\domain\obj\Debug\com.next.isam.domain.dll
+D:\MyWorkspace\Isam\domain\obj\Debug\com.next.isam.domain.pdb

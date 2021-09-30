@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetClaimRequestByKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClaimRequestByKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClaimRequestByKeyResult" type="tns:ClaimRequestDef" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClaimRequestDef">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DomainData">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="RequestId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="FormNo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ClaimType" type="tns:ClaimTypeEnum" />
+              <s:element minOccurs="0" maxOccurs="1" name="Vendor" type="tns:VendorRef" />
+              <s:element minOccurs="1" maxOccurs="1" name="IssueDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="ItemNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContractNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ClaimMonth" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="FaultQty" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="FaultReasonId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="VendorRechargePercent" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="NSRechargePercent" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="WorkflowStatus" type="tns:ClaimWFS" />
+              <s:element minOccurs="1" maxOccurs="1" name="WorkflowStatusId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NoForm" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsAuthorized" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreateDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="BIACurrencyId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="BIAAmount" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="BIARemark" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="BIAStatus" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsRemarkUpdated" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsSampleAttached" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsEmailCorrespondenceAttached" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DomainData" />
+      <s:complexType name="ClaimWFS">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DomainData">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="VendorRef">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DomainData">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="VendorId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CountryDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CityDescription" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="ClaimTypeEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="Rework" />
+          <s:enumeration value="Reject" />
+          <s:enumeration value="MFRN" />
+          <s:enumeration value="CFS" />
+          <s:enumeration value="Safety" />
+          <s:enumeration value="QCC" />
+          <s:enumeration value="CHB" />
+          <s:enumeration value="FabricTest" />
+          <s:enumeration value="PenaltyCharge" />
+          <s:enumeration value="FIRATest" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SetClaimRequestStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="workflowStatusId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetClaimRequestStatusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateVendorId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vendorId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateVendorIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="MarkBIATransmitCompleted">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarkBIATransmitCompletedResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateDummyClaimRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="claimTypeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vendorId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contractNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ukDebitNoteNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ukDebitNoteDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="claimMonth" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDummyClaimRequestResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetActiveClaimRequestListByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="claimRequestId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="claimTypeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vendorId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveClaimRequestListByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveClaimRequestListByTypeResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPendingCancellationClaimRequestList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPendingCancellationClaimRequestListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingCancellationClaimRequestListResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutstandingBIAClaimRequestList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOutstandingBIAClaimRequestListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOutstandingBIAClaimRequestListResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendCancelledClaimNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="claimRequestId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendCancelledClaimNotificationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetClaimRequestListByTypeMapping">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="claimRequestId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="claimTypeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vendorId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClaimRequestListByTypeMappingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClaimRequestListByTypeMappingResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSampleImageAvailable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="claimRequestId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSampleImageAvailableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsSampleImageAvailableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAuthorizationFormAvailable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="claimRequestId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAuthorizationFormAvailableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsAuthorizationFormAvailableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClaimTypeDMSDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="claimTypeId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClaimTypeDMSDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClaimTypeDMSDescriptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkflowStatusDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workflowStatusId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkflowStatusDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkflowStatusDescriptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetClaimRequestByKeySoapIn">
+    <wsdl:part name="parameters" element="tns:GetClaimRequestByKey" />
+  </wsdl:message>
+  <wsdl:message name="GetClaimRequestByKeySoapOut">
+    <wsdl:part name="parameters" element="tns:GetClaimRequestByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetClaimRequestStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SetClaimRequestStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetClaimRequestStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SetClaimRequestStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVendorIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateVendorId" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVendorIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateVendorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="MarkBIATransmitCompletedSoapIn">
+    <wsdl:part name="parameters" element="tns:MarkBIATransmitCompleted" />
+  </wsdl:message>
+  <wsdl:message name="MarkBIATransmitCompletedSoapOut">
+    <wsdl:part name="parameters" element="tns:MarkBIATransmitCompletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDummyClaimRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDummyClaimRequest" />
+  </wsdl:message>
+  <wsdl:message name="CreateDummyClaimRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDummyClaimRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveClaimRequestListByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveClaimRequestListByType" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveClaimRequestListByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveClaimRequestListByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingCancellationClaimRequestListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingCancellationClaimRequestList" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingCancellationClaimRequestListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingCancellationClaimRequestListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOutstandingBIAClaimRequestListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOutstandingBIAClaimRequestList" />
+  </wsdl:message>
+  <wsdl:message name="GetOutstandingBIAClaimRequestListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOutstandingBIAClaimRequestListResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendCancelledClaimNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:sendCancelledClaimNotification" />
+  </wsdl:message>
+  <wsdl:message name="sendCancelledClaimNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:sendCancelledClaimNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClaimRequestListByTypeMappingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClaimRequestListByTypeMapping" />
+  </wsdl:message>
+  <wsdl:message name="GetClaimRequestListByTypeMappingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClaimRequestListByTypeMappingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsSampleImageAvailableSoapIn">
+    <wsdl:part name="parameters" element="tns:IsSampleImageAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IsSampleImageAvailableSoapOut">
+    <wsdl:part name="parameters" element="tns:IsSampleImageAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsAuthorizationFormAvailableSoapIn">
+    <wsdl:part name="parameters" element="tns:IsAuthorizationFormAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IsAuthorizationFormAvailableSoapOut">
+    <wsdl:part name="parameters" element="tns:IsAuthorizationFormAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClaimTypeDMSDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClaimTypeDMSDescription" />
+  </wsdl:message>
+  <wsdl:message name="GetClaimTypeDMSDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClaimTypeDMSDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkflowStatusDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkflowStatusDescription" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkflowStatusDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkflowStatusDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ClaimRequestServiceSoap">
+    <wsdl:operation name="GetClaimRequestByKey">
+      <wsdl:input message="tns:GetClaimRequestByKeySoapIn" />
+      <wsdl:output message="tns:GetClaimRequestByKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetClaimRequestStatus">
+      <wsdl:input message="tns:SetClaimRequestStatusSoapIn" />
+      <wsdl:output message="tns:SetClaimRequestStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVendorId">
+      <wsdl:input message="tns:UpdateVendorIdSoapIn" />
+      <wsdl:output message="tns:UpdateVendorIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkBIATransmitCompleted">
+      <wsdl:input message="tns:MarkBIATransmitCompletedSoapIn" />
+      <wsdl:output message="tns:MarkBIATransmitCompletedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDummyClaimRequest">
+      <wsdl:input message="tns:CreateDummyClaimRequestSoapIn" />
+      <wsdl:output message="tns:CreateDummyClaimRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveClaimRequestListByType">
+      <wsdl:input message="tns:GetActiveClaimRequestListByTypeSoapIn" />
+      <wsdl:output message="tns:GetActiveClaimRequestListByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingCancellationClaimRequestList">
+      <wsdl:input message="tns:GetPendingCancellationClaimRequestListSoapIn" />
+      <wsdl:output message="tns:GetPendingCancellationClaimRequestListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutstandingBIAClaimRequestList">
+      <wsdl:input message="tns:GetOutstandingBIAClaimRequestListSoapIn" />
+      <wsdl:output message="tns:GetOutstandingBIAClaimRequestListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendCancelledClaimNotification">
+      <wsdl:input message="tns:sendCancelledClaimNotificationSoapIn" />
+      <wsdl:output message="tns:sendCancelledClaimNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimRequestListByTypeMapping">
+      <wsdl:input message="tns:GetClaimRequestListByTypeMappingSoapIn" />
+      <wsdl:output message="tns:GetClaimRequestListByTypeMappingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSampleImageAvailable">
+      <wsdl:input message="tns:IsSampleImageAvailableSoapIn" />
+      <wsdl:output message="tns:IsSampleImageAvailableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAuthorizationFormAvailable">
+      <wsdl:input message="tns:IsAuthorizationFormAvailableSoapIn" />
+      <wsdl:output message="tns:IsAuthorizationFormAvailableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimTypeDMSDescription">
+      <wsdl:input message="tns:GetClaimTypeDMSDescriptionSoapIn" />
+      <wsdl:output message="tns:GetClaimTypeDMSDescriptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkflowStatusDescription">
+      <wsdl:input message="tns:GetWorkflowStatusDescriptionSoapIn" />
+      <wsdl:output message="tns:GetWorkflowStatusDescriptionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClaimRequestServiceSoap" type="tns:ClaimRequestServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClaimRequestByKey">
+      <soap:operation soapAction="http://tempuri.org/GetClaimRequestByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClaimRequestStatus">
+      <soap:operation soapAction="http://tempuri.org/SetClaimRequestStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVendorId">
+      <soap:operation soapAction="http://tempuri.org/UpdateVendorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkBIATransmitCompleted">
+      <soap:operation soapAction="http://tempuri.org/MarkBIATransmitCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDummyClaimRequest">
+      <soap:operation soapAction="http://tempuri.org/CreateDummyClaimRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveClaimRequestListByType">
+      <soap:operation soapAction="http://tempuri.org/GetActiveClaimRequestListByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingCancellationClaimRequestList">
+      <soap:operation soapAction="http://tempuri.org/GetPendingCancellationClaimRequestList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutstandingBIAClaimRequestList">
+      <soap:operation soapAction="http://tempuri.org/GetOutstandingBIAClaimRequestList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendCancelledClaimNotification">
+      <soap:operation soapAction="http://tempuri.org/sendCancelledClaimNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimRequestListByTypeMapping">
+      <soap:operation soapAction="http://tempuri.org/GetClaimRequestListByTypeMapping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSampleImageAvailable">
+      <soap:operation soapAction="http://tempuri.org/IsSampleImageAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAuthorizationFormAvailable">
+      <soap:operation soapAction="http://tempuri.org/IsAuthorizationFormAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimTypeDMSDescription">
+      <soap:operation soapAction="http://tempuri.org/GetClaimTypeDMSDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkflowStatusDescription">
+      <soap:operation soapAction="http://tempuri.org/GetWorkflowStatusDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClaimRequestServiceSoap12" type="tns:ClaimRequestServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClaimRequestByKey">
+      <soap12:operation soapAction="http://tempuri.org/GetClaimRequestByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClaimRequestStatus">
+      <soap12:operation soapAction="http://tempuri.org/SetClaimRequestStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVendorId">
+      <soap12:operation soapAction="http://tempuri.org/UpdateVendorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkBIATransmitCompleted">
+      <soap12:operation soapAction="http://tempuri.org/MarkBIATransmitCompleted" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDummyClaimRequest">
+      <soap12:operation soapAction="http://tempuri.org/CreateDummyClaimRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveClaimRequestListByType">
+      <soap12:operation soapAction="http://tempuri.org/GetActiveClaimRequestListByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingCancellationClaimRequestList">
+      <soap12:operation soapAction="http://tempuri.org/GetPendingCancellationClaimRequestList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutstandingBIAClaimRequestList">
+      <soap12:operation soapAction="http://tempuri.org/GetOutstandingBIAClaimRequestList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendCancelledClaimNotification">
+      <soap12:operation soapAction="http://tempuri.org/sendCancelledClaimNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimRequestListByTypeMapping">
+      <soap12:operation soapAction="http://tempuri.org/GetClaimRequestListByTypeMapping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSampleImageAvailable">
+      <soap12:operation soapAction="http://tempuri.org/IsSampleImageAvailable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAuthorizationFormAvailable">
+      <soap12:operation soapAction="http://tempuri.org/IsAuthorizationFormAvailable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaimTypeDMSDescription">
+      <soap12:operation soapAction="http://tempuri.org/GetClaimTypeDMSDescription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkflowStatusDescription">
+      <soap12:operation soapAction="http://tempuri.org/GetWorkflowStatusDescription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClaimRequestService">
+    <wsdl:port name="ClaimRequestServiceSoap" binding="tns:ClaimRequestServiceSoap">
+      <soap:address location="http://ns-s02/qais/webservices/ClaimRequestService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClaimRequestServiceSoap12" binding="tns:ClaimRequestServiceSoap12">
+      <soap12:address location="http://ns-s02/qais/webservices/ClaimRequestService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

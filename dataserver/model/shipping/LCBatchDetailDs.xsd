@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LCBatchDetailDs" targetNamespace="http://tempuri.org/LCBatchDetailDs.xsd" xmlns:mstns="http://tempuri.org/LCBatchDetailDs.xsd" xmlns="http://tempuri.org/LCBatchDetailDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAM_20101026ConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAM_20101026ConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAM_20101026ConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LCBatchDetailTableAdapter" GeneratorDataComponentClassName="LCBatchDetailTableAdapter" Name="LCBatchDetail" UserDataComponentName="LCBatchDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        LCApplicationShipment.LCApplicationId, LCApplicationShipment.LCBatchId, LCApplicationShipment.ShipmentId, Shipment.CustomerDestinationId, 
+                         Shipment.ShipmentMethodId, Contract.CustomerId, Shipment.SupplierAtWarehouseDate, Shipment.QACommissionPercent, 
+                         Shipment.VendorPaymentDiscountPercent, Shipment.LabTestIncome, Contract.ProductId, Contract.PackingUnitId, ShipmentDetail.POQty, 
+                         ShipmentDetail.ReducedSupplierGmtPrice, Shipment.VendorId, Shipment.BuyCurrencyId AS CurrencyId, Product.ItemNo, LCApplicationShipment.WorkflowStatusId, 
+                         LCApplicationShipment.BankBranchId, Shipment.PurchaseLocationId, Shipment.TermOfPurchaseId, Shipment.PaymentTermId, 0 AS ProductTeamId, 
+                         AdvancePaymentOrderDetail.ExpectedDeductAmt, AdvancePaymentOrderDetail.ActualDeductAmt
+FROM            LCApplicationShipment INNER JOIN
+                         ShipmentDetail ON ShipmentDetail.ShipmentId = LCApplicationShipment.ShipmentId AND ShipmentDetail.Status = 1 INNER JOIN
+                         Shipment ON Shipment.ShipmentId = LCApplicationShipment.ShipmentId AND Shipment.Status = 1 INNER JOIN
+                         Contract ON Contract.ContractId = Shipment.ContractId AND Contract.Status = 1 INNER JOIN
+                         LCBatch ON LCApplicationShipment.LCBatchId = LCBatch.LCBatchId INNER JOIN
+                         Product ON LCApplicationShipment.ProductId = Product.ProductId LEFT OUTER JOIN
+                         AdvancePaymentOrderDetail ON LCApplicationShipment.ShipmentId = AdvancePaymentOrderDetail.ShipmentId
+WHERE        (LCApplicationShipment.Status = 1) AND (LCApplicationShipment.SplitShipmentId &lt;= 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="LCApplicationId" DataSetColumn="LCApplicationId" />
+              <Mapping SourceColumn="LCBatchId" DataSetColumn="LCBatchId" />
+              <Mapping SourceColumn="ShipmentId" DataSetColumn="ShipmentId" />
+              <Mapping SourceColumn="CustomerDestinationId" DataSetColumn="CustomerDestinationId" />
+              <Mapping SourceColumn="ShipmentMethodId" DataSetColumn="ShipmentMethodId" />
+              <Mapping SourceColumn="CustomerId" DataSetColumn="CustomerId" />
+              <Mapping SourceColumn="SupplierAtWarehouseDate" DataSetColumn="SupplierAtWarehouseDate" />
+              <Mapping SourceColumn="QACommissionPercent" DataSetColumn="QACommissionPercent" />
+              <Mapping SourceColumn="VendorPaymentDiscountPercent" DataSetColumn="VendorPaymentDiscountPercent" />
+              <Mapping SourceColumn="LabTestIncome" DataSetColumn="LabTestIncome" />
+              <Mapping SourceColumn="ProductId" DataSetColumn="ProductId" />
+              <Mapping SourceColumn="PackingUnitId" DataSetColumn="PackingUnitId" />
+              <Mapping SourceColumn="POQty" DataSetColumn="POQty" />
+              <Mapping SourceColumn="ReducedSupplierGmtPrice" DataSetColumn="ReducedSupplierGmtPrice" />
+              <Mapping SourceColumn="VendorId" DataSetColumn="VendorId" />
+              <Mapping SourceColumn="CurrencyId" DataSetColumn="CurrencyId" />
+              <Mapping SourceColumn="ItemNo" DataSetColumn="ItemNo" />
+              <Mapping SourceColumn="WorkflowStatusId" DataSetColumn="WorkflowStatusId" />
+              <Mapping SourceColumn="PurchaseLocationId" DataSetColumn="PurchaseLocationId" />
+              <Mapping SourceColumn="TermOfPurchaseId" DataSetColumn="TermOfPurchaseId" />
+              <Mapping SourceColumn="PaymentTermId" DataSetColumn="PaymentTermId" />
+              <Mapping SourceColumn="BankBranchId" DataSetColumn="BankBranchId" />
+              <Mapping SourceColumn="ProductTeamId" DataSetColumn="ProductTeamId" />
+              <Mapping SourceColumn="ExpectedDeductAmt" DataSetColumn="ExpectedDeductAmt" />
+              <Mapping SourceColumn="ActualDeductAmt" DataSetColumn="ActualDeductAmt" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LCBatchDetailDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LCBatchDetailDs" msprop:Generator_UserDSName="LCBatchDetailDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LCBatchDetail" msprop:Generator_TableClassName="LCBatchDetailDataTable" msprop:Generator_TableVarName="tableLCBatchDetail" msprop:Generator_TablePropName="LCBatchDetail" msprop:Generator_RowDeletingName="LCBatchDetailRowDeleting" msprop:Generator_RowChangingName="LCBatchDetailRowChanging" msprop:Generator_RowEvHandlerName="LCBatchDetailRowChangeEventHandler" msprop:Generator_RowDeletedName="LCBatchDetailRowDeleted" msprop:Generator_UserTableName="LCBatchDetail" msprop:Generator_RowChangedName="LCBatchDetailRowChanged" msprop:Generator_RowEvArgName="LCBatchDetailRowChangeEvent" msprop:Generator_RowClassName="LCBatchDetailRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LCApplicationId" msprop:Generator_ColumnVarNameInTable="columnLCApplicationId" msprop:Generator_ColumnPropNameInRow="LCApplicationId" msprop:Generator_ColumnPropNameInTable="LCApplicationIdColumn" msprop:Generator_UserColumnName="LCApplicationId" type="xs:int" />
+              <xs:element name="LCBatchId" msprop:Generator_ColumnVarNameInTable="columnLCBatchId" msprop:Generator_ColumnPropNameInRow="LCBatchId" msprop:Generator_ColumnPropNameInTable="LCBatchIdColumn" msprop:Generator_UserColumnName="LCBatchId" type="xs:int" minOccurs="0" />
+              <xs:element name="ShipmentId" msprop:Generator_ColumnVarNameInTable="columnShipmentId" msprop:Generator_ColumnPropNameInRow="ShipmentId" msprop:Generator_ColumnPropNameInTable="ShipmentIdColumn" msprop:Generator_UserColumnName="ShipmentId" type="xs:int" />
+              <xs:element name="CustomerDestinationId" msprop:Generator_ColumnVarNameInTable="columnCustomerDestinationId" msprop:Generator_ColumnPropNameInRow="CustomerDestinationId" msprop:Generator_ColumnPropNameInTable="CustomerDestinationIdColumn" msprop:Generator_UserColumnName="CustomerDestinationId" type="xs:int" minOccurs="0" />
+              <xs:element name="ShipmentMethodId" msprop:Generator_ColumnVarNameInTable="columnShipmentMethodId" msprop:Generator_ColumnPropNameInRow="ShipmentMethodId" msprop:Generator_ColumnPropNameInTable="ShipmentMethodIdColumn" msprop:Generator_UserColumnName="ShipmentMethodId" type="xs:int" />
+              <xs:element name="CustomerId" msprop:Generator_ColumnVarNameInTable="columnCustomerId" msprop:Generator_ColumnPropNameInRow="CustomerId" msprop:Generator_ColumnPropNameInTable="CustomerIdColumn" msprop:Generator_UserColumnName="CustomerId" type="xs:int" />
+              <xs:element name="SupplierAtWarehouseDate" msprop:Generator_ColumnVarNameInTable="columnSupplierAtWarehouseDate" msprop:Generator_ColumnPropNameInRow="SupplierAtWarehouseDate" msprop:Generator_ColumnPropNameInTable="SupplierAtWarehouseDateColumn" msprop:Generator_UserColumnName="SupplierAtWarehouseDate" type="xs:dateTime" />
+              <xs:element name="QACommissionPercent" msprop:Generator_ColumnVarNameInTable="columnQACommissionPercent" msprop:Generator_ColumnPropNameInRow="QACommissionPercent" msprop:Generator_ColumnPropNameInTable="QACommissionPercentColumn" msprop:Generator_UserColumnName="QACommissionPercent" type="xs:decimal" />
+              <xs:element name="VendorPaymentDiscountPercent" msprop:Generator_ColumnVarNameInTable="columnVendorPaymentDiscountPercent" msprop:Generator_ColumnPropNameInRow="VendorPaymentDiscountPercent" msprop:Generator_ColumnPropNameInTable="VendorPaymentDiscountPercentColumn" msprop:Generator_UserColumnName="VendorPaymentDiscountPercent" type="xs:decimal" />
+              <xs:element name="LabTestIncome" msprop:Generator_ColumnVarNameInTable="columnLabTestIncome" msprop:Generator_ColumnPropNameInRow="LabTestIncome" msprop:Generator_ColumnPropNameInTable="LabTestIncomeColumn" msprop:Generator_UserColumnName="LabTestIncome" type="xs:decimal" />
+              <xs:element name="ProductId" msprop:Generator_ColumnVarNameInTable="columnProductId" msprop:Generator_ColumnPropNameInRow="ProductId" msprop:Generator_ColumnPropNameInTable="ProductIdColumn" msprop:Generator_UserColumnName="ProductId" type="xs:int" />
+              <xs:element name="PackingUnitId" msprop:Generator_ColumnVarNameInTable="columnPackingUnitId" msprop:Generator_ColumnPropNameInRow="PackingUnitId" msprop:Generator_ColumnPropNameInTable="PackingUnitIdColumn" msprop:Generator_UserColumnName="PackingUnitId" type="xs:int" />
+              <xs:element name="POQty" msprop:Generator_ColumnVarNameInTable="columnPOQty" msprop:Generator_ColumnPropNameInRow="POQty" msprop:Generator_ColumnPropNameInTable="POQtyColumn" msprop:Generator_UserColumnName="POQty" type="xs:int" />
+              <xs:element name="ReducedSupplierGmtPrice" msprop:Generator_ColumnVarNameInTable="columnReducedSupplierGmtPrice" msprop:Generator_ColumnPropNameInRow="ReducedSupplierGmtPrice" msprop:Generator_ColumnPropNameInTable="ReducedSupplierGmtPriceColumn" msprop:Generator_UserColumnName="ReducedSupplierGmtPrice" type="xs:decimal" />
+              <xs:element name="VendorId" msprop:Generator_ColumnVarNameInTable="columnVendorId" msprop:Generator_ColumnPropNameInRow="VendorId" msprop:Generator_ColumnPropNameInTable="VendorIdColumn" msprop:Generator_UserColumnName="VendorId" type="xs:int" minOccurs="0" />
+              <xs:element name="CurrencyId" msprop:Generator_ColumnVarNameInTable="columnCurrencyId" msprop:Generator_ColumnPropNameInRow="CurrencyId" msprop:Generator_ColumnPropNameInTable="CurrencyIdColumn" msprop:Generator_UserColumnName="CurrencyId" type="xs:int" />
+              <xs:element name="ItemNo" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" msprop:Generator_UserColumnName="ItemNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkflowStatusId" msprop:Generator_ColumnVarNameInTable="columnWorkflowStatusId" msprop:Generator_ColumnPropNameInRow="WorkflowStatusId" msprop:Generator_ColumnPropNameInTable="WorkflowStatusIdColumn" msprop:Generator_UserColumnName="WorkflowStatusId" type="xs:int" />
+              <xs:element name="PurchaseLocationId" msprop:Generator_ColumnVarNameInTable="columnPurchaseLocationId" msprop:Generator_ColumnPropNameInRow="PurchaseLocationId" msprop:Generator_ColumnPropNameInTable="PurchaseLocationIdColumn" msprop:Generator_UserColumnName="PurchaseLocationId" type="xs:int" />
+              <xs:element name="TermOfPurchaseId" msprop:Generator_ColumnVarNameInTable="columnTermOfPurchaseId" msprop:Generator_ColumnPropNameInRow="TermOfPurchaseId" msprop:Generator_ColumnPropNameInTable="TermOfPurchaseIdColumn" msprop:Generator_UserColumnName="TermOfPurchaseId" type="xs:int" />
+              <xs:element name="PaymentTermId" msprop:Generator_ColumnVarNameInTable="columnPaymentTermId" msprop:Generator_ColumnPropNameInRow="PaymentTermId" msprop:Generator_ColumnPropNameInTable="PaymentTermIdColumn" msprop:Generator_UserColumnName="PaymentTermId" type="xs:int" minOccurs="0" />
+              <xs:element name="BankBranchId" msprop:Generator_ColumnVarNameInTable="columnBankBranchId" msprop:Generator_ColumnPropNameInRow="BankBranchId" msprop:Generator_ColumnPropNameInTable="BankBranchIdColumn" msprop:Generator_UserColumnName="BankBranchId" type="xs:int" />
+              <xs:element name="ProductTeamId" msprop:Generator_ColumnVarNameInTable="columnProductTeamId" msprop:Generator_ColumnPropNameInRow="ProductTeamId" msprop:Generator_ColumnPropNameInTable="ProductTeamIdColumn" msprop:Generator_UserColumnName="ProductTeamId" type="xs:int" minOccurs="0" />
+              <xs:element name="ExpectedDeductAmt" msprop:Generator_ColumnVarNameInTable="columnExpectedDeductAmt" msprop:Generator_ColumnPropNameInRow="ExpectedDeductAmt" msprop:Generator_ColumnPropNameInTable="ExpectedDeductAmtColumn" msprop:Generator_UserColumnName="ExpectedDeductAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ActualDeductAmt" msprop:Generator_ColumnVarNameInTable="columnActualDeductAmt" msprop:Generator_ColumnPropNameInRow="ActualDeductAmt" msprop:Generator_ColumnPropNameInTable="ActualDeductAmtColumn" msprop:Generator_UserColumnName="ActualDeductAmt" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

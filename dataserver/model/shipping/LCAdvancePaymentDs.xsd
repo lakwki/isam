@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LCAdvancePaymentDs" targetNamespace="http://tempuri.org/LCAdvancePaymentDs.xsd" xmlns:mstns="http://tempuri.org/LCAdvancePaymentDs.xsd" xmlns="http://tempuri.org/LCAdvancePaymentDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString7" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString7 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ConnectionString6" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString6" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString6 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ConnectionString6" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString3 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString3" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LCAdvancePaymentTableAdapter" GeneratorDataComponentClassName="LCAdvancePaymentTableAdapter" Name="LCAdvancePayment" UserDataComponentName="LCAdvancePaymentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMConnectionString2 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT c.ContractNo, s.DeliveryNo, l.VendorId, l.ProductId, l.SupplierAtWarehouseDate, 
+              l.TotalPoQty, s.TotalShippedQty, s.TotalShippedAmt, i.InvoiceDate, s.WorkflowStatusId as ShippmentStatusId, 
+              i.ApDate, a.LCApplicationNo, b.LCBatchNo, i.LCNo, i.LCIssueDate, i.LCExpiryDate,
+              ap.PaymentNo, od.ExpectedDeductAmt, ActualDeductAmt=0.00, ap.NSLRefNo, ap.WorkflowStatusId as AdvancePaymentStatusId, ApprovedDate=convert(datetime,null) , s.PaymentTermId, SubmittedDate=convert(datetime,null), RejectDate=convert(datetime,null), PaymentDeductionAmtInLC=isnull(null,0.00) 
+              FROM Shipment as s
+              INNER JOIN Contract as c on c.ContractId = s.ContractId and c.Status = 1 and s.Status = 1
+              INNER JOIN LCApplicationShipment as l on l.ShipmentId = s.ShipmentId and l.Status = 1
+              INNER JOIN LCApplication as a on a.LCApplicationId = l.LCApplicationId and a.Status = 1
+              INNER JOIN LCBatch as b on b.LCBatchId = l.LCBatchId and b.Status = 1
+              INNER JOIN Invoice as i on i.ShipmentId = l.ShipmentId and i.Status = 1
+              INNER JOIN vw_NSS_AdvancePaymentOrderDetail as od on od.ShipmentId = l.ShipmentId and od.Status = 1
+              INNER JOIN vw_NSS_AdvancePayment as ap on ap.PaymentId = od.PaymentId and ap.Status = 1
+              INNER JOIN Product as p on l.ProductId = p.ProductId
+WHERE 1=0</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="VendorId" DataSetColumn="VendorId" />
+              <Mapping SourceColumn="ProductId" DataSetColumn="ProductId" />
+              <Mapping SourceColumn="TotalPoQty" DataSetColumn="TotalPoQty" />
+              <Mapping SourceColumn="TotalShippedQty" DataSetColumn="TotalShippedQty" />
+              <Mapping SourceColumn="TotalShippedAmt" DataSetColumn="TotalShippedAmt" />
+              <Mapping SourceColumn="InvoiceDate" DataSetColumn="InvoiceDate" />
+              <Mapping SourceColumn="ApDate" DataSetColumn="ApDate" />
+              <Mapping SourceColumn="LCApplicationNo" DataSetColumn="LCApplicationNo" />
+              <Mapping SourceColumn="LCBatchNo" DataSetColumn="LCBatchNo" />
+              <Mapping SourceColumn="LCNo" DataSetColumn="LCNo" />
+              <Mapping SourceColumn="LCIssueDate" DataSetColumn="LCIssueDate" />
+              <Mapping SourceColumn="LCExpiryDate" DataSetColumn="LCExpiryDate" />
+              <Mapping SourceColumn="PaymentNo" DataSetColumn="PaymentNo" />
+              <Mapping SourceColumn="ExpectedDeductAmt" DataSetColumn="ExpectedDeductAmt" />
+              <Mapping SourceColumn="NSLRefNo" DataSetColumn="NSLRefNo" />
+              <Mapping SourceColumn="AdvancePaymentStatusId" DataSetColumn="AdvancePaymentStatusId" />
+              <Mapping SourceColumn="ShippmentStatusId" DataSetColumn="ShippmentStatusId" />
+              <Mapping SourceColumn="SupplierAtWarehouseDate" DataSetColumn="SupplierAtWarehouseDate" />
+              <Mapping SourceColumn="ActualDeductAmt" DataSetColumn="ActualDeductAmt" />
+              <Mapping SourceColumn="ApprovedDate" DataSetColumn="ApprovedDate" />
+              <Mapping SourceColumn="PaymentTermId" DataSetColumn="PaymentTermId" />
+              <Mapping SourceColumn="PaymentDeductionAmtInLC" DataSetColumn="PaymentDeductionAmtInLC" />
+              <Mapping SourceColumn="SubmittedDate" DataSetColumn="SubmittedDate" />
+              <Mapping SourceColumn="RejectDate" DataSetColumn="RejectDate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LCAdvancePaymentDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LCAdvancePaymentDs" msprop:Generator_UserDSName="LCAdvancePaymentDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LCAdvancePayment" msprop:Generator_TableClassName="LCAdvancePaymentDataTable" msprop:Generator_TableVarName="tableLCAdvancePayment" msprop:Generator_TablePropName="LCAdvancePayment" msprop:Generator_RowDeletingName="LCAdvancePaymentRowDeleting" msprop:Generator_RowChangingName="LCAdvancePaymentRowChanging" msprop:Generator_RowEvHandlerName="LCAdvancePaymentRowChangeEventHandler" msprop:Generator_RowDeletedName="LCAdvancePaymentRowDeleted" msprop:Generator_UserTableName="LCAdvancePayment" msprop:Generator_RowChangedName="LCAdvancePaymentRowChanged" msprop:Generator_RowEvArgName="LCAdvancePaymentRowChangeEvent" msprop:Generator_RowClassName="LCAdvancePaymentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" type="xs:int" />
+              <xs:element name="VendorId" msprop:Generator_ColumnVarNameInTable="columnVendorId" msprop:Generator_ColumnPropNameInRow="VendorId" msprop:Generator_ColumnPropNameInTable="VendorIdColumn" msprop:Generator_UserColumnName="VendorId" type="xs:int" minOccurs="0" />
+              <xs:element name="ProductId" msprop:Generator_ColumnVarNameInTable="columnProductId" msprop:Generator_ColumnPropNameInRow="ProductId" msprop:Generator_ColumnPropNameInTable="ProductIdColumn" msprop:Generator_UserColumnName="ProductId" type="xs:int" />
+              <xs:element name="TotalPoQty" msprop:Generator_ColumnVarNameInTable="columnTotalPoQty" msprop:Generator_ColumnPropNameInRow="TotalPoQty" msprop:Generator_ColumnPropNameInTable="TotalPoQtyColumn" msprop:Generator_UserColumnName="TotalPoQty" type="xs:int" />
+              <xs:element name="TotalShippedQty" msprop:Generator_ColumnVarNameInTable="columnTotalShippedQty" msprop:Generator_ColumnPropNameInRow="TotalShippedQty" msprop:Generator_ColumnPropNameInTable="TotalShippedQtyColumn" msprop:Generator_UserColumnName="TotalShippedQty" type="xs:int" />
+              <xs:element name="TotalShippedAmt" msprop:Generator_ColumnVarNameInTable="columnTotalShippedAmt" msprop:Generator_ColumnPropNameInRow="TotalShippedAmt" msprop:Generator_ColumnPropNameInTable="TotalShippedAmtColumn" msprop:Generator_UserColumnName="TotalShippedAmt" type="xs:decimal" />
+              <xs:element name="InvoiceDate" msprop:Generator_ColumnVarNameInTable="columnInvoiceDate" msprop:Generator_ColumnPropNameInRow="InvoiceDate" msprop:Generator_ColumnPropNameInTable="InvoiceDateColumn" msprop:Generator_UserColumnName="InvoiceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ApDate" msprop:Generator_ColumnVarNameInTable="columnApDate" msprop:Generator_ColumnPropNameInRow="ApDate" msprop:Generator_ColumnPropNameInTable="ApDateColumn" msprop:Generator_UserColumnName="ApDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LCApplicationNo" msprop:Generator_ColumnVarNameInTable="columnLCApplicationNo" msprop:Generator_ColumnPropNameInRow="LCApplicationNo" msprop:Generator_ColumnPropNameInTable="LCApplicationNoColumn" msprop:Generator_UserColumnName="LCApplicationNo" type="xs:int" />
+              <xs:element name="LCBatchNo" msprop:Generator_ColumnVarNameInTable="columnLCBatchNo" msprop:Generator_ColumnPropNameInRow="LCBatchNo" msprop:Generator_ColumnPropNameInTable="LCBatchNoColumn" msprop:Generator_UserColumnName="LCBatchNo" type="xs:int" />
+              <xs:element name="LCNo" msprop:Generator_ColumnVarNameInTable="columnLCNo" msprop:Generator_ColumnPropNameInRow="LCNo" msprop:Generator_ColumnPropNameInTable="LCNoColumn" msprop:Generator_UserColumnName="LCNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LCIssueDate" msprop:Generator_ColumnVarNameInTable="columnLCIssueDate" msprop:Generator_ColumnPropNameInRow="LCIssueDate" msprop:Generator_ColumnPropNameInTable="LCIssueDateColumn" msprop:Generator_UserColumnName="LCIssueDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LCExpiryDate" msprop:Generator_ColumnVarNameInTable="columnLCExpiryDate" msprop:Generator_ColumnPropNameInRow="LCExpiryDate" msprop:Generator_ColumnPropNameInTable="LCExpiryDateColumn" msprop:Generator_UserColumnName="LCExpiryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PaymentNo" msprop:Generator_ColumnVarNameInTable="columnPaymentNo" msprop:Generator_ColumnPropNameInRow="PaymentNo" msprop:Generator_ColumnPropNameInTable="PaymentNoColumn" msprop:Generator_UserColumnName="PaymentNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExpectedDeductAmt" msprop:Generator_ColumnVarNameInTable="columnExpectedDeductAmt" msprop:Generator_ColumnPropNameInRow="ExpectedDeductAmt" msprop:Generator_ColumnPropNameInTable="ExpectedDeductAmtColumn" msprop:Generator_UserColumnName="ExpectedDeductAmt" type="xs:decimal" />
+              <xs:element name="NSLRefNo" msprop:Generator_ColumnVarNameInTable="columnNSLRefNo" msprop:Generator_ColumnPropNameInRow="NSLRefNo" msprop:Generator_ColumnPropNameInTable="NSLRefNoColumn" msprop:Generator_UserColumnName="NSLRefNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdvancePaymentStatusId" msprop:Generator_ColumnVarNameInTable="columnAdvancePaymentStatusId" msprop:Generator_ColumnPropNameInRow="AdvancePaymentStatusId" msprop:Generator_ColumnPropNameInTable="AdvancePaymentStatusIdColumn" msprop:Generator_UserColumnName="AdvancePaymentStatusId" type="xs:int" />
+              <xs:element name="ShippmentStatusId" msprop:Generator_ColumnVarNameInTable="columnShippmentStatusId" msprop:Generator_ColumnPropNameInRow="ShippmentStatusId" msprop:Generator_ColumnPropNameInTable="ShippmentStatusIdColumn" msprop:Generator_UserColumnName="ShippmentStatusId" type="xs:int" />
+              <xs:element name="SupplierAtWarehouseDate" msprop:Generator_ColumnVarNameInTable="columnSupplierAtWarehouseDate" msprop:Generator_ColumnPropNameInRow="SupplierAtWarehouseDate" msprop:Generator_ColumnPropNameInTable="SupplierAtWarehouseDateColumn" msprop:Generator_UserColumnName="SupplierAtWarehouseDate" type="xs:dateTime" />
+              <xs:element name="ActualDeductAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnActualDeductAmt" msprop:Generator_ColumnPropNameInRow="ActualDeductAmt" msprop:Generator_ColumnPropNameInTable="ActualDeductAmtColumn" msprop:Generator_UserColumnName="ActualDeductAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ApprovedDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnApprovedDate" msprop:Generator_ColumnPropNameInRow="ApprovedDate" msprop:Generator_ColumnPropNameInTable="ApprovedDateColumn" msprop:Generator_UserColumnName="ApprovedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PaymentTermId" msprop:Generator_ColumnVarNameInTable="columnPaymentTermId" msprop:Generator_ColumnPropNameInRow="PaymentTermId" msprop:Generator_ColumnPropNameInTable="PaymentTermIdColumn" msprop:Generator_UserColumnName="PaymentTermId" type="xs:int" minOccurs="0" />
+              <xs:element name="PaymentDeductionAmtInLC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPaymentDeductionAmtInLC" msprop:Generator_ColumnPropNameInRow="PaymentDeductionAmtInLC" msprop:Generator_ColumnPropNameInTable="PaymentDeductionAmtInLCColumn" msprop:Generator_UserColumnName="PaymentDeductionAmtInLC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SubmittedDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSubmittedDate" msprop:Generator_ColumnPropNameInRow="SubmittedDate" msprop:Generator_ColumnPropNameInTable="SubmittedDateColumn" msprop:Generator_UserColumnName="SubmittedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RejectDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRejectDate" msprop:Generator_ColumnPropNameInRow="RejectDate" msprop:Generator_ColumnPropNameInTable="RejectDateColumn" msprop:Generator_UserColumnName="RejectDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

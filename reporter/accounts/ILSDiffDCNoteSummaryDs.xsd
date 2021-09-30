@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ILSDiffDCNoteSummaryDs" targetNamespace="http://tempuri.org/MockShopDebitNoteDs.xsd" xmlns:mstns="http://tempuri.org/MockShopDebitNoteDs.xsd" xmlns="http://tempuri.org/MockShopDebitNoteDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ILSDiffDCNoteSummaryDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ILSDiffDCNoteSummaryDs" msprop:Generator_UserDSName="ILSDiffDCNoteSummaryDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ILSDiffDCNoteSummary" msprop:Generator_UserTableName="ILSDiffDCNoteSummary" msprop:Generator_RowEvArgName="ILSDiffDCNoteSummaryRowChangeEvent" msprop:Generator_TableVarName="tableILSDiffDCNoteSummary" msprop:Generator_TablePropName="ILSDiffDCNoteSummary" msprop:Generator_RowDeletingName="ILSDiffDCNoteSummaryRowDeleting" msprop:Generator_RowChangingName="ILSDiffDCNoteSummaryRowChanging" msprop:Generator_RowDeletedName="ILSDiffDCNoteSummaryRowDeleted" msprop:Generator_TableClassName="ILSDiffDCNoteSummaryDataTable" msprop:Generator_RowChangedName="ILSDiffDCNoteSummaryRowChanged" msprop:Generator_RowEvHandlerName="ILSDiffDCNoteSummaryRowChangeEventHandler" msprop:Generator_RowClassName="ILSDiffDCNoteSummaryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DCNoteId" msprop:Generator_ColumnVarNameInTable="columnDCNoteId" msprop:Generator_ColumnPropNameInRow="DCNoteId" msprop:Generator_ColumnPropNameInTable="DCNoteIdColumn" msprop:Generator_UserColumnName="DCNoteId" type="xs:int" minOccurs="0" />
+              <xs:element name="DCNoteShipmentId" msprop:Generator_ColumnVarNameInTable="columnDCNoteShipmentId" msprop:Generator_ColumnPropNameInRow="DCNoteShipmentId" msprop:Generator_ColumnPropNameInTable="DCNoteShipmentIdColumn" msprop:Generator_UserColumnName="DCNoteShipmentId" type="xs:int" minOccurs="0" />
+              <xs:element name="DCNoteNo" msdata:Caption="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnDCNoteNo" msprop:Generator_ColumnPropNameInRow="DCNoteNo" msprop:Generator_ColumnPropNameInTable="DCNoteNoColumn" msprop:Generator_UserColumnName="DCNoteNo" type="xs:string" minOccurs="0" />
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemNo" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" msprop:Generator_UserColumnName="ItemNo" type="xs:string" minOccurs="0" />
+              <xs:element name="ShipmentId" msprop:Generator_ColumnVarNameInTable="columnShipmentId" msprop:Generator_ColumnPropNameInRow="ShipmentId" msprop:Generator_ColumnPropNameInTable="ShipmentIdColumn" msprop:Generator_UserColumnName="ShipmentId" type="xs:int" minOccurs="0" />
+              <xs:element name="TransDate" msprop:Generator_ColumnVarNameInTable="columnTransDate" msprop:Generator_ColumnPropNameInRow="TransDate" msprop:Generator_ColumnPropNameInTable="TransDateColumn" msprop:Generator_UserColumnName="TransDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="InvoiceNo" msprop:Generator_ColumnVarNameInTable="columnInvoiceNo" msprop:Generator_ColumnPropNameInRow="InvoiceNo" msprop:Generator_ColumnPropNameInTable="InvoiceNoColumn" msprop:Generator_UserColumnName="InvoiceNo" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceDate" msprop:Generator_ColumnVarNameInTable="columnInvoiceDate" msprop:Generator_ColumnPropNameInRow="InvoiceDate" msprop:Generator_ColumnPropNameInTable="InvoiceDateColumn" msprop:Generator_UserColumnName="InvoiceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProdCode" msprop:Generator_ColumnVarNameInTable="columnProdCode" msprop:Generator_ColumnPropNameInRow="ProdCode" msprop:Generator_ColumnPropNameInTable="ProdCodeColumn" msprop:Generator_UserColumnName="ProdCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Qty" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_UserColumnName="Qty" type="xs:int" minOccurs="0" />
+              <xs:element name="NSSAmt" msprop:Generator_ColumnVarNameInTable="columnNSSAmt" msprop:Generator_ColumnPropNameInRow="NSSAmt" msprop:Generator_ColumnPropNameInTable="NSSAmtColumn" msprop:Generator_UserColumnName="NSSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RecdAmt" msprop:Generator_ColumnVarNameInTable="columnRecdAmt" msprop:Generator_ColumnPropNameInRow="RecdAmt" msprop:Generator_ColumnPropNameInTable="RecdAmtColumn" msprop:Generator_UserColumnName="RecdAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CurrencyCode" msprop:Generator_ColumnVarNameInTable="columnCurrencyCode" msprop:Generator_ColumnPropNameInRow="CurrencyCode" msprop:Generator_ColumnPropNameInTable="CurrencyCodeColumn" msprop:Generator_UserColumnName="CurrencyCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ILSDiff" msprop:Generator_ColumnVarNameInTable="columnILSDiff" msprop:Generator_ColumnPropNameInRow="ILSDiff" msprop:Generator_ColumnPropNameInTable="ILSDiffColumn" msprop:Generator_UserColumnName="ILSDiff" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ILSType" msprop:Generator_ColumnVarNameInTable="columnILSType" msprop:Generator_ColumnPropNameInRow="ILSType" msprop:Generator_ColumnPropNameInTable="ILSTypeColumn" msprop:Generator_UserColumnName="ILSType" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

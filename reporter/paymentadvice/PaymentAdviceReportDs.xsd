@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PaymentAdviceReportDs" targetNamespace="http://tempuri.org/PaymentAdviceReportDs.xsd" xmlns:mstns="http://tempuri.org/PaymentAdviceReportDs.xsd" xmlns="http://tempuri.org/PaymentAdviceReportDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMNSS04" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMNSS04 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMNSS04" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PaymentAdviceReportTableAdapter" GeneratorDataComponentClassName="PaymentAdviceReportTableAdapter" Name="PaymentAdviceReport" UserDataComponentName="PaymentAdviceReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMNSS04 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select a.PaymentAdviceId, a.SUNSupplierId, a.SupplierName, a.PayDate, a.BankName, b.ManufacturerInvoiceNo, b.PONo, b.Amount, b.Currency, b.TransactionDate, b.RefNo from PaymentAdvice a, PaymentAdviceDetail b
+Where a.PaymentAdviceId = b.PaymentAdviceId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PaymentAdviceId" DataSetColumn="PaymentAdviceId" />
+              <Mapping SourceColumn="SUNSupplierId" DataSetColumn="SUNSupplierId" />
+              <Mapping SourceColumn="SupplierName" DataSetColumn="SupplierName" />
+              <Mapping SourceColumn="PayDate" DataSetColumn="PayDate" />
+              <Mapping SourceColumn="BankName" DataSetColumn="BankName" />
+              <Mapping SourceColumn="ManufacturerInvoiceNo" DataSetColumn="ManufacturerInvoiceNo" />
+              <Mapping SourceColumn="PONo" DataSetColumn="PONo" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Currency" DataSetColumn="Currency" />
+              <Mapping SourceColumn="TransactionDate" DataSetColumn="TransactionDate" />
+              <Mapping SourceColumn="RefNo" DataSetColumn="RefNo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PaymentAdviceReportDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="PaymentAdviceReportDs" msprop:Generator_UserDSName="PaymentAdviceReportDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PaymentAdviceReport" msprop:Generator_TableClassName="PaymentAdviceReportDataTable" msprop:Generator_TableVarName="tablePaymentAdviceReport" msprop:Generator_TablePropName="PaymentAdviceReport" msprop:Generator_RowDeletingName="PaymentAdviceReportRowDeleting" msprop:Generator_RowChangingName="PaymentAdviceReportRowChanging" msprop:Generator_RowEvHandlerName="PaymentAdviceReportRowChangeEventHandler" msprop:Generator_RowDeletedName="PaymentAdviceReportRowDeleted" msprop:Generator_UserTableName="PaymentAdviceReport" msprop:Generator_RowChangedName="PaymentAdviceReportRowChanged" msprop:Generator_RowEvArgName="PaymentAdviceReportRowChangeEvent" msprop:Generator_RowClassName="PaymentAdviceReportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PaymentAdviceId" msprop:Generator_ColumnVarNameInTable="columnPaymentAdviceId" msprop:Generator_ColumnPropNameInRow="PaymentAdviceId" msprop:Generator_ColumnPropNameInTable="PaymentAdviceIdColumn" msprop:Generator_UserColumnName="PaymentAdviceId" type="xs:int" />
+              <xs:element name="SUNSupplierId" msprop:Generator_ColumnVarNameInTable="columnSUNSupplierId" msprop:Generator_ColumnPropNameInRow="SUNSupplierId" msprop:Generator_ColumnPropNameInTable="SUNSupplierIdColumn" msprop:Generator_UserColumnName="SUNSupplierId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SupplierName" msprop:Generator_ColumnVarNameInTable="columnSupplierName" msprop:Generator_ColumnPropNameInRow="SupplierName" msprop:Generator_ColumnPropNameInTable="SupplierNameColumn" msprop:Generator_UserColumnName="SupplierName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PayDate" msprop:Generator_ColumnVarNameInTable="columnPayDate" msprop:Generator_ColumnPropNameInRow="PayDate" msprop:Generator_ColumnPropNameInTable="PayDateColumn" msprop:Generator_UserColumnName="PayDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="BankName" msprop:Generator_ColumnVarNameInTable="columnBankName" msprop:Generator_ColumnPropNameInRow="BankName" msprop:Generator_ColumnPropNameInTable="BankNameColumn" msprop:Generator_UserColumnName="BankName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ManufacturerInvoiceNo" msprop:Generator_ColumnVarNameInTable="columnManufacturerInvoiceNo" msprop:Generator_ColumnPropNameInRow="ManufacturerInvoiceNo" msprop:Generator_ColumnPropNameInTable="ManufacturerInvoiceNoColumn" msprop:Generator_UserColumnName="ManufacturerInvoiceNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PONo" msprop:Generator_ColumnVarNameInTable="columnPONo" msprop:Generator_ColumnPropNameInRow="PONo" msprop:Generator_ColumnPropNameInTable="PONoColumn" msprop:Generator_UserColumnName="PONo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="Currency" msprop:Generator_ColumnVarNameInTable="columnCurrency" msprop:Generator_ColumnPropNameInRow="Currency" msprop:Generator_ColumnPropNameInTable="CurrencyColumn" msprop:Generator_UserColumnName="Currency" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransactionDate" msprop:Generator_ColumnVarNameInTable="columnTransactionDate" msprop:Generator_ColumnPropNameInRow="TransactionDate" msprop:Generator_ColumnPropNameInTable="TransactionDateColumn" msprop:Generator_UserColumnName="TransactionDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RefNo" msprop:Generator_ColumnVarNameInTable="columnRefNo" msprop:Generator_ColumnPropNameInRow="RefNo" msprop:Generator_ColumnPropNameInTable="RefNoColumn" msprop:Generator_UserColumnName="RefNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

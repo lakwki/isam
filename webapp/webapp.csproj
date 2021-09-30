@@ -1,0 +1,2733 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A7220914-4990-401D-A92E-A55D3557D25A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>com.next.isam.webapp</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>com.next.isam.webapp</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <DeployIisAppPath>Default Web Site/isam</DeployIisAppPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>commonlib\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="com.next.common, Version=1.0.7922.17894, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NSCommon\common\bin\Debug\com.next.common.dll</HintPath>
+    </Reference>
+    <Reference Include="com.next.infra, Version=1.0.7775.29088, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NSCommon\common\bin\Debug\com.next.infra.dll</HintPath>
+    </Reference>
+    <Reference Include="com.next.infra.smartwebcontrol">
+      <HintPath>..\..\SmartWebControl\smartwebcontrol\bin\Debug\com.next.infra.smartwebcontrol.dll</HintPath>
+    </Reference>
+    <Reference Include="com.next.scheduler, Version=1.0.4224.28425, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NSCommon\scheduler\bin\Debug\com.next.scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>commonlib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>commonlib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>commonlib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration.Install">
+      <Name>System.Configuration.Install</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices">
+      <Name>System.DirectoryServices</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Messaging">
+      <Name>System.Messaging</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\appserver\appserver.csproj">
+      <Name>appserver</Name>
+      <Project>{64E23520-967D-4FA6-BA64-5051622BA7AC}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\dataserver\dataserver.csproj">
+      <Name>dataserver</Name>
+      <Project>{0D5C4EAD-AE76-4257-94C0-313782201D87}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\domain\domain.csproj">
+      <Name>domain</Name>
+      <Project>{316C3E10-5A1D-4F60-807D-CA23980060EE}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\reporter\reporter.csproj">
+      <Name>reporter</Name>
+      <Project>{90708247-4EAD-437B-B607-AC48B6EFED0F}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="account\AddContract.aspx.cs">
+      <DependentUpon>AddContract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\AddContract.aspx.designer.cs">
+      <DependentUpon>AddContract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\AdjustmentNoteSearchPopup.aspx.cs">
+      <DependentUpon>AdjustmentNoteSearchPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\AdjustmentNoteSearchPopup.aspx.designer.cs">
+      <DependentUpon>AdjustmentNoteSearchPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\AdvancePaymentSearch.aspx.cs">
+      <DependentUpon>AdvancePaymentSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\AdvancePaymentSearch.aspx.designer.cs">
+      <DependentUpon>AdvancePaymentSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\AdvPaymentInstalment.aspx.cs">
+      <DependentUpon>AdvPaymentInstalment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\AdvPaymentInstalment.aspx.designer.cs">
+      <DependentUpon>AdvPaymentInstalment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\AdvPaymentInstalmentInterestCharges.aspx.cs">
+      <DependentUpon>AdvPaymentInstalmentInterestCharges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\AdvPaymentInstalmentInterestCharges.aspx.designer.cs">
+      <DependentUpon>AdvPaymentInstalmentInterestCharges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\ARnAPIndex.aspx.cs">
+      <DependentUpon>ARnAPIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\ARnAPIndex.aspx.designer.cs">
+      <DependentUpon>ARnAPIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\ARShipmentReg.aspx.cs">
+      <DependentUpon>ARShipmentReg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\ARShipmentReg.aspx.designer.cs">
+      <DependentUpon>ARShipmentReg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\BankReconciliation.aspx.cs">
+      <DependentUpon>BankReconciliation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\BankReconciliation.aspx.designer.cs">
+      <DependentUpon>BankReconciliation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\ARAdjustment.aspx.cs">
+      <DependentUpon>ARAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\ARAdjustment.aspx.designer.cs">
+      <DependentUpon>ARAdjustment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\AdjustmentNoteSearch.aspx.cs">
+      <DependentUpon>AdjustmentNoteSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\AdjustmentNoteSearch.aspx.designer.cs">
+      <DependentUpon>AdjustmentNoteSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\APAdjustment.aspx.cs">
+      <DependentUpon>APAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\APAdjustment.aspx.designer.cs">
+      <DependentUpon>APAdjustment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\ConverterForTally.aspx.cs">
+      <DependentUpon>ConverterForTally.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\ConverterForTally.aspx.designer.cs">
+      <DependentUpon>ConverterForTally.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\DebitNoteVoid.aspx.cs">
+      <DependentUpon>DebitNoteVoid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\DebitNoteVoid.aspx.designer.cs">
+      <DependentUpon>DebitNoteVoid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\EditFabric.aspx.cs">
+      <DependentUpon>EditFabric.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\EditFabric.aspx.designer.cs">
+      <DependentUpon>EditFabric.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\GenLogoXMLFile.aspx.cs">
+      <DependentUpon>GenLogoXMLFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\GenLogoXMLFile.aspx.designer.cs">
+      <DependentUpon>GenLogoXMLFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\GenLogoXMLFilePopup.aspx.cs">
+      <DependentUpon>GenLogoXMLFilePopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\GenLogoXMLFilePopup.aspx.designer.cs">
+      <DependentUpon>GenLogoXMLFilePopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\ILSDiffDCNote.aspx.cs">
+      <DependentUpon>ILSDiffDCNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\ILSDiffDCNote.aspx.designer.cs">
+      <DependentUpon>ILSDiffDCNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\InstalmentAttachmentList.aspx.cs">
+      <DependentUpon>InstalmentAttachmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\InstalmentAttachmentList.aspx.designer.cs">
+      <DependentUpon>InstalmentAttachmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\NSLedSalesData.aspx.cs">
+      <DependentUpon>NSLedSalesData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\NSLedSalesData.aspx.designer.cs">
+      <DependentUpon>NSLedSalesData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\OtherChargesDebitNote.aspx.cs">
+      <DependentUpon>OtherChargesDebitNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\OtherChargesDebitNote.aspx.designer.cs">
+      <DependentUpon>OtherChargesDebitNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\SendThirdPartyCustomerDNToUK.aspx.cs">
+      <DependentUpon>SendThirdPartyCustomerDNToUK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\SendThirdPartyCustomerDNToUK.aspx.designer.cs">
+      <DependentUpon>SendThirdPartyCustomerDNToUK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\StudioSampleDebitNote.aspx.cs">
+      <DependentUpon>StudioSampleDebitNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\StudioSampleDebitNote.aspx.designer.cs">
+      <DependentUpon>StudioSampleDebitNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\UploadInstalmentDoc.aspx.cs">
+      <DependentUpon>UploadInstalmentDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\UploadInstalmentDoc.aspx.designer.cs">
+      <DependentUpon>UploadInstalmentDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\UploadNSLedSales.aspx.cs">
+      <DependentUpon>UploadNSLedSales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\UploadNSLedSales.aspx.designer.cs">
+      <DependentUpon>UploadNSLedSales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\UTDebitNote.aspx.cs">
+      <DependentUpon>UTDebitNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\UTDebitNote.aspx.designer.cs">
+      <DependentUpon>UTDebitNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\ViewAdvancePaymentLog.aspx.cs">
+      <DependentUpon>ViewAdvancePaymentLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\ViewAdvancePaymentLog.aspx.designer.cs">
+      <DependentUpon>ViewAdvancePaymentLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\MonthEndAdmin.aspx.cs">
+      <DependentUpon>MonthEndAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\MonthEndAdmin.aspx.designer.cs">
+      <DependentUpon>MonthEndAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\CheckExistInISAM.aspx.cs">
+      <DependentUpon>CheckExistInISAM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\CheckExistInISAM.aspx.designer.cs">
+      <DependentUpon>CheckExistInISAM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\GetDummy.aspx.cs">
+      <DependentUpon>GetDummy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\GetDummy.aspx.designer.cs">
+      <DependentUpon>GetDummy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\GetCustomer.aspx.cs">
+      <DependentUpon>GetCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\GetCustomer.aspx.designer.cs">
+      <DependentUpon>GetCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\GetShipmentInfo.aspx.cs">
+      <DependentUpon>GetShipmentInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\GetShipmentInfo.aspx.designer.cs">
+      <DependentUpon>GetShipmentInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\DNAttachmentList.aspx.cs">
+      <DependentUpon>DNAttachmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\DNAttachmentList.aspx.designer.cs">
+      <DependentUpon>DNAttachmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\MFRNBatchUpload.aspx.cs">
+      <DependentUpon>MFRNBatchUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\MFRNBatchUpload.aspx.designer.cs">
+      <DependentUpon>MFRNBatchUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\NextClaimUpload.aspx.cs">
+      <DependentUpon>NextClaimUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\NextClaimUpload.aspx.designer.cs">
+      <DependentUpon>NextClaimUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\UKDiscountClaimAttachmentList.aspx.cs">
+      <DependentUpon>UKDiscountClaimAttachmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\UKDiscountClaimAttachmentList.aspx.designer.cs">
+      <DependentUpon>UKDiscountClaimAttachmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\UKDiscountClaimEdit.aspx.cs">
+      <DependentUpon>UKDiscountClaimEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\UKDiscountClaimEdit.aspx.designer.cs">
+      <DependentUpon>UKDiscountClaimEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\UKDiscountClaimRefundEdit.aspx.cs">
+      <DependentUpon>UKDiscountClaimRefundEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\UKDiscountClaimRefundEdit.aspx.designer.cs">
+      <DependentUpon>UKDiscountClaimRefundEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\UKDiscountClaimSearch.aspx.cs">
+      <DependentUpon>UKDiscountClaimSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\UKDiscountClaimSearch.aspx.designer.cs">
+      <DependentUpon>UKDiscountClaimSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\UKDiscountUploadDoc.aspx.cs">
+      <DependentUpon>UKDiscountUploadDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\UKDiscountUploadDoc.aspx.designer.cs">
+      <DependentUpon>UKDiscountUploadDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\ViewDiscountLog.aspx.cs">
+      <DependentUpon>ViewDiscountLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\ViewDiscountLog.aspx.designer.cs">
+      <DependentUpon>ViewDiscountLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="commander\settings\ChangePasswordCommander.cs" />
+    <Compile Include="common\PromptInput.aspx.cs">
+      <DependentUpon>PromptInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="common\PromptInput.aspx.designer.cs">
+      <DependentUpon>PromptInput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dms\Attachment.aspx.cs">
+      <DependentUpon>Attachment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dms\Attachment.aspx.designer.cs">
+      <DependentUpon>Attachment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\ClaimRequestAttachmentList.aspx.cs">
+      <DependentUpon>ClaimRequestAttachmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\ClaimRequestAttachmentList.aspx.designer.cs">
+      <DependentUpon>ClaimRequestAttachmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\COOApproval.aspx.cs">
+      <DependentUpon>COOApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\COOApproval.aspx.designer.cs">
+      <DependentUpon>COOApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\UKClaimReviewList.aspx.cs">
+      <DependentUpon>UKClaimReviewList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\UKClaimReviewList.aspx.designer.cs">
+      <DependentUpon>UKClaimReviewList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\UKClaimApproval.aspx.cs">
+      <DependentUpon>UKClaimApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\UKClaimApproval.aspx.designer.cs">
+      <DependentUpon>UKClaimApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\RechargeSupplierDCNote.aspx.cs">
+      <DependentUpon>RechargeSupplierDCNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\RechargeSupplierDCNote.aspx.designer.cs">
+      <DependentUpon>RechargeSupplierDCNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\AttachmentList.aspx.cs">
+      <DependentUpon>AttachmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\AttachmentList.aspx.designer.cs">
+      <DependentUpon>AttachmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\UKClaimEdit.aspx.cs">
+      <DependentUpon>UKClaimEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\UKClaimEdit.aspx.designer.cs">
+      <DependentUpon>UKClaimEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\UKClaimRefundEdit.aspx.cs">
+      <DependentUpon>UKClaimRefundEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\UKClaimRefundEdit.aspx.designer.cs">
+      <DependentUpon>UKClaimRefundEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\UKClaimReview.aspx.cs">
+      <DependentUpon>UKClaimReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\UKClaimReview.aspx.designer.cs">
+      <DependentUpon>UKClaimReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\UKClaimSearch.aspx.cs">
+      <DependentUpon>UKClaimSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\UKClaimSearch.aspx.designer.cs">
+      <DependentUpon>UKClaimSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\PaymentMaintenance.aspx.cs">
+      <DependentUpon>PaymentMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\PaymentMaintenance.aspx.designer.cs">
+      <DependentUpon>PaymentMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\SunInterfaceBatch.aspx.cs">
+      <DependentUpon>SunInterfaceBatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\SunInterfaceBatch.aspx.designer.cs">
+      <DependentUpon>SunInterfaceBatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\GetRejectReason.aspx.cs">
+      <DependentUpon>GetRejectReason.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\GetRejectReason.aspx.designer.cs">
+      <DependentUpon>GetRejectReason.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\HoldPaymentSupplier.aspx.cs">
+      <DependentUpon>HoldPaymentSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\HoldPaymentSupplier.aspx.designer.cs">
+      <DependentUpon>HoldPaymentSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\InvoiceStatusEnquiry.aspx.cs">
+      <DependentUpon>InvoiceStatusEnquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\InvoiceStatusEnquiry.aspx.designer.cs">
+      <DependentUpon>InvoiceStatusEnquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\MockShopSampleDebitNote.aspx.cs">
+      <DependentUpon>MockShopSampleDebitNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\MockShopSampleDebitNote.aspx.designer.cs">
+      <DependentUpon>MockShopSampleDebitNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\ReplacementInvoiceEnquiry.aspx.cs">
+      <DependentUpon>ReplacementInvoiceEnquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\ReplacementInvoiceEnquiry.aspx.designer.cs">
+      <DependentUpon>ReplacementInvoiceEnquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\PaymentUpdate.aspx.cs">
+      <DependentUpon>PaymentUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\PaymentUpdate.aspx.designer.cs">
+      <DependentUpon>PaymentUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\CreateInvBatch.aspx.cs">
+      <DependentUpon>CreateInvBatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\CreateInvBatch.aspx.designer.cs">
+      <DependentUpon>CreateInvBatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\DCNoteDiscrepancy.aspx.cs">
+      <DependentUpon>DCNoteDiscrepancy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\DCNoteDiscrepancy.aspx.designer.cs">
+      <DependentUpon>DCNoteDiscrepancy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\DCNoteIndex.aspx.cs">
+      <DependentUpon>DCNoteIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\DCNoteIndex.aspx.designer.cs">
+      <DependentUpon>DCNoteIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\ePaymentAdvice.aspx.cs">
+      <DependentUpon>ePaymentAdvice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\ePaymentAdvice.aspx.designer.cs">
+      <DependentUpon>ePaymentAdvice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\GenSunAccountInterfaceFile.aspx.cs">
+      <DependentUpon>GenSunAccountInterfaceFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\GenSunAccountInterfaceFile.aspx.designer.cs">
+      <DependentUpon>GenSunAccountInterfaceFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\PaymentFileConversion.aspx.cs">
+      <DependentUpon>PaymentFileConversion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\PaymentFileConversion.aspx.designer.cs">
+      <DependentUpon>PaymentFileConversion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\QADebitNote.aspx.cs">
+      <DependentUpon>QADebitNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\QADebitNote.aspx.designer.cs">
+      <DependentUpon>QADebitNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\AttachmentList.aspx.cs">
+      <DependentUpon>AttachmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\AttachmentList.aspx.designer.cs">
+      <DependentUpon>AttachmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="account\SuppInvReg.aspx.cs">
+      <DependentUpon>SuppInvReg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="account\SuppInvReg.aspx.designer.cs">
+      <DependentUpon>SuppInvReg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Administration.aspx.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Administration.aspx.designer.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\BeanContainerManagement.aspx.cs">
+      <DependentUpon>BeanContainerManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\BeanContainerManagement.aspx.designer.cs">
+      <DependentUpon>BeanContainerManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\CacheManager.aspx.cs">
+      <DependentUpon>CacheManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\CacheManager.aspx.designer.cs">
+      <DependentUpon>CacheManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ClearMenu.aspx.cs">
+      <DependentUpon>ClearMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ClearMenu.aspx.designer.cs">
+      <DependentUpon>ClearMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="claim\UploadDoc.aspx.cs">
+      <DependentUpon>UploadDoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\UploadDoc.aspx.designer.cs">
+      <DependentUpon>UploadDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="claim\ViewLog.aspx.cs">
+      <DependentUpon>ViewLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="claim\ViewLog.aspx.designer.cs">
+      <DependentUpon>ViewLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="commander\account\AccountCommander.cs" />
+    <Compile Include="commander\admin\MonthEndCommander.cs" />
+    <Compile Include="commander\admin\SystemMaintenanceCommander.cs" />
+    <Compile Include="commander\NSExtensions.cs" />
+    <Compile Include="commander\shipment\ShipmentCommander.cs" />
+    <Compile Include="commander\WebUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="common\SmartCalendar.aspx.cs">
+      <DependentUpon>SmartCalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="common\SmartCalendar.aspx.designer.cs">
+      <DependentUpon>SmartCalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="common\SmartCalendarRange.aspx.cs">
+      <DependentUpon>SmartCalendarRange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="common\SmartCalendarRange.aspx.designer.cs">
+      <DependentUpon>SmartCalendarRange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="common\UclLoginOffice.ascx.cs">
+      <DependentUpon>UclLoginOffice.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="common\UclLoginOffice.ascx.designer.cs">
+      <DependentUpon>UclLoginOffice.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="help\Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="help\Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\ExcelSample.aspx.cs">
+      <DependentUpon>ExcelSample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\ExcelSample.aspx.designer.cs">
+      <DependentUpon>ExcelSample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\SearchResult.aspx.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\SearchResult.aspx.designer.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\ToolBar.aspx.cs">
+      <DependentUpon>ToolBar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\ToolBar.aspx.designer.cs">
+      <DependentUpon>ToolBar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\MainMaster.Master.cs">
+      <DependentUpon>MainMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\MainMaster.Master.designer.cs">
+      <DependentUpon>MainMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="myapplication\LCBankMaint.aspx.cs">
+      <DependentUpon>LCBankMaint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myapplication\LCBankMaint.aspx.designer.cs">
+      <DependentUpon>LCBankMaint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="myapplication\SystemMaintenance.aspx.cs">
+      <DependentUpon>SystemMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myapplication\SystemMaintenance.aspx.designer.cs">
+      <DependentUpon>SystemMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\NTRoleEdit.aspx.cs">
+      <DependentUpon>NTRoleEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\NTRoleEdit.aspx.designer.cs">
+      <DependentUpon>NTRoleEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\NTRoleList.aspx.cs">
+      <DependentUpon>NTRoleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\NTRoleList.aspx.designer.cs">
+      <DependentUpon>NTRoleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\DebitNoteSearch.aspx.cs">
+      <DependentUpon>DebitNoteSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\DebitNoteSearch.aspx.designer.cs">
+      <DependentUpon>DebitNoteSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\AttachmentList.aspx.cs">
+      <DependentUpon>AttachmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\AttachmentList.aspx.designer.cs">
+      <DependentUpon>AttachmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\NonTradeDebitNoteIndex.aspx.cs">
+      <DependentUpon>NonTradeDebitNoteIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\NonTradeDebitNoteIndex.aspx.designer.cs">
+      <DependentUpon>NonTradeDebitNoteIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\GenSunAccountInterfaceFile.aspx.cs">
+      <DependentUpon>GenSunAccountInterfaceFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\GenSunAccountInterfaceFile.aspx.designer.cs">
+      <DependentUpon>GenSunAccountInterfaceFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\NonTradeApproverMaintenance.aspx.cs">
+      <DependentUpon>NonTradeApproverMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\NonTradeApproverMaintenance.aspx.designer.cs">
+      <DependentUpon>NonTradeApproverMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\NonTradeExpenseSettlement.aspx.cs">
+      <DependentUpon>NonTradeExpenseSettlement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\NonTradeExpenseSettlement.aspx.designer.cs">
+      <DependentUpon>NonTradeExpenseSettlement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\NonTradeInvoice.aspx.cs">
+      <DependentUpon>NonTradeInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\NonTradeInvoice.aspx.designer.cs">
+      <DependentUpon>NonTradeInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\NonTradeMonthEndAdmin.aspx.cs">
+      <DependentUpon>NonTradeMonthEndAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\NonTradeMonthEndAdmin.aspx.designer.cs">
+      <DependentUpon>NonTradeMonthEndAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\NonTradeRecharge.aspx.cs">
+      <DependentUpon>NonTradeRecharge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\NonTradeRecharge.aspx.designer.cs">
+      <DependentUpon>NonTradeRecharge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\NonTradeSearchEngine.aspx.cs">
+      <DependentUpon>NonTradeSearchEngine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\NonTradeSearchEngine.aspx.designer.cs">
+      <DependentUpon>NonTradeSearchEngine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\NonTradeVendor.aspx.cs">
+      <DependentUpon>NonTradeVendor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\NonTradeVendor.aspx.designer.cs">
+      <DependentUpon>NonTradeVendor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nontrade\NonTradeVendorSearch.aspx.cs">
+      <DependentUpon>NonTradeVendorSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nontrade\NonTradeVendorSearch.aspx.designer.cs">
+      <DependentUpon>NonTradeVendorSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="personal\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="personal\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\ActiveSupplierReport.aspx.cs">
+      <DependentUpon>ActiveSupplierReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\ActiveSupplierReport.aspx.designer.cs">
+      <DependentUpon>ActiveSupplierReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\ActualSalesSummary.aspx.cs">
+      <DependentUpon>ActualSalesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\ActualSalesSummary.aspx.designer.cs">
+      <DependentUpon>ActualSalesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\AdvancePaymentReport.aspx.cs">
+      <DependentUpon>AdvancePaymentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\AdvancePaymentReport.aspx.designer.cs">
+      <DependentUpon>AdvancePaymentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\ClaimListReport.aspx.cs">
+      <DependentUpon>ClaimListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\ClaimListReport.aspx.designer.cs">
+      <DependentUpon>ClaimListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\CarbonFootprintReport.aspx.cs">
+      <DependentUpon>CarbonFootprintReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\CarbonFootprintReport.aspx.designer.cs">
+      <DependentUpon>CarbonFootprintReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\NSLedSalesInfoReport_Finance.aspx.cs">
+      <DependentUpon>NSLedSalesInfoReport_Finance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\NSLedSalesInfoReport_Finance.aspx.designer.cs">
+      <DependentUpon>NSLedSalesInfoReport_Finance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\NSLedSalesInfoReport_Finance_20210826.aspx.cs">
+      <DependentUpon>NSLedSalesInfoReport_Finance_20210826.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\NSLedSalesInfoReport_Finance_20210826.aspx.designer.cs">
+      <DependentUpon>NSLedSalesInfoReport_Finance_20210826.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\NSLedSalesInfoReport_Finance_20210825.aspx.cs">
+      <DependentUpon>NSLedSalesInfoReport_Finance_20210825.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\NSLedSalesInfoReport_Finance_20210825.aspx.designer.cs">
+      <DependentUpon>NSLedSalesInfoReport_Finance_20210825.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\InvoiceListSummaryReport.aspx.cs">
+      <DependentUpon>InvoiceListSummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\InvoiceListSummaryReport.aspx.designer.cs">
+      <DependentUpon>InvoiceListSummaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\NSLedSalesInfoReport_FinanceAdj.aspx.cs">
+      <DependentUpon>NSLedSalesInfoReport_FinanceAdj.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\NSLedSalesInfoReport_FinanceAdj.aspx.designer.cs">
+      <DependentUpon>NSLedSalesInfoReport_FinanceAdj.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\NSLedSalesInfoReport_Finance_TBC.aspx.cs">
+      <DependentUpon>NSLedSalesInfoReport_Finance_TBC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\NSLedSalesInfoReport_Finance_TBC.aspx.designer.cs">
+      <DependentUpon>NSLedSalesInfoReport_Finance_TBC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\NSLedActualSalesSummaryReport.aspx.cs">
+      <DependentUpon>NSLedActualSalesSummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\NSLedActualSalesSummaryReport.aspx.designer.cs">
+      <DependentUpon>NSLedActualSalesSummaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\DiscountClaimListReport.aspx.cs">
+      <DependentUpon>DiscountClaimListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\DiscountClaimListReport.aspx.designer.cs">
+      <DependentUpon>DiscountClaimListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\EpicorInterfaceLogReport.aspx.cs">
+      <DependentUpon>EpicorInterfaceLogReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\EpicorInterfaceLogReport.aspx.designer.cs">
+      <DependentUpon>EpicorInterfaceLogReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\FutureOrderSummaryBySupplierReport.aspx.cs">
+      <DependentUpon>FutureOrderSummaryBySupplierReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\FutureOrderSummaryBySupplierReport.aspx.designer.cs">
+      <DependentUpon>FutureOrderSummaryBySupplierReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\LCShipmentAmendmentReport.aspx.cs">
+      <DependentUpon>LCShipmentAmendmentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\LCShipmentAmendmentReport.aspx.designer.cs">
+      <DependentUpon>LCShipmentAmendmentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\LGHoldPaymentReport.aspx.cs">
+      <DependentUpon>LGHoldPaymentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\LGHoldPaymentReport.aspx.designer.cs">
+      <DependentUpon>LGHoldPaymentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\MFRNQtyAnalysisReportPage.aspx.cs">
+      <DependentUpon>MFRNQtyAnalysisReportPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\MFRNQtyAnalysisReportPage.aspx.designer.cs">
+      <DependentUpon>MFRNQtyAnalysisReportPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\MFRNQtyAnalysisReport.aspx.cs">
+      <DependentUpon>MFRNQtyAnalysisReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\MFRNQtyAnalysisReport.aspx.designer.cs">
+      <DependentUpon>MFRNQtyAnalysisReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\NonTradeExpenseStatementList.aspx.cs">
+      <DependentUpon>NonTradeExpenseStatementList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\NonTradeExpenseStatementList.aspx.designer.cs">
+      <DependentUpon>NonTradeExpenseStatementList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\NSLedProfitabilitiesReport.aspx.cs">
+      <DependentUpon>NSLedProfitabilitiesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\NSLedProfitabilitiesReport.aspx.designer.cs">
+      <DependentUpon>NSLedProfitabilitiesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\NSLedSalesInfoReport.aspx.cs">
+      <DependentUpon>NSLedSalesInfoReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\NSLedSalesInfoReport.aspx.designer.cs">
+      <DependentUpon>NSLedSalesInfoReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\NSLedSellThruHistory.aspx.cs">
+      <DependentUpon>NSLedSellThruHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\NSLedSellThruHistory.aspx.designer.cs">
+      <DependentUpon>NSLedSellThruHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\OrdersForLCCancellationReport.aspx.cs">
+      <DependentUpon>OrdersForLCCancellationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\OrdersForLCCancellationReport.aspx.designer.cs">
+      <DependentUpon>OrdersForLCCancellationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\OutstandingDiscountListReport.aspx.cs">
+      <DependentUpon>OutstandingDiscountListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\OutstandingDiscountListReport.aspx.designer.cs">
+      <DependentUpon>OutstandingDiscountListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\OutstandingDiscountListReportPage.aspx.cs">
+      <DependentUpon>OutstandingDiscountListReportPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\OutstandingDiscountListReportPage.aspx.designer.cs">
+      <DependentUpon>OutstandingDiscountListReportPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\OutstandingGBTestReport.aspx.cs">
+      <DependentUpon>OutstandingGBTestReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\OutstandingGBTestReport.aspx.designer.cs">
+      <DependentUpon>OutstandingGBTestReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\POListByOfficeSupplierReport.aspx.cs">
+      <DependentUpon>POListByOfficeSupplierReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\POListByOfficeSupplierReport.aspx.designer.cs">
+      <DependentUpon>POListByOfficeSupplierReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\ShipmentCommissionStudioSampleReport.aspx.cs">
+      <DependentUpon>ShipmentCommissionStudioSampleReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\ShipmentCommissionStudioSampleReport.aspx.designer.cs">
+      <DependentUpon>ShipmentCommissionStudioSampleReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\TradingAFReport.aspx.cs">
+      <DependentUpon>TradingAFReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\TradingAFReport.aspx.designer.cs">
+      <DependentUpon>TradingAFReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\UKClaimAuditLogReport.aspx.cs">
+      <DependentUpon>UKClaimAuditLogReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\UKClaimAuditLogReport.aspx.designer.cs">
+      <DependentUpon>UKClaimAuditLogReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\OutstandingClaimListReportPage.aspx.cs">
+      <DependentUpon>OutstandingClaimListReportPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\OutstandingClaimListReportPage.aspx.designer.cs">
+      <DependentUpon>OutstandingClaimListReportPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\OutstandingClaimListReport.aspx.cs">
+      <DependentUpon>OutstandingClaimListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\OutstandingClaimListReport.aspx.designer.cs">
+      <DependentUpon>OutstandingClaimListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\EziBuyPartialShipmentReport.aspx.cs">
+      <DependentUpon>EziBuyPartialShipmentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\EziBuyPartialShipmentReport.aspx.designer.cs">
+      <DependentUpon>EziBuyPartialShipmentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\CTSSTWReport.aspx.cs">
+      <DependentUpon>CTSSTWReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\CTSSTWReport.aspx.designer.cs">
+      <DependentUpon>CTSSTWReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\CustomerReceiptReport.aspx.cs">
+      <DependentUpon>CustomerReceiptReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\CustomerReceiptReport.aspx.designer.cs">
+      <DependentUpon>CustomerReceiptReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\LCApplicationSummaryReport.aspx.cs">
+      <DependentUpon>LCApplicationSummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\LCApplicationSummaryReport.aspx.designer.cs">
+      <DependentUpon>LCApplicationSummaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\MonthEndSummaryReport.aspx.cs">
+      <DependentUpon>MonthEndSummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\MonthEndSummaryReport.aspx.designer.cs">
+      <DependentUpon>MonthEndSummaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\OtherCostSummaryReport.aspx.cs">
+      <DependentUpon>OtherCostSummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\OtherCostSummaryReport.aspx.designer.cs">
+      <DependentUpon>OtherCostSummaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\ReleaseLockSummary.aspx.cs">
+      <DependentUpon>ReleaseLockSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\ReleaseLockSummary.aspx.designer.cs">
+      <DependentUpon>ReleaseLockSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\SalesAccrualArchiveReport.aspx.cs">
+      <DependentUpon>SalesAccrualArchiveReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\SalesAccrualArchiveReport.aspx.designer.cs">
+      <DependentUpon>SalesAccrualArchiveReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\InvoiceListReport.aspx.cs">
+      <DependentUpon>InvoiceListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\InvoiceListReport.aspx.designer.cs">
+      <DependentUpon>InvoiceListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\LCBatchControlReport.aspx.cs">
+      <DependentUpon>LCBatchControlReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\LCBatchControlReport.aspx.designer.cs">
+      <DependentUpon>LCBatchControlReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\LCStatusReport.aspx.cs">
+      <DependentUpon>LCStatusReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\LCStatusReport.aspx.designer.cs">
+      <DependentUpon>LCStatusReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\NSLSZOrderReport.aspx.cs">
+      <DependentUpon>NSLSZOrderReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\NSLSZOrderReport.aspx.designer.cs">
+      <DependentUpon>NSLSZOrderReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\OutstandingBookingReport.aspx.cs">
+      <DependentUpon>OutstandingBookingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\OutstandingBookingReport.aspx.designer.cs">
+      <DependentUpon>OutstandingBookingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\OutstandingLCReport.aspx.cs">
+      <DependentUpon>OutstandingLCReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\OutstandingLCReport.aspx.designer.cs">
+      <DependentUpon>OutstandingLCReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\OutstandingPaymentReport.aspx.cs">
+      <DependentUpon>OutstandingPaymentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\OutstandingPaymentReport.aspx.designer.cs">
+      <DependentUpon>OutstandingPaymentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\OutstandingTradePayableRpt.aspx.cs">
+      <DependentUpon>OutstandingTradePayableRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\OutstandingTradePayableRpt.aspx.designer.cs">
+      <DependentUpon>OutstandingTradePayableRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\OutstandingTradeReceivableRpt.aspx.cs">
+      <DependentUpon>OutstandingTradeReceivableRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\OutstandingTradeReceivableRpt.aspx.designer.cs">
+      <DependentUpon>OutstandingTradeReceivableRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\PartialShipmentReport.aspx.cs">
+      <DependentUpon>PartialShipmentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\PartialShipmentReport.aspx.designer.cs">
+      <DependentUpon>PartialShipmentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\ReceivablePayableForecastReport.aspx.cs">
+      <DependentUpon>ReceivablePayableForecastReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\ReceivablePayableForecastReport.aspx.designer.cs">
+      <DependentUpon>ReceivablePayableForecastReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\reports.aspx.cs">
+      <DependentUpon>reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\reports.aspx.designer.cs">
+      <DependentUpon>reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\ShipmentCommissionChoiceReport.aspx.cs">
+      <DependentUpon>ShipmentCommissionChoiceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\ShipmentCommissionChoiceReport.aspx.designer.cs">
+      <DependentUpon>ShipmentCommissionChoiceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\ShipmentCommissionMockShopReport.aspx.cs">
+      <DependentUpon>ShipmentCommissionMockShopReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\ShipmentCommissionMockShopReport.aspx.designer.cs">
+      <DependentUpon>ShipmentCommissionMockShopReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\ShipmentCommissionReport.aspx.cs">
+      <DependentUpon>ShipmentCommissionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\ShipmentCommissionReport.aspx.designer.cs">
+      <DependentUpon>ShipmentCommissionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\STWDateDiscrepancyReport.aspx.cs">
+      <DependentUpon>STWDateDiscrepancyReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\STWDateDiscrepancyReport.aspx.designer.cs">
+      <DependentUpon>STWDateDiscrepancyReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\SupplierOrderStatusReport.aspx.cs">
+      <DependentUpon>SupplierOrderStatusReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\SupplierOrderStatusReport.aspx.designer.cs">
+      <DependentUpon>SupplierOrderStatusReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\SupplierPaymentReport.aspx.cs">
+      <DependentUpon>SupplierPaymentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\SupplierPaymentReport.aspx.designer.cs">
+      <DependentUpon>SupplierPaymentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\UKClaimPhasingByProductTeamReport.aspx.cs">
+      <DependentUpon>UKClaimPhasingByProductTeamReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\UKClaimPhasingByProductTeamReport.aspx.designer.cs">
+      <DependentUpon>UKClaimPhasingByProductTeamReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\UKClaimPhasingReport.aspx.cs">
+      <DependentUpon>UKClaimPhasingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\UKClaimPhasingReport.aspx.designer.cs">
+      <DependentUpon>UKClaimPhasingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\UKClaimPhasingReportPage.aspx.cs">
+      <DependentUpon>UKClaimPhasingReportPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\UKClaimPhasingReportPage.aspx.designer.cs">
+      <DependentUpon>UKClaimPhasingReportPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\UKClaimSummaryReport.aspx.cs">
+      <DependentUpon>UKClaimSummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\UKClaimSummaryReport.aspx.designer.cs">
+      <DependentUpon>UKClaimSummaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\UTSizePriceDiscrepancyReport.aspx.cs">
+      <DependentUpon>UTSizePriceDiscrepancyReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\UTSizePriceDiscrepancyReport.aspx.designer.cs">
+      <DependentUpon>UTSizePriceDiscrepancyReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reporter\WeeklyShipmentReport.aspx.cs">
+      <DependentUpon>WeeklyShipmentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reporter\WeeklyShipmentReport.aspx.designer.cs">
+      <DependentUpon>WeeklyShipmentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\Alert.aspx.cs">
+      <DependentUpon>Alert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\Alert.aspx.designer.cs">
+      <DependentUpon>Alert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\AttachmentList.aspx.cs">
+      <DependentUpon>AttachmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\AttachmentList.aspx.designer.cs">
+      <DependentUpon>AttachmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\AWBDetail.aspx.cs">
+      <DependentUpon>AWBDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\AWBDetail.aspx.designer.cs">
+      <DependentUpon>AWBDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\ExportLicenceCopy.aspx.cs">
+      <DependentUpon>ExportLicenceCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\ExportLicenceCopy.aspx.designer.cs">
+      <DependentUpon>ExportLicenceCopy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\InvoiceForMultipleShipment.aspx.cs">
+      <DependentUpon>InvoiceForMultipleShipment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\InvoiceForMultipleShipment.aspx.designer.cs">
+      <DependentUpon>InvoiceForMultipleShipment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\InvoiceRemarkGenerator.aspx.cs">
+      <DependentUpon>InvoiceRemarkGenerator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\InvoiceRemarkGenerator.aspx.designer.cs">
+      <DependentUpon>InvoiceRemarkGenerator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\LCAdvancePayment.aspx.cs">
+      <DependentUpon>LCAdvancePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\LCAdvancePayment.aspx.designer.cs">
+      <DependentUpon>LCAdvancePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\LCAppRequest.aspx.cs">
+      <DependentUpon>LCAppRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\LCAppRequest.aspx.designer.cs">
+      <DependentUpon>LCAppRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\LCAppRequest_Ship.aspx.cs">
+      <DependentUpon>LCAppRequest_Ship.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\LCAppRequest_Ship.aspx.designer.cs">
+      <DependentUpon>LCAppRequest_Ship.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\LCBatchSearch.aspx.cs">
+      <DependentUpon>LCBatchSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\LCBatchSearch.aspx.designer.cs">
+      <DependentUpon>LCBatchSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\LCBatchUpdate.aspx.cs">
+      <DependentUpon>LCBatchUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\LCBatchUpdate.aspx.designer.cs">
+      <DependentUpon>LCBatchUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\Manifest.aspx.cs">
+      <DependentUpon>Manifest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\Manifest.aspx.designer.cs">
+      <DependentUpon>Manifest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\ShipmentDetail.aspx.cs">
+      <DependentUpon>ShipmentDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\ShipmentDetail.aspx.designer.cs">
+      <DependentUpon>ShipmentDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\ShipmentSearch.aspx.cs">
+      <DependentUpon>ShipmentSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\ShipmentSearch.aspx.designer.cs">
+      <DependentUpon>ShipmentSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\ShipmentToDMS.aspx.cs">
+      <DependentUpon>ShipmentToDMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\ShipmentToDMS.aspx.designer.cs">
+      <DependentUpon>ShipmentToDMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\ShippingDataUpload.aspx.cs">
+      <DependentUpon>ShippingDataUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\ShippingDataUpload.aspx.designer.cs">
+      <DependentUpon>ShippingDataUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\ShippingDocumentControl.aspx.cs">
+      <DependentUpon>ShippingDocumentControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\ShippingDocumentControl.aspx.designer.cs">
+      <DependentUpon>ShippingDocumentControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\SplitShipmentDetail.aspx.cs">
+      <DependentUpon>SplitShipmentDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shipping\SplitShipmentDetail.aspx.designer.cs">
+      <DependentUpon>SplitShipmentDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclDMSAttachmentDataGrid.ascx.cs">
+      <DependentUpon>UclDMSAttachmentDataGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclDMSAttachmentDataGrid.ascx.designer.cs">
+      <DependentUpon>UclDMSAttachmentDataGrid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\PageReportTemplate.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\PageTemplate.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclAutoCompleteMultipleTextBox.ascx.cs">
+      <DependentUpon>UclAutoCompleteMultipleTextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclAutoCompleteMultipleTextBox.ascx.designer.cs">
+      <DependentUpon>UclAutoCompleteMultipleTextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclAutoCompleteTextBox.ascx.cs">
+      <DependentUpon>UclAutoCompleteTextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclAutoCompleteTextBox.ascx.designer.cs">
+      <DependentUpon>UclAutoCompleteTextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclCountryLocation.ascx.cs">
+      <DependentUpon>UclCountryLocation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclCountryLocation.ascx.designer.cs">
+      <DependentUpon>UclCountryLocation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclDepartmentStaff.ascx.cs">
+      <DependentUpon>UclDepartmentStaff.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclDepartmentStaff.ascx.designer.cs">
+      <DependentUpon>UclDepartmentStaff.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclModuleMenu.ascx.cs">
+      <DependentUpon>UclModuleMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclModuleMenu.ascx.designer.cs">
+      <DependentUpon>UclModuleMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclMultipleSelection.ascx.cs">
+      <DependentUpon>UclMultipleSelection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclMultipleSelection.ascx.designer.cs">
+      <DependentUpon>UclMultipleSelection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclOfficeProductTeamSelection.ascx.cs">
+      <DependentUpon>UclOfficeProductTeamSelection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclOfficeProductTeamSelection.ascx.designer.cs">
+      <DependentUpon>UclOfficeProductTeamSelection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclOfficeSelection.ascx.cs">
+      <DependentUpon>UclOfficeSelection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclOfficeSelection.ascx.designer.cs">
+      <DependentUpon>UclOfficeSelection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclProductTeamSelection.ascx.cs">
+      <DependentUpon>UclProductTeamSelection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclProductTeamSelection.ascx.designer.cs">
+      <DependentUpon>UclProductTeamSelection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclSortingOrder.ascx.cs">
+      <DependentUpon>UclSortingOrder.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclSortingOrder.ascx.designer.cs">
+      <DependentUpon>UclSortingOrder.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclSubHeader.ascx.cs">
+      <DependentUpon>UclSubHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclSubHeader.ascx.designer.cs">
+      <DependentUpon>UclSubHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclTestReportIconBar.ascx.cs">
+      <DependentUpon>UclTestReportIconBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclTestReportIconBar.ascx.designer.cs">
+      <DependentUpon>UclTestReportIconBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclYearMonth.ascx.cs">
+      <DependentUpon>UclYearMonth.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclYearMonth.ascx.designer.cs">
+      <DependentUpon>UclYearMonth.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\UclYearWeek.ascx.cs">
+      <DependentUpon>UclYearWeek.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\UclYearWeek.ascx.designer.cs">
+      <DependentUpon>UclYearWeek.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\APDS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\QAIS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="webservices\CacheManagement.asmx.cs">
+      <DependentUpon>CacheManagement.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webservices\CacheManagement.aspx.cs">
+      <DependentUpon>CacheManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webservices\CacheManagement.aspx.designer.cs">
+      <DependentUpon>CacheManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webservices\DataSynchronization.asmx.cs">
+      <DependentUpon>DataSynchronization.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webservices\ISAM_Service.asmx.cs">
+      <DependentUpon>ISAM_Service.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webservices\MapBIAClaim.asmx.cs">
+      <DependentUpon>MapBIAClaim.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webservices\Reporter.asmx.cs">
+      <DependentUpon>Reporter.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webservices\SmartSelectionAJAXWebService.asmx.cs">
+      <DependentUpon>SmartSelectionAJAXWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webservices\SmartSelectionWebServices.asmx.cs">
+      <DependentUpon>SmartSelectionWebServices.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="webservices\UclSmartSelection.ascx.cs">
+      <DependentUpon>UclSmartSelection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webservices\UclSmartSelection.ascx.designer.cs">
+      <DependentUpon>UclSmartSelection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="webservices\UclSmartSelectionAJAX.ascx.cs">
+      <DependentUpon>UclSmartSelectionAJAX.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webservices\UclSmartSelectionAJAX.ascx.designer.cs">
+      <DependentUpon>UclSmartSelectionAJAX.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="webservices\UKClaimService.asmx.cs">
+      <DependentUpon>UKClaimService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Content Include="account\AddContract.aspx" />
+    <Content Include="account\AdjustmentNoteSearchPopup.aspx" />
+    <Content Include="account\AdvancePaymentSearch.aspx" />
+    <Content Include="account\AdvPaymentInstalment.aspx" />
+    <Content Include="account\AdvPaymentInstalmentInterestCharges.aspx" />
+    <Content Include="account\ARnAPIndex.aspx" />
+    <Content Include="account\ARShipmentReg.aspx" />
+    <Content Include="account\BankReconciliation.aspx" />
+    <Content Include="account\ARAdjustment.aspx" />
+    <Content Include="account\AdjustmentNoteSearch.aspx" />
+    <Content Include="account\APAdjustment.aspx" />
+    <Content Include="account\ConverterForTally.aspx" />
+    <Content Include="account\DebitNoteVoid.aspx" />
+    <Content Include="account\EditFabric.aspx" />
+    <Content Include="account\GenLogoXMLFile.aspx" />
+    <Content Include="account\GenLogoXMLFilePopup.aspx" />
+    <Content Include="account\ILSDiffDCNote.aspx" />
+    <Content Include="account\InstalmentAttachmentList.aspx" />
+    <Content Include="account\NSLedSalesData.aspx" />
+    <Content Include="account\OtherChargesDebitNote.aspx" />
+    <Content Include="account\SendThirdPartyCustomerDNToUK.aspx" />
+    <Content Include="account\StudioSampleDebitNote.aspx" />
+    <Content Include="account\UploadInstalmentDoc.aspx" />
+    <Content Include="account\UploadNSLedSales.aspx" />
+    <Content Include="account\UTDebitNote.aspx" />
+    <Content Include="account\ViewAdvancePaymentLog.aspx" />
+    <Content Include="admin\MonthEndAdmin.aspx" />
+    <Content Include="api\CheckExistInISAM.aspx" />
+    <Content Include="api\GetDummy.aspx" />
+    <Content Include="api\GetCustomer.aspx" />
+    <Content Include="api\GetShipmentInfo.aspx" />
+    <Content Include="bin\isam.nontrade.sql.all.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="claim\DNAttachmentList.aspx" />
+    <Content Include="claim\MFRNBatchUpload.aspx" />
+    <Content Include="claim\NextClaimUpload.aspx" />
+    <Content Include="claim\UKDiscountClaimAttachmentList.aspx" />
+    <Content Include="claim\UKDiscountClaimEdit.aspx" />
+    <Content Include="claim\UKDiscountClaimRefundEdit.aspx" />
+    <Content Include="claim\UKDiscountClaimSearch.aspx" />
+    <Content Include="claim\UKDiscountUploadDoc.aspx" />
+    <Content Include="claim\ViewDiscountLog.aspx" />
+    <Content Include="claim\webservice.htc" />
+    <Content Include="common\AJAXSmartControlStyle.css" />
+    <Content Include="common\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="common\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="common\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="common\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="common\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="common\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="common\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="common\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="common\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="common\images\ui-icons_222222_256x240.png" />
+    <Content Include="common\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="common\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="common\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="common\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="common\jquery-ui.css" />
+    <Content Include="common\jquery-ui.js" />
+    <Content Include="common\pnotify.custom.min.css" />
+    <Content Include="common\pnotify.custom.min.js" />
+    <Content Include="common\ProgressBarX.htm" />
+    <Content Include="common\PromptInput.aspx" />
+    <Content Include="dms\Attachment.aspx" />
+    <Content Include="claim\ClaimRequestAttachmentList.aspx" />
+    <Content Include="claim\COOApproval.aspx" />
+    <Content Include="claim\UKClaimReviewList.aspx" />
+    <Content Include="claim\UKClaimApproval.aspx" />
+    <Content Include="claim\RechargeSupplierDCNote.aspx" />
+    <Content Include="claim\AttachmentList.aspx" />
+    <Content Include="claim\UKClaimEdit.aspx" />
+    <Content Include="claim\UKClaimRefundEdit.aspx" />
+    <Content Include="claim\UKClaimReview.aspx" />
+    <Content Include="claim\UKClaimSearch.aspx" />
+    <Content Include="account\PaymentMaintenance.aspx" />
+    <Content Include="account\SunInterfaceBatch.aspx" />
+    <Content Include="account\GetRejectReason.aspx" />
+    <Content Include="account\HoldPaymentSupplier.aspx" />
+    <Content Include="account\InvoiceStatusEnquiry.aspx" />
+    <Content Include="account\MockShopSampleDebitNote.aspx" />
+    <Content Include="account\ReplacementInvoiceEnquiry.aspx" />
+    <Content Include="account\PaymentUpdate.aspx" />
+    <Content Include="account\CreateInvBatch.aspx" />
+    <Content Include="account\DCNoteDiscrepancy.aspx" />
+    <Content Include="account\DCNoteIndex.aspx" />
+    <Content Include="account\ePaymentAdvice.aspx" />
+    <Content Include="account\GenSunAccountInterfaceFile.aspx" />
+    <Content Include="account\PaymentFileConversion.aspx" />
+    <Content Include="account\QADebitNote.aspx" />
+    <Content Include="account\AttachmentList.aspx" />
+    <Content Include="account\SuppInvReg.aspx" />
+    <Content Include="admin\Administration.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="admin\BeanContainerManagement.aspx" />
+    <Content Include="admin\CacheManager.aspx" />
+    <Content Include="admin\ClearMenu.aspx" />
+    <Content Include="App_Themes\DefaultTheme\DefaultStyle.css" />
+    <Content Include="bin\isam.carbonfootprint.sql.all.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\budgeting.sql.all.config" />
+    <None Include="account\LC SETTLEMENT UPLOAD FILE.csv" />
+    <None Include="account\Logo_Tiger_XML_interface_generation_User_Guide.docx" />
+    <None Include="account\OTHER CHARGES DNCN UPLOAD FILE.xlsx" />
+    <None Include="account\PaymentStatusEnquiry.xlsx" />
+    <None Include="account\PaymentStatusEnquiryEpicorList.xlsx" />
+    <None Include="account\Settlement - Simplified Template.csv" />
+    <None Include="bin\dataaccess.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="claim\UploadDoc.aspx" />
+    <Content Include="claim\ViewLog.aspx" />
+    <Content Include="common\common.js" />
+    <Content Include="common\DMSProgressBar.htm" />
+    <Content Include="common\jquery-1.7.min.js" />
+    <Content Include="common\Revamp.js" />
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="common\ProgressBar.htm" />
+    <Content Include="common\SmartCalendar.aspx" />
+    <Content Include="common\SmartCalendarRange.aspx" />
+    <Content Include="common\UclLoginOffice.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="Default.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="bin\epicor.account.sql.all.config" />
+    <Content Include="bin\nsled.rangeplan.sql.all.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\qais.claim.sql.all.config" />
+    <Content Include="bin\isam.common.sql.all.config" />
+    <None Include="Global.asax">
+      <SubType>Component</SubType>
+    </None>
+    <Content Include="help\Help.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="images\banneretext_labtestreport.gif" />
+    <Content Include="images\bannertext_accreports.gif" />
+    <Content Include="images\bannertext_commercial.gif" />
+    <Content Include="images\bannertext_labtestreport.gif" />
+    <Content Include="images\bannertext_settings.gif" />
+    <Content Include="images\bannertext_statisticreports.gif" />
+    <Content Include="images\banner_Accounts.gif" />
+    <Content Include="images\banner_accounts_receipt_settlement.gif" />
+    <Content Include="images\banner_account_ap_adj.gif" />
+    <Content Include="images\banner_account_ar_adj.gif" />
+    <Content Include="images\banner_account_mockshopdebitnote.gif" />
+    <Content Include="images\banner_account_replace_invoice.gif" />
+    <Content Include="images\banner_account_sun.gif" />
+    <Content Include="images\banner_admin.gif" />
+    <Content Include="images\banner_alltestreports.gif" />
+    <Content Include="images\banner_commercial.gif" />
+    <Content Include="images\banner_debitnotes.gif" />
+    <Content Include="images\banner_elis.gif" />
+    <Content Include="images\banner_footer.gif" />
+    <Content Include="images\banner_help.gif" />
+    <Content Include="images\banner_isam.bmp" />
+    <Content Include="images\banner_isam.GIF" />
+    <Content Include="images\banner_isam3.GIF" />
+    <Content Include="images\banner_isam_final.gif" />
+    <Content Include="images\banner_isam_final.JPG" />
+    <Content Include="images\banner_label.gif" />
+    <Content Include="images\banner_labtestreport.gif" />
+    <Content Include="images\banner_logo.gif" />
+    <Content Include="images\banner_logo2.gif" />
+    <Content Include="images\banner_merchandising.gif" />
+    <Content Include="images\banner_MyWorkplace.gif" />
+    <Content Include="images\banner_next_logo.GIF" />
+    <Content Include="images\banner_next_logo_isam.gif" />
+    <Content Include="images\banner_nss.gif" />
+    <Content Include="images\banner_page.gif" />
+    <Content Include="images\banner_PersonalSettings.gif" />
+    <Content Include="images\banner_report.gif" />
+    <Content Include="images\banner_reports_accrual_archive.gif" />
+    <Content Include="images\banner_reports_actual_sales_summary.gif" />
+    <Content Include="images\banner_reports_ar_ap_forecast.gif" />
+    <Content Include="images\banner_reports_customer_receipt.gif" />
+    <Content Include="images\banner_reports_ezibuy_shipment_forecast.gif" />
+    <Content Include="images\banner_reports_invoice_list.gif" />
+    <Content Include="images\banner_reports_outstanding_booking.gif" />
+    <Content Include="images\banner_reports_outstanding_payable_rpt.gif" />
+    <Content Include="images\banner_reports_outstanding_receivable_rpt.gif" />
+    <Content Include="images\banner_reports_sales_actual_accrual.gif" />
+    <Content Include="images\banner_reports_shipment_forecast.gif" />
+    <Content Include="images\banner_reports_ship_comm_stmt.gif" />
+    <Content Include="images\banner_reports_ship_comm_stmt_ms.gif" />
+    <Content Include="images\banner_reports_supplier_payment.gif" />
+    <Content Include="images\banner_reports_weekly_shipment.gif" />
+    <Content Include="images\banner_search.gif" />
+    <Content Include="images\banner_settings.gif" />
+    <Content Include="images\banner_shipping.gif" />
+    <Content Include="images\banner_shipping_lc.gif" />
+    <Content Include="images\banner_shipping_lc_maint.gif" />
+    <Content Include="images\banner_shipping_lc_mer.gif" />
+    <Content Include="images\banner_shipping_manifest.gif" />
+    <Content Include="images\banner_shipping_search.gif" />
+    <Content Include="images\banner_statisticreports.gif" />
+    <Content Include="images\banner_testreports.gif" />
+    <Content Include="images\banner_testreportstatus.gif" />
+    <Content Include="images\banner_testreports_header.gif" />
+    <Content Include="images\banner_testreports_long.gif" />
+    <Content Include="images\banner_testresults.gif" />
+    <Content Include="images\banner_workplace.gif" />
+    <Content Include="images\banner_workplace_alert.gif" />
+    <Content Include="images\bg_testform1.gif" />
+    <Content Include="images\bg_testform2.gif" />
+    <Content Include="images\btn_bg.jpg" />
+    <Content Include="images\btn_bg_more_en.gif" />
+    <Content Include="images\btn_bg_onmouse.jpg" />
+    <Content Include="images\btn_cancel.gif" />
+    <Content Include="images\btn_close.gif" />
+    <Content Include="images\btn_closewindow.gif" />
+    <Content Include="images\btn_copy.gif" />
+    <Content Include="images\btn_delete.gif" />
+    <Content Include="images\btn_exit.gif" />
+    <Content Include="images\btn_get.gif" />
+    <Content Include="images\btn_go.gif" />
+    <Content Include="images\btn_inform.gif" />
+    <Content Include="images\btn_login.gif" />
+    <Content Include="images\btn_modify.gif" />
+    <Content Include="images\btn_mprint.gif" />
+    <Content Include="images\btn_preview.gif" />
+    <Content Include="images\btn_print.gif" />
+    <Content Include="images\btn_print.JPG" />
+    <Content Include="images\btn_save.gif" />
+    <Content Include="images\btn_search.gif" />
+    <Content Include="images\btn_search.jpg" />
+    <Content Include="images\btn_submit.gif" />
+    <Content Include="images\btn_t_bg.gif" />
+    <Content Include="images\btn_t_bg.jpg" />
+    <Content Include="images\btn_view.gif" />
+    <Content Include="images\btn_view.JPG" />
+    <Content Include="images\calculator.png" />
+    <Content Include="images\calendar.gif" />
+    <Content Include="images\cancel.PNG" />
+    <Content Include="images\close.PNG" />
+    <Content Include="images\collapse.jpg" />
+    <Content Include="images\Copy of banner_account_sun.gif" />
+    <Content Include="images\Copy of banner_isam.bmp" />
+    <Content Include="images\Copy of banner_isam_final.gif" />
+    <Content Include="images\Copy of banner_isam_final.JPG" />
+    <Content Include="images\Copy of banner_next_logo.GIF" />
+    <Content Include="images\Copy of banner_shipping_lc.gif" />
+    <Content Include="images\Copy of banner_shipping_lc_maint.gif" />
+    <Content Include="images\Copy of banner_shipping_lc_mer.gif" />
+    <Content Include="images\Copy of banner_shipping_search.gif" />
+    <Content Include="images\Copy of banner_workplace_alert.gif" />
+    <Content Include="images\Copy of icon_unlink.gif" />
+    <Content Include="images\copy.PNG" />
+    <Content Include="images\disabled_btn.jpg" />
+    <Content Include="images\disabled_btn_100.jpg" />
+    <Content Include="images\disabled_btn_120.jpg" />
+    <Content Include="images\disabled_btn_20.jpg" />
+    <Content Include="images\disabled_btn_200.jpg" />
+    <Content Include="images\disabled_btn_40.jpg" />
+    <Content Include="images\disabled_btn_80.jpg" />
+    <Content Include="images\disBg.jpg" />
+    <Content Include="images\dms_document.gif" />
+    <Content Include="images\elis_search_01.gif" />
+    <Content Include="images\elis_search_02.gif" />
+    <Content Include="images\elis_search_03.gif" />
+    <Content Include="images\elis_search_04.gif" />
+    <Content Include="images\elis_search_05.gif" />
+    <Content Include="images\email.gif" />
+    <Content Include="images\eraser.bmp" />
+    <Content Include="images\Excel.jpg" />
+    <Content Include="images\expand.jpg" />
+    <Content Include="images\frame.jpg" />
+    <Content Include="images\help.bmp" />
+    <Content Include="images\help.JPG" />
+    <Content Include="images\icon1.gif" />
+    <Content Include="images\icon10.gif" />
+    <Content Include="images\icon11.gif" />
+    <Content Include="images\icon12.gif" />
+    <Content Include="images\icon13.gif" />
+    <Content Include="images\icon14.gif" />
+    <Content Include="images\icon15.gif" />
+    <Content Include="images\icon16.gif" />
+    <Content Include="images\icon17.gif" />
+    <Content Include="images\icon18.gif" />
+    <Content Include="images\icon19.gif" />
+    <Content Include="images\icon2.gif" />
+    <Content Include="images\icon3.gif" />
+    <Content Include="images\icon4.gif" />
+    <Content Include="images\icon5.gif" />
+    <Content Include="images\icon6.gif" />
+    <Content Include="images\icon7.gif" />
+    <Content Include="images\icon8.gif" />
+    <Content Include="images\icon9.gif" />
+    <Content Include="images\icon_add.gif" />
+    <Content Include="images\icon_air.gif" />
+    <Content Include="images\icon_Air.png" />
+    <Content Include="images\icon_Air_Purple.gif" />
+    <Content Include="images\icon_Air_Red.gif" />
+    <Content Include="images\icon_calendar.gif" />
+    <Content Include="images\icon_clear.gif" />
+    <Content Include="images\icon_coins.gif" />
+    <Content Include="images\icon_commerciallabmethod.gif" />
+    <Content Include="images\icon_copy.gif" />
+    <Content Include="images\Icon_Copy_16.jpg" />
+    <Content Include="images\icon_delete.gif" />
+    <Content Include="images\icon_deleterequest.gif" />
+    <Content Include="images\icon_deselectall.jpg" />
+    <Content Include="images\icon_diminish.gif" />
+    <Content Include="images\icon_discountorder.gif" />
+    <Content Include="images\icon_DiscountOrder.PNG" />
+    <Content Include="images\icon_dualsourcing.gif" />
+    <Content Include="images\icon_DualSourcing.PNG" />
+    <Content Include="images\icon_edit.gif" />
+    <Content Include="images\icon_email.gif" />
+    <Content Include="images\Icon_Excel.jpg" />
+    <Content Include="images\icon_external.gif" />
+    <Content Include="images\icon_external_big.gif" />
+    <Content Include="images\icon_Fail.png" />
+    <Content Include="images\icon_Fail_orange.png" />
+    <Content Include="images\icon_Fail_red.png" />
+    <Content Include="images\icon_hk.gif" />
+    <Content Include="images\icon_important.gif" />
+    <Content Include="images\icon_inform.gif" />
+    <Content Include="images\icon_LC.gif" />
+    <Content Include="images\icon_ldp.gif" />
+    <Content Include="images\icon_LDP.png" />
+    <Content Include="images\icon_mockshop.gif" />
+    <Content Include="images\icon_MockShop.PNG" />
+    <Content Include="images\icon_move.jpg" />
+    <Content Include="images\icon_new.gif" />
+    <Content Include="images\icon_newexternalresult.gif" />
+    <Content Include="images\icon_newqr.gif" />
+    <Content Include="images\icon_newrequest.gif" />
+    <Content Include="images\icon_oprfabricorder.gif" />
+    <Content Include="images\icon_OPRFabricOrder.PNG" />
+    <Content Include="images\icon_oversea.gif" />
+    <Content Include="images\icon_Pass.png" />
+    <Content Include="images\icon_Pass_orange.png" />
+    <Content Include="images\Icon_Paste_16.jpg" />
+    <Content Include="images\icon_presssample.gif" />
+    <Content Include="images\icon_PressSample.PNG" />
+    <Content Include="images\icon_qccharge.gif" />
+    <Content Include="images\icon_QCCharge.png" />
+    <Content Include="images\icon_QCCInspection.png" />
+    <Content Include="images\icon_refresh.gif" />
+    <Content Include="images\icon_releaselock.gif" />
+    <Content Include="images\icon_ReleaseLock.PNG" />
+    <Content Include="images\icon_remove.gif" />
+    <Content Include="images\icon_ReprocessGoods.gif" />
+    <Content Include="images\icon_retest.gif" />
+    <Content Include="images\icon_samplereceived.gif" />
+    <Content Include="images\icon_selectall.jpg" />
+    <Content Include="images\icon_sp.gif" />
+    <Content Include="images\icon_square.gif" />
+    <Content Include="images\icon_submit.gif" />
+    <Content Include="images\icon_szorder.gif" />
+    <Content Include="images\icon_SZOrder.PNG" />
+    <Content Include="images\icon_s_add.gif" />
+    <Content Include="images\icon_s_copy.gif" />
+    <Content Include="images\icon_Test.png" />
+    <Content Include="images\icon_text.gif" />
+    <Content Include="images\icon_tooltips.gif" />
+    <Content Include="images\icon_unlink.gif" />
+    <Content Include="images\icon_uturn.gif" />
+    <Content Include="images\icon_UTurn.PNG" />
+    <Content Include="images\icon_yes.gif" />
+    <Content Include="images\ico_pdf.gif" />
+    <Content Include="images\indexbtn2.jpg" />
+    <Content Include="images\indexbtn2b.jpg" />
+    <Content Include="images\indexbtn2b_left.jpg" />
+    <Content Include="images\indexbtn2b_middle.jpg" />
+    <Content Include="images\indexbtn2b_right.jpg" />
+    <Content Include="images\indexbtn2_bottom.jpg" />
+    <Content Include="images\indexbtn2_left.jpg" />
+    <Content Include="images\indexbtn2_middle.jpg" />
+    <Content Include="images\indexbtn2_right.jpg" />
+    <Content Include="images\item_bg.jpg" />
+    <Content Include="images\item_bg_x2.jpg" />
+    <Content Include="images\item_bg_x3.jpg" />
+    <Content Include="images\item_bg_x4.jpg" />
+    <Content Include="images\left_bg.jpg" />
+    <Content Include="images\line_greyblue.gif" />
+    <Content Include="images\lms_login1.jpg" />
+    <Content Include="images\lms_login_office.jpg" />
+    <Content Include="images\lms_login_r1_c1.jpg" />
+    <Content Include="images\lms_login_r2_c1.jpg" />
+    <Content Include="images\lms_login_r2_c2.jpg" />
+    <Content Include="images\lms_login_r2_c3.jpg" />
+    <Content Include="images\lms_login_r2_c4.jpg" />
+    <Content Include="images\lms_login_r2_c5.jpg" />
+    <Content Include="images\load_spin.gif" />
+    <Content Include="images\Login\01.jpg" />
+    <Content Include="images\Login\02.jpg" />
+    <Content Include="images\Login\03.jpg" />
+    <Content Include="images\Login\04.jpg" />
+    <Content Include="images\Login\05.jpg" />
+    <Content Include="images\Login\06.jpg" />
+    <Content Include="images\Login\07.jpg" />
+    <Content Include="images\Login\btn_login.jpg" />
+    <Content Include="images\Login\btn_login_b.jpg" />
+    <Content Include="images\Login\company.jpg" />
+    <Content Include="images\Login\left.jpg" />
+    <Content Include="images\Login\next.jpg" />
+    <Content Include="images\Login\our_mission.gif" />
+    <Content Include="images\Login\pt.gif" />
+    <Content Include="images\Login\right.jpg" />
+    <Content Include="images\Login\top.jpg" />
+    <Content Include="images\Login\top3.jpg" />
+    <Content Include="images\Login\top3a.jpg" />
+    <Content Include="images\Login\top3b.jpg" />
+    <Content Include="images\Login\top3c.jpg" />
+    <Content Include="images\login_01_2_final.jpg" />
+    <Content Include="images\login_01_3.jpg" />
+    <Content Include="images\login_02.jpg" />
+    <Content Include="images\Login_03.jpg" />
+    <Content Include="images\logo.gif" />
+    <Content Include="images\logo_next.gif" />
+    <Content Include="images\menu_accounts.GIF" />
+    <Content Include="images\menu_accreports.gif" />
+    <Content Include="images\menu_admin.gif" />
+    <Content Include="images\menu_adminbox.gif" />
+    <Content Include="images\menu_adminbox_01.gif" />
+    <Content Include="images\menu_adminbox_02.gif" />
+    <Content Include="images\menu_adminbox_03.gif" />
+    <Content Include="images\menu_adminbox_04.gif" />
+    <Content Include="images\menu_adminbox_05.gif" />
+    <Content Include="images\menu_alltestreports.gif" />
+    <Content Include="images\menu_bg.gif" />
+    <Content Include="images\menu_debitnotes.gif" />
+    <Content Include="images\menu_ext.gif" />
+    <Content Include="images\menu_externaltestorder.gif" />
+    <Content Include="images\menu_historicaltestresult.gif" />
+    <Content Include="images\menu_label.gif" />
+    <Content Include="images\menu_labelbox.gif" />
+    <Content Include="images\menu_labelbox_01.gif" />
+    <Content Include="images\menu_labelbox_02.gif" />
+    <Content Include="images\menu_labelbox_03.gif" />
+    <Content Include="images\menu_labelbox_04.gif" />
+    <Content Include="images\menu_labelbox_05.gif" />
+    <Content Include="images\menu_labtestreport.gif" />
+    <Content Include="images\menu_labtestreportstatus.gif" />
+    <Content Include="images\menu_labtestrequest.gif" />
+    <Content Include="images\menu_newtestresult.gif" />
+    <Content Include="images\menu_reports.GIF" />
+    <Content Include="images\menu_settings.gif" />
+    <Content Include="images\menu_shipping.GIF" />
+    <Content Include="images\menu_statisticreports.gif" />
+    <Content Include="images\menu_supplier.gif" />
+    <Content Include="images\menu_testreports.gif" />
+    <Content Include="images\menu_testreportsbox.gif" />
+    <Content Include="images\menu_testreportstatus.gif" />
+    <Content Include="images\menu_testreportstatusbox.gif" />
+    <Content Include="images\menu_testreportstatusbox_01.gif" />
+    <Content Include="images\menu_testreportstatusbox_02.gif" />
+    <Content Include="images\menu_testreportstatusbox_03.gif" />
+    <Content Include="images\menu_testreportstatusbox_04.gif" />
+    <Content Include="images\menu_testreportstatusbox_05.gif" />
+    <Content Include="images\menu_testrequestbox_01.gif" />
+    <Content Include="images\menu_testrequestbox_02.gif" />
+    <Content Include="images\menu_testrequestbox_03.gif" />
+    <Content Include="images\menu_testrequestbox_04.gif" />
+    <Content Include="images\menu_testrequestbox_05.gif" />
+    <Content Include="images\menu_workplace.gif" />
+    <Content Include="images\menu_workplacebox.gif" />
+    <Content Include="images\moreinfo.JPG" />
+    <Content Include="images\navigation.gif" />
+    <Content Include="images\next_logo.gif" />
+    <Content Include="images\noframe.jpg" />
+    <Content Include="images\pdf.gif" />
+    <Content Include="images\pt3.gif" />
+    <Content Include="images\Report_AccountsReceivePayForecast.jpg" />
+    <Content Include="images\Report_ActiveSupplier.jpg" />
+    <Content Include="images\Report_ActualSalesSummary.jpg" />
+    <Content Include="images\Report_AdvancePaymentReport.PNG" />
+    <Content Include="images\Report_AF.png" />
+    <Content Include="images\Report_CustomerReceipt.jpg" />
+    <Content Include="images\Report_EpicorInterfaceLogReport.jpg" />
+    <Content Include="images\Report_InvoiceList.jpg" />
+    <Content Include="images\Report_LCAppControl.jpg" />
+    <Content Include="images\Report_LCAppSummary.jpg" />
+    <Content Include="images\Report_LCShipmentAmendment.jpg" />
+    <Content Include="images\Report_LCStatus.jpg" />
+    <Content Include="images\Report_MFRNQtyAnalysisReport.jpg" />
+    <Content Include="images\Report_MonthEndSummary.jpg" />
+    <Content Include="images\Report_NslSzOrder.jpg" />
+    <Content Include="images\Report_OtherCostSummary.jpg" />
+    <Content Include="images\Report_OutstandingBooking.jpg" />
+    <Content Include="images\report_OutstandingGBTestResultReport.jpg" />
+    <Content Include="images\Report_OutstandingLC.jpg" />
+    <Content Include="images\Report_OutstandingPayDocToAccount.jpg" />
+    <Content Include="images\Report_OutstandingTradePayable.jpg" />
+    <Content Include="images\Report_OutstandingTradeReceivable.jpg" />
+    <Content Include="images\Report_OutstandingUKClaim.jpg" />
+    <Content Include="images\Report_ReleaseLockSummary.jpg" />
+    <Content Include="images\Report_SalesAccrualArchive.jpg" />
+    <Content Include="images\Report_SalesActualAccrual.jpg" />
+    <Content Include="images\Report_ShipmentCommission.jpg" />
+    <Content Include="images\Report_ShipmentCommissionChoice.jpg" />
+    <Content Include="images\Report_ShipmentCommissionMockShop.jpg" />
+    <Content Include="images\Report_ShipmentForecast.jpg" />
+    <Content Include="images\Report_ShipmentFOrecastEzibuy.jpg" />
+    <Content Include="images\Report_StwDateDiscrepancy.jpg" />
+    <Content Include="images\Report_SunInterfaceLogReport.jpg" />
+    <Content Include="images\Report_SupplierOrderStatus.jpg" />
+    <Content Include="images\Report_SupplierPayment.jpg" />
+    <Content Include="images\Report_SupplierPayment_33.jpg" />
+    <Content Include="images\Report_SupplierPayment_50.jpg" />
+    <Content Include="images\Report_UKClaimAuditLog.jpg" />
+    <Content Include="images\Report_UKClaimPhasingByOffice.jpg" />
+    <Content Include="images\Report_UKClaimPhasingByProduct.jpg" />
+    <Content Include="images\Report_UKClaimPhasingByReason.jpg" />
+    <Content Include="images\Report_UKClaimPhasingBySupplier.jpg" />
+    <Content Include="images\Report_UKClaimSummary.jpg" />
+    <Content Include="images\Report_UTDiscrepancy.png" />
+    <Content Include="images\Report_WeeklyShipment.jpg" />
+    <Content Include="images\ruler_blue.gif" />
+    <Content Include="images\ruler_green.gif" />
+    <Content Include="images\ruler_orange.gif" />
+    <Content Include="images\ruler_yellow.gif" />
+    <Content Include="images\save.PNG" />
+    <Content Include="images\search_1.jpg" />
+    <Content Include="images\search_2.jpg" />
+    <Content Include="images\search_3.jpg" />
+    <Content Include="images\send_btn.jpg" />
+    <Content Include="images\send_btn_100.jpg" />
+    <Content Include="images\send_btn_120.jpg" />
+    <Content Include="images\send_btn_15.jpg" />
+    <Content Include="images\send_btn_150.jpg" />
+    <Content Include="images\send_btn_20.jpg" />
+    <Content Include="images\send_btn_200.jpg" />
+    <Content Include="images\send_btn_80.jpg" />
+    <Content Include="images\shim.gif" />
+    <Content Include="images\space_menu.gif" />
+    <Content Include="images\space_navigation.gif" />
+    <Content Include="images\summy.jpg" />
+    <Content Include="images\summy_reverse.jpg" />
+    <Content Include="images\tab_approval.gif" />
+    <Content Include="images\tab_approval_over.gif" />
+    <Content Include="images\tab_banner.gif" />
+    <Content Include="images\tab_bottombanner.gif" />
+    <Content Include="images\tab_createtestresult.gif" />
+    <Content Include="images\tab_createtestresult_over.gif" />
+    <Content Include="images\tab_deleted.gif" />
+    <Content Include="images\tab_deleted_over.gif" />
+    <Content Include="images\tab_draft.gif" />
+    <Content Include="images\tab_draft_over.gif" />
+    <Content Include="images\tab_general.gif" />
+    <Content Include="images\tab_general_over.gif" />
+    <Content Include="images\tab_history.gif" />
+    <Content Include="images\tab_history_over.gif" />
+    <Content Include="images\tab_info.gif" />
+    <Content Include="images\tab_info_over.gif" />
+    <Content Include="images\tab_labtestcomment.gif" />
+    <Content Include="images\tab_labtestcomment_over.gif" />
+    <Content Include="images\tab_others.gif" />
+    <Content Include="images\tab_others_over.gif" />
+    <Content Include="images\tab_result.gif" />
+    <Content Include="images\tab_result_over.gif" />
+    <Content Include="images\tab_retested.gif" />
+    <Content Include="images\tab_retested_over.gif" />
+    <Content Include="images\tab_settled.gif" />
+    <Content Include="images\tab_settled_over.gif" />
+    <Content Include="images\tab_status.gif" />
+    <Content Include="images\tab_status_over.gif" />
+    <Content Include="images\tab_submitted.gif" />
+    <Content Include="images\tab_submitted_over.gif" />
+    <Content Include="images\tab_testhistory.gif" />
+    <Content Include="images\tab_testhistory_over.gif" />
+    <Content Include="images\tab_testreport.gif" />
+    <Content Include="images\tab_testreport_over.gif" />
+    <Content Include="images\tab_testresultform.gif" />
+    <Content Include="images\tab_testresultform_over.gif" />
+    <Content Include="images\tab_wip.gif" />
+    <Content Include="images\tab_wip_over.gif" />
+    <Content Include="images\top2_bg.jpg" />
+    <Content Include="images\top_bg.jpg" />
+    <Content Include="images\tt_3.jpg" />
+    <Content Include="images\t_2_bg.jpg" />
+    <Content Include="images\t_bg.jpg" />
+    <Content Include="images\Upload2.jpg" />
+    <Content Include="images\view1.jpg" />
+    <Content Include="includes\autoCompleteBox.js" />
+    <Content Include="includes\banner.aspx" />
+    <Content Include="includes\bottom.aspx" />
+    <Content Include="includes\bottomNoMenu.aspx" />
+    <Content Include="includes\btn_close.gif" />
+    <Content Include="includes\common.js" />
+    <Content Include="includes\elabCommon.js" />
+    <Content Include="includes\externalCommon.js" />
+    <Content Include="includes\global.css" />
+    <Content Include="includes\jquery-1.7.2.min.js" />
+    <Content Include="includes\jquery-ui-1.8.22.custom.css" />
+    <Content Include="includes\jquery-ui-1.8.22.custom.min.js" />
+    <Content Include="includes\keylauncher.js" />
+    <Content Include="includes\LoginStyle.css" />
+    <Content Include="includes\logo.aspx" />
+    <Content Include="includes\overlib.js" />
+    <Content Include="includes\overlib_mini.js" />
+    <Content Include="includes\popBox1.3.0.css" />
+    <Content Include="includes\popBox1.3.0.js" />
+    <Content Include="includes\popBox1.3.0.min.js" />
+    <Content Include="includes\RevampStyle.css" />
+    <Content Include="includes\stylesheet.css" />
+    <Content Include="includes\top.aspx" />
+    <Content Include="includes\topNoMenu.aspx" />
+    <Content Include="includes\top_ext.aspx" />
+    <Content Include="includes\validation.js" />
+    <Content Include="main\ErrorPage.aspx" />
+    <Content Include="main\Excel.xsl" />
+    <Content Include="main\ExcelSample.aspx" />
+    <Content Include="main\Login.aspx" />
+    <Content Include="main\Logout.aspx" />
+    <Content Include="main\Main.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="main\SearchResult.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="main\ToolBar.aspx" />
+    <Content Include="myapplication\DailyBookingUpload.txt" />
+    <Content Include="myapplication\LCBankMaint.aspx" />
+    <Content Include="myapplication\SystemMaintenance.aspx" />
+    <Content Include="nontrade\NTRoleEdit.aspx" />
+    <Content Include="nontrade\NTRoleList.aspx" />
+    <Content Include="nontrade\DebitNoteSearch.aspx" />
+    <Content Include="nontrade\AttachmentList.aspx" />
+    <Content Include="nontrade\NonTradeDebitNoteIndex.aspx" />
+    <Content Include="nontrade\GenSunAccountInterfaceFile.aspx" />
+    <Content Include="nontrade\NonTradeApproverMaintenance.aspx" />
+    <Content Include="nontrade\NonTradeExpenseSettlement.aspx" />
+    <Content Include="nontrade\NonTradeInvoice.aspx" />
+    <Content Include="nontrade\NonTradeMonthEndAdmin.aspx" />
+    <Content Include="nontrade\NonTradeRecharge.aspx" />
+    <Content Include="nontrade\NonTradeSearchEngine.aspx" />
+    <Content Include="nontrade\NonTradeVendor.aspx" />
+    <Content Include="nontrade\NonTradeVendorSearch.aspx" />
+    <Content Include="personal\ChangePassword.aspx" />
+    <Content Include="reporter\ActiveSupplierReport.aspx" />
+    <Content Include="reporter\ActualSalesSummary.aspx" />
+    <Content Include="reporter\AdvancePaymentReport.aspx" />
+    <Content Include="reporter\ClaimListReport.aspx" />
+    <Content Include="reporter\CarbonFootprintReport.aspx" />
+    <Content Include="reporter\NSLedSalesInfoReport_Finance.aspx" />
+    <Content Include="reporter\NSLedSalesInfoReport_Finance_20210826.aspx" />
+    <Content Include="reporter\NSLedSalesInfoReport_Finance_20210825.aspx" />
+    <Content Include="reporter\InvoiceListSummaryReport.aspx" />
+    <Content Include="reporter\NSLedSalesInfoReport_FinanceAdj.aspx" />
+    <Content Include="reporter\NSLedSalesInfoReport_Finance_TBC.aspx" />
+    <Content Include="reporter\NSLedActualSalesSummaryReport.aspx" />
+    <Content Include="reporter\DiscountClaimListReport.aspx" />
+    <Content Include="reporter\EpicorInterfaceLogReport.aspx" />
+    <Content Include="reporter\FutureOrderSummaryBySupplierReport.aspx" />
+    <Content Include="reporter\LCShipmentAmendmentReport.aspx" />
+    <Content Include="reporter\LGHoldPaymentReport.aspx" />
+    <Content Include="reporter\MFRNQtyAnalysisReportPage.aspx" />
+    <Content Include="reporter\MFRNQtyAnalysisReport.aspx" />
+    <Content Include="reporter\NonTradeExpenseStatementList.aspx" />
+    <Content Include="reporter\NSLedProfitabilitiesReport.aspx" />
+    <Content Include="reporter\NSLedSalesInfoReport.aspx" />
+    <Content Include="reporter\NSLedSellThruHistory.aspx" />
+    <Content Include="reporter\OrdersForLCCancellationReport.aspx" />
+    <Content Include="reporter\OutstandingDiscountListReport.aspx" />
+    <Content Include="reporter\OutstandingDiscountListReportPage.aspx" />
+    <Content Include="reporter\OutstandingGBTestReport.aspx" />
+    <Content Include="reporter\POListByOfficeSupplierReport.aspx" />
+    <Content Include="reporter\ShipmentCommissionStudioSampleReport.aspx" />
+    <Content Include="reporter\TradingAFReport.aspx" />
+    <Content Include="reporter\UKClaimAuditLogReport.aspx" />
+    <Content Include="reporter\OutstandingClaimListReportPage.aspx" />
+    <Content Include="reporter\OutstandingClaimListReport.aspx" />
+    <Content Include="reporter\EziBuyPartialShipmentReport.aspx" />
+    <Content Include="reporter\CTSSTWReport.aspx" />
+    <Content Include="reporter\CustomerReceiptReport.aspx" />
+    <Content Include="reporter\LCApplicationSummaryReport.aspx" />
+    <Content Include="reporter\MonthEndSummaryReport.aspx" />
+    <Content Include="reporter\OtherCostSummaryReport.aspx" />
+    <Content Include="reporter\ReleaseLockSummary.aspx" />
+    <Content Include="reporter\SalesAccrualArchiveReport.aspx" />
+    <Content Include="reporter\InvoiceListReport.aspx" />
+    <Content Include="reporter\LCBatchControlReport.aspx" />
+    <Content Include="reporter\LCStatusReport.aspx" />
+    <Content Include="reporter\NSLSZOrderReport.aspx" />
+    <Content Include="reporter\OutstandingBookingReport.aspx" />
+    <Content Include="reporter\OutstandingLCReport.aspx" />
+    <Content Include="reporter\OutstandingPaymentReport.aspx" />
+    <Content Include="reporter\OutstandingTradePayableRpt.aspx" />
+    <Content Include="reporter\OutstandingTradeReceivableRpt.aspx" />
+    <Content Include="reporter\PartialShipmentReport.aspx" />
+    <Content Include="reporter\ReceivablePayableForecastReport.aspx" />
+    <Content Include="reporter\reports.aspx" />
+    <Content Include="reporter\ShipmentCommissionChoiceReport.aspx" />
+    <Content Include="reporter\ShipmentCommissionMockShopReport.aspx" />
+    <Content Include="reporter\ShipmentCommissionReport.aspx" />
+    <Content Include="reporter\STWDateDiscrepancyReport.aspx" />
+    <Content Include="reporter\SupplierOrderStatusReport.aspx" />
+    <Content Include="reporter\SupplierPaymentReport.aspx" />
+    <Content Include="reporter\UKClaimPhasingByProductTeamReport.aspx" />
+    <Content Include="reporter\UKClaimPhasingReport.aspx" />
+    <Content Include="reporter\UKClaimPhasingReportPage.aspx" />
+    <Content Include="reporter\UKClaimSummaryReport.aspx" />
+    <Content Include="reporter\UTSizePriceDiscrepancyReport.aspx" />
+    <Content Include="reporter\WeeklyShipmentReport.aspx" />
+    <Content Include="Shipping\Alert.aspx" />
+    <Content Include="Shipping\AttachmentList.aspx" />
+    <Content Include="Shipping\AWBDetail.aspx" />
+    <Content Include="Shipping\ExportLicenceCopy.aspx" />
+    <Content Include="Shipping\InvoiceForMultipleShipment.aspx" />
+    <Content Include="Shipping\InvoiceRemarkGenerator.aspx" />
+    <Content Include="Shipping\LCAdvancePayment.aspx" />
+    <Content Include="Shipping\LCAppRequest.aspx" />
+    <Content Include="Shipping\LCAppRequest_Ship.aspx" />
+    <Content Include="Shipping\LCBatchSearch.aspx" />
+    <Content Include="Shipping\LCBatchUpdate.aspx" />
+    <Content Include="Shipping\Manifest.aspx" />
+    <Content Include="Shipping\ShipmentDetail.aspx" />
+    <Content Include="Shipping\ShipmentSearch.aspx" />
+    <Content Include="Shipping\ShipmentToDMS.aspx" />
+    <Content Include="Shipping\ShippingDataUpload.aspx" />
+    <Content Include="Shipping\ShippingDocumentControl.aspx" />
+    <Content Include="Shipping\SplitShipmentDetail.aspx" />
+    <Content Include="usercontrol\UclDMSAttachmentDataGrid.ascx" />
+    <Content Include="usercontrol\UclAutoCompleteMultipleTextBox.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="usercontrol\UclAutoCompleteTextBox.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="usercontrol\UclCountryLocation.ascx" />
+    <Content Include="usercontrol\UclDepartmentStaff.ascx" />
+    <Content Include="usercontrol\UclModuleMenu.ascx" />
+    <Content Include="usercontrol\UclMultipleSelection.ascx" />
+    <Content Include="usercontrol\UclOfficeProductTeamSelection.ascx" />
+    <Content Include="usercontrol\UclOfficeSelection.ascx" />
+    <Content Include="usercontrol\UclProductTeamSelection.ascx" />
+    <Content Include="usercontrol\UclSortingOrder.ascx" />
+    <Content Include="usercontrol\UclSubHeader.ascx" />
+    <Content Include="usercontrol\UclTestReportIconBar.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="usercontrol\UclYearMonth.ascx" />
+    <Content Include="usercontrol\UclYearWeek.ascx" />
+    <Content Include="bin\isam.claim.sql.all.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="nontrade\ISAM-NonTradeExpenseUserTraining.pdf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report_template\AdvancePaymentMgtSummary - 20180926.xlsm" />
+    <None Include="report_template\AdvancePaymentMgtSummary - 20190828.xlsm" />
+    <None Include="report_template\AdvancePaymentMgtSummary.xlsm" />
+    <None Include="report_template\FutureOrderSummaryBySupplier.xlsm" />
+    <None Include="report_template\InvoiceList.xlsm" />
+    <None Include="report_template\InvoiceListSummary.xlsx" />
+    <None Include="report_template\LCAdvancePaymentSearchResult.xlsm" />
+    <None Include="report_template\LGHoldPaymentReport.xlsm" />
+    <None Include="report_template\NSLEDProfitabilities.xlsm" />
+    <None Include="report_template\NSLedSalesInfo.xlsm" />
+    <None Include="report_template\NSLedSellThru.xlsm" />
+    <None Include="report_template\NTSettlement.xlsm" />
+    <None Include="report_template\NTVendor - 20190828.xlsm" />
+    <None Include="report_template\NTVendor.xlsm" />
+    <None Include="report_template\OrdersForLCCancellationReport.xlsm" />
+    <None Include="report_template\POListByOfficeSupplier.xlsm" />
+    <None Include="report_template\TradingAirFreightReport.xlsm" />
+    <None Include="report_template\WeeklySales-New Format.xlsx" />
+    <None Include="report_template\WeeklySales.xlsx" />
+    <None Include="report_template\WeeklySalesDetail.xlsx" />
+    <None Include="report_template\WeeklySalesSlippedOrders.xlsx" />
+    <None Include="Web References\APDS\APDSService.wsdl" />
+    <None Include="Web References\APDS\ProcurementRequestDef.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\APDS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\QAIS\ClaimRequestDef.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\QAIS\ClaimRequestService.disco" />
+    <None Include="Web References\APDS\APDSService.disco" />
+    <Content Include="webservices\CacheManagement.asmx" />
+    <Content Include="webservices\CacheManagement.aspx">
+      <SubType>Form</SubType>
+    </Content>
+    <None Include="webservices\DataSynchronization.asmx" />
+    <Content Include="webservices\ISAM_Service.asmx" />
+    <Content Include="webservices\MapBIAClaim.asmx" />
+    <Content Include="webservices\Reporter.asmx" />
+    <Content Include="webservices\SmartSelectionAJAXWebService.asmx" />
+    <Content Include="webservices\SmartSelectionWebServices.asmx">
+      <SubType>Form</SubType>
+    </Content>
+    <Content Include="webservices\UclSmartSelection.ascx">
+      <SubType>UserControl</SubType>
+    </Content>
+    <Content Include="webservices\UclSmartSelection.js" />
+    <Content Include="webservices\UclSmartSelectionAJAX.ascx" />
+    <Content Include="webservices\UKClaimService.asmx" />
+    <Content Include="webservices\webservice.htc" />
+    <EmbeddedResource Include="admin\Administration.aspx.resx">
+      <DependentUpon>Administration.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\BeanContainerManagement.aspx.resx">
+      <DependentUpon>BeanContainerManagement.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\CacheManager.aspx.resx">
+      <DependentUpon>CacheManager.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\ClearMenu.aspx.resx">
+      <DependentUpon>ClearMenu.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="common\UclLoginOffice.ascx.resx">
+      <DependentUpon>UclLoginOffice.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Default.aspx.resx">
+      <DependentUpon>Default.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global.asax.resx">
+      <DependentUpon>Global.asax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="help\Help.aspx.resx">
+      <DependentUpon>Help.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\ErrorPage.aspx.resx">
+      <DependentUpon>ErrorPage.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\ExcelSample.aspx.resx">
+      <DependentUpon>ExcelSample.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\Login.aspx.resx">
+      <DependentUpon>Login.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\Logout.aspx.resx">
+      <DependentUpon>Logout.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\Main.aspx.resx">
+      <DependentUpon>Main.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\SearchResult.aspx.resx">
+      <DependentUpon>SearchResult.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\ToolBar.aspx.resx">
+      <DependentUpon>ToolBar.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="personal\ChangePassword.aspx.resx">
+      <DependentUpon>ChangePassword.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\UclAutoCompleteMultipleTextBox.ascx.resx">
+      <DependentUpon>UclAutoCompleteMultipleTextBox.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\UclAutoCompleteTextBox.ascx.resx">
+      <DependentUpon>UclAutoCompleteTextBox.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\UclCountryLocation.ascx.resx">
+      <DependentUpon>UclCountryLocation.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\UclDepartmentStaff.ascx.resx">
+      <DependentUpon>UclDepartmentStaff.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\UclModuleMenu.ascx.resx">
+      <DependentUpon>UclModuleMenu.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\UclSubHeader.ascx.resx">
+      <DependentUpon>UclSubHeader.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\UclTestReportIconBar.ascx.resx">
+      <DependentUpon>UclTestReportIconBar.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\UclYearMonth.ascx.resx">
+      <DependentUpon>UclYearMonth.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\UclYearWeek.ascx.resx">
+      <DependentUpon>UclYearWeek.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="webservices\CacheManagement.asmx.resx">
+      <DependentUpon>CacheManagement.asmx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="webservices\CacheManagement.aspx.resx">
+      <DependentUpon>CacheManagement.aspx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="webservices\SmartSelectionWebServices.asmx.resx">
+      <DependentUpon>SmartSelectionWebServices.asmx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="webservices\UclSmartSelection.ascx.resx">
+      <DependentUpon>UclSmartSelection.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="App_Themes\DefaultTheme\DefaultSkin.skin" />
+    <None Include="bin\appserver.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="bin\isam.account.sql.all.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\isam.ils.sql.all.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\isam.lc.sql.all.config" />
+    <Content Include="bin\isam.order.sql.all.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\isam.shipping.sql.all.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\isam.suninterface.sql.all.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="bin\mail.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="bin\next.common.sql.general.all.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\next.common.sql.general.security.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\next.common.sql.general.workflow.config" />
+    <Content Include="bin\next.common.sql.hris.config" />
+    <Content Include="bin\next.common.sql.industry.fabric.config" />
+    <Content Include="bin\next.common.sql.industry.lms.config" />
+    <Content Include="bin\next.common.sql.industry.vendor.config" />
+    <Content Include="bin\next.common.sql.lms.config" />
+    <Content Include="bin\next.common.sql.login.config" />
+    <Content Include="bin\next.common.sql.nss.account.config" />
+    <Content Include="bin\next.common.sql.nsssync.config" />
+    <Content Include="bin\next.scheduler.sql.industry.fis.config" />
+    <Content Include="bin\next.scheduler.sql.industry.vps.config" />
+    <Content Include="bin\qais.common.sql.all.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\sun.account.sql.all.config" />
+    <Content Include="bin\isam.alertnotification.sql.all.config" />
+    <Content Include="bin\next.common.sql.nss.config" />
+    <Content Include="MasterPage\MainMaster.Master" />
+    <None Include="Web References\QAIS\ClaimRequestService.wsdl" />
+    <None Include="Web References\QAIS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="webservices\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{CF845C55-C321-4742-B673-E6212D061ED9}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ns-s02/qais/webservices/ClaimRequestService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\QAIS\</RelPath>
+      <UpdateFromURL>http://ns-s02/qais/webservices/ClaimRequestService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>com_next_isam_webapp_QAIS_ClaimRequestService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ns-s15/apds/webservices/APDSService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\APDS\</RelPath>
+      <UpdateFromURL>http://ns-s15/apds/webservices/APDSService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>com_next_isam_webapp_APDS_APDSService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="commonlib\" />
+    <Folder Include="reporter\tmpReport\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53878</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/isam</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

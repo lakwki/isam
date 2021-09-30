@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{64E23520-967D-4FA6-BA64-5051622BA7AC}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>com.next.isam.appserver</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>com.next.isam.appserver</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>http://localhost/com.next.elab.appserver/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="com.next.common, Version=1.0.7922.17894, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NSCommon\common\bin\Debug\com.next.common.dll</HintPath>
+    </Reference>
+    <Reference Include="com.next.infra, Version=1.0.7775.29088, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NSCommon\common\bin\Debug\com.next.infra.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Interop.Shell32">
+      <HintPath>..\webapp\commonlib\Interop.Shell32.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices">
+      <HintPath>..\webapp\commonlib\Microsoft.Exchange.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\webapp\bin\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\dataserver\dataserver.csproj">
+      <Project>{0D5C4EAD-AE76-4257-94C0-313782201D87}</Project>
+      <Name>dataserver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\domain\domain.csproj">
+      <Name>domain</Name>
+      <Project>{316C3E10-5A1D-4F60-807D-CA23980060EE}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\reporter\reporter.csproj">
+      <Project>{90708247-4EAD-437B-B607-AC48B6EFED0F}</Project>
+      <Name>reporter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="account\AccountDataUploadManager.cs" />
+    <Compile Include="account\AccountManager.cs" />
+    <Compile Include="account\BankReconciliationManager.cs" />
+    <Compile Include="account\NonTradeManager.cs" />
+    <Compile Include="account\UKClaimManager.cs" />
+    <Compile Include="account\EBankingManager.cs" />
+    <Compile Include="account\PaymentAdviceManager.cs" />
+    <Compile Include="account\SunManager.cs" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="common\CommonManager.cs" />
+    <Compile Include="common\CarbonFootprintManager.cs" />
+    <Compile Include="common\FileUploadManager.cs" />
+    <Compile Include="helper\MailBoxHelper.cs" />
+    <Compile Include="helper\TableHelper.cs" />
+    <Compile Include="ils\ILSUploadManager.cs" />
+    <Compile Include="order\BookingUploadXMLManager.cs" />
+    <Compile Include="order\UKItemUploadManager.cs" />
+    <Compile Include="order\OrderManager.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Shipping\LCManager.cs" />
+    <Compile Include="Shipping\ShipmentManager.cs" />
+    <Compile Include="Shipping\ShippingDataUploadManager.cs" />
+    <Compile Include="startup\BankReconciliationHandler.cs" />
+    <Compile Include="startup\BlockRef3DocHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="startup\BlockRef5DocHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="startup\BlockRef6DocHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="startup\BlockRefDocHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="startup\BookingUploadXMLHandler.cs" />
+    <Compile Include="startup\CacheRenewalHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="startup\BIAClearanceHandler.cs" />
+    <Compile Include="startup\EpicorInterfaceUploadAlertHandler.cs" />
+    <Compile Include="startup\MonthEndAutomaticCutOffHandler.cs" />
+    <Compile Include="startup\NSSDiscrepancyMailHandler.cs" />
+    <Compile Include="startup\NTSunInterfaceProcessHandler.cs" />
+    <Compile Include="startup\DMSKeepAliveHandler.cs" />
+    <Compile Include="startup\DMSUploadRevisionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="startup\GenerateUKClaimDCNoteHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="startup\GenerateUKClaimDCNoteLiveHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="startup\NTExpenseHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="startup\NUKSalesCutOffHandler.cs" />
+    <Compile Include="startup\SendNSSWeeklyReportHandler.cs" />
+    <Compile Include="startup\UKDiscountClaimHandler.cs" />
+    <Compile Include="startup\SendUTForecastReportHandler.cs" />
+    <Compile Include="startup\UKClaimMappingHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="startup\PriceDiffAlertHandler.cs" />
+    <Compile Include="startup\UploadToDMSHandler.cs" />
+    <Compile Include="startup\DMSUploadNSInvoiceHandler.cs" />
+    <Compile Include="startup\MockShopSunAccountUploadHandler.cs" />
+    <Compile Include="startup\InvoiceTransmissionHandler.cs" />
+    <Compile Include="startup\ShippingDataUploadHandler.cs" />
+    <Compile Include="startup\SunInterfaceSubmissionHandler.cs" />
+    <Compile Include="startup\GeneratePaymentAdviceHandler.cs" />
+    <Compile Include="startup\MissingILSOrderCopyHandler.cs" />
+    <Compile Include="startup\SunInterfaceProcessHandler.cs" />
+    <Compile Include="startup\ILSUploadHandler.cs" />
+    <Compile Include="startup\SynOPSHandler.cs" />
+    <Compile Include="synchronization\SynchronizationManager.cs" />
+    <Compile Include="user\UserAccessManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web References\QAIS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\QAIS\ClaimRequestDef.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\QAIS\ClaimRequestService.wsdl" />
+    <None Include="Web References\QAIS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ns-s02/qais/webservices/ClaimRequestService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\QAIS\</RelPath>
+      <UpdateFromURL>http://ns-s02/qais/webservices/ClaimRequestService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>com_next_isam_appserver_QAIS_ClaimRequestService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\QAIS\ClaimRequestService.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,49 @@
+﻿/*.ui-autocomplete { height: 200px; overflow-y: scroll; overflow-x: hidden;}   */
+
+.ui-autocomplete { position: absolute; cursor: default; }   
+
+/* 
+    targets the first result's <a> element, 
+    remove the a at the end to target the li itself 
+*/
+ul.ui-autocomplete.ui-menu li:first-child a{
+    color:blue;
+}
+
+/* workarounds */
+.ui-autocomplete { width:320px; } /* without this, the menu expands to 100% in IE6 */
+.ui-menu {
+    list-style:none;
+    padding: 2px;
+    margin: 0;
+    display:block;
+    float: left;
+    height: 250px; 
+    overflow-y: scroll; 
+    overflow-x: hidden;
+}
+.ui-menu .ui-menu {
+    margin-top: -3px;
+}
+.ui-menu .ui-menu-item {
+    margin:0;
+    padding: 0;
+    zoom: 1;
+    float: left;
+    clear: left;
+    width: 100%;
+    font-size:x-small;
+    font-family:@Arial Unicode MS;
+}
+.ui-menu .ui-menu-item a {
+    text-decoration:none;
+    display:block;
+    padding:.2em .4em;
+    line-height:1.5;
+    zoom:1;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+    font-weight: normal;
+    margin: -1px;
+}

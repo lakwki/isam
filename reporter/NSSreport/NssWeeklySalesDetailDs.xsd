@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NssWeeklySalesDetailDs" targetNamespace="http://tempuri.org/NssWeeklySalesDetailDs.xsd" xmlns:mstns="http://tempuri.org/NssWeeklySalesDetailDs.xsd" xmlns="http://tempuri.org/NssWeeklySalesDetailDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NSSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NSSConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.NSSConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NssWeeklySalesDetailTableAdapter" GeneratorDataComponentClassName="NssWeeklySalesDetailTableAdapter" Name="NssWeeklySalesDetail" UserDataComponentName="NssWeeklySalesDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NSSConnectionString (Settings)" DbObjectName="SELECT d.*, p.SnapshotNo, Timing = (CASE TimingStatus WHEN 'S' THEN 'Slippage' WHEN 'O' THEN 'OnTime' WHEN 'E' THEN 'Early' ELSE '' END), wk = CASE WHEN (d.WeekNo &lt; d.WeekNoParam AND d.ShipmentStatus='OrderBook') THEN d.WeekNoParam WHEN d.WeekNo &lt; 1 THEN 1 ELSE d.WeekNo END, DlyDateDiffInWeek = datediff(wk, COALESCE(PreviousDeliveryDate, DeliveryDate), DeliveryDate), p.PeriodStartDate, p.NoOfWeek, p.NextPeriodNoOfWeek, LastPeriodDeliveryDate=NULL, Status = (CASE s.WorkflowStatusId WHEN 8 THEN 'Actual' WHEN 9 THEN 'Cancelled' ELSE 'OrderBook' END), DlyDate = CONVERT(varchar,(CASE WHEN s.WorkflowStatusId=8 THEN s.ActualAtWarehouseDate ELSE s.CustomerAtWarehouseDate END),23), Customer = (SELECT replace(CustomerCode,char(13)+char(10),'') FROM Customer WHERE CustomerId=c.CustomerId), Remark='' FROM (SELECT FiscalYear=fc.BudgetYear, FiscalPeriod=fc.Period, PeriodStartDate=fc.StartDate, PeriodEndDate=fc.EndDate, snapshotNo=0, NoOfWeek = 0, NextPeriodNoOfWeek = 0 FROM nsldb..AccountFinancialCalender AS fc INNER JOIN nsldb..AccountFinancialCalender AS nfc ON nfc.StartDate=dateadd(d,1,fc.EndDate) AND nfc.AppId=9 WHERE 1=0 ) AS p INNER JOIN WeeklySalesSnapshotDetailForSimon AS d ON d.FiscalYear=p.FiscalYear AND d.Period=p.FiscalPeriod INNER JOIN Shipment AS s WITH (nolock) ON s.shipmentId=d.ShipmentId INNER JOIN Contract AS c WITH (nolock) ON c.ContractId=s.ContractId" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT t.officeCode, t.ContractNo, t.DeliveryNo, 
+	t.Status, t.DlyDate, t.Customer,
+	Week0_WkNo	= max(case when WeekNoParam=1 and Wk&lt;=NoOfWeek then convert(varchar,wk) else '' end),
+	Week0_Timing	= max(case when WeekNoParam=1 and Wk&lt;=NoOfWeek then Timing else '' end),
+	Week0_Status	= max(case when WeekNoParam=1 and Wk&lt;=NoOfWeek then ShipmentStatus else '' end),
+	Week0_DlyDate	= max(case when WeekNoParam=1 and Wk&lt;=NoOfWeek then convert(varchar, DeliveryDate,23) else '' end),
+	Week0_Amt	= max(case when WeekNoParam=1 and Wk&lt;=NoOfWeek then convert(varchar,SalesAmt) else '' end),
+
+	Week1_WkNo	= max(case when WeekNoParam=2 and Wk&lt;=NoOfWeek then convert(varchar,wk) else '' end),
+	Week1_Timing	= max(case when WeekNoParam=2 and Wk&lt;=NoOfWeek then Timing else '' end),
+	Week1_Status	= max(case when WeekNoParam=2 and Wk&lt;=NoOfWeek then ShipmentStatus else '' end),
+	Week1_DlyDate	= max(case when WeekNoParam=2 and Wk&lt;=NoOfWeek then convert(varchar, DeliveryDate,23) else '' end),
+	Week1_Amt	= max(case when WeekNoParam=2 and Wk&lt;=NoOfWeek then convert(varchar,SalesAmt) else '' end),
+
+	Week2_WkNo	= max(case when WeekNoParam=3 and Wk&lt;=NoOfWeek then convert(varchar,wk) else '' end),
+	Week2_Timing	= max(case when WeekNoParam=3 and Wk&lt;=NoOfWeek then Timing else '' end),
+	Week2_Status	= max(case when WeekNoParam=3 and Wk&lt;=NoOfWeek then ShipmentStatus else '' end),
+	Week2_DlyDate	= max(case when WeekNoParam=3 and Wk&lt;=NoOfWeek then convert(varchar, DeliveryDate,23) else '' end),
+	Week2_Amt	= max(case when WeekNoParam=3 and Wk&lt;=NoOfWeek then convert(varchar,SalesAmt) else '' end),
+	
+	Week3_WkNo	= max(case when WeekNoParam=4 and Wk&lt;=NoOfWeek then convert(varchar,wk) else '' end),
+	Week3_Timing	= max(case when WeekNoParam=4 and Wk&lt;=NoOfWeek then Timing else '' end),
+	Week3_Status	= max(case when WeekNoParam=4 and Wk&lt;=NoOfWeek then ShipmentStatus else '' end),
+	Week3_DlyDate	= max(case when WeekNoParam=4 and Wk&lt;=NoOfWeek then convert(varchar, DeliveryDate,23) else '' end),
+	Week3_Amt	= max(case when WeekNoParam=4 and Wk&lt;=NoOfWeek then convert(varchar,SalesAmt) else '' end),
+
+	Week4_WkNo	= max(case when WeekNoParam=5 and Wk&lt;=NoOfWeek then convert(varchar,wk) else '' end),
+	Week4_Timing	= max(case when WeekNoParam=5 and Wk&lt;=NoOfWeek then Timing else '' end),
+	Week4_Status	= max(case when WeekNoParam=5 and Wk&lt;=NoOfWeek then ShipmentStatus else '' end),
+	Week4_DlyDate	= max(case when WeekNoParam=5 and Wk&lt;=NoOfWeek then convert(varchar, DeliveryDate,23) else '' end),
+	Week4_Amt	= max(case when WeekNoParam=5 and Wk&lt;=NoOfWeek then convert(varchar,SalesAmt) else '' end),
+
+	Week5_WkNo	= max(case when WeekNoParam=6 and Wk&lt;=NoOfWeek then convert(varchar,wk) else '' end),
+	Week5_Timing	= max(case when WeekNoParam=6 and Wk&lt;=NoOfWeek then Timing else '' end),
+	Week5_Status	= max(case when WeekNoParam=6 and Wk&lt;=NoOfWeek then ShipmentStatus else '' end),
+	Week5_DlyDate	= max(case when WeekNoParam=6 and Wk&lt;=NoOfWeek then convert(varchar, DeliveryDate,23) else '' end),
+	Week5_SalesAmt	= max(case when WeekNoParam=6 and Wk&lt;=NoOfWeek then convert(varchar,SalesAmt) else '' end),
+
+	WeekX_WkNo	= max(case when WeekNoParam=SnapshotNo and Wk&gt;NoOfWeek then convert(varchar,wk-NoOfWeek) else '' end),
+	WeekX_Timing	= max(case when WeekNoParam=SnapshotNo and Wk&gt;NoOfWeek then Timing else '' end),
+	WeekX_Status	= max(case when WeekNoParam=SnapshotNo and Wk&gt;NoOfWeek then ShipmentStatus else '' end),
+	WeekX_DlyDate	= max(case when WeekNoParam=SnapshotNo and Wk&gt;NoOfWeek then convert(varchar, DeliveryDate,23) else '' end),
+	WeekX_SalesAmt	= max(case when WeekNoParam=SnapshotNo and Wk&gt;NoOfWeek then convert(varchar,SalesAmt) else '' end),
+
+	Other_DlyDate	= (CASE WHEN max((CASE WHEN WeekNoParam=SnapshotNo and wk&lt;=NoOfWeek+NextPeriodNoOfWeek THEN wk ELSE null END)) IS NOT NULL THEN ''
+					ELSE convert(varchar, MAX(ISNULL(s.ActualAtWarehouseDate,s.CustomerAtWarehouseDate)),23) END),
+	Other_SalesAmt	= (CASE WHEN max((CASE WHEN WeekNoParam=SnapshotNo and wk&lt;=NoOfWeek+NextPeriodNoOfWeek THEN wk ELSE null END)) IS NOT NULL THEN ''
+					ELSE convert(varchar, max((CASE WHEN s.WorkflowStatusId=8 THEN s.TotalShippedAmt ELSE s.TotalOrderAmt END))) END), 
+	Other_WFS	= (case when max((case when WeekNoParam=SnapshotNo and wk&lt;=NoOfWeek+NextPeriodNoOfWeek then wk else null end)) IS NOT NULL THEN ''
+					ELSE (select WorkflowStatusDesc 
+						from ContractWFS 
+						where WorkflowStatusId=s.WorkflowStatusId)
+					END) 
+FROM (
+	select d.*, p.SnapshotNo,
+		Timing = (case TimingStatus when 'S' then 'Slippage' when 'O' then 'OnTime' when 'E' then 'Early' else '' end),
+		wk = case when (d.WeekNo &lt; d.WeekNoParam and d.ShipmentStatus='OrderBook') then d.WeekNoParam when d.WeekNo &lt; 1 then 1 else d.WeekNo end, 
+		DlyDateDiffInWeek = datediff(wk, coalesce(PreviousDeliveryDate, DeliveryDate), DeliveryDate),
+		p.PeriodStartDate, p.NoOfWeek, p.NextPeriodNoOfWeek, 
+		LastPeriodDeliveryDate=null,
+		Status = (case s.WorkflowStatusId when 8 then 'Actual' when 9 then 'Cancelled' else 'OrderBook' end),
+		DlyDate = convert(varchar,(case when s.WorkflowStatusId=8 then s.ActualAtWarehouseDate else s.CustomerAtWarehouseDate end),23),
+		Customer = (select replace(CustomerCode,char(13)+char(10),'') from Customer where CustomerId=c.CustomerId),
+		Remark=''
+	from (select FiscalYear=fc.BudgetYear, FiscalPeriod=fc.Period, PeriodStartDate=fc.StartDate, PeriodEndDate=fc.EndDate,
+		snapshotNo=0, NoOfWeek = 0, NextPeriodNoOfWeek = 0
+		from nsldb..AccountFinancialCalender as fc
+		inner join nsldb..AccountFinancialCalender as nfc on nfc.StartDate=dateadd(d,1,fc.EndDate) and nfc.AppId=9
+		where 1=0
+		) as p
+		inner join WeeklySalesSnapshotDetailForSimon as d on d.FiscalYear=p.FiscalYear and d.Period=p.FiscalPeriod
+		inner join Shipment as s with (nolock) on s.shipmentId=d.ShipmentId
+		inner join Contract as c with (nolock) on c.ContractId=s.ContractId
+	) as t 
+	left join shipment as s on s.shipmentId=t.ShipmentId
+	left join contract as c on c.ContractId=s.ContractId
+GROUP BY t.shipmentId, t.OfficeCode, t.ContractNo, t.DeliveryNo, t.LastPeriodDeliveryDate,t.Status,t.DlyDate, t.Customer, s.WorkflowStatusId
+	</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="officeCode" DataSetColumn="officeCode" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="DlyDate" DataSetColumn="DlyDate" />
+              <Mapping SourceColumn="Customer" DataSetColumn="Customer" />
+              <Mapping SourceColumn="Week0_WkNo" DataSetColumn="Week0_WkNo" />
+              <Mapping SourceColumn="Week0_Timing" DataSetColumn="Week0_Timing" />
+              <Mapping SourceColumn="Week0_Status" DataSetColumn="Week0_Status" />
+              <Mapping SourceColumn="Week0_DlyDate" DataSetColumn="Week0_DlyDate" />
+              <Mapping SourceColumn="Week0_Amt" DataSetColumn="Week0_Amt" />
+              <Mapping SourceColumn="Week1_WkNo" DataSetColumn="Week1_WkNo" />
+              <Mapping SourceColumn="Week1_Timing" DataSetColumn="Week1_Timing" />
+              <Mapping SourceColumn="Week1_Status" DataSetColumn="Week1_Status" />
+              <Mapping SourceColumn="Week1_DlyDate" DataSetColumn="Week1_DlyDate" />
+              <Mapping SourceColumn="Week1_Amt" DataSetColumn="Week1_Amt" />
+              <Mapping SourceColumn="Week2_WkNo" DataSetColumn="Week2_WkNo" />
+              <Mapping SourceColumn="Week2_Timing" DataSetColumn="Week2_Timing" />
+              <Mapping SourceColumn="Week2_Status" DataSetColumn="Week2_Status" />
+              <Mapping SourceColumn="Week2_DlyDate" DataSetColumn="Week2_DlyDate" />
+              <Mapping SourceColumn="Week2_Amt" DataSetColumn="Week2_Amt" />
+              <Mapping SourceColumn="Week3_WkNo" DataSetColumn="Week3_WkNo" />
+              <Mapping SourceColumn="Week3_Timing" DataSetColumn="Week3_Timing" />
+              <Mapping SourceColumn="Week3_Status" DataSetColumn="Week3_Status" />
+              <Mapping SourceColumn="Week3_DlyDate" DataSetColumn="Week3_DlyDate" />
+              <Mapping SourceColumn="Week3_Amt" DataSetColumn="Week3_Amt" />
+              <Mapping SourceColumn="Week4_WkNo" DataSetColumn="Week4_WkNo" />
+              <Mapping SourceColumn="Week4_Timing" DataSetColumn="Week4_Timing" />
+              <Mapping SourceColumn="Week4_Status" DataSetColumn="Week4_Status" />
+              <Mapping SourceColumn="Week4_DlyDate" DataSetColumn="Week4_DlyDate" />
+              <Mapping SourceColumn="Week4_Amt" DataSetColumn="Week4_Amt" />
+              <Mapping SourceColumn="Week5_WkNo" DataSetColumn="Week5_WkNo" />
+              <Mapping SourceColumn="Week5_Timing" DataSetColumn="Week5_Timing" />
+              <Mapping SourceColumn="Week5_Status" DataSetColumn="Week5_Status" />
+              <Mapping SourceColumn="Week5_DlyDate" DataSetColumn="Week5_DlyDate" />
+              <Mapping SourceColumn="Week5_SalesAmt" DataSetColumn="Week5_SalesAmt" />
+              <Mapping SourceColumn="WeekX_WkNo" DataSetColumn="WeekX_WkNo" />
+              <Mapping SourceColumn="WeekX_Timing" DataSetColumn="WeekX_Timing" />
+              <Mapping SourceColumn="WeekX_Status" DataSetColumn="WeekX_Status" />
+              <Mapping SourceColumn="WeekX_DlyDate" DataSetColumn="WeekX_DlyDate" />
+              <Mapping SourceColumn="WeekX_SalesAmt" DataSetColumn="WeekX_SalesAmt" />
+              <Mapping SourceColumn="Other_DlyDate" DataSetColumn="Other_DlyDate" />
+              <Mapping SourceColumn="Other_SalesAmt" DataSetColumn="Other_SalesAmt" />
+              <Mapping SourceColumn="Other_WFS" DataSetColumn="Other_WFS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NssWeeklySalesDetailDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NssWeeklySalesDetailDs" msprop:Generator_UserDSName="NssWeeklySalesDetailDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NssWeeklySalesDetail" msprop:Generator_TableClassName="NssWeeklySalesDetailDataTable" msprop:Generator_TableVarName="tableNssWeeklySalesDetail" msprop:Generator_TablePropName="NssWeeklySalesDetail" msprop:Generator_RowDeletingName="NssWeeklySalesDetailRowDeleting" msprop:Generator_UserTableName="NssWeeklySalesDetail" msprop:Generator_RowChangingName="NssWeeklySalesDetailRowChanging" msprop:Generator_RowEvHandlerName="NssWeeklySalesDetailRowChangeEventHandler" msprop:Generator_RowDeletedName="NssWeeklySalesDetailRowDeleted" msprop:Generator_RowEvArgName="NssWeeklySalesDetailRowChangeEvent" msprop:Generator_RowChangedName="NssWeeklySalesDetailRowChanged" msprop:Generator_RowClassName="NssWeeklySalesDetailRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="officeCode" msprop:Generator_ColumnVarNameInTable="columnofficeCode" msprop:Generator_ColumnPropNameInRow="officeCode" msprop:Generator_ColumnPropNameInTable="officeCodeColumn" msprop:Generator_UserColumnName="officeCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" type="xs:int" />
+              <xs:element name="Status" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DlyDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDlyDate" msprop:Generator_ColumnPropNameInRow="DlyDate" msprop:Generator_ColumnPropNameInTable="DlyDateColumn" msprop:Generator_UserColumnName="DlyDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCustomer" msprop:Generator_ColumnPropNameInRow="Customer" msprop:Generator_ColumnPropNameInTable="CustomerColumn" msprop:Generator_UserColumnName="Customer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week0_WkNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek0_WkNo" msprop:Generator_ColumnPropNameInRow="Week0_WkNo" msprop:Generator_ColumnPropNameInTable="Week0_WkNoColumn" msprop:Generator_UserColumnName="Week0_WkNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week0_Timing" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek0_Timing" msprop:Generator_ColumnPropNameInRow="Week0_Timing" msprop:Generator_ColumnPropNameInTable="Week0_TimingColumn" msprop:Generator_UserColumnName="Week0_Timing" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week0_Status" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek0_Status" msprop:Generator_ColumnPropNameInRow="Week0_Status" msprop:Generator_ColumnPropNameInTable="Week0_StatusColumn" msprop:Generator_UserColumnName="Week0_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week0_DlyDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek0_DlyDate" msprop:Generator_ColumnPropNameInRow="Week0_DlyDate" msprop:Generator_ColumnPropNameInTable="Week0_DlyDateColumn" msprop:Generator_UserColumnName="Week0_DlyDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week0_Amt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek0_Amt" msprop:Generator_ColumnPropNameInRow="Week0_Amt" msprop:Generator_ColumnPropNameInTable="Week0_AmtColumn" msprop:Generator_UserColumnName="Week0_Amt" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week1_WkNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek1_WkNo" msprop:Generator_ColumnPropNameInRow="Week1_WkNo" msprop:Generator_ColumnPropNameInTable="Week1_WkNoColumn" msprop:Generator_UserColumnName="Week1_WkNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week1_Timing" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek1_Timing" msprop:Generator_ColumnPropNameInRow="Week1_Timing" msprop:Generator_ColumnPropNameInTable="Week1_TimingColumn" msprop:Generator_UserColumnName="Week1_Timing" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week1_Status" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek1_Status" msprop:Generator_ColumnPropNameInRow="Week1_Status" msprop:Generator_ColumnPropNameInTable="Week1_StatusColumn" msprop:Generator_UserColumnName="Week1_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week1_DlyDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek1_DlyDate" msprop:Generator_ColumnPropNameInRow="Week1_DlyDate" msprop:Generator_ColumnPropNameInTable="Week1_DlyDateColumn" msprop:Generator_UserColumnName="Week1_DlyDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week1_Amt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek1_Amt" msprop:Generator_ColumnPropNameInRow="Week1_Amt" msprop:Generator_ColumnPropNameInTable="Week1_AmtColumn" msprop:Generator_UserColumnName="Week1_Amt" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week2_WkNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek2_WkNo" msprop:Generator_ColumnPropNameInRow="Week2_WkNo" msprop:Generator_ColumnPropNameInTable="Week2_WkNoColumn" msprop:Generator_UserColumnName="Week2_WkNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week2_Timing" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek2_Timing" msprop:Generator_ColumnPropNameInRow="Week2_Timing" msprop:Generator_ColumnPropNameInTable="Week2_TimingColumn" msprop:Generator_UserColumnName="Week2_Timing" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week2_Status" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek2_Status" msprop:Generator_ColumnPropNameInRow="Week2_Status" msprop:Generator_ColumnPropNameInTable="Week2_StatusColumn" msprop:Generator_UserColumnName="Week2_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week2_DlyDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek2_DlyDate" msprop:Generator_ColumnPropNameInRow="Week2_DlyDate" msprop:Generator_ColumnPropNameInTable="Week2_DlyDateColumn" msprop:Generator_UserColumnName="Week2_DlyDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week2_Amt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek2_Amt" msprop:Generator_ColumnPropNameInRow="Week2_Amt" msprop:Generator_ColumnPropNameInTable="Week2_AmtColumn" msprop:Generator_UserColumnName="Week2_Amt" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week3_WkNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek3_WkNo" msprop:Generator_ColumnPropNameInRow="Week3_WkNo" msprop:Generator_ColumnPropNameInTable="Week3_WkNoColumn" msprop:Generator_UserColumnName="Week3_WkNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week3_Timing" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek3_Timing" msprop:Generator_ColumnPropNameInRow="Week3_Timing" msprop:Generator_ColumnPropNameInTable="Week3_TimingColumn" msprop:Generator_UserColumnName="Week3_Timing" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week3_Status" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek3_Status" msprop:Generator_ColumnPropNameInRow="Week3_Status" msprop:Generator_ColumnPropNameInTable="Week3_StatusColumn" msprop:Generator_UserColumnName="Week3_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week3_DlyDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek3_DlyDate" msprop:Generator_ColumnPropNameInRow="Week3_DlyDate" msprop:Generator_ColumnPropNameInTable="Week3_DlyDateColumn" msprop:Generator_UserColumnName="Week3_DlyDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week3_Amt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek3_Amt" msprop:Generator_ColumnPropNameInRow="Week3_Amt" msprop:Generator_ColumnPropNameInTable="Week3_AmtColumn" msprop:Generator_UserColumnName="Week3_Amt" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week4_WkNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek4_WkNo" msprop:Generator_ColumnPropNameInRow="Week4_WkNo" msprop:Generator_ColumnPropNameInTable="Week4_WkNoColumn" msprop:Generator_UserColumnName="Week4_WkNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week4_Timing" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek4_Timing" msprop:Generator_ColumnPropNameInRow="Week4_Timing" msprop:Generator_ColumnPropNameInTable="Week4_TimingColumn" msprop:Generator_UserColumnName="Week4_Timing" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week4_Status" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek4_Status" msprop:Generator_ColumnPropNameInRow="Week4_Status" msprop:Generator_ColumnPropNameInTable="Week4_StatusColumn" msprop:Generator_UserColumnName="Week4_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week4_DlyDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek4_DlyDate" msprop:Generator_ColumnPropNameInRow="Week4_DlyDate" msprop:Generator_ColumnPropNameInTable="Week4_DlyDateColumn" msprop:Generator_UserColumnName="Week4_DlyDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week4_Amt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek4_Amt" msprop:Generator_ColumnPropNameInRow="Week4_Amt" msprop:Generator_ColumnPropNameInTable="Week4_AmtColumn" msprop:Generator_UserColumnName="Week4_Amt" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week5_WkNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek5_WkNo" msprop:Generator_ColumnPropNameInRow="Week5_WkNo" msprop:Generator_ColumnPropNameInTable="Week5_WkNoColumn" msprop:Generator_UserColumnName="Week5_WkNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week5_Timing" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek5_Timing" msprop:Generator_ColumnPropNameInRow="Week5_Timing" msprop:Generator_ColumnPropNameInTable="Week5_TimingColumn" msprop:Generator_UserColumnName="Week5_Timing" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week5_Status" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek5_Status" msprop:Generator_ColumnPropNameInRow="Week5_Status" msprop:Generator_ColumnPropNameInTable="Week5_StatusColumn" msprop:Generator_UserColumnName="Week5_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week5_DlyDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek5_DlyDate" msprop:Generator_ColumnPropNameInRow="Week5_DlyDate" msprop:Generator_ColumnPropNameInTable="Week5_DlyDateColumn" msprop:Generator_UserColumnName="Week5_DlyDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Week5_SalesAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeek5_SalesAmt" msprop:Generator_ColumnPropNameInRow="Week5_SalesAmt" msprop:Generator_ColumnPropNameInTable="Week5_SalesAmtColumn" msprop:Generator_UserColumnName="Week5_SalesAmt" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WeekX_WkNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeekX_WkNo" msprop:Generator_ColumnPropNameInRow="WeekX_WkNo" msprop:Generator_ColumnPropNameInTable="WeekX_WkNoColumn" msprop:Generator_UserColumnName="WeekX_WkNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WeekX_Timing" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeekX_Timing" msprop:Generator_ColumnPropNameInRow="WeekX_Timing" msprop:Generator_ColumnPropNameInTable="WeekX_TimingColumn" msprop:Generator_UserColumnName="WeekX_Timing" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WeekX_Status" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeekX_Status" msprop:Generator_ColumnPropNameInRow="WeekX_Status" msprop:Generator_ColumnPropNameInTable="WeekX_StatusColumn" msprop:Generator_UserColumnName="WeekX_Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WeekX_DlyDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeekX_DlyDate" msprop:Generator_ColumnPropNameInRow="WeekX_DlyDate" msprop:Generator_ColumnPropNameInTable="WeekX_DlyDateColumn" msprop:Generator_UserColumnName="WeekX_DlyDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WeekX_SalesAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWeekX_SalesAmt" msprop:Generator_ColumnPropNameInRow="WeekX_SalesAmt" msprop:Generator_ColumnPropNameInTable="WeekX_SalesAmtColumn" msprop:Generator_UserColumnName="WeekX_SalesAmt" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Other_DlyDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOther_DlyDate" msprop:Generator_ColumnPropNameInRow="Other_DlyDate" msprop:Generator_ColumnPropNameInTable="Other_DlyDateColumn" msprop:Generator_UserColumnName="Other_DlyDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Other_SalesAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOther_SalesAmt" msprop:Generator_ColumnPropNameInRow="Other_SalesAmt" msprop:Generator_ColumnPropNameInTable="Other_SalesAmtColumn" msprop:Generator_UserColumnName="Other_SalesAmt" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Other_WFS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOther_WFS" msprop:Generator_ColumnPropNameInRow="Other_WFS" msprop:Generator_ColumnPropNameInTable="Other_WFSColumn" msprop:Generator_UserColumnName="Other_WFS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

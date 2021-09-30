@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SAndBCommissionDebitNoteDs" targetNamespace="http://tempuri.org/SAndBCommissionDebitNoteDs.xsd" xmlns:mstns="http://tempuri.org/SAndBCommissionDebitNoteDs.xsd" xmlns="http://tempuri.org/SAndBCommissionDebitNoteDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SAndBCommissionDebitNoteTableAdapter" GeneratorDataComponentClassName="SAndBCommissionDebitNoteTableAdapter" Name="SAndBCommissionDebitNote" UserDataComponentName="SAndBCommissionDebitNoteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.fn_formatInvoiceNo(i.InvoicePrefix, i.InvoiceSeq, i.InvoiceYear) AS InvoiceNo, i.InvoiceDate, c.ContractNo, s.DeliveryNo,
+                             (SELECT        RTRIM(REPLACE(Description, 'Office', '')) AS Expr1
+                               FROM            Office WITH (NOLOCK)
+                               WHERE        (OfficeId = c.OfficeId)) AS OfficeName,
+                             (SELECT        ItemNo
+                               FROM            Product WITH (NOLOCK)
+                               WHERE        (ProductId = c.ProductId)) AS ItemNo,
+                             (SELECT        PackingUnitDesc
+                               FROM            PackingUnit
+                               WHERE        (PackingUnitId = c.PackingUnitId)) AS PackingUnit, s.TotalShippedQty, s.TotalShippedAmt,
+                             (SELECT        CurrencyCode
+                               FROM            Currency WITH (NOLOCK)
+                               WHERE        (CurrencyId = s.SellCurrencyId)) AS CurrencyCode, s.NSLCommissionPercent, i.NSLCommissionAmt, sn.SupplierNo, sbd.AccountName, sbd.SwiftCode, 
+                         sbd.BankName, sbd.BankAddress, sbd.AccountNo, cust.CustomerDesc, cust.CustomerId, cust.Address1, cust.Address2, cust.Address3, cust.Address4
+FROM            Shipment AS s WITH (NOLOCK) INNER JOIN
+                         Contract AS c WITH (NOLOCK) ON c.ContractId = s.ContractId INNER JOIN
+                         Invoice AS i WITH (NOLOCK) ON i.ShipmentId = s.ShipmentId INNER JOIN
+                         Customer AS cust WITH (NOLOCK) ON c.CustomerId = cust.CustomerId LEFT OUTER JOIN
+                         SettlementBankDetail AS sbd ON CHARINDEX(',' + CONVERT(varchar, c.OfficeId) + ',', ',' + sbd.OfficeId + ',') &gt; 0 AND (sbd.CurrencyId = 0 OR
+                         sbd.CurrencyId = s.SellCurrencyId) AND (sbd.TradingAgencyId = '0' OR
+                         CHARINDEX(',' + CONVERT(varchar, c.TradingAgencyId) + ',', ',' + sbd.TradingAgencyId + ',') &gt; 0) AND sbd.AccountId &lt;&gt; 13 LEFT OUTER JOIN
+                             (SELECT        1 AS OfficeId, 3 AS CurrencyId, '21D15420' AS SupplierNo, '181402777201' AS BankAccountNo, 'NSL HONG KONG USD' AS SupplierName
+                               UNION
+                               SELECT        2 AS Expr1, 3 AS Expr2, '21D21140' AS Expr3, '502153745274' AS Expr4, 'NSL SHANGHAI USD' AS Expr5
+                               UNION
+                               SELECT        3 AS Expr1, 3 AS Expr2, '21D16900' AS Expr3, '502154131274' AS Expr4, 'NSL SRI LANKA USD' AS Expr5
+                               UNION
+                               SELECT        4 AS Expr1, 2 AS Expr2, '21D41310' AS Expr3, '41312446983' AS Expr4, 'NSL THAILAND GBP' AS Expr5
+                               UNION
+                               SELECT        4 AS Expr1, 3 AS Expr2, '21D50130' AS Expr3, '41310751177' AS Expr4, 'NSL THAILAND PAYMENT ACCOUNT USD' AS Expr5
+                               UNION
+                               SELECT        7 AS Expr1, 3 AS Expr2, '21D85400' AS Expr3, '502153745201' AS Expr4, 'NSL BANGLEDESH PMT AC' AS Expr5
+                               UNION
+                               SELECT        8 AS Expr1, 2 AS Expr2, '21D29880' AS Expr3, '502137094276' AS Expr4, 'NSL INDIA GBP' AS Expr5
+                               UNION
+                               SELECT        9 AS Expr1, 2 AS Expr2, '21D16910' AS Expr3, '502154131276' AS Expr4, 'NSL (TURKEY) GBP' AS Expr5
+                               UNION
+                               SELECT        9 AS Expr1, 3 AS Expr2, '21D61090' AS Expr3, '502075419201' AS Expr4, 'NSL (TURKEY) USD' AS Expr5
+                               UNION
+                               SELECT        9 AS Expr1, 12 AS Expr2, '21D80460' AS Expr3, '808451355220' AS Expr4, 'NSL TURKEY PAYMENT EUR' AS Expr5
+                               UNION
+                               SELECT        13 AS Expr1, 2 AS Expr2, '21D45510' AS Expr3, '502137094276' AS Expr4, 'NSL INDIA (DELHI) GBP' AS Expr5
+                               UNION
+                               SELECT        14 AS Expr1, 2 AS Expr2, '21A66330' AS Expr3, '808623086202' AS Expr4, 'NSL PAKISTAN GBP' AS Expr5
+                               UNION
+                               SELECT        14 AS Expr1, 3 AS Expr2, '21D68810' AS Expr3, '808623086201' AS Expr4, 'NSL PAKISTAN USD' AS Expr5
+                               UNION
+                               SELECT        16 AS Expr1, 3 AS Expr2, '21D68740' AS Expr3, '41310751134' AS Expr4, 'NSL VIETNAM USD' AS Expr5
+                               UNION
+                               SELECT        18 AS Expr1, 2 AS Expr2, '21D82850' AS Expr3, '502154131276' AS Expr4, 'NSL EGYPT FOB GBP' AS Expr5
+                               UNION
+                               SELECT        18 AS Expr1, 3 AS Expr2, '21D85340' AS Expr3, '502075419201' AS Expr4, 'NSL EGYPT USD' AS Expr5
+                               UNION
+                               SELECT        18 AS Expr1, 12 AS Expr2, '21D83050' AS Expr3, '808451355220' AS Expr4, 'NSL EGYPT FOB EUR' AS Expr5
+                               UNION
+                               SELECT        3 AS Expr1, 2 AS Expr2, '21D38690' AS Expr3, '502153745276' AS Expr4, 'NSL SRI LANKA GBP' AS Expr5) AS sn ON sn.OfficeId = c.OfficeId AND 
+                         sn.CurrencyId = s.SellCurrencyId
+WHERE        (s.Status = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TotalShippedAmt" DataSetColumn="TotalShippedAmt" />
+              <Mapping SourceColumn="InvoiceNo" DataSetColumn="InvoiceNo" />
+              <Mapping SourceColumn="InvoiceDate" DataSetColumn="InvoiceDate" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="OfficeName" DataSetColumn="OfficeName" />
+              <Mapping SourceColumn="ItemNo" DataSetColumn="ItemNo" />
+              <Mapping SourceColumn="PackingUnit" DataSetColumn="PackingUnit" />
+              <Mapping SourceColumn="TotalShippedQty" DataSetColumn="TotalShippedQty" />
+              <Mapping SourceColumn="CurrencyCode" DataSetColumn="CurrencyCode" />
+              <Mapping SourceColumn="NSLCommissionPercent" DataSetColumn="NSLCommissionPercent" />
+              <Mapping SourceColumn="NSLCommissionAmt" DataSetColumn="NSLCommissionAmt" />
+              <Mapping SourceColumn="SupplierNo" DataSetColumn="SupplierNo" />
+              <Mapping SourceColumn="AccountName" DataSetColumn="AccountName" />
+              <Mapping SourceColumn="SwiftCode" DataSetColumn="SwiftCode" />
+              <Mapping SourceColumn="BankName" DataSetColumn="BankName" />
+              <Mapping SourceColumn="BankAddress" DataSetColumn="BankAddress" />
+              <Mapping SourceColumn="AccountNo" DataSetColumn="AccountNo" />
+              <Mapping SourceColumn="CustomerDesc" DataSetColumn="CustomerDesc" />
+              <Mapping SourceColumn="CustomerId" DataSetColumn="CustomerId" />
+              <Mapping SourceColumn="Address1" DataSetColumn="Address1" />
+              <Mapping SourceColumn="Address2" DataSetColumn="Address2" />
+              <Mapping SourceColumn="Address3" DataSetColumn="Address3" />
+              <Mapping SourceColumn="Address4" DataSetColumn="Address4" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SAndBCommissionDebitNoteDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SAndBCommissionDebitNoteDs" msprop:Generator_UserDSName="SAndBCommissionDebitNoteDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SAndBCommissionDebitNote" msprop:Generator_TableClassName="SAndBCommissionDebitNoteDataTable" msprop:Generator_TableVarName="tableSAndBCommissionDebitNote" msprop:Generator_TablePropName="SAndBCommissionDebitNote" msprop:Generator_RowDeletingName="SAndBCommissionDebitNoteRowDeleting" msprop:Generator_RowChangingName="SAndBCommissionDebitNoteRowChanging" msprop:Generator_RowEvHandlerName="SAndBCommissionDebitNoteRowChangeEventHandler" msprop:Generator_RowDeletedName="SAndBCommissionDebitNoteRowDeleted" msprop:Generator_UserTableName="SAndBCommissionDebitNote" msprop:Generator_RowChangedName="SAndBCommissionDebitNoteRowChanged" msprop:Generator_RowEvArgName="SAndBCommissionDebitNoteRowChangeEvent" msprop:Generator_RowClassName="SAndBCommissionDebitNoteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalShippedAmt" msprop:Generator_ColumnVarNameInTable="columnTotalShippedAmt" msprop:Generator_ColumnPropNameInRow="TotalShippedAmt" msprop:Generator_ColumnPropNameInTable="TotalShippedAmtColumn" msprop:Generator_UserColumnName="TotalShippedAmt" type="xs:decimal" />
+              <xs:element name="InvoiceNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInvoiceNo" msprop:Generator_ColumnPropNameInRow="InvoiceNo" msprop:Generator_ColumnPropNameInTable="InvoiceNoColumn" msprop:Generator_UserColumnName="InvoiceNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceDate" msprop:Generator_ColumnVarNameInTable="columnInvoiceDate" msprop:Generator_ColumnPropNameInRow="InvoiceDate" msprop:Generator_ColumnPropNameInTable="InvoiceDateColumn" msprop:Generator_UserColumnName="InvoiceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" type="xs:int" />
+              <xs:element name="OfficeName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOfficeName" msprop:Generator_ColumnPropNameInRow="OfficeName" msprop:Generator_ColumnPropNameInTable="OfficeNameColumn" msprop:Generator_UserColumnName="OfficeName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" msprop:Generator_UserColumnName="ItemNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PackingUnit" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPackingUnit" msprop:Generator_ColumnPropNameInRow="PackingUnit" msprop:Generator_ColumnPropNameInTable="PackingUnitColumn" msprop:Generator_UserColumnName="PackingUnit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalShippedQty" msprop:Generator_ColumnVarNameInTable="columnTotalShippedQty" msprop:Generator_ColumnPropNameInRow="TotalShippedQty" msprop:Generator_ColumnPropNameInTable="TotalShippedQtyColumn" msprop:Generator_UserColumnName="TotalShippedQty" type="xs:int" />
+              <xs:element name="CurrencyCode" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCurrencyCode" msprop:Generator_ColumnPropNameInRow="CurrencyCode" msprop:Generator_ColumnPropNameInTable="CurrencyCodeColumn" msprop:Generator_UserColumnName="CurrencyCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NSLCommissionPercent" msprop:Generator_ColumnVarNameInTable="columnNSLCommissionPercent" msprop:Generator_ColumnPropNameInRow="NSLCommissionPercent" msprop:Generator_ColumnPropNameInTable="NSLCommissionPercentColumn" msprop:Generator_UserColumnName="NSLCommissionPercent" type="xs:decimal" />
+              <xs:element name="NSLCommissionAmt" msprop:Generator_ColumnVarNameInTable="columnNSLCommissionAmt" msprop:Generator_ColumnPropNameInRow="NSLCommissionAmt" msprop:Generator_ColumnPropNameInTable="NSLCommissionAmtColumn" msprop:Generator_UserColumnName="NSLCommissionAmt" type="xs:decimal" />
+              <xs:element name="SupplierNo" msprop:Generator_ColumnVarNameInTable="columnSupplierNo" msprop:Generator_ColumnPropNameInRow="SupplierNo" msprop:Generator_ColumnPropNameInTable="SupplierNoColumn" msprop:Generator_UserColumnName="SupplierNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AccountName" msprop:Generator_ColumnVarNameInTable="columnAccountName" msprop:Generator_ColumnPropNameInRow="AccountName" msprop:Generator_ColumnPropNameInTable="AccountNameColumn" msprop:Generator_UserColumnName="AccountName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SwiftCode" msprop:Generator_ColumnVarNameInTable="columnSwiftCode" msprop:Generator_ColumnPropNameInRow="SwiftCode" msprop:Generator_ColumnPropNameInTable="SwiftCodeColumn" msprop:Generator_UserColumnName="SwiftCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BankName" msprop:Generator_ColumnVarNameInTable="columnBankName" msprop:Generator_ColumnPropNameInRow="BankName" msprop:Generator_ColumnPropNameInTable="BankNameColumn" msprop:Generator_UserColumnName="BankName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BankAddress" msprop:Generator_ColumnVarNameInTable="columnBankAddress" msprop:Generator_ColumnPropNameInRow="BankAddress" msprop:Generator_ColumnPropNameInTable="BankAddressColumn" msprop:Generator_UserColumnName="BankAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AccountNo" msprop:Generator_ColumnVarNameInTable="columnAccountNo" msprop:Generator_ColumnPropNameInRow="AccountNo" msprop:Generator_ColumnPropNameInTable="AccountNoColumn" msprop:Generator_UserColumnName="AccountNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerDesc" msprop:Generator_ColumnVarNameInTable="columnCustomerDesc" msprop:Generator_ColumnPropNameInRow="CustomerDesc" msprop:Generator_ColumnPropNameInTable="CustomerDescColumn" msprop:Generator_UserColumnName="CustomerDesc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerId" msprop:Generator_ColumnVarNameInTable="columnCustomerId" msprop:Generator_ColumnPropNameInRow="CustomerId" msprop:Generator_ColumnPropNameInTable="CustomerIdColumn" msprop:Generator_UserColumnName="CustomerId" type="xs:int" />
+              <xs:element name="Address1" msprop:Generator_ColumnVarNameInTable="columnAddress1" msprop:Generator_ColumnPropNameInRow="Address1" msprop:Generator_ColumnPropNameInTable="Address1Column" msprop:Generator_UserColumnName="Address1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address2" msprop:Generator_ColumnVarNameInTable="columnAddress2" msprop:Generator_ColumnPropNameInRow="Address2" msprop:Generator_ColumnPropNameInTable="Address2Column" msprop:Generator_UserColumnName="Address2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address3" msprop:Generator_ColumnVarNameInTable="columnAddress3" msprop:Generator_ColumnPropNameInRow="Address3" msprop:Generator_ColumnPropNameInTable="Address3Column" msprop:Generator_UserColumnName="Address3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address4" msprop:Generator_ColumnVarNameInTable="columnAddress4" msprop:Generator_ColumnPropNameInRow="Address4" msprop:Generator_ColumnPropNameInTable="Address4Column" msprop:Generator_UserColumnName="Address4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

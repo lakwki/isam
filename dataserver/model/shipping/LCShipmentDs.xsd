@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LCShipmentDs" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="4" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAM_20101026ConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAM_20101026ConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAM_20101026ConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString7" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString7 (Settings)" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ConnectionString7" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LCShipmentTableAdapter" GeneratorDataComponentClassName="LCShipmentTableAdapter" Name="LCShipment" UserDataComponentName="LCShipmentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMConnectionString2 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     Contract.ContractNo, Shipment.DeliveryNo, SplitShipment.SplitSuffix, Shipment.ContractId, Shipment.ShipmentId, CONVERT(int, 
+                      ISNULL(SplitShipment.SplitShipmentId, 0)) AS SplitShipmentId, Contract.OfficeId, (CASE WHEN shipment.splitCount = 0 OR
+                      shipment.IsVirtualSetSplit = 1 THEN Contract.ProductId ELSE SplitShipment.ProductId END) AS ProductId, Contract.PackingMethodId, 
+                      Contract.PackingUnitId, Shipment.VendorId, Shipment.CountryOfOriginId, ISNULL(Shipment.ShipmentMethodId, 0) AS ShipmentMethodId, 
+                      ISNULL(Shipment.ShipmentPortId, - 1) AS ShipmentPortId, Shipment.SupplierAtWarehouseDate, ISNULL(Shipment.TotalPOQty, 0) AS TotalPOQty, 
+                      ISNULL(Shipment.TotalSupplierGmtAmtAfterDiscount, 0) AS ShipmentTotalPOAmount, Shipment.QACommissionPercent, Shipment.LabTestIncome,
+                      ISNULL(Shipment.CustomerDestinationId, - 1) AS CustomerDestinationId, Shipment.WorkflowStatusId AS ShipmentWorkflowStatusId, 
+                      (CASE WHEN shipment.splitCount = 0 OR
+                      shipment.IsVirtualSetSplit = 1 THEN product .ItemNo ELSE split_Product.ItemNo END) AS ItemNo, LCApplicationShipment.Status, Contract.CustomerId, 
+                      VendorBankMapping.BankBranchId, Shipment.CustomerAtWarehouseDate, Shipment.BuyCurrencyId AS CurrencyId, 
+                      LCApplicationShipment.LCApplicationId, LCApplicationShipment.WorkflowStatusId, LCApplicationShipment.LCBatchId, Invoice.LCNo, 
+                      Invoice.LCIssueDate, Invoice.LCExpiryDate, Invoice.LCAmt, Shipment.TermOfPurchaseId, Shipment.PurchaseLocationId, 
+                      LCApplicationShipment.TotalPOAmt, Shipment.PaymentTermId, OtherShipmentIdWithLCNo=0,  OtherSplitShipmentIdWithLCNo=0, LCCancellationDate
+FROM         LCApplicationShipment INNER JOIN
+                      Invoice ON LCApplicationShipment.ShipmentId = Invoice.ShipmentId RIGHT OUTER JOIN
+                      Product AS split_product INNER JOIN
+                      SplitShipment ON split_product.ProductId = SplitShipment.ProductId INNER JOIN
+                      VendorBankMapping ON SplitShipment.VendorId = VendorBankMapping.VendorId RIGHT OUTER JOIN
+                      Contract INNER JOIN
+                      Shipment ON Contract.ContractId = Shipment.ContractId INNER JOIN
+                      Product ON Contract.ProductId = Product.ProductId INNER JOIN
+                      CountryOfOrigin ON Shipment.CountryOfOriginId = CountryOfOrigin.CountryOfOriginId ON SplitShipment.ShipmentId = Shipment.ShipmentId ON 
+                      LCApplicationShipment.ShipmentId = Shipment.ShipmentId
+WHERE     (Shipment.PaymentTermId = 2)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ShipmentId" DataSetColumn="ShipmentId" />
+              <Mapping SourceColumn="ContractId" DataSetColumn="ContractId" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="VendorId" DataSetColumn="VendorId" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="SplitSuffix" DataSetColumn="SplitSuffix" />
+              <Mapping SourceColumn="OfficeId" DataSetColumn="OfficeId" />
+              <Mapping SourceColumn="SupplierAtWarehouseDate" DataSetColumn="SupplierAtWarehouseDate" />
+              <Mapping SourceColumn="CountryOfOriginId" DataSetColumn="CountryOfOriginId" />
+              <Mapping SourceColumn="PackingMethodId" DataSetColumn="PackingMethodId" />
+              <Mapping SourceColumn="TotalPOQty" DataSetColumn="TotalPOQty" />
+              <Mapping SourceColumn="ShipmentMethodId" DataSetColumn="ShipmentMethodId" />
+              <Mapping SourceColumn="ShipmentPortId" DataSetColumn="ShipmentPortId" />
+              <Mapping SourceColumn="CustomerDestinationId" DataSetColumn="CustomerDestinationId" />
+              <Mapping SourceColumn="SplitShipmentId" DataSetColumn="SplitShipmentId" />
+              <Mapping SourceColumn="QACommissionPercent" DataSetColumn="QACommissionPercent" />
+              <Mapping SourceColumn="ItemNo" DataSetColumn="ItemNo" />
+              <Mapping SourceColumn="CustomerId" DataSetColumn="CustomerId" />
+              <Mapping SourceColumn="ProductId" DataSetColumn="ProductId" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="BankBranchId" DataSetColumn="BankBranchId" />
+              <Mapping SourceColumn="CustomerAtWarehouseDate" DataSetColumn="CustomerAtWarehouseDate" />
+              <Mapping SourceColumn="CurrencyId" DataSetColumn="CurrencyId" />
+              <Mapping SourceColumn="LCApplicationId" DataSetColumn="LCApplicationId" />
+              <Mapping SourceColumn="WorkflowStatusId" DataSetColumn="WorkflowStatusId" />
+              <Mapping SourceColumn="ShipmentWorkflowStatusId" DataSetColumn="ShipmentWorkflowStatusId" />
+              <Mapping SourceColumn="LCBatchId" DataSetColumn="LCBatchId" />
+              <Mapping SourceColumn="LCNo" DataSetColumn="LCNo" />
+              <Mapping SourceColumn="LCIssueDate" DataSetColumn="LCIssueDate" />
+              <Mapping SourceColumn="LCExpiryDate" DataSetColumn="LCExpiryDate" />
+              <Mapping SourceColumn="LCAmt" DataSetColumn="LCAmt" />
+              <Mapping SourceColumn="TermOfPurchaseId" DataSetColumn="TermOfPurchaseId" />
+              <Mapping SourceColumn="PurchaseLocationId" DataSetColumn="PurchaseLocationId" />
+              <Mapping SourceColumn="TotalPOAmt" DataSetColumn="TotalPOAmt" />
+              <Mapping SourceColumn="ShipmentTotalPOAmount" DataSetColumn="ShipmentTotalPOAmount" />
+              <Mapping SourceColumn="PackingUnitId" DataSetColumn="PackingUnitId" />
+              <Mapping SourceColumn="PaymentTermId" DataSetColumn="PaymentTermId" />
+              <Mapping SourceColumn="VendorPaymentDiscountPercent" DataSetColumn="VendorPaymentDiscountPercent" />
+              <Mapping SourceColumn="LabTestIncome" DataSetColumn="LabTestIncome" />
+              <Mapping SourceColumn="OtherShipmentIdWithLCNo" DataSetColumn="OtherShipmentIdWithLCNo" />
+              <Mapping SourceColumn="OtherSplitShipmentIdWithLCNo" DataSetColumn="OtherSplitShipmentIdWithLCNo" />
+              <Mapping SourceColumn="LCCancellationDate" DataSetColumn="LCCancellationDate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LCShipmentDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LCShipmentDs" msprop:Generator_UserDSName="LCShipmentDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LCShipment" msprop:Generator_UserTableName="LCShipment" msprop:Generator_RowEvArgName="LCShipmentRowChangeEvent" msprop:Generator_TableVarName="tableLCShipment" msprop:Generator_TablePropName="LCShipment" msprop:Generator_RowDeletingName="LCShipmentRowDeleting" msprop:Generator_RowChangingName="LCShipmentRowChanging" msprop:Generator_RowDeletedName="LCShipmentRowDeleted" msprop:Generator_RowEvHandlerName="LCShipmentRowChangeEventHandler" msprop:Generator_TableClassName="LCShipmentDataTable" msprop:Generator_RowChangedName="LCShipmentRowChanged" msprop:Generator_RowClassName="LCShipmentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShipmentId" msprop:Generator_ColumnVarNameInTable="columnShipmentId" msprop:Generator_ColumnPropNameInRow="ShipmentId" msprop:Generator_ColumnPropNameInTable="ShipmentIdColumn" msprop:Generator_UserColumnName="ShipmentId" type="xs:int" />
+              <xs:element name="ContractId" msprop:Generator_ColumnVarNameInTable="columnContractId" msprop:Generator_ColumnPropNameInRow="ContractId" msprop:Generator_ColumnPropNameInTable="ContractIdColumn" msprop:Generator_UserColumnName="ContractId" type="xs:int" />
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" type="xs:int" />
+              <xs:element name="VendorId" msprop:Generator_ColumnVarNameInTable="columnVendorId" msprop:Generator_ColumnPropNameInRow="VendorId" msprop:Generator_ColumnPropNameInTable="VendorIdColumn" msprop:Generator_UserColumnName="VendorId" type="xs:int" minOccurs="0" />
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SplitSuffix" msprop:Generator_ColumnVarNameInTable="columnSplitSuffix" msprop:Generator_ColumnPropNameInRow="SplitSuffix" msprop:Generator_ColumnPropNameInTable="SplitSuffixColumn" msprop:Generator_UserColumnName="SplitSuffix" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OfficeId" msprop:Generator_ColumnVarNameInTable="columnOfficeId" msprop:Generator_ColumnPropNameInRow="OfficeId" msprop:Generator_ColumnPropNameInTable="OfficeIdColumn" msprop:Generator_UserColumnName="OfficeId" type="xs:int" />
+              <xs:element name="SupplierAtWarehouseDate" msprop:Generator_ColumnVarNameInTable="columnSupplierAtWarehouseDate" msprop:Generator_ColumnPropNameInRow="SupplierAtWarehouseDate" msprop:Generator_ColumnPropNameInTable="SupplierAtWarehouseDateColumn" msprop:Generator_UserColumnName="SupplierAtWarehouseDate" type="xs:dateTime" />
+              <xs:element name="CountryOfOriginId" msprop:Generator_ColumnVarNameInTable="columnCountryOfOriginId" msprop:Generator_ColumnPropNameInRow="CountryOfOriginId" msprop:Generator_ColumnPropNameInTable="CountryOfOriginIdColumn" msprop:Generator_UserColumnName="CountryOfOriginId" type="xs:int" minOccurs="0" />
+              <xs:element name="PackingMethodId" msprop:Generator_ColumnVarNameInTable="columnPackingMethodId" msprop:Generator_ColumnPropNameInRow="PackingMethodId" msprop:Generator_ColumnPropNameInTable="PackingMethodIdColumn" msprop:Generator_UserColumnName="PackingMethodId" type="xs:int" />
+              <xs:element name="TotalPOQty" msprop:Generator_ColumnVarNameInTable="columnTotalPOQty" msprop:Generator_ColumnPropNameInRow="TotalPOQty" msprop:Generator_ColumnPropNameInTable="TotalPOQtyColumn" msprop:Generator_UserColumnName="TotalPOQty" type="xs:int" minOccurs="0" />
+              <xs:element name="ShipmentMethodId" msprop:Generator_ColumnVarNameInTable="columnShipmentMethodId" msprop:Generator_ColumnPropNameInRow="ShipmentMethodId" msprop:Generator_ColumnPropNameInTable="ShipmentMethodIdColumn" msprop:Generator_UserColumnName="ShipmentMethodId" type="xs:int" minOccurs="0" />
+              <xs:element name="ShipmentPortId" msprop:Generator_ColumnVarNameInTable="columnShipmentPortId" msprop:Generator_ColumnPropNameInRow="ShipmentPortId" msprop:Generator_ColumnPropNameInTable="ShipmentPortIdColumn" msprop:Generator_UserColumnName="ShipmentPortId" type="xs:int" minOccurs="0" />
+              <xs:element name="CustomerDestinationId" msprop:Generator_ColumnVarNameInTable="columnCustomerDestinationId" msprop:Generator_ColumnPropNameInRow="CustomerDestinationId" msprop:Generator_ColumnPropNameInTable="CustomerDestinationIdColumn" msprop:Generator_UserColumnName="CustomerDestinationId" type="xs:int" minOccurs="0" />
+              <xs:element name="SplitShipmentId" msprop:Generator_ColumnVarNameInTable="columnSplitShipmentId" msprop:Generator_ColumnPropNameInRow="SplitShipmentId" msprop:Generator_ColumnPropNameInTable="SplitShipmentIdColumn" msprop:Generator_UserColumnName="SplitShipmentId" type="xs:int" minOccurs="0" />
+              <xs:element name="QACommissionPercent" msprop:Generator_ColumnVarNameInTable="columnQACommissionPercent" msprop:Generator_ColumnPropNameInRow="QACommissionPercent" msprop:Generator_ColumnPropNameInTable="QACommissionPercentColumn" msprop:Generator_UserColumnName="QACommissionPercent" type="xs:decimal" />
+              <xs:element name="ItemNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" msprop:Generator_UserColumnName="ItemNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerId" msprop:Generator_ColumnVarNameInTable="columnCustomerId" msprop:Generator_ColumnPropNameInRow="CustomerId" msprop:Generator_ColumnPropNameInTable="CustomerIdColumn" msprop:Generator_UserColumnName="CustomerId" type="xs:int" />
+              <xs:element name="ProductId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnProductId" msprop:Generator_ColumnPropNameInRow="ProductId" msprop:Generator_ColumnPropNameInTable="ProductIdColumn" msprop:Generator_UserColumnName="ProductId" type="xs:int" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:int" minOccurs="0" />
+              <xs:element name="BankBranchId" msprop:Generator_ColumnVarNameInTable="columnBankBranchId" msprop:Generator_ColumnPropNameInRow="BankBranchId" msprop:Generator_ColumnPropNameInTable="BankBranchIdColumn" msprop:Generator_UserColumnName="BankBranchId" type="xs:int" minOccurs="0" />
+              <xs:element name="CustomerAtWarehouseDate" msprop:Generator_ColumnVarNameInTable="columnCustomerAtWarehouseDate" msprop:Generator_ColumnPropNameInRow="CustomerAtWarehouseDate" msprop:Generator_ColumnPropNameInTable="CustomerAtWarehouseDateColumn" msprop:Generator_UserColumnName="CustomerAtWarehouseDate" type="xs:dateTime" />
+              <xs:element name="CurrencyId" msprop:Generator_ColumnVarNameInTable="columnCurrencyId" msprop:Generator_ColumnPropNameInRow="CurrencyId" msprop:Generator_ColumnPropNameInTable="CurrencyIdColumn" msprop:Generator_UserColumnName="CurrencyId" type="xs:int" />
+              <xs:element name="LCApplicationId" msprop:Generator_ColumnVarNameInTable="columnLCApplicationId" msprop:Generator_ColumnPropNameInRow="LCApplicationId" msprop:Generator_ColumnPropNameInTable="LCApplicationIdColumn" msprop:Generator_UserColumnName="LCApplicationId" type="xs:int" minOccurs="0" />
+              <xs:element name="WorkflowStatusId" msprop:Generator_ColumnVarNameInTable="columnWorkflowStatusId" msprop:Generator_ColumnPropNameInRow="WorkflowStatusId" msprop:Generator_ColumnPropNameInTable="WorkflowStatusIdColumn" msprop:Generator_UserColumnName="WorkflowStatusId" type="xs:int" minOccurs="0" />
+              <xs:element name="ShipmentWorkflowStatusId" msprop:Generator_ColumnVarNameInTable="columnShipmentWorkflowStatusId" msprop:Generator_ColumnPropNameInRow="ShipmentWorkflowStatusId" msprop:Generator_ColumnPropNameInTable="ShipmentWorkflowStatusIdColumn" msprop:Generator_UserColumnName="ShipmentWorkflowStatusId" type="xs:int" />
+              <xs:element name="LCBatchId" msprop:Generator_ColumnVarNameInTable="columnLCBatchId" msprop:Generator_ColumnPropNameInRow="LCBatchId" msprop:Generator_ColumnPropNameInTable="LCBatchIdColumn" msprop:Generator_UserColumnName="LCBatchId" type="xs:int" minOccurs="0" />
+              <xs:element name="LCNo" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="LCNo" msprop:Generator_ColumnVarNameInTable="columnLCNo" msprop:Generator_ColumnPropNameInTable="LCNoColumn" msprop:Generator_UserColumnName="LCNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LCIssueDate" msprop:Generator_ColumnVarNameInTable="columnLCIssueDate" msprop:Generator_ColumnPropNameInRow="LCIssueDate" msprop:Generator_ColumnPropNameInTable="LCIssueDateColumn" msprop:Generator_UserColumnName="LCIssueDate" type="xs:dateTime" default="0001-01-01T00:00:00+08:00" minOccurs="0" />
+              <xs:element name="LCExpiryDate" msprop:Generator_ColumnVarNameInTable="columnLCExpiryDate" msprop:Generator_ColumnPropNameInRow="LCExpiryDate" msprop:Generator_ColumnPropNameInTable="LCExpiryDateColumn" msprop:Generator_UserColumnName="LCExpiryDate" type="xs:dateTime" default="0001-01-01T00:00:00+08:00" minOccurs="0" />
+              <xs:element name="LCAmt" msprop:Generator_ColumnVarNameInTable="columnLCAmt" msprop:Generator_ColumnPropNameInRow="LCAmt" msprop:Generator_ColumnPropNameInTable="LCAmtColumn" msprop:Generator_UserColumnName="LCAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TermOfPurchaseId" msprop:Generator_ColumnVarNameInTable="columnTermOfPurchaseId" msprop:Generator_ColumnPropNameInRow="TermOfPurchaseId" msprop:Generator_ColumnPropNameInTable="TermOfPurchaseIdColumn" msprop:Generator_UserColumnName="TermOfPurchaseId" type="xs:int" />
+              <xs:element name="PurchaseLocationId" msprop:Generator_ColumnVarNameInTable="columnPurchaseLocationId" msprop:Generator_ColumnPropNameInRow="PurchaseLocationId" msprop:Generator_ColumnPropNameInTable="PurchaseLocationIdColumn" msprop:Generator_UserColumnName="PurchaseLocationId" type="xs:int" />
+              <xs:element name="TotalPOAmt" msprop:Generator_ColumnVarNameInTable="columnTotalPOAmt" msprop:Generator_ColumnPropNameInRow="TotalPOAmt" msprop:Generator_ColumnPropNameInTable="TotalPOAmtColumn" msprop:Generator_UserColumnName="TotalPOAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ShipmentTotalPOAmount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnShipmentTotalPOAmount" msprop:Generator_ColumnPropNameInRow="ShipmentTotalPOAmount" msprop:Generator_ColumnPropNameInTable="ShipmentTotalPOAmountColumn" msprop:Generator_UserColumnName="ShipmentTotalPOAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PackingUnitId" msprop:Generator_ColumnVarNameInTable="columnPackingUnitId" msprop:Generator_ColumnPropNameInRow="PackingUnitId" msprop:Generator_ColumnPropNameInTable="PackingUnitIdColumn" msprop:Generator_UserColumnName="PackingUnitId" type="xs:int" />
+              <xs:element name="PaymentTermId" msprop:Generator_ColumnVarNameInTable="columnPaymentTermId" msprop:Generator_ColumnPropNameInRow="PaymentTermId" msprop:Generator_ColumnPropNameInTable="PaymentTermIdColumn" msprop:Generator_UserColumnName="PaymentTermId" type="xs:int" minOccurs="0" />
+              <xs:element name="VendorPaymentDiscountPercent" msprop:Generator_ColumnVarNameInTable="columnVendorPaymentDiscountPercent" msprop:Generator_ColumnPropNameInRow="VendorPaymentDiscountPercent" msprop:Generator_ColumnPropNameInTable="VendorPaymentDiscountPercentColumn" msprop:Generator_UserColumnName="VendorPaymentDiscountPercent" type="xs:decimal" />
+              <xs:element name="LabTestIncome" msprop:Generator_ColumnVarNameInTable="columnLabTestIncome" msprop:Generator_ColumnPropNameInRow="LabTestIncome" msprop:Generator_ColumnPropNameInTable="LabTestIncomeColumn" msprop:Generator_UserColumnName="LabTestIncome" type="xs:decimal" />
+              <xs:element name="OtherShipmentIdWithLCNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOtherShipmentIdWithLCNo" msprop:Generator_ColumnPropNameInRow="OtherShipmentIdWithLCNo" msprop:Generator_ColumnPropNameInTable="OtherShipmentIdWithLCNoColumn" msprop:Generator_UserColumnName="OtherShipmentIdWithLCNo" type="xs:int" minOccurs="0" />
+              <xs:element name="OtherSplitShipmentIdWithLCNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOtherSplitShipmentIdWithLCNo" msprop:Generator_ColumnPropNameInRow="OtherSplitShipmentIdWithLCNo" msprop:Generator_ColumnPropNameInTable="OtherSplitShipmentIdWithLCNoColumn" msprop:Generator_UserColumnName="OtherSplitShipmentIdWithLCNo" type="xs:int" minOccurs="0" />
+              <xs:element name="LCCancellationDate" msprop:Generator_ColumnVarNameInTable="columnLCCancellationDate" msprop:Generator_ColumnPropNameInRow="LCCancellationDate" msprop:Generator_ColumnPropNameInTable="LCCancellationDateColumn" msprop:Generator_UserColumnName="LCCancellationDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LCShipment" />
+      <xs:field xpath="mstns:ShipmentId" />
+      <xs:field xpath="mstns:SplitShipmentId" />
+      <xs:field xpath="mstns:LCApplicationId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

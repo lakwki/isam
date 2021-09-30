@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EziBuyListDs" targetNamespace="http://tempuri.org/EziBuyListDs.xsd" xmlns:mstns="http://tempuri.org/EziBuyListDs.xsd" xmlns="http://tempuri.org/EziBuyListDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EziBuyListTableAdapter" GeneratorDataComponentClassName="EziBuyListTableAdapter" Name="EziBuyList" UserDataComponentName="EziBuyListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>          SELECT TOP 100
+                s.ShipmentId, c.ContractNo, s.DeliveryNo,
+                OfficeCode='', ItemNo='',
+            	InvoiceNo = '',
+	i.InvoiceDate, i.InvoiceSentDate,
+                            CustomerDeliveryDate = s.CustomerAtwarehouseDate,
+                            InvoiceAmount = s.TotalShippedAmt,
+		           ActualInWarehousDate = i.ActualAtWarehouseDate,
+		            InboundDeliveryNo = c.BookingRefNo,
+SalesSettlementDate= i.ARDate
+            FROM Shipment s
+                INNER JOIN Contract c ON c.ContractId = s.ContractId
+                INNER JOIN Invoice i ON i.ShipmentId = s.ShipmentId
+          WHERE s.Status = 1
+                and c.CustomerId = 13
+                AND s.WorkflowStatusId = 8
+                AND (i.ActualAtWarehouseDate IS NULL OR i.ARDate IS NULL)
+
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ShipmentId" DataSetColumn="ShipmentId" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="OfficeCode" DataSetColumn="OfficeCode" />
+              <Mapping SourceColumn="ItemNo" DataSetColumn="ItemNo" />
+              <Mapping SourceColumn="InvoiceNo" DataSetColumn="InvoiceNo" />
+              <Mapping SourceColumn="InvoiceDate" DataSetColumn="InvoiceDate" />
+              <Mapping SourceColumn="CustomerDeliveryDate" DataSetColumn="CustomerDeliveryDate" />
+              <Mapping SourceColumn="InvoiceAmount" DataSetColumn="InvoiceAmount" />
+              <Mapping SourceColumn="ActualInWarehousDate" DataSetColumn="ActualInWarehousDate" />
+              <Mapping SourceColumn="InboundDeliveryNo" DataSetColumn="InboundDeliveryNo" />
+              <Mapping SourceColumn="SalesSettlementDate" DataSetColumn="SalesSettlementDate" />
+              <Mapping SourceColumn="InvoiceSentDate" DataSetColumn="InvoiceSentDate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EziBuyListDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="EziBuyListDs" msprop:Generator_DataSetName="EziBuyListDs" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EziBuyList" msprop:Generator_UserTableName="EziBuyList" msprop:Generator_RowDeletedName="EziBuyListRowDeleted" msprop:Generator_RowChangedName="EziBuyListRowChanged" msprop:Generator_RowClassName="EziBuyListRow" msprop:Generator_RowChangingName="EziBuyListRowChanging" msprop:Generator_RowEvArgName="EziBuyListRowChangeEvent" msprop:Generator_RowEvHandlerName="EziBuyListRowChangeEventHandler" msprop:Generator_TableClassName="EziBuyListDataTable" msprop:Generator_TableVarName="tableEziBuyList" msprop:Generator_RowDeletingName="EziBuyListRowDeleting" msprop:Generator_TablePropName="EziBuyList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShipmentId" msprop:Generator_UserColumnName="ShipmentId" msprop:Generator_ColumnVarNameInTable="columnShipmentId" msprop:Generator_ColumnPropNameInRow="ShipmentId" msprop:Generator_ColumnPropNameInTable="ShipmentIdColumn" type="xs:int" />
+              <xs:element name="ContractNo" msprop:Generator_UserColumnName="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryNo" msprop:Generator_UserColumnName="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" type="xs:int" />
+              <xs:element name="OfficeCode" msdata:ReadOnly="true" msprop:Generator_UserColumnName="OfficeCode" msprop:Generator_ColumnVarNameInTable="columnOfficeCode" msprop:Generator_ColumnPropNameInRow="OfficeCode" msprop:Generator_ColumnPropNameInTable="OfficeCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemNo" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ItemNo" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceNo" msdata:ReadOnly="true" msprop:Generator_UserColumnName="InvoiceNo" msprop:Generator_ColumnVarNameInTable="columnInvoiceNo" msprop:Generator_ColumnPropNameInRow="InvoiceNo" msprop:Generator_ColumnPropNameInTable="InvoiceNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceDate" msprop:Generator_UserColumnName="InvoiceDate" msprop:Generator_ColumnVarNameInTable="columnInvoiceDate" msprop:Generator_ColumnPropNameInRow="InvoiceDate" msprop:Generator_ColumnPropNameInTable="InvoiceDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CustomerDeliveryDate" msdata:ReadOnly="true" msprop:Generator_UserColumnName="CustomerDeliveryDate" msprop:Generator_ColumnVarNameInTable="columnCustomerDeliveryDate" msprop:Generator_ColumnPropNameInRow="CustomerDeliveryDate" msprop:Generator_ColumnPropNameInTable="CustomerDeliveryDateColumn" type="xs:dateTime" />
+              <xs:element name="InvoiceAmount" msprop:Generator_UserColumnName="InvoiceAmount" msprop:Generator_ColumnVarNameInTable="columnInvoiceAmount" msprop:Generator_ColumnPropNameInRow="InvoiceAmount" msprop:Generator_ColumnPropNameInTable="InvoiceAmountColumn" type="xs:decimal" />
+              <xs:element name="ActualInWarehousDate" msprop:Generator_UserColumnName="ActualInWarehousDate" msprop:Generator_ColumnVarNameInTable="columnActualInWarehousDate" msprop:Generator_ColumnPropNameInRow="ActualInWarehousDate" msprop:Generator_ColumnPropNameInTable="ActualInWarehousDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="InboundDeliveryNo" msdata:ReadOnly="true" msprop:Generator_UserColumnName="InboundDeliveryNo" msprop:Generator_ColumnVarNameInTable="columnInboundDeliveryNo" msprop:Generator_ColumnPropNameInRow="InboundDeliveryNo" msprop:Generator_ColumnPropNameInTable="InboundDeliveryNoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SalesSettlementDate" msprop:Generator_UserColumnName="SalesSettlementDate" msprop:Generator_ColumnVarNameInTable="columnSalesSettlementDate" msprop:Generator_ColumnPropNameInRow="SalesSettlementDate" msprop:Generator_ColumnPropNameInTable="SalesSettlementDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="InvoiceSentDate" msprop:Generator_UserColumnName="InvoiceSentDate" msprop:Generator_ColumnPropNameInRow="InvoiceSentDate" msprop:Generator_ColumnVarNameInTable="columnInvoiceSentDate" msprop:Generator_ColumnPropNameInTable="InvoiceSentDateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:EziBuyList" />
+      <xs:field xpath="mstns:ShipmentId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

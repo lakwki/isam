@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UTDiscrepancyDs" targetNamespace="http://tempuri.org/UTDiscrepancyDs.xsd" xmlns:mstns="http://tempuri.org/UTDiscrepancyDs.xsd" xmlns="http://tempuri.org/UTDiscrepancyDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UTDiscrepancyTableAdapter" GeneratorDataComponentClassName="UTDiscrepancyTableAdapter" Name="UTDiscrepancy" UserDataComponentName="UTDiscrepancyTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select  distinct o.OfficeCode As Office,y.name As Vendor,x.itemno As Item, z.contractno As ContractNo, a.deliveryno As DeliveryNo, a.customeratwarehousedate As CustomerDeliveryDate, InvoiceNo = dbo.fn_formatInvoiceNo(e.InvoicePrefix, e.InvoiceSeq, e.INvoiceYear), e.InvoiceDate, w.sizeoptionno As SizeOptionNo, b.sellingprice As UTSellingPrice, d.sellingprice As UKSellingPrice, b.SupplierGmtPrice As UTSupplierPrice,d.SupplierGmtPrice As UKSupplierPrice
+from shipment a inner join shipmentdetail b on a.shipmentid = b.shipmentid and a.status = 1 and b.status = 1 and a.customeratwarehousedate &gt;= '2017-01-01' and a.termofpurchaseid = 5 and a.workflowstatusid not in (1,3,5,9,8)
+inner join invoice e on e.shipmentid = a.shipmentid
+inner join sizeoption w on w.sizeoptionid = b.sizeoptionid
+inner join nslindustry..vendor y on y.vendorid = a.vendorid
+inner join contract z on a.contractid = z.contractid
+inner join product x on x.productid = z.productid
+inner join shipment c on c.contractid = a.contractid and c.workflowstatusid not in (1,3,5,9,8) and c.termofpurchaseid &lt;&gt; 5
+inner join shipmentdetail d on c.shipmentid = d.shipmentid and d.status = 1 and d.sizeoptionid = b.sizeoptionid
+inner join office o on z.OfficeId = o.OfficeId
+--and (b.sellingprice &lt;&gt; d.sellingprice or d.SupplierGmtPrice &lt;&gt; b.SupplierGmtPrice)
+order by 1,2,3,4,5,6</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Office" DataSetColumn="Office" />
+              <Mapping SourceColumn="Vendor" DataSetColumn="Vendor" />
+              <Mapping SourceColumn="Item" DataSetColumn="Item" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="CustomerDeliveryDate" DataSetColumn="CustomerDeliveryDate" />
+              <Mapping SourceColumn="InvoiceNo" DataSetColumn="InvoiceNo" />
+              <Mapping SourceColumn="InvoiceDate" DataSetColumn="InvoiceDate" />
+              <Mapping SourceColumn="SizeOptionNo" DataSetColumn="SizeOptionNo" />
+              <Mapping SourceColumn="UTSellingPrice" DataSetColumn="UTSellingPrice" />
+              <Mapping SourceColumn="UKSellingPrice" DataSetColumn="UKSellingPrice" />
+              <Mapping SourceColumn="UTSupplierPrice" DataSetColumn="UTSupplierPrice" />
+              <Mapping SourceColumn="UKSupplierPrice" DataSetColumn="UKSupplierPrice" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UTDiscrepancyDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="UTDiscrepancyDs" msprop:Generator_UserDSName="UTDiscrepancyDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UTDiscrepancy" msprop:Generator_TableClassName="UTDiscrepancyDataTable" msprop:Generator_TableVarName="tableUTDiscrepancy" msprop:Generator_RowChangedName="UTDiscrepancyRowChanged" msprop:Generator_TablePropName="UTDiscrepancy" msprop:Generator_RowDeletingName="UTDiscrepancyRowDeleting" msprop:Generator_RowChangingName="UTDiscrepancyRowChanging" msprop:Generator_RowEvHandlerName="UTDiscrepancyRowChangeEventHandler" msprop:Generator_RowDeletedName="UTDiscrepancyRowDeleted" msprop:Generator_RowClassName="UTDiscrepancyRow" msprop:Generator_UserTableName="UTDiscrepancy" msprop:Generator_RowEvArgName="UTDiscrepancyRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Office" msprop:Generator_ColumnVarNameInTable="columnOffice" msprop:Generator_ColumnPropNameInRow="Office" msprop:Generator_ColumnPropNameInTable="OfficeColumn" msprop:Generator_UserColumnName="Office">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Vendor" msprop:Generator_ColumnVarNameInTable="columnVendor" msprop:Generator_ColumnPropNameInRow="Vendor" msprop:Generator_ColumnPropNameInTable="VendorColumn" msprop:Generator_UserColumnName="Vendor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Item" msprop:Generator_ColumnVarNameInTable="columnItem" msprop:Generator_ColumnPropNameInRow="Item" msprop:Generator_ColumnPropNameInTable="ItemColumn" msprop:Generator_UserColumnName="Item">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" type="xs:int" />
+              <xs:element name="CustomerDeliveryDate" msprop:Generator_ColumnVarNameInTable="columnCustomerDeliveryDate" msprop:Generator_ColumnPropNameInRow="CustomerDeliveryDate" msprop:Generator_ColumnPropNameInTable="CustomerDeliveryDateColumn" msprop:Generator_UserColumnName="CustomerDeliveryDate" type="xs:dateTime" />
+              <xs:element name="InvoiceNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInvoiceNo" msprop:Generator_ColumnPropNameInRow="InvoiceNo" msprop:Generator_ColumnPropNameInTable="InvoiceNoColumn" msprop:Generator_UserColumnName="InvoiceNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceDate" msprop:Generator_ColumnVarNameInTable="columnInvoiceDate" msprop:Generator_ColumnPropNameInRow="InvoiceDate" msprop:Generator_ColumnPropNameInTable="InvoiceDateColumn" msprop:Generator_UserColumnName="InvoiceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SizeOptionNo" msprop:Generator_ColumnVarNameInTable="columnSizeOptionNo" msprop:Generator_ColumnPropNameInRow="SizeOptionNo" msprop:Generator_ColumnPropNameInTable="SizeOptionNoColumn" msprop:Generator_UserColumnName="SizeOptionNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UTSellingPrice" msprop:Generator_ColumnVarNameInTable="columnUTSellingPrice" msprop:Generator_ColumnPropNameInRow="UTSellingPrice" msprop:Generator_ColumnPropNameInTable="UTSellingPriceColumn" msprop:Generator_UserColumnName="UTSellingPrice" type="xs:decimal" />
+              <xs:element name="UKSellingPrice" msprop:Generator_ColumnVarNameInTable="columnUKSellingPrice" msprop:Generator_ColumnPropNameInRow="UKSellingPrice" msprop:Generator_ColumnPropNameInTable="UKSellingPriceColumn" msprop:Generator_UserColumnName="UKSellingPrice" type="xs:decimal" />
+              <xs:element name="UTSupplierPrice" msprop:Generator_ColumnVarNameInTable="columnUTSupplierPrice" msprop:Generator_ColumnPropNameInRow="UTSupplierPrice" msprop:Generator_ColumnPropNameInTable="UTSupplierPriceColumn" msprop:Generator_UserColumnName="UTSupplierPrice" type="xs:decimal" />
+              <xs:element name="UKSupplierPrice" msprop:Generator_ColumnVarNameInTable="columnUKSupplierPrice" msprop:Generator_ColumnPropNameInRow="UKSupplierPrice" msprop:Generator_ColumnPropNameInTable="UKSupplierPriceColumn" msprop:Generator_UserColumnName="UKSupplierPrice" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

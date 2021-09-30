@@ -1,0 +1,351 @@
+body {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color:#647D91;
+}
+
+td {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: #617D96;
+	text-decoration: none;
+}
+a:hover {
+	color: #617D96;
+	text-decoration: underline;
+	background-color: none;
+}
+form {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	}
+
+input {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+textarea {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+select {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+ul {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+li {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+ol {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	list-style-type: upper-roman;
+	list-style-position: outside;
+}
+
+.small {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+
+.big {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+.bodystyle {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.box1 {
+	padding: 3px;
+	border-width: thin;
+	border-style: solid;
+	border-color: #CCCCCC #666666 #666666 #CCCCCC;
+}
+
+.box2 {
+	border-width: 3px;
+	border-style: solid;
+	padding: 5px;
+}
+
+.menu {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #CCCCCC;
+	text-align: center;
+}
+.login {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+	text-align: left;
+}
+.summarytitle {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+.summary {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+}
+.title {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #336699;
+}
+.errorTitle {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+  	background-color: #008080; color: #FFFFFF;
+}
+.subtitle {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+  	color: #999999;
+}
+.submenu {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+  	background-color: #666666; color: #FFFFFF;
+}
+.columnHeading {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+  	background-color: #B5C3CE; color: #336699;
+}
+.rowLabel {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background-color: #f0f8ff;
+	color: #000000;
+}
+.rowText {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+  	color: #000000;
+  	BACKGROUND-COLOR: #FFFFFF
+}
+.rowTemplate {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+  	color: #000000;
+	BACKGROUND-COLOR: #f6f6f6
+}
+.rowData1 {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+  	color: #006699;
+}
+.rowData2 {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	background-color: #FFFFEC;
+  	color: #006699;
+}
+.formBox {
+	BORDER-RIGHT: #999999 1px outset; BORDER-TOP: #999999 1px outset; FONT-SIZE: 11px; BORDER-LEFT: #999999 1px outset; CURSOR: hand; BORDER-BOTTOM: #999999 1px outset; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: grey
+}
+.formText {
+	BORDER-RIGHT: #CCCCCC 1px solid; BORDER-TOP: #CCCCCC 1px solid; BORDER-LEFT: #CCCCCC 1px solid; BORDER-BOTTOM: #CCCCCC 1px solid; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.formTextRight {
+	BORDER-RIGHT: #CCCCCC 1px solid; BORDER-TOP: #CCCCCC 1px solid; BORDER-LEFT: #CCCCCC 1px solid; BORDER-BOTTOM: #CCCCCC 1px solid; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; text-align: right;
+}
+.editText {
+	BORDER-RIGHT: #CCCCCC 1px solid; BORDER-TOP: #CCCCCC 1px solid; BORDER-LEFT: #CCCCCC 1px solid; BORDER-BOTTOM: #CCCCCC 1px solid; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.editTextToolTip {
+	BORDER-RIGHT: #CCCCCC 1px solid; BORDER-TOP: #CCCCCC 1px solid; BORDER-LEFT: #CCCCCC 1px solid; BORDER-BOTTOM: #CCCCCC 1px solid;  FONT-SIZE: 11px; font-style:italic; color: teal; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.editTextRight {
+	BORDER-RIGHT: #CCCCCC 1px solid; BORDER-TOP: #CCCCCC 1px solid; BORDER-LEFT: #CCCCCC 1px solid; BORDER-BOTTOM: #CCCCCC 1px solid; TEXT-ALIGN: right; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.toolTipImage{
+	filter:progid:DXImageTransform.Microsoft.Alpha( Opacity=80, FinishOpacity=100, Style=1, StartX=0,  FinishX=100, StartY=0, FinishY=100);
+}
+.toolTipTextBg{
+	BACKGROUND-COLOR: #ffffe8;
+}
+.toolTipCaptionBg{
+	BACKGROUND-COLOR: #297A73; filter:progid:DXImageTransform.Microsoft.Alpha( Opacity=90, FinishOpacity=80, Style=1, StartX=0,  FinishX=100, StartY=0, FinishY=100);
+}
+.toolTipCaptionFont{
+	font-weight:bold; color: white;
+}
+.copyright {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+  	color: #666666;
+}
+.rowMessage {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	text-align: left;
+  	background-color: #FFFFE8; color: #000000;
+}
+
+.alertMessage {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: left;
+  	background-color: #FFFFFF; color: red;
+}
+.rowMessageTitle {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	text-align: left;
+  	background-color: #FFFFE8; color: #FF6600;
+}
+.summaryTitle {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+.summaryHeading {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+}
+.summary {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+	background-color: #F1F1E2;
+}
+.login {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+	text-align: center;
+}
+.btn {
+	background-color:#E6E6E6;border-color:#FFF #C1C1C1 #C1C1C1 #FFF;color:#333;
+	font:bold 78% verdana;border-style:outset;border-width:2px;margin-right:.5em;
+	padding:.2em 0;cursor:pointer;cursor:hand;
+}
+.chkbox {
+	BORDER-RIGHT: #999999 1px outset; BORDER-TOP: #999999 1px outset; FONT-SIZE: 11px; BORDER-LEFT: #999999 1px outset; CURSOR: hand; BORDER-BOTTOM: #999999 1px outset; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #F2FBFF
+}
+
+
+.gridTitle {
+	border-top-color:#FFF;border-bottom-color:#C1C1C1;border-right-color:#C1C1C1;background-color:#E6E6E6;
+
+}
+.gridItem
+{
+	border-width: 0 0 1px 0;border-style: solid;padding:2px 0 2px 5px;vertical-align:center;
+	border-bottom-color:#E6E6E6;
+}
+
+/* Button bars */
+div.globalbuttonbar, div.contentbuttonbar{padding:.5em;text-align:right;line-height:1.8em;height:2.8em;}
+html>body div.globalbuttonbar, html>body div.contentbuttonbar{height:2.8em;}
+@media all{html>body div.globalbuttonbar, html>body div.contentbuttonbar{height:1.8em;}}
+div.globalbuttonbar span.last button, div.contentbuttonbar span.last button{margin:0;}
+div.globalbuttonbar span.last{padding:.25em;}
+html>body div.globalbuttonbar span.last{white-space:nowrap;width:1%;padding-top:0;padding-bottom:0;}
+@media all{html>body div.globalbuttonbar span.last{padding:.25em;}}
+div.globalbuttonbar span span{display:none;}
+div.globalbuttonbar span.first{float:left;text-align:left;}
+div.globalbuttonbar span.last a{font-weight:bold;padding-bottom:.15em;text-decoration:underline;}
+div.globalbuttonbar span.last span{display:inline;}
+div.globalbuttonbar span.last img{position:relative;top:.25em;}
+@media all{html>body div.globalbuttonbar span.last img{position:relative;top:.35em;}}
+.contentnav{margin:4px 0;font:78% verdana;text-align:right;}
+.contentnav a{text-decoration:underline;}
+.contentnav span.first{float:left;text-align:left;}
+.contentnav span.last span{margin-left:1em;}
+.contentnav #checkall, .contentnav #clearall{margin:0;cursor:pointer;cursor:hand;text-decoration:underline;color:#039;}
+#contentnavtop{border-top-width:1px;border-top-style:solid;padding-top:.5em;}
+.contentbuttonbar span.first{float:left;text-align:left;}
+#contentbuttonbartop{border-width:0 0 1px 0;border-style:solid;}
+/* Buttons */
+.button, button, .inputbutton{font:bold 78% verdana;border-style:outset;border-width:2px;margin-right:.5em;}
+.inputbutton{padding:.2em .8em;cursor:pointer;cursor:hand;}
+@media all{.button,button{position:relative;}}
+button{padding:.2em 0;cursor:pointer;cursor:hand;}
+html>body button{padding:.2em .8em;line-height:150%;height:1.8em;}
+@media all{html>body button{height:auto;position:relative;display:inline;}}
+.button{padding:.4em .8em;height:2em;}
+.button:hover{text-decoration:none;}
+html>body .button{height:auto;line-height:2em;}
+button.menubutton{background:url(bt_b_dd_2.gif) no-repeat right center;padding-right:20px;}
+button.hasdefaultstate{background:url(bt_s_dd_2.gif) no-repeat right center;padding-right:20px;}
+.contentnav #filtercontrol span{display:block;float:left;margin:0 .5em 0 0;padding:0;}
+.contentnav #filtercontrol span.filterbutton{background:url(bt_dd_2.gif) no-repeat 95% 50%;font:normal 100% verdana;border-width:1px;border-style:solid;padding:0 20px 0 .25em;position:relative;cursor:pointer;cursor:hand;width:auto;}
+/* Button menus */
+.buttonmenu{top:0;left:0;z-index:2;position:absolute;visibility:hidden;border-style:solid;border-width:1px;font:78% verdana;}
+html>body .buttonmenu{width:1%;}
+@media all{html>body .buttonmenu{width:auto;}}
+.buttonmenu strong{display:none;}
+.buttonmenu ul{margin:0;list-style:none;padding:.5em;}
+.buttonmenu li{padding:.25em;border-width:1px;border-style:solid;cursor:pointer;cursor:hand;}
+.buttonmenu li.hover, #movemenu li.hover{width:100%;}
+.buttonmenu li a:hover{text-decoration:none;}
+html>body .buttonmenu ul{float:left;}
+@media all{html>body .buttonmenu ul{float:none;width:auto;}}
+#movemenu li{background:url(perc1.gif) left center no-repeat;margin:0;padding:.25em .25em .25em 2em;white-space:nowrap;}
+html>body #movemenu li{padding-left:20px;}
+.overflow{height:254px;overflow:auto;}
+html>body .overflow{height:250px;overflow:-moz-scrollbars-vertical;}
+/* Buttons */
+button, .button, .inputbutton, button.menubutton, button.hasdefaultstate{background-color:#E6E6E6;border-color:#FFF #C1C1C1 #C1C1C1 #FFF;color:#333;}
+a.button:visited{color:#333;}
+/* Data table */
+.tbldata caption{display:none;}
+table.tbldata{border-collapse:collapse;clear:both;}
+.tbldata tbody td{border-width: 0 0 1px 0;border-style: solid;padding:2px 0 2px 5px;vertical-align:center;}
+.tbldata thead th{text-align:left;border-width:1px 1px 1px 0;border-style:solid;padding:1px 0 1px 5px;background:url(px_w.gif) repeat-y;}
+.tbldata thead th input{margin-bottom:0px;margin-top:-1px;}
+.tbldata td img{text-align:right;}
+.tbldata th img{float:right;margin:4px 4px 0 0;}
+.tbldata tr.msgnew{font-weight:normal;}
+
+.tbldata thead th.iconheader{border-right-width:0;border-right-style:none;}
+.tbldata thead th#toheader,.tbldata thead th#senderheader,.tbldata thead th#recipientheader,.tbldata thead th#subjectheader{border-left-width:0;border-left-style:none;background-image:none;}
+/* Data table */
+.tbldata thead th{border-top-color:#FFF;border-bottom-color:#C1C1C1;border-right-color:#C1C1C1;background-color:#E6E6E6;}
+.tbldata thead th.sortcol{background-color:#C1C1C1;}
+.tbldata tbody td{border-bottom-color:#E6E6E6;}
+.tbldata tr.selected td {background-color:#d7e4ea;}
+
+/*Selection box*/
+.cbx {BORDER-RIGHT: #999999 1px outset; BORDER-TOP: #999999 1px outset; FONT-SIZE: 11px; BORDER-LEFT: #999999 1px outset; CURSOR: hand; BORDER-BOTTOM: #999999 1px outset; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: grey}
+
+/*Text Box*/
+.editText {
+	BORDER-RIGHT: #CCCCCC 1px solid; BORDER-TOP: #CCCCCC 1px solid; BORDER-LEFT: #CCCCCC 1px solid; BORDER-BOTTOM: #CCCCCC 1px solid; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}

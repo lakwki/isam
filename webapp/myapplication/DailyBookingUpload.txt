@@ -1,0 +1,476 @@
+﻿'Daily Booking Upload Main Program
+Dim dbName As String
+Dim cn As ADODB.Connection
+Dim rs As ADODB.Recordset
+Dim ShowUploadDetail As Boolean
+
+
+
+Sub Upload_All()
+'Upload all the opened WorkBook (excluding this one)
+'##################################
+'##                             '##
+    dbName = "ISAM"             '##
+'##                             '##
+'##################################
+    Dim wb As Workbook
+    Dim success As Boolean
+    
+    ShowUploadDetail = True
+    
+    Set cn = New ADODB.Connection
+    cn.Open "Provider=SQLOLEDB;Server=NS-DB04; Initial Catalog=" & dbName & "; User Id=sa;Password=797836s#s;"
+
+    For Each wb In Application.workbooks
+        If wb.Name <> ThisWorkbook.Name Then
+            success = UploadWorkbook(wb)
+        End If
+    Next
+    MsgBox "Upload Completed"
+    
+    cn.Close
+    Set cn = Nothing
+
+End Sub
+
+
+
+
+Function UploadWorkbook(ByRef wb As Workbook)
+' Upload the Daily and Revise booking worksheet of this workbook
+    ' UploadBooking (wb, "DAILY", 1, "Daily Booking")     ' Standard calling parameters
+    Debug.Print ""
+    Debug.Print "-----------------------------------------------------------------------------------"
+    Debug.Print "Upload [" & wb.Name & "] to " & dbName
+    Debug.Print "-----------------------------------------------------------------------------------"
+    Debug.Print ""
+
+    UploadWorkbook = True
+    UploadWorkbook = (UploadWorkbook And UploadWorksheet(wb, "DAILY"))
+    UploadWorkbook = (UploadWorkbook And UploadWorksheet(wb, "REVISE"))
+
+    Debug.Print ""
+    Debug.Print "<< Upload [" & wb.Name & "] " & IIf(UploadWorkbook, "completed", "failed") & " >>"
+    Debug.Print "-----------------------------------------------------------------------------------"
+    Debug.Print ""
+End Function
+
+
+'Sub Upload_Me()
+''Upload all this WorkBook
+''##################################
+''##                             '##
+'    dbName = "ISAM"             '##
+''##                             '##
+''##################################
+'    Dim wb As Workbook
+'   Dim success As Boolean
+'
+'    ShowUploadDetail = False
+'
+'    Set cn = New ADODB.Connection
+'    cn.Open "Provider=SQLOLEDB;Server=NS-DB04; Initial Catalog=" & dbName & "; User Id=sa;Password=797836s#s;"'
+'
+'    ' UploadBooking (wb, "DAILY", 1, "Daily Booking")     ' Standard calling parameters
+'    Debug.Print ""
+'    Debug.Print "-----------------------------------------------------------------------------------"
+'    Debug.Print "Upload [" & ThisWorkbook.Name & "] to " & dbName
+'    Debug.Print "-----------------------------------------------------------------------------------"
+'    Debug.Print ""
+'
+'    success = True
+'    success = (success And UploadWorksheet(ThisWorkbook, "DAILY"))
+'    success = (success And UploadWorksheet(ThisWorkbook, "REVISE"))
+'
+'    Debug.Print ""
+'    Debug.Print "<< Upload [" & ThisWorkbook.Name & "] " & IIf(success, "completed", "failed") & " >>"
+'    Debug.Print ""
+'
+'    MsgBox "Upload Completed"
+'
+'    cn.Close
+'    Set cn = Nothing
+'
+'End Sub
+
+
+
+Function UploadWorksheet(wb As Workbook, UploadType, Optional StartLine As Integer, Optional WorksheetName As String)
+    ' Update the booking info in the specified WorkSheet
+    Dim contractNo As String
+    Dim deliveryNo As Integer
+    Dim shipmentId As Long
+    Dim qty As Long
+    Dim dbQty As Long
+    Dim port As String
+    Dim strDly, strQty As String
+    Dim orgBookQty, newBookQty As Long
+    Dim orgBookDate, newBookDate, orgBookAWHDate, newBookAWHDatae As Date
+    Dim orgBookSoNo, newBookSoNo As String
+    
+    Dim ShipmentType, ShipmentMethodCode As String
+    Dim sqlNewBookQty, sqlNewBookDate, sqlNewBookAwhDate, sqlNewBookSoNo As String
+    Dim importBookQty, importBookDate, importBookAwhDate, importBookSoNo As String
+    Dim nullDate As Date
+    Dim rowColor As Integer
+    Dim noOfInvalidRow As Integer
+    Dim blankLine As Boolean
+    
+    Dim i, j As Integer
+    Dim isWorksheetFound, toBeUpload, anyDifferent, success As Boolean
+    Dim sql As String
+    Dim alertMessage As String
+    Dim ws As Worksheet
+    Dim uploadInfo As Boolean
+    Dim uploadCount As Integer
+    Dim rejectCount As Integer
+    Dim ignoreCount As Integer
+    
+    
+    uploadInfo = True
+    uploadCount = 0
+    ignoreCount = 0
+    
+    isWorksheetFound = False
+    For Each ws In wb.Worksheets
+        If InStr(1, ws.Name, IIf(WorksheetName = "", UploadType, WorksheetName), vbTextCompare) _
+            Or (InStr(1, ws.Name, IIf(WorksheetName = "" And UploadType = "DAILY", "NEW BOOKING", Null), vbTextCompare)) Then
+            ws.Activate
+            isWorksheetFound = True
+            Exit For
+        End If
+    Next
+    
+    If Not isWorksheetFound Then
+        UploadWorksheet = False
+        Debug.Print ""
+        Debug.Print "###################################################################################"
+        Debug.Print "# Please specify the " & IIf(WorksheetName = "", "", "correct ") & "work sheet name for " & LCase(UploadType) & " booking upload"
+        Debug.Print "###################################################################################"
+        Debug.Print ""
+        MsgBox "Fail in " & UploadType & " Booking Upload"
+    Else
+        UploadWorksheet = True
+        Debug.Print ""
+        Debug.Print "Uploading [" & ws.Name & "]"
+        Debug.Print ""
+        
+        noOfInvalidRow = 0
+        i = IIf(StartLine <= 0, 0, StartLine - 1)
+        While noOfInvalidRow < 20    ' more than 20 incorrect record -> End of records
+            i = i + 1
+            For j = 1 To 5
+                If ws.Cells(i, j) <> "" Then Exit For
+            Next
+            blankLine = (j > 5)
+            
+            port = Trim(ws.Cells(i, 1))
+            contractNo = Trim(ws.Cells(i, 3))
+            strDly = ws.Cells(i, 5)
+            strQty = ws.Cells(i, 7)
+            
+            If blankLine Then
+                ' Skip the blank line
+                noOfInvalidRow = noOfInvalidRow + 1
+            ElseIf contractNo = "" Or Not IsNumeric(strDly) Or Not IsNumeric(strQty) Then
+                ' Skip the line if data format is not correct
+                noOfInvalidRow = noOfInvalidRow + 1
+            Else
+                DoEvents
+                
+                noOfInvalidRow = 0
+                toBeUpload = True
+                alertMessage = ""
+                
+                actionFlag = ""
+                If UploadType = "REVISE" Then
+                    actionFlag = Trim(ws.Cells(i, 13))
+                    If actionFlag <> "" Then actionFlag = UCase(Left(actionFlag, 1))
+                    If actionFlag <> "C" Then actionFlag = "R"
+                End If
+                
+                port = Trim(ws.Cells(i, 1))
+                contractNo = Trim(ws.Cells(i, 3))
+                deliveryNo = Val(ws.Cells(i, 5))
+                qty = ws.Cells(i, 7)
+                
+                importBookQty = ws.Cells(i, 7)
+                importBookDate = Format(ws.Cells(i, 8), "yyyy-MM-dd")
+                importBookAwhDate = Format(ws.Cells(i, 9), "yyyy-MM-dd")
+                importBookSoNo = Trim(ws.Cells(i, 10).Text)
+                If UploadType = "REVISE" And actionFlag = "C" Then
+                    sqlNewBookQty = "0"
+                    sqlNewBookDate = "NULL"
+                    sqlNewBookAwhDate = "NULL"
+                    sqlNewBookSoNo = "NULL"
+                Else
+                    sqlNewBookQty = ws.Cells(i, 7)
+                    sqlNewBookDate = "'" & importBookDate & "'"
+                    sqlNewBookAwhDate = "'" & importBookAwhDate & "'"
+                    sqlNewBookSoNo = "'" & importBookSoNo & "'"
+                End If
+                
+                ShipmentType = ws.Cells(i, 11)
+                If InStr(1, ShipmentType, "AIR", vbTextCompare) > 0 Then
+                    ShipmentMethodCode = IIf(InStr(1, ShipmentType, "ECO", vbTextCompare) > 0, "E", IIf(InStr(1, ShipmentType, "SEA", vbTextCompare) > 0, "X", "A"))
+                    ShipmentType = "AIR"
+                ElseIf InStr(1, ShipmentType, "SEA", vbTextCompare) > 0 Then
+                    ShipmentMethodCode = "S"
+                    ShipmentType = "SEA"
+                ElseIf InStr(1, ShipmentType, "LAND", vbTextCompare) > 0 Or InStr(1, ShipmentType, "TRUNK", vbTextCompare) > 0 Then
+                    ShipmentMethodCode = "L"
+                    ShipmentType = "LAND"
+                ElseIf ShipmentType = "A" Or ShipmentType = "E" Or ShipmentType = "X" Then
+                    ShipmentMethodCode = ShipmentType
+                    ShipmentType = "AIR"
+                ElseIf ShipmentType = "S" Then
+                    ShipmentMethodCode = ShipmentType
+                    ShipmentType = "SEA"
+                ElseIf ShipmentType = "L" Or ShipmentType = "T" Then
+                    ShipmentMethodCode = "L"
+                    ShipmentType = "LAND"
+                Else
+                    ShipmentMethodCode = ""
+                    ShipmentType = ""
+                End If
+            
+                ' Upload control - Check workflow status, existance of shipment & booking info
+                Set rs = New ADODB.Recordset
+                sql = "select b.ShipmentId, b.WorkflowStatusId, " _
+                    & "   EmptyBookingInfo = (case when isnull(BookingQty,0)=0 and isnull(BookingDate,'')=convert(datetime,'') and isnull(BookingAtWarehouseDate,'')=convert(datetime,'') and isnull(BookingSoNo,'')='' then 1 else 0 end),  " _
+                    & "   SameBookingInfo = (case when isnull(BookingQty,0)=" & sqlNewBookQty & " and isnull(BookingDate,'')=convert(datetime," & IIf(sqlNewBookDate = "NULL", "''", sqlNewBookDate) & ") and isnull(BookingAtWarehouseDate,'')=convert(datetime," & IIf(sqlNewBookAwhDate = "NULL", "''", sqlNewBookAwhDate) & ") and isnull(BookingSoNo,'')=isnull(" & sqlNewBookSoNo & ",'') then 1 else 0 end),  " _
+                    & "   ShipmentMethodCode = (select ShipmentMethodOPSKey from shipmentmethod where ShipmentMethodId=b.ShipmentMethodId and status=1), " _
+                    & "   OfficialCode = (select OfficialCode from shipmentport where shipmentportid = b.shipmentportid and status=1), " _
+                    & "   TotalOrderQty = (select sum(orderqty) from ShipmentDetail where ShipmentId = b.shipmentId and status=1) " _
+                    & " from invoice a " & vbCrLf _
+                    & "   inner join shipment b on a.shipmentid = b.shipmentid and b.status = 1 " & vbCrLf _
+                    & "   inner join contract c on b.contractid = c.contractid and c.status = 1 " & vbCrLf _
+                    & " where contractno = '" & contractNo & "' and b.deliveryno = " & deliveryNo & vbCrLf
+                rs.Open sql, cn, adOpenStatic
+                
+                shipmentId = IIf(rs.EOF, 0, rs.Fields("ShipmentId"))
+                alertMessage = ""
+                rowColor = -1
+                toBeUpload = True
+                If rs.EOF Then
+                    ' Missing Shipment
+                    toBeUpload = False
+                    alertMessage = "Missing Shipment"
+                    rowColor = 4
+                ElseIf rs.Fields("WorkflowStatusId") = 8 Then
+                    ' Invoiced shipment
+                    toBeUpload = False
+                    alertMessage = "Invoiced"
+                    rowColor = 20   ' Light Blue
+                ElseIf rs.Fields("WorkflowStatusId") = 9 Then
+                    ' Cancelled shipment
+                    toBeUpload = False
+                    alertMessage = "Cancelled"
+                    rowColor = 15   ' Light Grey
+                ElseIf rs.Fields("SameBookingInfo") = 1 Then
+                    ' no change in booking info
+                    alertMessage = "No Different"
+                    rowColor = -1   ' Undefine
+                    toBeUpload = False
+                ElseIf rs.Fields("EmptyBookingInfo") = 0 Then
+                    ' Booking info exist
+                    alertMessage = "Booking Info Exist"
+                    rowColor = 6   ' Yellow
+                End If
+                If alertMessage <> "" And rowColor >= 0 Then
+                    For j = 1 To 15
+                        ws.Cells(i, j).Select
+                        With Selection.Interior
+                            .ColorIndex = rowColor
+                            .Pattern = xlSolid
+                        End With
+                    Next
+                    ws.Cells(i, 1).Select
+                End If
+                    
+                ' Check/show cell discrepancy
+                If toBeUpload Then
+                    If ShipmentMethodCode <> rs.Fields("ShipmentMethodCode") Then
+                        ' Shipment method matching
+                        ws.Cells(i, 11).Select
+                        With Selection.Interior
+                            .ColorIndex = 4     ' Light Green
+                            .Pattern = xlSolid
+                        End With
+                    End If
+                
+                    'If ShipmentType = "SEA" Then
+                        ' Port code matching
+                        If port <> rs.Fields("OfficialCode") Then
+                            ws.Cells(i, 1).Select
+                            With Selection.Interior
+                                .ColorIndex = 4    ' light Green
+                                .Pattern = xlSolid
+                            End With
+                        End If
+                    'End If
+                        
+                    If rs.Fields("TotalOrderQty") > qty * 1.1 Or rs.Fields("TotalOrderQty") < qty * 0.9 Then
+                        ' Order Qty difference exceed 10% tolerent.
+                        ws.Cells(i, 7).Select
+                        With Selection.Interior
+                            .ColorIndex = 4     'light Green
+                            .Pattern = xlSolid
+                        End With
+                    End If
+                    
+                    If Not IsDate(importBookDate) Then
+                        ' Invalid Booking Date
+                        ws.Cells(i, 8).Select
+                        With Selection.Interior
+                            .ColorIndex = 45     ' Orange
+                            .Pattern = xlSolid
+                        End With
+                    End If
+                    
+                    If Not IsDate(importBookAwhDate) Then
+                        ' Invalid Booking AWH Date
+                        ws.Cells(i, 9).Select
+                        With Selection.Interior
+                            .ColorIndex = 45     ' Orange
+                            .Pattern = xlSolid
+                        End With
+                    End If
+                    
+                End If
+                rs.Close
+                
+                
+                ' Upload Booking information
+                If toBeUpload Then
+                    ' Update booking information in DB
+                    sql = "SELECT a.ShipmentId, nullDate=convert(datetime,''), " & vbCrLf _
+                        & "  BookingQty=isnull(BookingQty,0), NewBookingQty = 0+isnull(" & sqlNewBookQty & ",0)," & vbCrLf _
+                        & "  BookingDate=isnull(BookingDate,''), NewBookingDate = convert(datetime,isnull(" & IIf(IsDate(Replace(sqlNewBookDate, "'", "")), sqlNewBookDate, "''") & ",'')), " & vbCrLf _
+                        & "  BookingAtWarehouseDate=isnull(BookingAtWarehouseDate,''), NewBookingAtWarehouseDate = convert(datetime, isnull(" & IIf(IsDate(Replace(sqlNewBookAwhDate, "'", "")), sqlNewBookAwhDate, "''") & ",'')), " & vbCrLf _
+                        & "  BookingSoNo=isnull(BookingSoNo,''), NewBookingSoNo = convert(varchar(50),isnull(" & sqlNewBookSoNo & ",'')) " & vbCrLf _
+                        & " FROM invoice a " & vbCrLf _
+                        & " WHERE shipmentId = " & shipmentId & vbCrLf
+                    rs.Open sql, cn, adOpenStatic
+                    uploadCount = uploadCount + 1
+                    
+                    nullDate = rs.Fields("nullDate")
+                    orgBookQty = rs.Fields("BookingQty")
+                    orgBookDate = rs.Fields("BookingDate")
+                    orgBookAWHDate = rs.Fields("BookingAtWarehouseDate")
+                    orgBookSoNo = rs.Fields("BookingSoNo")
+                    newBookQty = rs.Fields("NewBookingQty")
+                    newBookDate = rs.Fields("NewBookingDate")
+                    newBookAWHDate = rs.Fields("NewBookingAtwarehouseDate")
+                    newBookSoNo = rs.Fields("NewBookingSoNo")
+                    rs.Close
+    
+                    If uploadInfo Then
+                        ' Update Booking info
+                        sql = ""
+                        If orgBookQty <> newBookQty Then sql = sql & IIf(sql = "", "", " ,") & "BookingQty = " & sqlNewBookQty & " " & vbCrLf
+                        If orgBookDate <> newBookDate Then sql = sql & IIf(sql = "", "", " ,") & "BookingDate = " & sqlNewBookDate & " " & vbCrLf
+                        If orgBookAWHDate <> newBookAWHDate Then sql = sql & IIf(sql = "", "", " ,") & "BookingAtWarehouseDate = " & sqlNewBookAwhDate & " " & vbCrLf
+                        If orgBookSoNo <> newBookSoNo Then sql = sql & IIf(sql = "", "", " ,") & "BookingSoNo = " & sqlNewBookSoNo & " " & vbCrLf
+                        If sql <> "" Then
+                            sql = "UPDATE Invoice SET " & vbCrLf _
+                                & sql _
+                                & " FROM invoice a " & vbCrLf _
+                                & "  INNER JOIN shipment b ON a.shipmentid = b.shipmentid " & vbCrLf _
+                                & "  INNER JOIN contract c ON b.contractid = c.contractid " & vbCrLf _
+                                & " WHERE c.contractNo = '" & contractNo & "' AND b.DeliveryNo = " & deliveryNo & vbCrLf
+                            cn.Execute sql
+                        End If
+        
+                        ' Add log into ActionHistory
+                        anyDifferent = False
+                        If orgBookQty <> newBookQty Then
+                            anyDifferent = True
+                            success = InsertActionLog(shipmentId, IIf(actionFlag = "C", "Cancel ", IIf(actionFlag = "R", "Revise ", "")) _
+                                                    & "Booking Quantity : " & orgBookQty & " -> " & newBookQty)
+                        End If
+                        If orgBookDate <> newBookDate Then
+                            anyDifferent = True
+                            success = InsertActionLog(shipmentId, IIf(actionFlag = "C", "Cancel ", IIf(actionFlag = "R", "Revise ", "")) _
+                                                    & "Booking Date : " & IIf(orgBookDate = nullDate, "", Format(orgBookDate, "dd/mm/yyyy")) _
+                                                    & " -> " & IIf(newBookDate = nullDate, "", Format(newBookDate, "dd/mm/yyyy")))
+                        End If
+                        If orgBookAWHDate <> newBookAWHDate Then
+                            anyDifferent = True
+                            success = InsertActionLog(shipmentId, IIf(actionFlag = "C", "Cancel ", IIf(actionFlag = "R", "Revise ", "")) _
+                                                    & "Booking AWH Date : " & IIf(orgBookAWHDate = nullDate, "", Format(orgBookAWHDate, "dd/mm/yyyy")) _
+                                                    & " -> " & IIf(newBookAWHDate = nullDate, "", Format(newBookAWHDate, "dd/mm/yyyy")))
+                        End If
+                        If orgBookSoNo <> newBookSoNo Then
+                            anyDifferent = True
+                            success = InsertActionLog(shipmentId, IIf(actionFlag = "C", "Cancel ", IIf(actionFlag = "R", "Revise ", "")) _
+                                                    & "Lot Ship Order No. : " & orgBookSoNo & " -> " & newBookSoNo)
+                        End If
+                    Else
+                        anyDifferent = False
+                        alertMessage = "No Upload - Trial Only"
+                    End If
+                Else
+                    ignoreCount = ignoreCount + 1
+                End If
+                If ShowUploadDetail Then
+                    Debug.Print i & " : " & contractNo & "-" & deliveryNo & " , " & port _
+                                & IIf(actionFlag = "", "", ", " & IIf(actionFlag = "C", "CANCEL", IIf(actionFlag = "R", "REVISE", "?"))) _
+                                & IIf(toBeUpload, IIf(anyDifferent, " - Updated", "") & IIf(alertMessage = "", "", " [" & alertMessage & "]"), " - Ignored : [" & alertMessage & "]")
+                End If
+            End If
+        Wend
+        If Not ShowUploadDetail Then
+            Debug.Print uploadCount & " Uploaded, " & ignoreCount & " ignored"
+        End If
+        Debug.Print ""
+    End If
+    'Debug.Print vbCrLf & "< " & UploadType & " BOOKING UPLOAD COMPLETED >" & vbCrLf
+
+End Function
+
+
+
+Function ExecuteSQL(sqlStr As String) As Boolean
+    
+    ExecuteSQL = False
+    On Error GoTo ExecFail
+    cn.Execute sqlStr
+
+ExecSuccess:
+    ExecuteSQL = True
+    GoTo ExecFinished
+
+ExecFail:
+    ExecuteSQL = False
+    
+ExecFinished:
+
+End Function
+
+
+
+Function InsertActionLog(shipmentId As Long, remark As String) As Boolean
+    Dim sqlInsert As String
+    Dim try As Integer
+    
+    sqlInsert = "INSERT ActionHistory " & vbCrLf _
+            & "  SELECT ActionHistoryId=(SELECT MAX(ActionHistoryId)+1 FROM ActionHistory), " & vbCrLf _
+            & "    ShipmentId=" & shipmentId & ", SplitShipmentId=0, ActionHistoryTypeId=25, AmendmentTypeId=NULL, " & vbCrLf _
+            & "    Remark='" & remark & "', " _
+            & "    ActionDate=getdate(), Status=1 "
+
+    InsertActionLog = False
+    For try = 1 To 10
+        If ExecuteSQL(sqlInsert) Then
+            InsertActionLog = True
+            Exit For
+        End If
+    Next
+    
+    If InsertActionLog = False Then
+        MsgBox "Fail to add action log for shipment (Shipment ID : " & shipmentId & ") : " & vbCrLf & remark, , "Action History"
+        Debug.Print "Fail to add action log : " & vbCrLf & sqlInsert
+    End If
+
+End Function

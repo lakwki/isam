@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CartonTypeDs" targetNamespace="http://tempuri.org/CartonTypeDs.xsd" xmlns:mstns="http://tempuri.org/CartonTypeDs.xsd" xmlns="http://tempuri.org/CartonTypeDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CartonTypeTableAdapter" GeneratorDataComponentClassName="CartonTypeTableAdapter" Name="CartonType" UserDataComponentName="CartonTypeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMConnectionString (Settings)" DbObjectName="ISAM.dbo.vw_CartonType" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CartonTypeId, CartonTypeDesc, PackingMethodId, Status FROM dbo.vw_CartonType</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CartonTypeId" DataSetColumn="CartonTypeId" />
+              <Mapping SourceColumn="CartonTypeDesc" DataSetColumn="CartonTypeDesc" />
+              <Mapping SourceColumn="PackingMethodId" DataSetColumn="PackingMethodId" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CartonTypeDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="CartonTypeDs" msprop:Generator_UserDSName="CartonTypeDs" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CartonType" msprop:Generator_UserTableName="CartonType" msprop:Generator_RowDeletedName="CartonTypeRowDeleted" msprop:Generator_TableClassName="CartonTypeDataTable" msprop:Generator_RowChangedName="CartonTypeRowChanged" msprop:Generator_RowClassName="CartonTypeRow" msprop:Generator_RowChangingName="CartonTypeRowChanging" msprop:Generator_RowEvArgName="CartonTypeRowChangeEvent" msprop:Generator_RowEvHandlerName="CartonTypeRowChangeEventHandler" msprop:Generator_TablePropName="CartonType" msprop:Generator_TableVarName="tableCartonType" msprop:Generator_RowDeletingName="CartonTypeRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CartonTypeId" msprop:Generator_UserColumnName="CartonTypeId" msprop:Generator_ColumnPropNameInRow="CartonTypeId" msprop:Generator_ColumnVarNameInTable="columnCartonTypeId" msprop:Generator_ColumnPropNameInTable="CartonTypeIdColumn" type="xs:int" />
+              <xs:element name="CartonTypeDesc" msprop:Generator_UserColumnName="CartonTypeDesc" msprop:Generator_ColumnPropNameInRow="CartonTypeDesc" msprop:Generator_ColumnVarNameInTable="columnCartonTypeDesc" msprop:Generator_ColumnPropNameInTable="CartonTypeDescColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PackingMethodId" msprop:Generator_UserColumnName="PackingMethodId" msprop:Generator_ColumnPropNameInRow="PackingMethodId" msprop:Generator_ColumnVarNameInTable="columnPackingMethodId" msprop:Generator_ColumnPropNameInTable="PackingMethodIdColumn" type="xs:int" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInTable="StatusColumn" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CartonType" />
+      <xs:field xpath="mstns:CartonTypeId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

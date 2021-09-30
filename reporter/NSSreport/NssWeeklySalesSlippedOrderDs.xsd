@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NssWeeklySalesSlippedOrderDs" targetNamespace="http://tempuri.org/NssWeeklySalesSlippedOrderDs.xsd" xmlns:mstns="http://tempuri.org/NssWeeklySalesSlippedOrderDs.xsd" xmlns="http://tempuri.org/NssWeeklySalesSlippedOrderDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NSSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NSSConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.NSSConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NssWeeklySalesSlippedOrderTableAdapter" GeneratorDataComponentClassName="NssWeeklySalesSlippedOrderTableAdapter" Name="NssWeeklySalesSlippedOrder" UserDataComponentName="NssWeeklySalesSlippedOrderTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NSSConnectionString (Settings)" DbObjectName="NSS.dbo.WeeklySalesSnapshotSlippedOrderForSimon" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select 
+	OfficeCode, 
+	Department = rtrim(replace(Dept,'('+OfficeCode+')','')),
+	ProductTeam = ProductTeamCode + ' - ' + ProductTeam, 
+	ContractNo, DeliveryNo,
+	OriginalDeliveryDate = convert(varchar,OriginalDeliveryDate,23), 
+	RevisedDeliveryDate = convert(varchar,RevisedDeliveryDate,23), 
+	SalesAmt
+from WeeklySalesSnapshotSlippedOrderForSimon as ws 
+where 1=0
+
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OfficeCode" DataSetColumn="OfficeCode" />
+              <Mapping SourceColumn="Department" DataSetColumn="Department" />
+              <Mapping SourceColumn="ProductTeam" DataSetColumn="ProductTeam" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="OriginalDeliveryDate" DataSetColumn="OriginalDeliveryDate" />
+              <Mapping SourceColumn="RevisedDeliveryDate" DataSetColumn="RevisedDeliveryDate" />
+              <Mapping SourceColumn="SalesAmt" DataSetColumn="SalesAmt" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NssWeeklySalesSlippedOrderDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NssWeeklySalesSlippedOrderDs" msprop:Generator_UserDSName="NssWeeklySalesSlippedOrderDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NssWeeklySalesSlippedOrder" msprop:Generator_TableClassName="NssWeeklySalesSlippedOrderDataTable" msprop:Generator_TableVarName="tableNssWeeklySalesSlippedOrder" msprop:Generator_TablePropName="NssWeeklySalesSlippedOrder" msprop:Generator_RowDeletingName="NssWeeklySalesSlippedOrderRowDeleting" msprop:Generator_UserTableName="NssWeeklySalesSlippedOrder" msprop:Generator_RowChangingName="NssWeeklySalesSlippedOrderRowChanging" msprop:Generator_RowEvHandlerName="NssWeeklySalesSlippedOrderRowChangeEventHandler" msprop:Generator_RowDeletedName="NssWeeklySalesSlippedOrderRowDeleted" msprop:Generator_RowEvArgName="NssWeeklySalesSlippedOrderRowChangeEvent" msprop:Generator_RowChangedName="NssWeeklySalesSlippedOrderRowChanged" msprop:Generator_RowClassName="NssWeeklySalesSlippedOrderRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OfficeCode" msprop:Generator_ColumnVarNameInTable="columnOfficeCode" msprop:Generator_ColumnPropNameInRow="OfficeCode" msprop:Generator_ColumnPropNameInTable="OfficeCodeColumn" msprop:Generator_UserColumnName="OfficeCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Department" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProductTeam" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnProductTeam" msprop:Generator_ColumnPropNameInRow="ProductTeam" msprop:Generator_ColumnPropNameInTable="ProductTeamColumn" msprop:Generator_UserColumnName="ProductTeam" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="213" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" type="xs:int" />
+              <xs:element name="OriginalDeliveryDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOriginalDeliveryDate" msprop:Generator_ColumnPropNameInRow="OriginalDeliveryDate" msprop:Generator_ColumnPropNameInTable="OriginalDeliveryDateColumn" msprop:Generator_UserColumnName="OriginalDeliveryDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RevisedDeliveryDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRevisedDeliveryDate" msprop:Generator_ColumnPropNameInRow="RevisedDeliveryDate" msprop:Generator_ColumnPropNameInTable="RevisedDeliveryDateColumn" msprop:Generator_UserColumnName="RevisedDeliveryDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SalesAmt" msprop:Generator_ColumnVarNameInTable="columnSalesAmt" msprop:Generator_ColumnPropNameInRow="SalesAmt" msprop:Generator_ColumnPropNameInTable="SalesAmtColumn" msprop:Generator_UserColumnName="SalesAmt" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

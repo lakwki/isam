@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReceivablePayableForecastDs" targetNamespace="http://tempuri.org/ReceivablePayableForecastDs.xsd" xmlns:mstns="http://tempuri.org/ReceivablePayableForecastDs.xsd" xmlns="http://tempuri.org/ReceivablePayableForecastDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReceivablePayableForecastTableAdapter" GeneratorDataComponentClassName="ReceivablePayableForecastTableAdapter" Name="ReceivablePayableForecast" UserDataComponentName="ReceivablePayableForecastTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select 
+ReportName = convert(varchar(20),''),
+RecordType = convert(varchar(10),''),
+Office = convert(varchar(30),''),
+TradingAgency = convert(varchar(20),''),
+GroupTitle = convert(varchar(30),''),
+GroupField = convert(varchar(100),''),
+
+WeekStartDate = convert(datetime,null),
+DeliveryDate = convert(datetime,null),
+DayTotal = convert(decimal(18,2),null),
+
+WeekNo = convert(varchar(10),''),
+Currency = convert(varchar(10),''),
+
+GroupSequence = convert(varchar(100),'')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ReportName" DataSetColumn="ReportName" />
+              <Mapping SourceColumn="Office" DataSetColumn="Office" />
+              <Mapping SourceColumn="TradingAgency" DataSetColumn="TradingAgency" />
+              <Mapping SourceColumn="WeekNo" DataSetColumn="WeekNo" />
+              <Mapping SourceColumn="WeekStartDate" DataSetColumn="WeekStartDate" />
+              <Mapping SourceColumn="RecordType" DataSetColumn="RecordType" />
+              <Mapping SourceColumn="DeliveryDate" DataSetColumn="DeliveryDate" />
+              <Mapping SourceColumn="DayTotal" DataSetColumn="DayTotal" />
+              <Mapping SourceColumn="Currency" DataSetColumn="Currency" />
+              <Mapping SourceColumn="GroupField" DataSetColumn="GroupField" />
+              <Mapping SourceColumn="GroupTitle" DataSetColumn="GroupTitle" />
+              <Mapping SourceColumn="GroupSequence" DataSetColumn="GroupSequence" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReceivablePayableForecastDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ReceivablePayableForecastDs" msprop:Generator_DataSetName="ReceivablePayableForecastDs" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReceivablePayableForecast" msprop:Generator_UserTableName="ReceivablePayableForecast" msprop:Generator_RowDeletedName="ReceivablePayableForecastRowDeleted" msprop:Generator_RowChangedName="ReceivablePayableForecastRowChanged" msprop:Generator_RowClassName="ReceivablePayableForecastRow" msprop:Generator_RowChangingName="ReceivablePayableForecastRowChanging" msprop:Generator_RowEvArgName="ReceivablePayableForecastRowChangeEvent" msprop:Generator_RowEvHandlerName="ReceivablePayableForecastRowChangeEventHandler" msprop:Generator_TableClassName="ReceivablePayableForecastDataTable" msprop:Generator_TableVarName="tableReceivablePayableForecast" msprop:Generator_RowDeletingName="ReceivablePayableForecastRowDeleting" msprop:Generator_TablePropName="ReceivablePayableForecast">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReportName" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ReportName" msprop:Generator_ColumnVarNameInTable="columnReportName" msprop:Generator_ColumnPropNameInRow="ReportName" msprop:Generator_ColumnPropNameInTable="ReportNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Office" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Office" msprop:Generator_ColumnVarNameInTable="columnOffice" msprop:Generator_ColumnPropNameInRow="Office" msprop:Generator_ColumnPropNameInTable="OfficeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TradingAgency" msdata:ReadOnly="true" msprop:Generator_UserColumnName="TradingAgency" msprop:Generator_ColumnVarNameInTable="columnTradingAgency" msprop:Generator_ColumnPropNameInRow="TradingAgency" msprop:Generator_ColumnPropNameInTable="TradingAgencyColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WeekNo" msdata:ReadOnly="true" msprop:Generator_UserColumnName="WeekNo" msprop:Generator_ColumnVarNameInTable="columnWeekNo" msprop:Generator_ColumnPropNameInRow="WeekNo" msprop:Generator_ColumnPropNameInTable="WeekNoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WeekStartDate" msdata:ReadOnly="true" msprop:Generator_UserColumnName="WeekStartDate" msprop:Generator_ColumnVarNameInTable="columnWeekStartDate" msprop:Generator_ColumnPropNameInRow="WeekStartDate" msprop:Generator_ColumnPropNameInTable="WeekStartDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RecordType" msdata:ReadOnly="true" msprop:Generator_UserColumnName="RecordType" msprop:Generator_ColumnVarNameInTable="columnRecordType" msprop:Generator_ColumnPropNameInRow="RecordType" msprop:Generator_ColumnPropNameInTable="RecordTypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryDate" msdata:ReadOnly="true" msprop:Generator_UserColumnName="DeliveryDate" msprop:Generator_ColumnVarNameInTable="columnDeliveryDate" msprop:Generator_ColumnPropNameInRow="DeliveryDate" msprop:Generator_ColumnPropNameInTable="DeliveryDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DayTotal" msdata:ReadOnly="true" msprop:Generator_UserColumnName="DayTotal" msprop:Generator_ColumnVarNameInTable="columnDayTotal" msprop:Generator_ColumnPropNameInRow="DayTotal" msprop:Generator_ColumnPropNameInTable="DayTotalColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Currency" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Currency" msprop:Generator_ColumnVarNameInTable="columnCurrency" msprop:Generator_ColumnPropNameInRow="Currency" msprop:Generator_ColumnPropNameInTable="CurrencyColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupField" msdata:ReadOnly="true" msprop:Generator_UserColumnName="GroupField" msprop:Generator_ColumnVarNameInTable="columnGroupField" msprop:Generator_ColumnPropNameInRow="GroupField" msprop:Generator_ColumnPropNameInTable="GroupFieldColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupTitle" msdata:ReadOnly="true" msprop:Generator_UserColumnName="GroupTitle" msprop:Generator_ColumnVarNameInTable="columnGroupTitle" msprop:Generator_ColumnPropNameInRow="GroupTitle" msprop:Generator_ColumnPropNameInTable="GroupTitleColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GroupSequence" msdata:ReadOnly="true" msprop:Generator_UserColumnName="GroupSequence" msprop:Generator_ColumnVarNameInTable="columnGroupSequence" msprop:Generator_ColumnPropNameInRow="GroupSequence" msprop:Generator_ColumnPropNameInTable="GroupSequenceColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

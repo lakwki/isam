@@ -1,0 +1,3582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D5C4EAD-AE76-4257-94C0-313782201D87}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>com.next.isam.dataserver</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>com.next.isam.dataserver</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/com.next.isam.dataserver/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="com.next.common, Version=1.0.7922.17894, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NSCommon\common\bin\Debug\com.next.common.dll</HintPath>
+    </Reference>
+    <Reference Include="com.next.infra, Version=1.0.7775.29088, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NSCommon\common\bin\Debug\com.next.infra.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="model\account\AdjustmentDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdjustmentDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\AdjustmentDetailLineDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdjustmentDetailLineDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\AdjustmentNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdjustmentNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\AdjustmentNoteNoParamDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdjustmentNoteNoParamDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\AdvancePaymentActionHistoryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentActionHistoryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\AdvancePaymentBalanceSettlementDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentBalanceSettlementDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\AdvancePaymentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\AdvancePaymentInstalmentDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentInstalmentDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\AdvancePaymentOrderDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentOrderDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\ARCustomerDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ARCustomerDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\BankAccountDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BankAccountDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\BankReconciliationRequestDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BankReconciliationRequestDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\ClaimDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClaimDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\ClaimDetailTypeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClaimDetailTypeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\ClaimDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClaimDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\ClaimTypeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClaimTypeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\ConvertPaymentFileRequestDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConvertPaymentFileRequestDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\DailySunInterfaceDs.cs">
+      <DependentUpon>DailySunInterfaceDs.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="model\account\DailySunInterfaceDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailySunInterfaceDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\DebitNoteToNUKParamDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DebitNoteToNUKParamDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\eBankingColumnMappingDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eBankingColumnMappingDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\EInvoiceBatchDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EInvoiceBatchDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\EpicorGLExtractLogDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EpicorGLExtractLogDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\EpicorGLJournalDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EpicorGLJournalDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\EpicorVendorDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EpicorVendorDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\GenerateFileRequestDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenerateFileRequestDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\GenericDCNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenericDCNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\ILSDiffDCNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSDiffDCNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\ILSDiffDCNoteShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSDiffDCNoteShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\LetterOfGuaranteeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LetterOfGuaranteeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\LGDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LGDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\LGHoldPaymentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LGHoldPaymentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\LogoInterfaceRequestDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogoInterfaceRequestDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\MockShopDCNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MockShopDCNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\MockShopDCNoteShipmentDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MockShopDCNoteShipmentDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\MockShopDCNoteShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MockShopDCNoteShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NSLedCostDataByWeekDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLedCostDataByWeekDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NSLedFinanceReportBFValuesDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLedFinanceReportBFValuesDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NSLedFinanceReportCYValuesDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLedFinanceReportCYValuesDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NSLedFPQtyDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLedFPQtyDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NSLedImportFileDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLedImportFileDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NSLedProfitabilitiesDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLedProfitabilitiesDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NSLedRangePlanDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLedRangePlanDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NSLedRangePlanPictureDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLedRangePlanPictureDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NSLedRepeatItemParamDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLedRepeatItemParamDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NSLedSalesDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLedSalesDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NSLedSalesInfoDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLedSalesInfoDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NSLedSelfBilledSupplierCodeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLedSelfBilledSupplierCodeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\NUKSalesDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NUKSalesDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\PaymentAdviceDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentAdviceDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\PaymentAdviceDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentAdviceDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\PaymentStatusEnquiryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentStatusEnquiryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\QACommissionDNDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QACommissionDNDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\QACommissionDNShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QACommissionDNShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\RechargeSupplierDebitCreditNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RechargeSupplierDebitCreditNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\SALFLDGDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SALFLDGDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\SettlementBankDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettlementBankDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\StudioDCNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudioDCNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\StudioDCNoteShipmentDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudioDCNoteShipmentDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\StudioDCNoteShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudioDCNoteShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\SunInterfaceLogDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SunInterfaceLogDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\SunInterfaceQueueDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SunInterfaceQueueDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\SunInterfaceTypeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SunInterfaceTypeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\SupplierPaymentStatusDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierPaymentStatusDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\TallyUploadHistoryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TallyUploadHistoryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\TXRefParamDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TXRefParamDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\UKPaymentSupplierDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKPaymentSupplierDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\UTContractDCNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UTContractDCNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\account\UTContractDCNoteShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UTContractDCNoteShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\OutstandingUKClaimDCNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingUKClaimDCNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKClaimBIADiscrepancyDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimBIADiscrepancyDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKClaimBIAMappingDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimBIAMappingDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKClaimDCNoteDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimDCNoteDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKClaimDCNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimDCNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKClaimDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKClaimLogDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimLogDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKClaimPhasingByProductTeamDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimPhasingByProductTeamDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKClaimPhasingDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimPhasingDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKDiscountClaimDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKDiscountClaimDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKDiscountClaimLogDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKDiscountClaimLogDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKDiscountClaimRefundDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKDiscountClaimRefundDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\AirFreightPaymentTypeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirFreightPaymentTypeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\CustomerDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\EpicorUploadImportLogDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EpicorUploadImportLogDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\FileUploadLogDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileUploadLogDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\GenericDataSummaryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenericDataSummaryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSDocumentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSDocumentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSErrorDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSErrorDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSFileSentLogDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSFileSentLogDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSInvoiceChangeHistoryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSInvoiceChangeHistoryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSInvoiceDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSInvoiceDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSMonthEndLogDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSMonthEndLogDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSMonthEndShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSMonthEndShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSPackingListMixedCartonDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSPackingListMixedCartonDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NSLBankAccountDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLBankAccountDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTActionHistoryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTActionHistoryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTApproverDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTApproverDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTEpicorSegmentValueDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTEpicorSegmentValueDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTExpenseNatureDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTExpenseNatureDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTExpenseTypeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTExpenseTypeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTInvoiceDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTInvoiceDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTInvoiceDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTInvoiceDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTMonthEndStatusDs.designer.cs">
+      <DependentUpon>NTMonthEndStatusDs.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="model\nontrade\NTPaymentMethodDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTPaymentMethodDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTRechargeDCNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTRechargeDCNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTRechargeDCNoteNoParamDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTRechargeDCNoteNoParamDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTRoleDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTRoleDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTSunInterfaceQueueDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTSunInterfaceQueueDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTUserRoleAccessDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTUserRoleAccessDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTVendorDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTVendorDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nontrade\NTVendorExpenseTypeMappingDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTVendorExpenseTypeMappingDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssAdvancePaymentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssAdvancePaymentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssAdvancePaymentOrderDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssAdvancePaymentOrderDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssLGPaymentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssLGPaymentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssLGPaymentOrderDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssLGPaymentOrderDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\UKItemDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKItemDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\UKItemPartDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKItemPartDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\order\ShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\order\ShipmentProductDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentProductDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\qais\UKClaimReasonDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimReasonDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKClaimRechargeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimRechargeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\claim\UKClaimRefundDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimRefundDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\BankBranchDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BankBranchDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\BankDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BankDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\CartonTypeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CartonTypeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\CustomerDestinationDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerDestinationDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\CustomerTypeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerTypeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\ExchangeRateDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExchangeRateDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\FileUploadDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileUploadDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\OtherCostTypeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OtherCostTypeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\PackingMethodDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PackingMethodDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\PackingUnitDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PackingUnitDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\PurchaseLocationDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseLocationDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\QuotaCategoryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuotaCategoryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\QuotaCategoryGroupDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuotaCategoryGroupDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\ReportOfficeGroupDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportOfficeGroupDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\ShipmentCountryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentCountryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\ShipmentMethodDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentMethodDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\ShipmentPortDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentPortDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\SizeOptionDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SizeOptionDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\StaffDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StaffDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\StandardMSCourierChargeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StandardMSCourierChargeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\SystemParameterDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemParameterDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\TermOfPurchaseDs.cs">
+      <DependentUpon>TermOfPurchaseDs.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="model\common\TermOfPurchaseDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TermOfPurchaseDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\ThirdPartyAgencyDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThirdPartyAgencyDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\TradingAgencyDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TradingAgencyDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\UKDiscountReasonDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKDiscountReasonDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\UKFinalDestinationDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKFinalDestinationDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\VendorBankMappingDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorBankMappingDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\common\WorkflowStatusDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkflowStatusDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSCancelledOrderDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSCancelledOrderDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSCommissionInvoiceDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSCommissionInvoiceDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSCommissionInvoiceDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSCommissionInvoiceDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSInvoiceDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSInvoiceDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSManifestDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSManifestDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSManifestDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSManifestDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSMessageResultDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSMessageResultDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSOrderCopyDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSOrderCopyDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSOrderCopyDiscrepancyDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSOrderCopyDiscrepancyDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSOrderCopyDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSOrderCopyDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSOrderCopyOriginDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSOrderCopyOriginDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSOrderRefDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSOrderRefDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSPackingListCartonDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSPackingListCartonDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSPackingListDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSPackingListDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSPackingListDs.cs">
+      <DependentUpon>ILSPackingListDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSPackingListDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSPackingListDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSParamDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSParamDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSQCCApprovalDs.cs">
+      <DependentUpon>ILSQCCApprovalDs.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="model\ils\ILSQCCApprovalDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSQCCApprovalDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\ils\ILSUnitPriceMatrixDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSUnitPriceMatrixDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\EziBuyOrderCopySummaryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EziBuyOrderCopySummaryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssProgressDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssProgressDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\order\ContractShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContractShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\order\ILSManifestDetailShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSManifestDetailShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\ActionHistoryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActionHistoryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\AlertNotificationDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlertNotificationDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\LCAdvancePaymentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCAdvancePaymentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\LCApplicationShipmentDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCApplicationShipmentDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\LCBatchDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCBatchDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\LCBatchDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCBatchDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\LCBatchSummaryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCBatchSummaryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\LCShipmentDs.cs">
+      <DependentUpon>LCShipmentDs.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="model\shipping\LCShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssContractDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssContractDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssOtherCostDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssOtherCostDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssProductDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssProductDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssShipmentDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssShipmentDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssSizeOptionDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssSizeOptionDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssSplitShipmentDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssSplitShipmentDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\nss\NssSplitShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssSplitShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\order\ContractDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContractDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\order\OtherCostDs.cs">
+      <DependentUpon>OtherCostDs.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="model\order\OtherCostDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OtherCostDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\order\QuarterlyExchangeRateDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuarterlyExchangeRateDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\order\ShipmentDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\order\SplitShipmentDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SplitShipmentDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\order\SplitShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SplitShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\order\UTurnOrderParameterDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UTurnOrderParameterDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\product\ProductDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\qais\InspectionDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InspectionDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\DocumentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\InvoiceDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\InvoiceNoParamDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceNoParamDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\LCApplicationDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCApplicationDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\LCApplicationShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCApplicationShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\ShipmentAttributeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentAttributeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\ShipmentDeductionDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentDeductionDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\ShipmentToDMSDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentToDMSDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\shipping\WorkflowStatusDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkflowStatusDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\sync\DomainAdvancePaymentSyncDef.cs" />
+    <Compile Include="model\sync\DomainLetterOfGuaranteeSyncDef.cs" />
+    <Compile Include="model\sync\DomainShipmentSyncDef.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Web References\APDS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\QAIS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="worker\AccountWorker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="worker\AdvancePaymentWorker.cs" />
+    <Compile Include="worker\AlertNotificationWorker.cs" />
+    <Compile Include="worker\BankReconciliationWorker.cs" />
+    <Compile Include="worker\BookingUploadXMLWorker.cs" />
+    <Compile Include="worker\CarbonFootprintWorker.cs" />
+    <Compile Include="worker\UKItemWorker.cs" />
+    <Compile Include="worker\NonTradeEpicorInterfaceWorker.cs" />
+    <Compile Include="worker\EpicorInterfaceWorker.cs" />
+    <Compile Include="worker\NonTradeWorker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="worker\UKClaimWorker.cs" />
+    <Compile Include="worker\CommonWorker.cs" />
+    <Compile Include="worker\CustomerOrderWorker.cs" />
+    <Compile Include="worker\DataUploadWorker.cs" />
+    <Compile Include="worker\eBankingWorker.cs" />
+    <Compile Include="worker\LCWorker.cs" />
+    <Compile Include="worker\NoticeHelper.cs" />
+    <Compile Include="worker\PaymentAdviceWorker.cs" />
+    <Compile Include="worker\QAISWorker.cs" />
+    <Compile Include="worker\ILSUploadWorker.cs" />
+    <Compile Include="worker\ReportWorker.cs" />
+    <Compile Include="worker\ShippingWorker.cs" />
+    <Compile Include="worker\OrderSelectWorker.cs" />
+    <Compile Include="worker\OrderWorker.cs" />
+    <Compile Include="worker\ProductWorker.cs" />
+    <Compile Include="worker\SunWorker.cs" />
+    <Compile Include="worker\SynchronizationWorker.cs" />
+    <None Include="app.config" />
+    <None Include="model\account\AdjustmentDetailDs.xsc">
+      <DependentUpon>AdjustmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdjustmentDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdjustmentDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\AdjustmentDetailDs.xss">
+      <DependentUpon>AdjustmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdjustmentDetailLineDs.xsc">
+      <DependentUpon>AdjustmentDetailLineDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdjustmentDetailLineDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdjustmentDetailLineDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\AdjustmentDetailLineDs.xss">
+      <DependentUpon>AdjustmentDetailLineDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdjustmentNoteDs.xsc">
+      <DependentUpon>AdjustmentNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdjustmentNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdjustmentNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\AdjustmentNoteDs.xss">
+      <DependentUpon>AdjustmentNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdjustmentNoteNoParamDs.xsc">
+      <DependentUpon>AdjustmentNoteNoParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdjustmentNoteNoParamDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdjustmentNoteNoParamDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\AdjustmentNoteNoParamDs.xss">
+      <DependentUpon>AdjustmentNoteNoParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdvancePaymentActionHistoryDs.xsc">
+      <DependentUpon>AdvancePaymentActionHistoryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdvancePaymentActionHistoryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdvancePaymentActionHistoryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\AdvancePaymentActionHistoryDs.xss">
+      <DependentUpon>AdvancePaymentActionHistoryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdvancePaymentBalanceSettlementDs.xsc">
+      <DependentUpon>AdvancePaymentBalanceSettlementDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdvancePaymentBalanceSettlementDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdvancePaymentBalanceSettlementDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\AdvancePaymentBalanceSettlementDs.xss">
+      <DependentUpon>AdvancePaymentBalanceSettlementDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdvancePaymentDs.xsc">
+      <DependentUpon>AdvancePaymentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdvancePaymentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdvancePaymentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\AdvancePaymentDs.xss">
+      <DependentUpon>AdvancePaymentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdvancePaymentInstalmentDetailDs.xsc">
+      <DependentUpon>AdvancePaymentInstalmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdvancePaymentInstalmentDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdvancePaymentInstalmentDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\AdvancePaymentInstalmentDetailDs.xss">
+      <DependentUpon>AdvancePaymentInstalmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdvancePaymentOrderDetailDs.xsc">
+      <DependentUpon>AdvancePaymentOrderDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\AdvancePaymentOrderDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdvancePaymentOrderDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\AdvancePaymentOrderDetailDs.xss">
+      <DependentUpon>AdvancePaymentOrderDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ARCustomerDs.xsc">
+      <DependentUpon>ARCustomerDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ARCustomerDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ARCustomerDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\ARCustomerDs.xss">
+      <DependentUpon>ARCustomerDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\BankAccountDs.xsc">
+      <DependentUpon>BankAccountDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\BankAccountDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BankAccountDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\BankAccountDs.xss">
+      <DependentUpon>BankAccountDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\BankReconciliationRequestDs.xsc">
+      <DependentUpon>BankReconciliationRequestDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\BankReconciliationRequestDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BankReconciliationRequestDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\BankReconciliationRequestDs.xss">
+      <DependentUpon>BankReconciliationRequestDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ClaimDetailDs.xsc">
+      <DependentUpon>ClaimDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ClaimDetailDs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClaimDetailDs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="model\account\ClaimDetailDs.xss">
+      <DependentUpon>ClaimDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ClaimDetailTypeDs.xsc">
+      <DependentUpon>ClaimDetailTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ClaimDetailTypeDs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClaimDetailTypeDs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="model\account\ClaimDetailTypeDs.xss">
+      <DependentUpon>ClaimDetailTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ClaimDs.xsc">
+      <DependentUpon>ClaimDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ClaimDs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClaimDs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="model\account\ClaimDs.xss">
+      <DependentUpon>ClaimDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ClaimTypeDs.xsc">
+      <DependentUpon>ClaimTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ClaimTypeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClaimTypeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\ClaimTypeDs.xss">
+      <DependentUpon>ClaimTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ConvertPaymentFileRequestDs.xsc">
+      <DependentUpon>ConvertPaymentFileRequestDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ConvertPaymentFileRequestDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConvertPaymentFileRequestDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\ConvertPaymentFileRequestDs.xss">
+      <DependentUpon>ConvertPaymentFileRequestDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\DailySunInterfaceDs.xsc">
+      <DependentUpon>DailySunInterfaceDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\DailySunInterfaceDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DailySunInterfaceDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\DailySunInterfaceDs.xss">
+      <DependentUpon>DailySunInterfaceDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\DebitNoteToNUKParamDs.xsc">
+      <DependentUpon>DebitNoteToNUKParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\DebitNoteToNUKParamDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DebitNoteToNUKParamDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\DebitNoteToNUKParamDs.xss">
+      <DependentUpon>DebitNoteToNUKParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\eBankingColumnMappingDs.xsc">
+      <DependentUpon>eBankingColumnMappingDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\eBankingColumnMappingDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>eBankingColumnMappingDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\eBankingColumnMappingDs.xss">
+      <DependentUpon>eBankingColumnMappingDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\EInvoiceBatchDs.xsc">
+      <DependentUpon>EInvoiceBatchDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\EInvoiceBatchDs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EInvoiceBatchDs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="model\account\EInvoiceBatchDs.xss">
+      <DependentUpon>EInvoiceBatchDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\EpicorGLExtractLogDs.xsc">
+      <DependentUpon>EpicorGLExtractLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\EpicorGLExtractLogDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EpicorGLExtractLogDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\EpicorGLExtractLogDs.xss">
+      <DependentUpon>EpicorGLExtractLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\EpicorGLJournalDetailDs.xsc">
+      <DependentUpon>EpicorGLJournalDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\EpicorGLJournalDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EpicorGLJournalDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\EpicorGLJournalDetailDs.xss">
+      <DependentUpon>EpicorGLJournalDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\EpicorVendorDs.xsc">
+      <DependentUpon>EpicorVendorDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\EpicorVendorDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EpicorVendorDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\EpicorVendorDs.xss">
+      <DependentUpon>EpicorVendorDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\GenerateFileRequestDs.xsc">
+      <DependentUpon>GenerateFileRequestDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\GenerateFileRequestDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenerateFileRequestDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\GenerateFileRequestDs.xss">
+      <DependentUpon>GenerateFileRequestDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\GenericDCNoteDs.xsc">
+      <DependentUpon>GenericDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\GenericDCNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenericDCNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\GenericDCNoteDs.xss">
+      <DependentUpon>GenericDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ILSDiffDCNoteDs.xsc">
+      <DependentUpon>ILSDiffDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ILSDiffDCNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSDiffDCNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\ILSDiffDCNoteDs.xss">
+      <DependentUpon>ILSDiffDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ILSDiffDCNoteShipmentDs.xsc">
+      <DependentUpon>ILSDiffDCNoteShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\ILSDiffDCNoteShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSDiffDCNoteShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\ILSDiffDCNoteShipmentDs.xss">
+      <DependentUpon>ILSDiffDCNoteShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\LetterOfGuaranteeDs.xsc">
+      <DependentUpon>LetterOfGuaranteeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\LetterOfGuaranteeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LetterOfGuaranteeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\LetterOfGuaranteeDs.xss">
+      <DependentUpon>LetterOfGuaranteeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\LGDetailDs.xsc">
+      <DependentUpon>LGDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\LGDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LGDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\LGDetailDs.xss">
+      <DependentUpon>LGDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\LGHoldPaymentDs.xsc">
+      <DependentUpon>LGHoldPaymentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\LGHoldPaymentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LGHoldPaymentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\LGHoldPaymentDs.xss">
+      <DependentUpon>LGHoldPaymentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\LogoInterfaceRequestDs.xsc">
+      <DependentUpon>LogoInterfaceRequestDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\LogoInterfaceRequestDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LogoInterfaceRequestDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\LogoInterfaceRequestDs.xss">
+      <DependentUpon>LogoInterfaceRequestDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\MockShopDCNoteDs.xsc">
+      <DependentUpon>MockShopDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\MockShopDCNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MockShopDCNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\MockShopDCNoteDs.xss">
+      <DependentUpon>MockShopDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\MockShopDCNoteShipmentDetailDs.xsc">
+      <DependentUpon>MockShopDCNoteShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\MockShopDCNoteShipmentDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MockShopDCNoteShipmentDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\MockShopDCNoteShipmentDetailDs.xss">
+      <DependentUpon>MockShopDCNoteShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\MockShopDCNoteShipmentDs.xsc">
+      <DependentUpon>MockShopDCNoteShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\MockShopDCNoteShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MockShopDCNoteShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\MockShopDCNoteShipmentDs.xss">
+      <DependentUpon>MockShopDCNoteShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedCostDataByWeekDs.xsc">
+      <DependentUpon>NSLedCostDataByWeekDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedCostDataByWeekDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLedCostDataByWeekDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NSLedCostDataByWeekDs.xss">
+      <DependentUpon>NSLedCostDataByWeekDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedFinanceReportBFValuesDs.xsc">
+      <DependentUpon>NSLedFinanceReportBFValuesDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedFinanceReportBFValuesDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLedFinanceReportBFValuesDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NSLedFinanceReportBFValuesDs.xss">
+      <DependentUpon>NSLedFinanceReportBFValuesDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedFinanceReportCYValuesDs.xsc">
+      <DependentUpon>NSLedFinanceReportCYValuesDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedFinanceReportCYValuesDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLedFinanceReportCYValuesDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NSLedFinanceReportCYValuesDs.xss">
+      <DependentUpon>NSLedFinanceReportCYValuesDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedFPQtyDs.xsc">
+      <DependentUpon>NSLedFPQtyDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedFPQtyDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLedFPQtyDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NSLedFPQtyDs.xss">
+      <DependentUpon>NSLedFPQtyDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedImportFileDs.xsc">
+      <DependentUpon>NSLedImportFileDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedImportFileDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLedImportFileDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NSLedImportFileDs.xss">
+      <DependentUpon>NSLedImportFileDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedProfitabilitiesDs.xsc">
+      <DependentUpon>NSLedProfitabilitiesDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedProfitabilitiesDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLedProfitabilitiesDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NSLedProfitabilitiesDs.xss">
+      <DependentUpon>NSLedProfitabilitiesDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedRangePlanDs.xsc">
+      <DependentUpon>NSLedRangePlanDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedRangePlanDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLedRangePlanDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NSLedRangePlanDs.xss">
+      <DependentUpon>NSLedRangePlanDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedRangePlanPictureDs.xsc">
+      <DependentUpon>NSLedRangePlanPictureDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedRangePlanPictureDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLedRangePlanPictureDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NSLedRangePlanPictureDs.xss">
+      <DependentUpon>NSLedRangePlanPictureDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedRepeatItemParamDs.xsc">
+      <DependentUpon>NSLedRepeatItemParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedRepeatItemParamDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLedRepeatItemParamDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NSLedRepeatItemParamDs.xss">
+      <DependentUpon>NSLedRepeatItemParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedSalesDs.xsc">
+      <DependentUpon>NSLedSalesDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedSalesDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLedSalesDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NSLedSalesDs.xss">
+      <DependentUpon>NSLedSalesDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedSalesInfoDs.xsc">
+      <DependentUpon>NSLedSalesInfoDs.xsd</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="model\account\NSLedSalesInfoDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLedSalesInfoDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NSLedSalesInfoDs.xss">
+      <DependentUpon>NSLedSalesInfoDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedSelfBilledSupplierCodeDs.xsc">
+      <DependentUpon>NSLedSelfBilledSupplierCodeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NSLedSelfBilledSupplierCodeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLedSelfBilledSupplierCodeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NSLedSelfBilledSupplierCodeDs.xss">
+      <DependentUpon>NSLedSelfBilledSupplierCodeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NUKSalesDs.xsc">
+      <DependentUpon>NUKSalesDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\NUKSalesDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NUKSalesDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\NUKSalesDs.xss">
+      <DependentUpon>NUKSalesDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\PaymentAdviceDetailDs.xsc">
+      <DependentUpon>PaymentAdviceDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\PaymentAdviceDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentAdviceDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\PaymentAdviceDetailDs.xss">
+      <DependentUpon>PaymentAdviceDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\PaymentAdviceDs.xsc">
+      <DependentUpon>PaymentAdviceDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\PaymentAdviceDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentAdviceDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\PaymentAdviceDs.xss">
+      <DependentUpon>PaymentAdviceDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\PaymentStatusEnquiryDs.xsc">
+      <DependentUpon>PaymentStatusEnquiryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\PaymentStatusEnquiryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentStatusEnquiryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\PaymentStatusEnquiryDs.xss">
+      <DependentUpon>PaymentStatusEnquiryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\QACommissionDNDs.xsc">
+      <DependentUpon>QACommissionDNDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\QACommissionDNDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QACommissionDNDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\QACommissionDNDs.xss">
+      <DependentUpon>QACommissionDNDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\QACommissionDNShipmentDs.xsc">
+      <DependentUpon>QACommissionDNShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\QACommissionDNShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QACommissionDNShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\QACommissionDNShipmentDs.xss">
+      <DependentUpon>QACommissionDNShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\RechargeSupplierDebitCreditNoteDs.xsc">
+      <DependentUpon>RechargeSupplierDebitCreditNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\RechargeSupplierDebitCreditNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RechargeSupplierDebitCreditNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\RechargeSupplierDebitCreditNoteDs.xss">
+      <DependentUpon>RechargeSupplierDebitCreditNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\SALFLDGDs.xsc">
+      <DependentUpon>SALFLDGDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\SALFLDGDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SALFLDGDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\SALFLDGDs.xss">
+      <DependentUpon>SALFLDGDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\SettlementBankDetailDs.xsc">
+      <DependentUpon>SettlementBankDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\SettlementBankDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SettlementBankDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\SettlementBankDetailDs.xss">
+      <DependentUpon>SettlementBankDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\StudioDCNoteDs.xsc">
+      <DependentUpon>StudioDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\StudioDCNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudioDCNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\StudioDCNoteDs.xss">
+      <DependentUpon>StudioDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\StudioDCNoteShipmentDetailDs.xsc">
+      <DependentUpon>StudioDCNoteShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\StudioDCNoteShipmentDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudioDCNoteShipmentDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\StudioDCNoteShipmentDetailDs.xss">
+      <DependentUpon>StudioDCNoteShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\StudioDCNoteShipmentDs.xsc">
+      <DependentUpon>StudioDCNoteShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\StudioDCNoteShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudioDCNoteShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\StudioDCNoteShipmentDs.xss">
+      <DependentUpon>StudioDCNoteShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\SunInterfaceLogDs.xsc">
+      <DependentUpon>SunInterfaceLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\SunInterfaceLogDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SunInterfaceLogDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\SunInterfaceLogDs.xss">
+      <DependentUpon>SunInterfaceLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\SunInterfaceQueueDs.xsc">
+      <DependentUpon>SunInterfaceQueueDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\SunInterfaceQueueDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SunInterfaceQueueDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\SunInterfaceQueueDs.xss">
+      <DependentUpon>SunInterfaceQueueDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\SunInterfaceTypeDs.xsc">
+      <DependentUpon>SunInterfaceTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\SunInterfaceTypeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SunInterfaceTypeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\SunInterfaceTypeDs.xss">
+      <DependentUpon>SunInterfaceTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\SupplierPaymentStatusDs.xsc">
+      <DependentUpon>SupplierPaymentStatusDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\SupplierPaymentStatusDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SupplierPaymentStatusDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\SupplierPaymentStatusDs.xss">
+      <DependentUpon>SupplierPaymentStatusDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\TallyUploadHistoryDs.xsc">
+      <DependentUpon>TallyUploadHistoryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\TallyUploadHistoryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TallyUploadHistoryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\TallyUploadHistoryDs.xss">
+      <DependentUpon>TallyUploadHistoryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\TXRefParamDs.xsc">
+      <DependentUpon>TXRefParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\TXRefParamDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TXRefParamDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\TXRefParamDs.xss">
+      <DependentUpon>TXRefParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\UKPaymentSupplierDs.xsc">
+      <DependentUpon>UKPaymentSupplierDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\UKPaymentSupplierDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKPaymentSupplierDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\UKPaymentSupplierDs.xss">
+      <DependentUpon>UKPaymentSupplierDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\UTContractDCNoteDs.xsc">
+      <DependentUpon>UTContractDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\UTContractDCNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UTContractDCNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\UTContractDCNoteDs.xss">
+      <DependentUpon>UTContractDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\UTContractDCNoteShipmentDs.xsc">
+      <DependentUpon>UTContractDCNoteShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\account\UTContractDCNoteShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UTContractDCNoteShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\account\UTContractDCNoteShipmentDs.xss">
+      <DependentUpon>UTContractDCNoteShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\OutstandingUKClaimDCNoteDs.xsc">
+      <DependentUpon>OutstandingUKClaimDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\OutstandingUKClaimDCNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutstandingUKClaimDCNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\OutstandingUKClaimDCNoteDs.xss">
+      <DependentUpon>OutstandingUKClaimDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimBIADiscrepancyDs.xsc">
+      <DependentUpon>UKClaimBIADiscrepancyDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimBIADiscrepancyDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimBIADiscrepancyDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\UKClaimBIADiscrepancyDs.xss">
+      <DependentUpon>UKClaimBIADiscrepancyDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimBIAMappingDs.xsc">
+      <DependentUpon>UKClaimBIAMappingDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimBIAMappingDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimBIAMappingDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\UKClaimBIAMappingDs.xss">
+      <DependentUpon>UKClaimBIAMappingDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimDCNoteDetailDs.xsc">
+      <DependentUpon>UKClaimDCNoteDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimDCNoteDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimDCNoteDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\UKClaimDCNoteDetailDs.xss">
+      <DependentUpon>UKClaimDCNoteDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimDCNoteDs.xsc">
+      <DependentUpon>UKClaimDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimDCNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimDCNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\UKClaimDCNoteDs.xss">
+      <DependentUpon>UKClaimDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimDs.xsc">
+      <DependentUpon>UKClaimDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\UKClaimDs.xss">
+      <DependentUpon>UKClaimDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimLogDs.xsc">
+      <DependentUpon>UKClaimLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimLogDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimLogDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\UKClaimLogDs.xss">
+      <DependentUpon>UKClaimLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimPhasingByProductTeamDs.xsc">
+      <DependentUpon>UKClaimPhasingByProductTeamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimPhasingByProductTeamDs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimPhasingByProductTeamDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\UKClaimPhasingByProductTeamDs.xss">
+      <DependentUpon>UKClaimPhasingByProductTeamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimPhasingDs.xsc">
+      <DependentUpon>UKClaimPhasingDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimPhasingDs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimPhasingDs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="model\claim\UKClaimPhasingDs.xss">
+      <DependentUpon>UKClaimPhasingDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKDiscountClaimDs.xsc">
+      <DependentUpon>UKDiscountClaimDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKDiscountClaimDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKDiscountClaimDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\UKDiscountClaimDs.xss">
+      <DependentUpon>UKDiscountClaimDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKDiscountClaimLogDs.xsc">
+      <DependentUpon>UKDiscountClaimLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKDiscountClaimLogDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKDiscountClaimLogDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\UKDiscountClaimLogDs.xss">
+      <DependentUpon>UKDiscountClaimLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKDiscountClaimRefundDs.xsc">
+      <DependentUpon>UKDiscountClaimRefundDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKDiscountClaimRefundDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKDiscountClaimRefundDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\UKDiscountClaimRefundDs.xss">
+      <DependentUpon>UKDiscountClaimRefundDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\AirFreightPaymentTypeDs.xsc">
+      <DependentUpon>AirFreightPaymentTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\AirFreightPaymentTypeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AirFreightPaymentTypeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\AirFreightPaymentTypeDs.xss">
+      <DependentUpon>AirFreightPaymentTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\CustomerDs.xsc">
+      <DependentUpon>CustomerDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\CustomerDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\CustomerDs.xss">
+      <DependentUpon>CustomerDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\EpicorUploadImportLogDs.xsc">
+      <DependentUpon>EpicorUploadImportLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\EpicorUploadImportLogDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EpicorUploadImportLogDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\EpicorUploadImportLogDs.xss">
+      <DependentUpon>EpicorUploadImportLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\FileUploadLogDs.xsc">
+      <DependentUpon>FileUploadLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\FileUploadLogDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FileUploadLogDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\FileUploadLogDs.xss">
+      <DependentUpon>FileUploadLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\GenericDataSummaryDs.xsc">
+      <DependentUpon>GenericDataSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\GenericDataSummaryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenericDataSummaryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\GenericDataSummaryDs.xss">
+      <DependentUpon>GenericDataSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSDocumentDs.xsc">
+      <DependentUpon>ILSDocumentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSDocumentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSDocumentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSDocumentDs.xss">
+      <DependentUpon>ILSDocumentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSErrorDs.xsc">
+      <DependentUpon>ILSErrorDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSErrorDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSErrorDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSErrorDs.xss">
+      <DependentUpon>ILSErrorDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSFileSentLogDs.xsc">
+      <DependentUpon>ILSFileSentLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSFileSentLogDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSFileSentLogDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSFileSentLogDs.xss">
+      <DependentUpon>ILSFileSentLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSInvoiceChangeHistoryDs.xsc">
+      <DependentUpon>ILSInvoiceChangeHistoryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSInvoiceChangeHistoryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSInvoiceChangeHistoryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSInvoiceChangeHistoryDs.xss">
+      <DependentUpon>ILSInvoiceChangeHistoryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSInvoiceDetailDs.xsc">
+      <DependentUpon>ILSInvoiceDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSInvoiceDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSInvoiceDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSInvoiceDetailDs.xss">
+      <DependentUpon>ILSInvoiceDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSMonthEndLogDs.xsc">
+      <DependentUpon>ILSMonthEndLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSMonthEndLogDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSMonthEndLogDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSMonthEndLogDs.xss">
+      <DependentUpon>ILSMonthEndLogDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSMonthEndShipmentDs.xsc">
+      <DependentUpon>ILSMonthEndShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSMonthEndShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSMonthEndShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSMonthEndShipmentDs.xss">
+      <DependentUpon>ILSMonthEndShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSPackingListMixedCartonDetailDs.xsc">
+      <DependentUpon>ILSPackingListMixedCartonDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSPackingListMixedCartonDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSPackingListMixedCartonDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSPackingListMixedCartonDetailDs.xss">
+      <DependentUpon>ILSPackingListMixedCartonDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NSLBankAccountDs.xsc">
+      <DependentUpon>NSLBankAccountDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NSLBankAccountDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLBankAccountDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NSLBankAccountDs.xss">
+      <DependentUpon>NSLBankAccountDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTActionHistoryDs.xsc">
+      <DependentUpon>NTActionHistoryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTActionHistoryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTActionHistoryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTActionHistoryDs.xss">
+      <DependentUpon>NTActionHistoryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTApproverDs.xsc">
+      <DependentUpon>NTApproverDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTApproverDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTApproverDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTApproverDs.xss">
+      <DependentUpon>NTApproverDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTEpicorSegmentValueDs.xsc">
+      <DependentUpon>NTEpicorSegmentValueDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTEpicorSegmentValueDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTEpicorSegmentValueDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTEpicorSegmentValueDs.xss">
+      <DependentUpon>NTEpicorSegmentValueDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTExpenseNatureDs.xsc">
+      <DependentUpon>NTExpenseNatureDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTExpenseNatureDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTExpenseNatureDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTExpenseNatureDs.xss">
+      <DependentUpon>NTExpenseNatureDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTExpenseTypeDs.xsc">
+      <DependentUpon>NTExpenseTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTExpenseTypeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTExpenseTypeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTExpenseTypeDs.xss">
+      <DependentUpon>NTExpenseTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTInvoiceDetailDs.xsc">
+      <DependentUpon>NTInvoiceDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTInvoiceDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTInvoiceDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTInvoiceDetailDs.xss">
+      <DependentUpon>NTInvoiceDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTInvoiceDs.xsc">
+      <DependentUpon>NTInvoiceDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTInvoiceDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTInvoiceDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTInvoiceDs.xss">
+      <DependentUpon>NTInvoiceDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTMonthEndStatusDs.xsc">
+      <DependentUpon>NTMonthEndStatusDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTMonthEndStatusDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTMonthEndStatusDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTMonthEndStatusDs.xss">
+      <DependentUpon>NTMonthEndStatusDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTPaymentMethodDs.xsc">
+      <DependentUpon>NTPaymentMethodDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTPaymentMethodDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTPaymentMethodDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTPaymentMethodDs.xss">
+      <DependentUpon>NTPaymentMethodDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTRechargeDCNoteDs.xsc">
+      <DependentUpon>NTRechargeDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTRechargeDCNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTRechargeDCNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTRechargeDCNoteDs.xss">
+      <DependentUpon>NTRechargeDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTRechargeDCNoteNoParamDs.xsc">
+      <DependentUpon>NTRechargeDCNoteNoParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTRechargeDCNoteNoParamDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTRechargeDCNoteNoParamDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTRechargeDCNoteNoParamDs.xss">
+      <DependentUpon>NTRechargeDCNoteNoParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTRoleDs.xsc">
+      <DependentUpon>NTRoleDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTRoleDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTRoleDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTRoleDs.xss">
+      <DependentUpon>NTRoleDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTSunInterfaceQueueDs.xsc">
+      <DependentUpon>NTSunInterfaceQueueDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTSunInterfaceQueueDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTSunInterfaceQueueDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTSunInterfaceQueueDs.xss">
+      <DependentUpon>NTSunInterfaceQueueDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTUserRoleAccessDs.xsc">
+      <DependentUpon>NTUserRoleAccessDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTUserRoleAccessDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTUserRoleAccessDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTUserRoleAccessDs.xss">
+      <DependentUpon>NTUserRoleAccessDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTVendorDs.xsc">
+      <DependentUpon>NTVendorDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTVendorDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTVendorDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTVendorDs.xss">
+      <DependentUpon>NTVendorDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTVendorExpenseTypeMappingDs.xsc">
+      <DependentUpon>NTVendorExpenseTypeMappingDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nontrade\NTVendorExpenseTypeMappingDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTVendorExpenseTypeMappingDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nontrade\NTVendorExpenseTypeMappingDs.xss">
+      <DependentUpon>NTVendorExpenseTypeMappingDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssAdvancePaymentDs.xsc">
+      <DependentUpon>NssAdvancePaymentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssAdvancePaymentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssAdvancePaymentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssAdvancePaymentDs.xss">
+      <DependentUpon>NssAdvancePaymentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssAdvancePaymentOrderDetailDs.xsc">
+      <DependentUpon>NssAdvancePaymentOrderDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssAdvancePaymentOrderDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssAdvancePaymentOrderDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssAdvancePaymentOrderDetailDs.xss">
+      <DependentUpon>NssAdvancePaymentOrderDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssLGPaymentDs.xsc">
+      <DependentUpon>NssLGPaymentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssLGPaymentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssLGPaymentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssLGPaymentDs.xss">
+      <DependentUpon>NssLGPaymentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssLGPaymentOrderDetailDs.xsc">
+      <DependentUpon>NssLGPaymentOrderDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssLGPaymentOrderDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssLGPaymentOrderDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssLGPaymentOrderDetailDs.xss">
+      <DependentUpon>NssLGPaymentOrderDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssShipmentDs.xsc">
+      <DependentUpon>NssShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssShipmentDs.xss">
+      <DependentUpon>NssShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\UKItemDs.xsc">
+      <DependentUpon>UKItemDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\UKItemDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKItemDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\UKItemDs.xss">
+      <DependentUpon>UKItemDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\UKItemPartDs.xsc">
+      <DependentUpon>UKItemPartDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\UKItemPartDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKItemPartDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\UKItemPartDs.xss">
+      <DependentUpon>UKItemPartDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\ShipmentDs.xsc">
+      <DependentUpon>ShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\ShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\order\ShipmentDs.xss">
+      <DependentUpon>ShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\ShipmentProductDs.xsc">
+      <DependentUpon>ShipmentProductDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\ShipmentProductDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShipmentProductDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\order\ShipmentProductDs.xss">
+      <DependentUpon>ShipmentProductDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\qais\UKClaimReasonDs.xsc">
+      <DependentUpon>UKClaimReasonDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\qais\UKClaimReasonDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimReasonDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\qais\UKClaimReasonDs.xss">
+      <DependentUpon>UKClaimReasonDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimRechargeDs.xsc">
+      <DependentUpon>UKClaimRechargeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimRechargeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimRechargeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\UKClaimRechargeDs.xss">
+      <DependentUpon>UKClaimRechargeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimRefundDs.xsc">
+      <DependentUpon>UKClaimRefundDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\claim\UKClaimRefundDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimRefundDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\claim\UKClaimRefundDs.xss">
+      <DependentUpon>UKClaimRefundDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\BankBranchDs.xsc">
+      <DependentUpon>BankBranchDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\BankBranchDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BankBranchDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\BankBranchDs.xss">
+      <DependentUpon>BankBranchDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\BankDs.xsc">
+      <DependentUpon>BankDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\BankDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BankDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\BankDs.xss">
+      <DependentUpon>BankDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\CartonTypeDs.xsc">
+      <DependentUpon>CartonTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\CartonTypeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CartonTypeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\CartonTypeDs.xss">
+      <DependentUpon>CartonTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\CustomerDestinationDs.xsc">
+      <DependentUpon>CustomerDestinationDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\CustomerDestinationDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerDestinationDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\CustomerDestinationDs.xss">
+      <DependentUpon>CustomerDestinationDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\CustomerTypeDs.xsc">
+      <DependentUpon>CustomerTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\CustomerTypeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerTypeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\CustomerTypeDs.xss">
+      <DependentUpon>CustomerTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\ExchangeRateDs.xsc">
+      <DependentUpon>ExchangeRateDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\ExchangeRateDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExchangeRateDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\ExchangeRateDs.xss">
+      <DependentUpon>ExchangeRateDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\FileUploadDs.xsc">
+      <DependentUpon>FileUploadDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\FileUploadDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FileUploadDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\FileUploadDs.xss">
+      <DependentUpon>FileUploadDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\OtherCostTypeDs.xsc">
+      <DependentUpon>OtherCostTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\OtherCostTypeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OtherCostTypeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\OtherCostTypeDs.xss">
+      <DependentUpon>OtherCostTypeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\PackingMethodDs.xsc">
+      <DependentUpon>PackingMethodDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\PackingMethodDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PackingMethodDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\PackingMethodDs.xss">
+      <DependentUpon>PackingMethodDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\PackingUnitDs.xsc">
+      <DependentUpon>PackingUnitDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\PackingUnitDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PackingUnitDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\PackingUnitDs.xss">
+      <DependentUpon>PackingUnitDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\PurchaseLocationDs.xsc">
+      <DependentUpon>PurchaseLocationDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\PurchaseLocationDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PurchaseLocationDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\PurchaseLocationDs.xss">
+      <DependentUpon>PurchaseLocationDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\QuotaCategoryDs.xsc">
+      <DependentUpon>QuotaCategoryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\QuotaCategoryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuotaCategoryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\QuotaCategoryDs.xss">
+      <DependentUpon>QuotaCategoryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\QuotaCategoryGroupDs.xsc">
+      <DependentUpon>QuotaCategoryGroupDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\QuotaCategoryGroupDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuotaCategoryGroupDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\QuotaCategoryGroupDs.xss">
+      <DependentUpon>QuotaCategoryGroupDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\ReportOfficeGroupDs.xsc">
+      <DependentUpon>ReportOfficeGroupDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\ReportOfficeGroupDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportOfficeGroupDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\ReportOfficeGroupDs.xss">
+      <DependentUpon>ReportOfficeGroupDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\ShipmentCountryDs.xsc">
+      <DependentUpon>ShipmentCountryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\ShipmentCountryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShipmentCountryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\ShipmentCountryDs.xss">
+      <DependentUpon>ShipmentCountryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\ShipmentMethodDs.xsc">
+      <DependentUpon>ShipmentMethodDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\ShipmentMethodDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShipmentMethodDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\ShipmentMethodDs.xss">
+      <DependentUpon>ShipmentMethodDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\ShipmentPortDs.xsc">
+      <DependentUpon>ShipmentPortDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\ShipmentPortDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShipmentPortDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\ShipmentPortDs.xss">
+      <DependentUpon>ShipmentPortDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\SizeOptionDs.xsc">
+      <DependentUpon>SizeOptionDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\SizeOptionDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SizeOptionDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\SizeOptionDs.xss">
+      <DependentUpon>SizeOptionDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\StaffDs.xsc">
+      <DependentUpon>StaffDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\StaffDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StaffDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\StaffDs.xss">
+      <DependentUpon>StaffDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\StandardMSCourierChargeDs.xsc">
+      <DependentUpon>StandardMSCourierChargeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\StandardMSCourierChargeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StandardMSCourierChargeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\StandardMSCourierChargeDs.xss">
+      <DependentUpon>StandardMSCourierChargeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\SystemParameterDs.xsc">
+      <DependentUpon>SystemParameterDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\SystemParameterDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SystemParameterDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\SystemParameterDs.xss">
+      <DependentUpon>SystemParameterDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\TermOfPurchaseDs.xsc">
+      <DependentUpon>TermOfPurchaseDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\TermOfPurchaseDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TermOfPurchaseDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\TermOfPurchaseDs.xss">
+      <DependentUpon>TermOfPurchaseDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\ThirdPartyAgencyDs.xsc">
+      <DependentUpon>ThirdPartyAgencyDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\ThirdPartyAgencyDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThirdPartyAgencyDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\ThirdPartyAgencyDs.xss">
+      <DependentUpon>ThirdPartyAgencyDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\TradingAgencyDs.xsc">
+      <DependentUpon>TradingAgencyDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\TradingAgencyDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TradingAgencyDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\TradingAgencyDs.xss">
+      <DependentUpon>TradingAgencyDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\UKDiscountReasonDs.xsc">
+      <DependentUpon>UKDiscountReasonDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\UKDiscountReasonDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKDiscountReasonDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\UKDiscountReasonDs.xss">
+      <DependentUpon>UKDiscountReasonDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\UKFinalDestinationDs.xsc">
+      <DependentUpon>UKFinalDestinationDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\UKFinalDestinationDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKFinalDestinationDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\UKFinalDestinationDs.xss">
+      <DependentUpon>UKFinalDestinationDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\VendorBankMappingDs.xsc">
+      <DependentUpon>VendorBankMappingDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\VendorBankMappingDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VendorBankMappingDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\VendorBankMappingDs.xss">
+      <DependentUpon>VendorBankMappingDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\WorkflowStatusDs.xsc">
+      <DependentUpon>WorkflowStatusDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\common\WorkflowStatusDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkflowStatusDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\common\WorkflowStatusDs.xss">
+      <DependentUpon>WorkflowStatusDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSCancelledOrderDs.xsc">
+      <DependentUpon>ILSCancelledOrderDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSCancelledOrderDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSCancelledOrderDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSCancelledOrderDs.xss">
+      <DependentUpon>ILSCancelledOrderDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSCommissionInvoiceDetailDs.xsc">
+      <DependentUpon>ILSCommissionInvoiceDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSCommissionInvoiceDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSCommissionInvoiceDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSCommissionInvoiceDetailDs.xss">
+      <DependentUpon>ILSCommissionInvoiceDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSCommissionInvoiceDs.xsc">
+      <DependentUpon>ILSCommissionInvoiceDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSCommissionInvoiceDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSCommissionInvoiceDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSCommissionInvoiceDs.xss">
+      <DependentUpon>ILSCommissionInvoiceDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSInvoiceDs.xsc">
+      <DependentUpon>ILSInvoiceDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSInvoiceDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSInvoiceDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSInvoiceDs.xss">
+      <DependentUpon>ILSInvoiceDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSManifestDetailDs.xsc">
+      <DependentUpon>ILSManifestDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSManifestDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSManifestDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSManifestDetailDs.xss">
+      <DependentUpon>ILSManifestDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSManifestDs.xsc">
+      <DependentUpon>ILSManifestDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSManifestDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSManifestDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSManifestDs.xss">
+      <DependentUpon>ILSManifestDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSMessageResultDs.xsc">
+      <DependentUpon>ILSMessageResultDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSMessageResultDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSMessageResultDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSMessageResultDs.xss">
+      <DependentUpon>ILSMessageResultDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSOrderCopyDetailDs.xsc">
+      <DependentUpon>ILSOrderCopyDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSOrderCopyDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSOrderCopyDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSOrderCopyDetailDs.xss">
+      <DependentUpon>ILSOrderCopyDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSOrderCopyDiscrepancyDs.xsc">
+      <DependentUpon>ILSOrderCopyDiscrepancyDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSOrderCopyDiscrepancyDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSOrderCopyDiscrepancyDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSOrderCopyDiscrepancyDs.xss">
+      <DependentUpon>ILSOrderCopyDiscrepancyDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSOrderCopyDs.xsc">
+      <DependentUpon>ILSOrderCopyDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSOrderCopyDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSOrderCopyDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSOrderCopyDs.xss">
+      <DependentUpon>ILSOrderCopyDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSOrderCopyOriginDs.xsc">
+      <DependentUpon>ILSOrderCopyOriginDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSOrderCopyOriginDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSOrderCopyOriginDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSOrderCopyOriginDs.xss">
+      <DependentUpon>ILSOrderCopyOriginDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSOrderRefDs.xsc">
+      <DependentUpon>ILSOrderRefDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSOrderRefDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSOrderRefDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSOrderRefDs.xss">
+      <DependentUpon>ILSOrderRefDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSPackingListCartonDetailDs.xsc">
+      <DependentUpon>ILSPackingListCartonDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSPackingListCartonDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSPackingListCartonDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSPackingListCartonDetailDs.xss">
+      <DependentUpon>ILSPackingListCartonDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSPackingListDetailDs.xsc">
+      <DependentUpon>ILSPackingListDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSPackingListDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSPackingListDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSPackingListDetailDs.xss">
+      <DependentUpon>ILSPackingListDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSPackingListDs.xsc">
+      <DependentUpon>ILSPackingListDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSPackingListDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSPackingListDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSPackingListDs.xss">
+      <DependentUpon>ILSPackingListDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSParamDs.xsc">
+      <DependentUpon>ILSParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSParamDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSParamDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSParamDs.xss">
+      <DependentUpon>ILSParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSQCCApprovalDs.xsc">
+      <DependentUpon>ILSQCCApprovalDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSQCCApprovalDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSQCCApprovalDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSQCCApprovalDs.xss">
+      <DependentUpon>ILSQCCApprovalDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSUnitPriceMatrixDs.xsc">
+      <DependentUpon>ILSUnitPriceMatrixDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\ils\ILSUnitPriceMatrixDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSUnitPriceMatrixDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\ils\ILSUnitPriceMatrixDs.xss">
+      <DependentUpon>ILSUnitPriceMatrixDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\EziBuyOrderCopySummaryDs.xsc">
+      <DependentUpon>EziBuyOrderCopySummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\EziBuyOrderCopySummaryDs.xsd">
+      <SubType>
+      </SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EziBuyOrderCopySummaryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\EziBuyOrderCopySummaryDs.xss">
+      <DependentUpon>EziBuyOrderCopySummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssProgressDs.xsc">
+      <DependentUpon>NssProgressDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssProgressDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssProgressDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssProgressDs.xss">
+      <DependentUpon>NssProgressDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\ContractShipmentDs.xsc">
+      <DependentUpon>ContractShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\ContractShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContractShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\order\ContractShipmentDs.xss">
+      <DependentUpon>ContractShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\ILSManifestDetailShipmentDs.xsc">
+      <DependentUpon>ILSManifestDetailShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\ILSManifestDetailShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSManifestDetailShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\order\ILSManifestDetailShipmentDs.xss">
+      <DependentUpon>ILSManifestDetailShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\ActionHistoryDs.xsc">
+      <DependentUpon>ActionHistoryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\ActionHistoryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ActionHistoryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\ActionHistoryDs.xss">
+      <DependentUpon>ActionHistoryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\AlertNotificationDs.xsc">
+      <DependentUpon>AlertNotificationDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\AlertNotificationDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AlertNotificationDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\AlertNotificationDs.xss">
+      <DependentUpon>AlertNotificationDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCAdvancePaymentDs.xsc">
+      <DependentUpon>LCAdvancePaymentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCAdvancePaymentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LCAdvancePaymentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\LCAdvancePaymentDs.xss">
+      <DependentUpon>LCAdvancePaymentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCApplicationShipmentDetailDs.xsc">
+      <DependentUpon>LCApplicationShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCApplicationShipmentDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LCApplicationShipmentDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\LCApplicationShipmentDetailDs.xss">
+      <DependentUpon>LCApplicationShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCBatchDetailDs.xsc">
+      <DependentUpon>LCBatchDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCBatchDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LCBatchDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\LCBatchDetailDs.xss">
+      <DependentUpon>LCBatchDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCBatchDs.xsc">
+      <DependentUpon>LCBatchDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCBatchDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LCBatchDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\LCBatchDs.xss">
+      <DependentUpon>LCBatchDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCBatchSummaryDs.xsc">
+      <DependentUpon>LCBatchSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCBatchSummaryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LCBatchSummaryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\LCBatchSummaryDs.xss">
+      <DependentUpon>LCBatchSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCShipmentDs.xsc">
+      <DependentUpon>LCShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LCShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\LCShipmentDs.xss">
+      <DependentUpon>LCShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssContractDs.xsc">
+      <DependentUpon>NssContractDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssContractDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssContractDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssContractDs.xss">
+      <DependentUpon>NssContractDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssOtherCostDs.xsc">
+      <DependentUpon>NssOtherCostDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssOtherCostDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssOtherCostDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssOtherCostDs.xss">
+      <DependentUpon>NssOtherCostDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssProductDs.xsc">
+      <DependentUpon>NssProductDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssProductDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssProductDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssProductDs.xss">
+      <DependentUpon>NssProductDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssShipmentDetailDs.xsc">
+      <DependentUpon>NssShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssShipmentDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssShipmentDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssShipmentDetailDs.xss">
+      <DependentUpon>NssShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssSizeOptionDs.xsc">
+      <DependentUpon>NssSizeOptionDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssSizeOptionDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssSizeOptionDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssSizeOptionDs.xss">
+      <DependentUpon>NssSizeOptionDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssSplitShipmentDetailDs.xsc">
+      <DependentUpon>NssSplitShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssSplitShipmentDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssSplitShipmentDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssSplitShipmentDetailDs.xss">
+      <DependentUpon>NssSplitShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssSplitShipmentDs.xsc">
+      <DependentUpon>NssSplitShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\nss\NssSplitShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssSplitShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\nss\NssSplitShipmentDs.xss">
+      <DependentUpon>NssSplitShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\ContractDs.xsc">
+      <DependentUpon>ContractDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\ContractDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContractDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\order\ContractDs.xss">
+      <DependentUpon>ContractDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\OtherCostDs.xsc">
+      <DependentUpon>OtherCostDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\OtherCostDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OtherCostDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\order\OtherCostDs.xss">
+      <DependentUpon>OtherCostDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\QuarterlyExchangeRateDs.xsc">
+      <DependentUpon>QuarterlyExchangeRateDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\QuarterlyExchangeRateDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuarterlyExchangeRateDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\order\QuarterlyExchangeRateDs.xss">
+      <DependentUpon>QuarterlyExchangeRateDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\ShipmentDetailDs.xsc">
+      <DependentUpon>ShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\ShipmentDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShipmentDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\order\ShipmentDetailDs.xss">
+      <DependentUpon>ShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\SplitShipmentDetailDs.xsc">
+      <DependentUpon>SplitShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\SplitShipmentDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SplitShipmentDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\order\SplitShipmentDetailDs.xss">
+      <DependentUpon>SplitShipmentDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\SplitShipmentDs.xsc">
+      <DependentUpon>SplitShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\SplitShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SplitShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\order\SplitShipmentDs.xss">
+      <DependentUpon>SplitShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\UTurnOrderParameterDs.xsc">
+      <DependentUpon>UTurnOrderParameterDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\order\UTurnOrderParameterDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UTurnOrderParameterDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\order\UTurnOrderParameterDs.xss">
+      <DependentUpon>UTurnOrderParameterDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\product\ProductDs.xsc">
+      <DependentUpon>ProductDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\product\ProductDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\product\ProductDs.xss">
+      <DependentUpon>ProductDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\qais\InspectionDs.xsc">
+      <DependentUpon>InspectionDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\qais\InspectionDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InspectionDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\qais\InspectionDs.xss">
+      <DependentUpon>InspectionDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\DocumentDs.xsc">
+      <DependentUpon>DocumentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\DocumentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DocumentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\DocumentDs.xss">
+      <DependentUpon>DocumentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\InvoiceDs.xsc">
+      <DependentUpon>InvoiceDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\InvoiceDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvoiceDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\InvoiceDs.xss">
+      <DependentUpon>InvoiceDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\InvoiceNoParamDs.xsc">
+      <DependentUpon>InvoiceNoParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\InvoiceNoParamDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvoiceNoParamDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\InvoiceNoParamDs.xss">
+      <DependentUpon>InvoiceNoParamDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCApplicationDs.xsc">
+      <DependentUpon>LCApplicationDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCApplicationDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LCApplicationDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\LCApplicationDs.xss">
+      <DependentUpon>LCApplicationDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCApplicationShipmentDs.xsc">
+      <DependentUpon>LCApplicationShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\LCApplicationShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LCApplicationShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\LCApplicationShipmentDs.xss">
+      <DependentUpon>LCApplicationShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\ShipmentAttributeDs.xsc">
+      <DependentUpon>ShipmentAttributeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\ShipmentAttributeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShipmentAttributeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\ShipmentAttributeDs.xss">
+      <DependentUpon>ShipmentAttributeDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\ShipmentDeductionDs.xsc">
+      <DependentUpon>ShipmentDeductionDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\ShipmentDeductionDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShipmentDeductionDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\ShipmentDeductionDs.xss">
+      <DependentUpon>ShipmentDeductionDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\ShipmentToDMSDs.xsc">
+      <DependentUpon>ShipmentToDMSDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\ShipmentToDMSDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShipmentToDMSDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="model\shipping\ShipmentToDMSDs.xss">
+      <DependentUpon>ShipmentToDMSDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\WorkflowStatusDs.xsc">
+      <DependentUpon>WorkflowStatusDs.xsd</DependentUpon>
+    </None>
+    <None Include="model\shipping\WorkflowStatusDs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkflowStatusDs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="model\shipping\WorkflowStatusDs.xss">
+      <DependentUpon>WorkflowStatusDs.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\APDS\APDSService.wsdl" />
+    <None Include="Web References\APDS\ProcurementRequestDef.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\APDS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\QAIS\ClaimRequestDef.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\QAIS\ClaimRequestService.wsdl" />
+    <None Include="Web References\QAIS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\domain\domain.csproj">
+      <Project>{316C3E10-5A1D-4F60-807D-CA23980060EE}</Project>
+      <Name>domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ns-s02/qais/webservices/ClaimRequestService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\QAIS\</RelPath>
+      <UpdateFromURL>http://ns-s02/qais/webservices/ClaimRequestService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>com_next_isam_dataserver_QAIS_ClaimRequestService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ns-s15/apds/webservices/APDSService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\APDS\</RelPath>
+      <UpdateFromURL>http://ns-s15/apds/webservices/APDSService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>com_next_isam_dataserver_APDS_APDSService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\QAIS\ClaimRequestService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\APDS\APDSService.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,2215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{90708247-4EAD-437B-B607-AC48B6EFED0F}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>com.next.isam.reporter</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>com.next.isam.reporter</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>http://localhost/com.next.elab.reporter/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="com.next.common, Version=1.0.7922.17894, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NSCommon\common\bin\Debug\com.next.common.dll</HintPath>
+    </Reference>
+    <Reference Include="com.next.infra, Version=1.0.7775.29088, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NSCommon\common\bin\Debug\com.next.infra.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\webapp\commonlib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <HintPath>..\webapp\commonlib\Interop.Microsoft.Office.Core.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Office">
+      <HintPath>..\webapp\commonlib\Interop.Office.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\webapp\commonlib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="accounts\AccountReportManager.cs" />
+    <Compile Include="accounts\AccrualArchiveDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccrualArchiveDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\AccrualArchiveReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccrualArchiveReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\ActiveSupplierReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActiveSupplierReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\ActiveSupplierReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActiveSupplierReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\ActualSalesSummaryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActualSalesSummaryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\ActualSalesSummaryReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActualSalesSummaryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\AdvancePaymentReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\AdvancePaymentReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\AdvancePaymentReportMG.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentReportMG.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\AdvancePaymentSummaryReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentSummaryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\AdvancePaymentSummaryReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentSummaryReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\AdvancePaymentSummaryReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentSummaryReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\AdvancePaymentSummaryReportMG.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentSummaryReportMG.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\AdvPaymentInstalmentInterestChargesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvPaymentInstalmentInterestChargesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\APAdjustmentNote.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APAdjustmentNote.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\APAdjustmentNoteDs.cs">
+      <DependentUpon>APAdjustmentNoteDs.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\APAdjustmentNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APAdjustmentNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\ARAdjustmentNote.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ARAdjustmentNote.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\ARAdjustmentNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ARAdjustmentNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\CutoffSalesDiscrepancyReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CutoffSalesDiscrepancyReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\CutOffSalesDiscrepancyReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CutOffSalesDiscrepancyReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\EpicorInterfaceLogReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EpicorInterfaceLogReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\EpicorInterfaceLogReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EpicorInterfaceLogReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\FutureOrderSummaryBySupplierReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FutureOrderSummaryBySupplierReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\GenericDCNoteReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenericDCNoteReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\GenericDCNoteReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenericDCNoteReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\ILSDiffDCNoteReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSDiffDCNoteReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\ILSDiffDCNoteReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSDiffDCNoteReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\ILSDiffDCNoteSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSDiffDCNoteSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\ILSDiffDCNoteSummaryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ILSDiffDCNoteSummaryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\MonthEndShipmentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthEndShipmentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\MonthEndSlippageReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthEndSlippageReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\NonTradeExpenseStatementDs.Designer.cs">
+      <DependentUpon>NonTradeExpenseStatementDs.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="accounts\NonTradeExpenseStatementList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NonTradeExpenseStatementList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\NTInvoiceDetailExportList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTInvoiceDetailExportList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\NTInvoiceSettlementDetailList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTInvoiceSettlementDetailList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\NTInvoiceSettlementDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTInvoiceSettlementDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\NTRechargeDCNote.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTRechargeDCNote.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\NTRechargeDCNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTRechargeDCNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\NTVendorReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTVendorReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\NTVendorReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NTVendorReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\NUKSalesCutOffSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NUKSalesCutOffSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\NUKSalesCutOffSummaryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NUKSalesCutOffSummaryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\NUKSalesShippingReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NUKSalesShippingReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\NUKSalesShippingReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NUKSalesShippingReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\PaymentStatusEnquiryEpicorDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentStatusEnquiryEpicorDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\PaymentStatusEnquiryEpicorReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentStatusEnquiryEpicorReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\PaymentStatusEnquiryReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentStatusEnquiryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\POListByOfficeSupplierReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POListByOfficeSupplierReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\QADebitNoteDs.cs">
+      <DependentUpon>QADebitNoteDs.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\ShipmentCommissionStudioSampleReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentCommissionStudioSampleReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\SupplierOrderStatusReportDs.cs">
+      <DependentUpon>SupplierOrderStatusReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\UKClaimMFRNQtyAnalysisReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimMFRNQtyAnalysisReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\UKClaimPhasingByOfficeClaimTypeReport.cs">
+      <DependentUpon>UKClaimPhasingByOfficeClaimTypeReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="accounts\UKClaimAuditLogReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimAuditLogReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\UKClaimAuditLogReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimAuditLogReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\UKClaimPhasingByOfficeAnnualReport.cs">
+      <DependentUpon>UKClaimPhasingByOfficeAnnualReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="accounts\UKClaimPhasingByOfficeClaimReasonDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimPhasingByOfficeClaimReasonDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\UKClaimPhasingByOfficeClaimReasonReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimPhasingByOfficeClaimReasonReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\UKClaimPhasingByOfficeClaimReasonSummaryReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimPhasingByOfficeClaimReasonSummaryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\UKClaimPhasingByOfficeDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimPhasingByOfficeDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\UKClaimPhasingByOfficeReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimPhasingByOfficeReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\UKClaimSummaryByCurrency.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimSummaryByCurrency.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\UKClaimSummaryByReason.cs">
+      <DependentUpon>UKClaimSummaryByReason.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="accounts\UKClaimSummaryReport.cs">
+      <DependentUpon>UKClaimSummaryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="accounts\UKClaimSummaryReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimSummaryReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\UKClaimDCNoteReport.cs">
+      <DependentUpon>UKClaimDCNoteReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="accounts\SAndBCommissionDebitNote.cs">
+      <DependentUpon>SAndBCommissionDebitNote.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="accounts\MockShopDebitNote.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MockShopDebitNote.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\MockShopDebitNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MockShopDebitNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\MockShopDebitNoteSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MockShopDebitNoteSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\MonthEndSummaryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthEndSummaryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\MonthEndSummaryRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthEndSummaryRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\OtherCostSummaryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OtherCostSummaryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\OtherCostSummaryRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OtherCostSummaryRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\QADebitNote.cs">
+      <DependentUpon>QADebitNote.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="accounts\QADebitNoteDs.Designer.cs">
+      <DependentUpon>QADebitNoteDs.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="accounts\ReceivablePayableForecastDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReceivablePayableForecastDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\ReceivablePayableForecastRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReceivablePayableForecastRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\ReleaseLockDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReleaseLockDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\ReleaseLockSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReleaseLockSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\SAndBCommissionDebitNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAndBCommissionDebitNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\ShipmentCommissionChoiceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentCommissionChoiceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\ShipmentCommissionMockShopReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentCommissionMockShopReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\ShipmentCommissionReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentCommissionReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\ShipmentCommissionReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShipmentCommissionReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\SupplierOrderStatusReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierOrderStatusReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\SupplierOrderStatusReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierOrderStatusReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\UKClaimDCNoteReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UKClaimDCNoteReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\UTDebitNote.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UTDebitNote.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\UTDebitNoteDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UTDebitNoteDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\UTDebitNoteSummaryReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UTDebitNoteSummaryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accounts\UTQACommissionDNRepDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UTQACommissionDNRepDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="accounts\UTQADebitNoteReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UTQADebitNoteReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ARAP\ARAPReportManager.cs" />
+    <Compile Include="ARAP\OutstandingTradeReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingTradeReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ARAP\OutstandingTradeReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingTradeReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="common\ReportParameterRef.cs" />
+    <Compile Include="customerreceipt\CustomerReceiptReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerReceiptReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerreceipt\CustomerReceiptRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerReceiptRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="customerreceipt\CustomerReciptReportManager.cs" />
+    <Compile Include="dataserver\ReporterWorker.cs" />
+    <Compile Include="helper\ReportHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="invoice\BeneficiaryCert\BeneficiaryCertDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BeneficiaryCertDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="invoice\BeneficiaryCert\BeneficiaryCertManager.cs" />
+    <Compile Include="invoice\BeneficiaryCert\BeneficiaryCertRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BeneficiaryCertRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="invoice\InvoiceListReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceListReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="invoice\InvoiceListRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceListRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="invoice\InvoiceListSummaryReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceListSummaryReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="invoice\InvoiceReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="invoice\InvoiceReportManager.cs" />
+    <Compile Include="invoice\InvoiceRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lcreport\LCApplicationSummaryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCApplicationSummaryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lcreport\LCApplicationSummaryReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCApplicationSummaryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lcreport\LCBatchControlReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCBatchControlReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lcreport\LCBatchControlRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCBatchControlRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lcreport\LCNewApplicationAllocationRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCNewApplicationAllocationRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lcreport\LCReportManager.cs" />
+    <Compile Include="lcreport\LCShipmentAmendmentReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCShipmentAmendmentReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lcreport\LCShipmentAmendmentRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCShipmentAmendmentRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lcreport\LCStatusReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCStatusReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lcreport\LCStatusRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LCStatusRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lcreport\OrdersForLCCancellationReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdersForLCCancellationReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lcreport\OutstandingLCReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingLCReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="lcreport\OutstandingLCReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingLCReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NSSreport\NSSReportManager.cs" />
+    <Compile Include="NSSreport\NssWeeklySalesDetailDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssWeeklySalesDetailDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NSSreport\NssWeeklySalesSlippedOrderDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssWeeklySalesSlippedOrderDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NSSreport\NssWeeklySalesSummaryDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NssWeeklySalesSummaryDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="paymentadvice\PaymentAdviceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentAdviceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="paymentadvice\PaymentAdviceReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentAdviceReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\ContainerManifestReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContainerManifestReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\ContainerManifestReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContainerManifestReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\EziBuyPartialShipmentReport.cs">
+      <DependentUpon>EziBuyPartialShipmentReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="shipping\CTSSTWReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTSSTWReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\CTSSTWReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTSSTWReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\EziBuyListDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EziBuyListDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\EziBuyOSPaymentDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EziBuyOSPaymentDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\EziBuyOSPaymentList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EziBuyOSPaymentList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\EziBuyPartialShipmentReportDs.cs">
+      <DependentUpon>EziBuyPartialShipmentReportDs.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\EziBuyPartialShipmentReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EziBuyPartialShipmentReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\NSLSZOrderReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLSZOrderReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\NSLSZOrderReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSLSZOrderReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\OutstandingBookingReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingBookingReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\OutstandingBookingReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingBookingReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\OutstandingGBTestReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingGBTestReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\OutstandingGBTestReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingGBTestReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\OutstandingPaymentReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingPaymentReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\OutstandingPaymentReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OutstandingPaymentReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\PartialShipmentReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartialShipmentReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\PartialShipmentReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartialShipmentReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\ShippingReportManager.cs" />
+    <Compile Include="shipping\STWDateDiscrepancyDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>STWDateDiscrepancyDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\STWDateDiscrepancyRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>STWDateDiscrepancyRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\TradingAFReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TradingAFReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\TradingAFReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TradingAFReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\UTDiscrepancyDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UTDiscrepancyDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\UTDiscrepancyReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UTDiscrepancyReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\UTForcastDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UTForcastDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\UTForcastReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UTForcastReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\WeeklyShipmentReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeeklyShipmentReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="shipping\WeeklyShipmentReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeeklyShipmentReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="supplierpayment\SupplierPaymentReportDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierPaymentReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="supplierpayment\SupplierPaymentReportManager.cs" />
+    <Compile Include="supplierpayment\SupplierPaymentRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierPaymentRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Web References\QAIS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+    <Service Include="{CF845C55-C321-4742-B673-E6212D061ED9}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="accounts\AccrualArchiveDs.xsc">
+      <DependentUpon>AccrualArchiveDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\AccrualArchiveDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccrualArchiveDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\AccrualArchiveDs.xss">
+      <DependentUpon>AccrualArchiveDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ActiveSupplierReportDs.xsc">
+      <DependentUpon>ActiveSupplierReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ActiveSupplierReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ActiveSupplierReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\ActiveSupplierReportDs.xss">
+      <DependentUpon>ActiveSupplierReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ActualSalesSummaryDs.xsc">
+      <DependentUpon>ActualSalesSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ActualSalesSummaryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ActualSalesSummaryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\ActualSalesSummaryDs.xss">
+      <DependentUpon>ActualSalesSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\AdvancePaymentReportDs.xsc">
+      <DependentUpon>AdvancePaymentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\AdvancePaymentReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdvancePaymentReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\AdvancePaymentReportDs.xss">
+      <DependentUpon>AdvancePaymentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\AdvancePaymentSummaryReportDs.xsc">
+      <DependentUpon>AdvancePaymentSummaryReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\AdvancePaymentSummaryReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdvancePaymentSummaryReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\AdvancePaymentSummaryReportDs.xss">
+      <DependentUpon>AdvancePaymentSummaryReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\APAdjustmentNoteDs.xsc">
+      <DependentUpon>APAdjustmentNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\APAdjustmentNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>APAdjustmentNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\APAdjustmentNoteDs.xss">
+      <DependentUpon>APAdjustmentNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ARAdjustmentNoteDs.xsc">
+      <DependentUpon>ARAdjustmentNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ARAdjustmentNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ARAdjustmentNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\ARAdjustmentNoteDs.xss">
+      <DependentUpon>ARAdjustmentNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\CutOffSalesDiscrepancyReportDs.xsc">
+      <DependentUpon>CutOffSalesDiscrepancyReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\CutOffSalesDiscrepancyReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CutOffSalesDiscrepancyReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\CutOffSalesDiscrepancyReportDs.xss">
+      <DependentUpon>CutOffSalesDiscrepancyReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\EpicorInterfaceLogReportDs.xsc">
+      <DependentUpon>EpicorInterfaceLogReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\EpicorInterfaceLogReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EpicorInterfaceLogReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\EpicorInterfaceLogReportDs.xss">
+      <DependentUpon>EpicorInterfaceLogReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\FutureOrderSummaryBySupplierReportDs.xsc">
+      <DependentUpon>FutureOrderSummaryBySupplierReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\FutureOrderSummaryBySupplierReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FutureOrderSummaryBySupplierReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\FutureOrderSummaryBySupplierReportDs.xss">
+      <DependentUpon>FutureOrderSummaryBySupplierReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\GenericDCNoteReportDs.xsc">
+      <DependentUpon>GenericDCNoteReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\GenericDCNoteReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenericDCNoteReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\GenericDCNoteReportDs.xss">
+      <DependentUpon>GenericDCNoteReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ILSDiffDCNoteReportDs.xsc">
+      <DependentUpon>ILSDiffDCNoteReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ILSDiffDCNoteReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSDiffDCNoteReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\ILSDiffDCNoteReportDs.xss">
+      <DependentUpon>ILSDiffDCNoteReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ILSDiffDCNoteSummaryDs.xsc">
+      <DependentUpon>ILSDiffDCNoteSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ILSDiffDCNoteSummaryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ILSDiffDCNoteSummaryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\ILSDiffDCNoteSummaryDs.xss">
+      <DependentUpon>ILSDiffDCNoteSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\MockShopDebitNoteDs.xsc">
+      <DependentUpon>MockShopDebitNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\MockShopDebitNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MockShopDebitNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\MockShopDebitNoteDs.xss">
+      <DependentUpon>MockShopDebitNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\MonthEndShipmentDs.xsc">
+      <DependentUpon>MonthEndShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\MonthEndShipmentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MonthEndShipmentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\MonthEndShipmentDs.xss">
+      <DependentUpon>MonthEndShipmentDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\MonthEndSummaryDs.xsc">
+      <DependentUpon>MonthEndSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\MonthEndSummaryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MonthEndSummaryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\MonthEndSummaryDs.xss">
+      <DependentUpon>MonthEndSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\NonTradeExpenseStatementDs.xsc">
+      <DependentUpon>NonTradeExpenseStatementDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\NonTradeExpenseStatementDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NonTradeExpenseStatementDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\NonTradeExpenseStatementDs.xss">
+      <DependentUpon>NonTradeExpenseStatementDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\NTInvoiceSettlementDs.xsc">
+      <DependentUpon>NTInvoiceSettlementDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\NTInvoiceSettlementDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTInvoiceSettlementDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\NTInvoiceSettlementDs.xss">
+      <DependentUpon>NTInvoiceSettlementDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\NTRechargeDCNoteDs.xsc">
+      <DependentUpon>NTRechargeDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\NTRechargeDCNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTRechargeDCNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\NTRechargeDCNoteDs.xss">
+      <DependentUpon>NTRechargeDCNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\NTVendorReportDs.xsc">
+      <DependentUpon>NTVendorReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\NTVendorReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NTVendorReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\NTVendorReportDs.xss">
+      <DependentUpon>NTVendorReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\NUKSalesCutOffSummaryDs.xsc">
+      <DependentUpon>NUKSalesCutOffSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\NUKSalesCutOffSummaryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NUKSalesCutOffSummaryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\NUKSalesCutOffSummaryDs.xss">
+      <DependentUpon>NUKSalesCutOffSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\NUKSalesShippingReportDs.xsc">
+      <DependentUpon>NUKSalesShippingReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\NUKSalesShippingReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NUKSalesShippingReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\NUKSalesShippingReportDs.xss">
+      <DependentUpon>NUKSalesShippingReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\OtherCostSummaryDs.xsc">
+      <DependentUpon>OtherCostSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\OtherCostSummaryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OtherCostSummaryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\OtherCostSummaryDs.xss">
+      <DependentUpon>OtherCostSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\PaymentStatusEnquiryEpicorDs.xsc">
+      <DependentUpon>PaymentStatusEnquiryEpicorDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\PaymentStatusEnquiryEpicorDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentStatusEnquiryEpicorDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\PaymentStatusEnquiryEpicorDs.xss">
+      <DependentUpon>PaymentStatusEnquiryEpicorDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\POListByOfficeSupplierReportDs.xsc">
+      <DependentUpon>POListByOfficeSupplierReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\POListByOfficeSupplierReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POListByOfficeSupplierReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\POListByOfficeSupplierReportDs.xss">
+      <DependentUpon>POListByOfficeSupplierReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\QADebitNoteDs.xsc">
+      <DependentUpon>QADebitNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\QADebitNoteDs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QADebitNoteDs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="accounts\QADebitNoteDs.xss">
+      <DependentUpon>QADebitNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ReceivablePayableForecastDs.xsc">
+      <DependentUpon>ReceivablePayableForecastDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ReceivablePayableForecastDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReceivablePayableForecastDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\ReceivablePayableForecastDs.xss">
+      <DependentUpon>ReceivablePayableForecastDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ReleaseLockDs.xsc">
+      <DependentUpon>ReleaseLockDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ReleaseLockDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReleaseLockDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\ReleaseLockDs.xss">
+      <DependentUpon>ReleaseLockDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\SAndBCommissionDebitNoteDs.xsc">
+      <DependentUpon>SAndBCommissionDebitNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\SAndBCommissionDebitNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAndBCommissionDebitNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\SAndBCommissionDebitNoteDs.xss">
+      <DependentUpon>SAndBCommissionDebitNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ShipmentCommissionReportDs.xsc">
+      <DependentUpon>ShipmentCommissionReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\ShipmentCommissionReportDs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShipmentCommissionReportDs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="accounts\ShipmentCommissionReportDs.xss">
+      <DependentUpon>ShipmentCommissionReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\SupplierOrderStatusReportDs.xsc">
+      <DependentUpon>SupplierOrderStatusReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\SupplierOrderStatusReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SupplierOrderStatusReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\SupplierOrderStatusReportDs.xss">
+      <DependentUpon>SupplierOrderStatusReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UKClaimAuditLogReportDs.xsc">
+      <DependentUpon>UKClaimAuditLogReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UKClaimAuditLogReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimAuditLogReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\UKClaimAuditLogReportDs.xss">
+      <DependentUpon>UKClaimAuditLogReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UKClaimDCNoteReportDs.xsc">
+      <DependentUpon>UKClaimDCNoteReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UKClaimDCNoteReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimDCNoteReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\UKClaimDCNoteReportDs.xss">
+      <DependentUpon>UKClaimDCNoteReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UKClaimMFRNQtyAnalysisReportDs.xsc">
+      <DependentUpon>UKClaimMFRNQtyAnalysisReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UKClaimMFRNQtyAnalysisReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimMFRNQtyAnalysisReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\UKClaimMFRNQtyAnalysisReportDs.xss">
+      <DependentUpon>UKClaimMFRNQtyAnalysisReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UKClaimPhasingByOfficeClaimReasonDs.xsc">
+      <DependentUpon>UKClaimPhasingByOfficeClaimReasonDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UKClaimPhasingByOfficeClaimReasonDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimPhasingByOfficeClaimReasonDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\UKClaimPhasingByOfficeClaimReasonDs.xss">
+      <DependentUpon>UKClaimPhasingByOfficeClaimReasonDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UKClaimPhasingByOfficeDs.xsc">
+      <DependentUpon>UKClaimPhasingByOfficeDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UKClaimPhasingByOfficeDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimPhasingByOfficeDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\UKClaimPhasingByOfficeDs.xss">
+      <DependentUpon>UKClaimPhasingByOfficeDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UKClaimSummaryReportDs.xsc">
+      <DependentUpon>UKClaimSummaryReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UKClaimSummaryReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UKClaimSummaryReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\UKClaimSummaryReportDs.xss">
+      <DependentUpon>UKClaimSummaryReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UTDebitNoteDs.xsc">
+      <DependentUpon>UTDebitNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UTDebitNoteDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UTDebitNoteDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\UTDebitNoteDs.xss">
+      <DependentUpon>UTDebitNoteDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UTQACommissionDNRepDs.xsc">
+      <DependentUpon>UTQACommissionDNRepDs.xsd</DependentUpon>
+    </None>
+    <None Include="accounts\UTQACommissionDNRepDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UTQACommissionDNRepDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="accounts\UTQACommissionDNRepDs.xss">
+      <DependentUpon>UTQACommissionDNRepDs.xsd</DependentUpon>
+    </None>
+    <None Include="app.config" />
+    <None Include="ARAP\OutstandingTradeReportDs.xsc">
+      <DependentUpon>OutstandingTradeReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="ARAP\OutstandingTradeReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutstandingTradeReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ARAP\OutstandingTradeReportDs.xss">
+      <DependentUpon>OutstandingTradeReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="customerreceipt\CustomerReceiptReportDs.xsc">
+      <DependentUpon>CustomerReceiptReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="customerreceipt\CustomerReceiptReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerReceiptReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="customerreceipt\CustomerReceiptReportDs.xss">
+      <DependentUpon>CustomerReceiptReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="invoice\BeneficiaryCert\BeneficiaryCertDs.xsc">
+      <DependentUpon>BeneficiaryCertDs.xsd</DependentUpon>
+    </None>
+    <None Include="invoice\BeneficiaryCert\BeneficiaryCertDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BeneficiaryCertDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="invoice\BeneficiaryCert\BeneficiaryCertDs.xss">
+      <DependentUpon>BeneficiaryCertDs.xsd</DependentUpon>
+    </None>
+    <None Include="invoice\InvoiceListReportDs.xsc">
+      <DependentUpon>InvoiceListReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="invoice\InvoiceListReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvoiceListReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="invoice\InvoiceListReportDs.xss">
+      <DependentUpon>InvoiceListReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="invoice\InvoiceListSummaryReportDs.xsc">
+      <DependentUpon>InvoiceListSummaryReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="invoice\InvoiceListSummaryReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvoiceListSummaryReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="invoice\InvoiceListSummaryReportDs.xss">
+      <DependentUpon>InvoiceListSummaryReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="invoice\InvoiceReportDs.xsc">
+      <DependentUpon>InvoiceReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="invoice\InvoiceReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvoiceReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="invoice\InvoiceReportDs.xss">
+      <DependentUpon>InvoiceReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="lcreport\LCApplicationSummaryDs.xsc">
+      <DependentUpon>LCApplicationSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="lcreport\LCApplicationSummaryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LCApplicationSummaryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="lcreport\LCApplicationSummaryDs.xss">
+      <DependentUpon>LCApplicationSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="lcreport\LCBatchControlReportDs.xsc">
+      <DependentUpon>LCBatchControlReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="lcreport\LCBatchControlReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LCBatchControlReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="lcreport\LCBatchControlReportDs.xss">
+      <DependentUpon>LCBatchControlReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="lcreport\LCShipmentAmendmentReportDs.xsc">
+      <DependentUpon>LCShipmentAmendmentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="lcreport\LCShipmentAmendmentReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LCShipmentAmendmentReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="lcreport\LCShipmentAmendmentReportDs.xss">
+      <DependentUpon>LCShipmentAmendmentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="lcreport\LCStatusReportDs.xsc">
+      <DependentUpon>LCStatusReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="lcreport\LCStatusReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LCStatusReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="lcreport\LCStatusReportDs.xss">
+      <DependentUpon>LCStatusReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="lcreport\OrdersForLCCancellationReportDs.xsc">
+      <DependentUpon>OrdersForLCCancellationReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="lcreport\OrdersForLCCancellationReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrdersForLCCancellationReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="lcreport\OrdersForLCCancellationReportDs.xss">
+      <DependentUpon>OrdersForLCCancellationReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="lcreport\OutstandingLCReportDs.xsc">
+      <DependentUpon>OutstandingLCReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="lcreport\OutstandingLCReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutstandingLCReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="lcreport\OutstandingLCReportDs.xss">
+      <DependentUpon>OutstandingLCReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="NSSreport\NssWeeklySalesDetailDs.xsc">
+      <DependentUpon>NssWeeklySalesDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="NSSreport\NssWeeklySalesDetailDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssWeeklySalesDetailDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NSSreport\NssWeeklySalesDetailDs.xss">
+      <DependentUpon>NssWeeklySalesDetailDs.xsd</DependentUpon>
+    </None>
+    <None Include="NSSreport\NssWeeklySalesSlippedOrderDs.xsc">
+      <DependentUpon>NssWeeklySalesSlippedOrderDs.xsd</DependentUpon>
+    </None>
+    <None Include="NSSreport\NssWeeklySalesSlippedOrderDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssWeeklySalesSlippedOrderDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NSSreport\NssWeeklySalesSlippedOrderDs.xss">
+      <DependentUpon>NssWeeklySalesSlippedOrderDs.xsd</DependentUpon>
+    </None>
+    <None Include="NSSreport\NssWeeklySalesSummaryDs.xsc">
+      <DependentUpon>NssWeeklySalesSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="NSSreport\NssWeeklySalesSummaryDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NssWeeklySalesSummaryDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NSSreport\NssWeeklySalesSummaryDs.xss">
+      <DependentUpon>NssWeeklySalesSummaryDs.xsd</DependentUpon>
+    </None>
+    <None Include="paymentadvice\PaymentAdviceReportDs.xsc">
+      <DependentUpon>PaymentAdviceReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="paymentadvice\PaymentAdviceReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentAdviceReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="paymentadvice\PaymentAdviceReportDs.xss">
+      <DependentUpon>PaymentAdviceReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\ContainerManifestReportDs.xsc">
+      <DependentUpon>ContainerManifestReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\ContainerManifestReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContainerManifestReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\ContainerManifestReportDs.xss">
+      <DependentUpon>ContainerManifestReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\CTSSTWReportDs.xsc">
+      <DependentUpon>CTSSTWReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\CTSSTWReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CTSSTWReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\CTSSTWReportDs.xss">
+      <DependentUpon>CTSSTWReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\EziBuyListDs.xsc">
+      <DependentUpon>EziBuyListDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\EziBuyListDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EziBuyListDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\EziBuyListDs.xss">
+      <DependentUpon>EziBuyListDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\EziBuyOSPaymentDs.xsc">
+      <DependentUpon>EziBuyOSPaymentDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\EziBuyOSPaymentDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EziBuyOSPaymentDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\EziBuyOSPaymentDs.xss">
+      <DependentUpon>EziBuyOSPaymentDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\EziBuyPartialShipmentReportDs.xsc">
+      <DependentUpon>EziBuyPartialShipmentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\EziBuyPartialShipmentReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EziBuyPartialShipmentReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\EziBuyPartialShipmentReportDs.xss">
+      <DependentUpon>EziBuyPartialShipmentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\NSLSZOrderReportDs.xsc">
+      <DependentUpon>NSLSZOrderReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\NSLSZOrderReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSLSZOrderReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\NSLSZOrderReportDs.xss">
+      <DependentUpon>NSLSZOrderReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\OutstandingBookingReportDs.xsc">
+      <DependentUpon>OutstandingBookingReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\OutstandingBookingReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutstandingBookingReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\OutstandingBookingReportDs.xss">
+      <DependentUpon>OutstandingBookingReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\OutstandingGBTestReportDs.xsc">
+      <DependentUpon>OutstandingGBTestReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\OutstandingGBTestReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutstandingGBTestReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\OutstandingGBTestReportDs.xss">
+      <DependentUpon>OutstandingGBTestReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\OutstandingPaymentReportDs.xsc">
+      <DependentUpon>OutstandingPaymentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\OutstandingPaymentReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OutstandingPaymentReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\OutstandingPaymentReportDs.xss">
+      <DependentUpon>OutstandingPaymentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\PartialShipmentReportDs.xsc">
+      <DependentUpon>PartialShipmentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\PartialShipmentReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PartialShipmentReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\PartialShipmentReportDs.xss">
+      <DependentUpon>PartialShipmentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\STWDateDiscrepancyDs.xsc">
+      <DependentUpon>STWDateDiscrepancyDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\STWDateDiscrepancyDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>STWDateDiscrepancyDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\STWDateDiscrepancyDs.xss">
+      <DependentUpon>STWDateDiscrepancyDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\TradingAFReportDs.xsc">
+      <DependentUpon>TradingAFReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\TradingAFReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TradingAFReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\TradingAFReportDs.xss">
+      <DependentUpon>TradingAFReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\UTDiscrepancyDs.xsc">
+      <DependentUpon>UTDiscrepancyDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\UTDiscrepancyDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UTDiscrepancyDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\UTDiscrepancyDs.xss">
+      <DependentUpon>UTDiscrepancyDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\UTForcastDs.xsc">
+      <DependentUpon>UTForcastDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\UTForcastDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UTForcastDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\UTForcastDs.xss">
+      <DependentUpon>UTForcastDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\WeeklyShipmentReportDs.xsc">
+      <DependentUpon>WeeklyShipmentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="shipping\WeeklyShipmentReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WeeklyShipmentReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipping\WeeklyShipmentReportDs.xss">
+      <DependentUpon>WeeklyShipmentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="supplierpayment\SupplierPaymentReportDs.xsc">
+      <DependentUpon>SupplierPaymentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="supplierpayment\SupplierPaymentReportDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SupplierPaymentReportDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="supplierpayment\SupplierPaymentReportDs.xss">
+      <DependentUpon>SupplierPaymentReportDs.xsd</DependentUpon>
+    </None>
+    <None Include="Web References\QAIS\ClaimRequestDef.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\QAIS\ClaimRequestService.wsdl" />
+    <None Include="Web References\QAIS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="accounts\AccrualArchiveReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AccrualArchiveReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\ActiveSupplierReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ActiveSupplierReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\ActualSalesSummaryReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ActualSalesSummaryReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\AdvancePaymentReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AdvancePaymentReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\AdvancePaymentReportMG.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AdvancePaymentReportMG.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\AdvancePaymentSummaryReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AdvancePaymentSummaryReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\AdvancePaymentSummaryReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AdvancePaymentSummaryReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\AdvancePaymentSummaryReportMG.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AdvancePaymentSummaryReportMG.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\AdvPaymentInstalmentInterestChargesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AdvPaymentInstalmentInterestChargesReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\APAdjustmentNote.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>APAdjustmentNote.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\ARAdjustmentNote.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ARAdjustmentNote.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\CutoffSalesDiscrepancyReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CutoffSalesDiscrepancyReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\EpicorInterfaceLogReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EpicorInterfaceLogReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\GenericDCNoteReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GenericDCNoteReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\ILSDiffDCNoteReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ILSDiffDCNoteReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\ILSDiffDCNoteSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ILSDiffDCNoteSummary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\MonthEndSlippageReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonthEndSlippageReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\NonTradeExpenseStatementList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NonTradeExpenseStatementList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\NTInvoiceDetailExportList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NTInvoiceDetailExportList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\NTInvoiceSettlementDetailList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NTInvoiceSettlementDetailList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\NTRechargeDCNote.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NTRechargeDCNote.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\NTVendorReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NTVendorReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\NUKSalesCutOffSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NUKSalesCutOffSummary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\NUKSalesShippingReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NUKSalesShippingReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\PaymentStatusEnquiryEpicorReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaymentStatusEnquiryEpicorReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\ShipmentCommissionStudioSampleReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ShipmentCommissionStudioSampleReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UKClaimPhasingByOfficeClaimTypeReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UKClaimPhasingByOfficeClaimTypeReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UKClaimAuditLogReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UKClaimAuditLogReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UKClaimPhasingByOfficeAnnualReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UKClaimPhasingByOfficeAnnualReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UKClaimPhasingByOfficeClaimReasonReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UKClaimPhasingByOfficeClaimReasonReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UKClaimPhasingByOfficeClaimReasonSummaryReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UKClaimPhasingByOfficeClaimReasonSummaryReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UKClaimPhasingByOfficeReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UKClaimPhasingByOfficeReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UKClaimSummaryByReason.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UKClaimSummaryByReason.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UKClaimDCNoteReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UKClaimDCNoteReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\SAndBCommissionDebitNote.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SAndBCommissionDebitNote.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\MockShopDebitNote.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MockShopDebitNote.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\MockShopDebitNoteSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MockShopDebitNoteSummary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\MonthEndSummaryRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonthEndSummaryRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\OtherCostSummaryRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OtherCostSummaryRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\PaymentStatusEnquiryReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaymentStatusEnquiryReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\QADebitNote.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QADebitNote.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\ReceivablePayableForecastRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReceivablePayableForecastRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\ReleaseLockSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReleaseLockSummary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\ShipmentCommissionChoiceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ShipmentCommissionChoiceReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\ShipmentCommissionMockShopReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ShipmentCommissionMockShopReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\ShipmentCommissionReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ShipmentCommissionReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\SupplierOrderStatusReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SupplierOrderStatusReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UKClaimSummaryByCurrency.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UKClaimSummaryByCurrency.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UKClaimSummaryReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UKClaimSummaryReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UTDebitNote.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UTDebitNote.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UTDebitNoteSummaryReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UTDebitNoteSummaryReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accounts\UTQADebitNoteReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UTQADebitNoteReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ARAP\OutstandingTradeReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OutstandingTradeReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerreceipt\CustomerReceiptRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CustomerReceiptRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="invoice\BeneficiaryCert\BeneficiaryCertRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BeneficiaryCertRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="invoice\InvoiceListRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvoiceListRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="invoice\InvoiceRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvoiceRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lcreport\LCApplicationSummaryReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LCApplicationSummaryReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lcreport\LCBatchControlRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LCBatchControlRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lcreport\LCNewApplicationAllocationRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LCNewApplicationAllocationRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lcreport\LCShipmentAmendmentRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LCShipmentAmendmentRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lcreport\LCStatusRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LCStatusRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lcreport\OutstandingLCReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OutstandingLCReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paymentadvice\PaymentAdviceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaymentAdviceReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\ContainerManifestReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ContainerManifestReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\EziBuyPartialShipmentReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EziBuyPartialShipmentReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\CTSSTWReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTSSTWReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\EziBuyOSPaymentList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EziBuyOSPaymentList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\NSLSZOrderReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NSLSZOrderReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\OutstandingBookingReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OutstandingBookingReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\OutstandingGBTestReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OutstandingGBTestReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\OutstandingPaymentReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OutstandingPaymentReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\PartialShipmentReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PartialShipmentReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\STWDateDiscrepancyRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>STWDateDiscrepancyRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\TradingAFReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TradingAFReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\UTDiscrepancyReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UTDiscrepancyReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\UTForcastReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UTForcastReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shipping\WeeklyShipmentReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>WeeklyShipmentReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supplierpayment\SupplierPaymentRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SupplierPaymentRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dataserver\dataserver.csproj">
+      <Project>{0D5C4EAD-AE76-4257-94C0-313782201D87}</Project>
+      <Name>dataserver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\domain\domain.csproj">
+      <Project>{316C3E10-5A1D-4F60-807D-CA23980060EE}</Project>
+      <Name>domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ns-s02/qais/webservices/ClaimRequestService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\QAIS\</RelPath>
+      <UpdateFromURL>http://ns-s02/qais/webservices/ClaimRequestService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>com_next_isam_reporter_QAIS_ClaimRequestService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\QAIS\ClaimRequestService.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

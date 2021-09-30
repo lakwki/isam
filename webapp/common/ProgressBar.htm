@@ -1,0 +1,36 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>System Message&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="ProgId" content="VisualStudio.HTML">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+	</head>
+	<body>
+		<p align="center">
+			<div id="ProgressBar" style="FONT-SIZE: 11px; VISIBILITY: hidden; COLOR: black; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; align:center;"><BR>
+				Processing...
+				<div id="ProgressBar_bar" style="PADDING-RIGHT:0px; PADDING-LEFT:0px; BACKGROUND:lightblue; PADDING-BOTTOM:0px; FONT:1pt verdana; WIDTH:200px; PADDING-TOP:0px; HEIGHT:15px"></div>
+			</div>
+		</p>
+		<script lang="javascript">
+		var i=0;
+		var k=20;
+		setTimeout("startProgressBar();",100);
+
+		function startProgressBar(){
+			//document.all.hi.style.filter="progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#0000FF', EndColorStr='#FF000000')progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=135, Strength=3";
+			document.all.ProgressBar.style.visibility="inherit";
+			document.all.ProgressBar_bar.style.filter="progid:DXImageTransform.Microsoft.Alpha( Opacity=100, FinishOpacity=0, Style=1, StartX=" + i + ",  FinishX="+k+", StartY=" + i + ", FinishY="+k+")progid:DXImageTransform.Microsoft.Shadow(color='#FFC080', Direction=135, Strength=4";
+			i+=5;k+=5;
+			if (i>80) {
+				i=0;
+			    k=20;
+			}
+			setTimeout("startProgressBar();",150);
+		}
+		</script>
+	</body>
+</html>
+

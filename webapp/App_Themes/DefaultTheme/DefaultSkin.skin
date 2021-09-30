@@ -1,0 +1,172 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<asp:Label runat="server" ForeColor="Black" Font-Size="8pt" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="120px"/>
+<asp:CheckBox Font-Size="8pt" runat="server" />
+<asp:DropDownList runat="server" Width="120px" Font-Size="8pt" />
+<asp:GridView runat="server" AutoGenerateColumns="False" 
+RowStyle-HorizontalAlign="Center" CellPadding="2" BorderStyle="Solid">
+    <HeaderStyle BackColor="#F0F0F0" ForeColor="Black" Font-Size="8pt" HorizontalAlign="Center"  />
+    <AlternatingRowStyle BackColor="#F4FDFF" />
+    <FooterStyle HorizontalAlign="Center" />
+<RowStyle BackColor="white" />
+<EmptyDataRowStyle Font-Size ="8pt" />
+<FooterStyle Font-Bold ="true" />
+</asp:GridView>
+<%--
+<asp:Button  runat="server" BackColor="#C6D6D9" BorderColor="#D9D6D9" 
+        BorderStyle="Outset" BorderWidth="1px" Font-Bold="True" Font-Names="Verdana" 
+        Font-Size="8pt" width="80px" />
+<asp:Button  runat="server" BackColor="#C6D6D9" BorderColor="#D9D6D9" 
+        BorderStyle="Outset" BorderWidth="1px" Font-Bold="True" Font-Names="Verdana" 
+        Font-Size="8pt" width="100px" SkinID="MButton" />
+<asp:Button  runat="server" BackColor="#C6D6D9" BorderColor="#D9D6D9" 
+        BorderStyle="Outset" BorderWidth="1px" Font-Bold="True" Font-Names="Verdana" 
+        Font-Size="8pt" width="120px" SkinID="LButton" />
+<asp:Button  runat="server" BackColor="#C6D6D9" BorderColor="#D9D6D9" 
+        BorderStyle="Outset" BorderWidth="1px" Font-Bold="True" Font-Names="Verdana" 
+        Font-Size="8pt" width="15px" SkinId="XSButton />
+--%>
+<asp:Label runat="server" ForeColor="Red" SkinID="AlertLabel" />
+<asp:Label runat="server" ForeColor="White" SkinID="WhiteLabel" />
+<asp:Label runat="server" ForeColor="#443344" Font-Size="7pt" SkinID="SmallLabel" />
+<asp:Label runat="server" ForeColor="#443344" Font-Size="8pt" Width="150px" SkinID="LongLabel" />
+<asp:Label runat="server" ForeColor="#443344" Font-Size="8pt" Font-Bold="True" SkinID="FieldLabel" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="20px" SkinID="XXSTextBox" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="30px" SkinID="XSTextBox" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="40px" SkinID="SmallTextBox" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="50px" SkinID="TextBox_50" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="70px" SkinID="DateTextBox" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="95px" SkinID="TextBox_95" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="100px" SkinID="MTextBox" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="170px" SkinID="TextBox_160" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="260px" SkinID="TextBox_250" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="200" SkinID="TextBoxLarge" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="300" SkinID="TextBox300" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="450" SkinID="XLTextBox" />
+<asp:TextBox runat="server" Font-Size="8pt" Width="800" SkinID="XLInvoiceTextBox" />
+<asp:DropDownList runat="server" Width="50px" Font-Size="8pt" SkinID="XSDDL" />
+<asp:DropDownList runat="server" Width="80px" Font-Size="8pt" SkinID="SmallDDL" />
+<asp:DropDownList runat="server" Width="250px" Font-Size="8pt" SkinID="LargeDDL" />
+<asp:DropDownList runat="server" Width="400px" Font-Size="8pt" SkinId="LDDL" />
+<asp:DropDownList runat="server" Width="450px" Font-Size="8pt" SkinId="XLDDL" />
+
+
+<asp:Button 
+        runat="server" 
+        Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Font-Color="#FFFFFF" 
+        style="background-image:url(../images/send_btn.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;color:white;" 
+        Height="26" width="60px" />
+<asp:Button SkinId="XSButton" 
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="6pt" Font-Color="#FFFFFF" 
+        style="background-image:url(../images/send_btn_20.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;color:white;padding-bottom:5px;" 
+        Height="26" width="28px" />
+<asp:Button SkinID="SButton" 
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Font-Color="#FFFFFF" 
+        style="background-image:url(../images/send_btn_80.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;color:white;" 
+        Height="26" width="80px" />
+<asp:Button SkinID="MButton"
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Font-Color="#FFFFFF" 
+        style="background-image:url(../images/send_btn_100.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;color:white;" 
+        Height="26" width="100px" />
+<asp:Button SkinID="LButton"
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Font-Color="#FFFFFF" 
+        style="background-image:url(../images/send_btn_120.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;color:white;" 
+        Height="26" width="120px" />
+<asp:Button SkinID="XLButton_Hint"
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Font-Color="#FFFFFF"
+        style="background-image:url(../images/send_btn_150.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;color:yellow;" 
+        Height="26" width="150px" />
+<asp:Button SkinID="XLButton"
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Font-Color="#FFFFFF" 
+        style="background-image:url(../images/send_btn_150.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;color:white;" 
+        Height="26" width="150px" />
+<asp:Button SkinID="XXLButton"
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Font-Color="#FFFFFF" 
+        style="background-image:url(../images/send_btn_200.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;color:white;" 
+        Height="26" width="200px" />
+
+<asp:Button SkinID="DisabledButton"
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Height="26" width="60px" ForeColor="#505050"
+        style="background-image:url(../images/disabled_btn.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;"/>
+<asp:Button SkinId="XSDisabledButton" 
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="6pt" Height="26" width="28px" ForeColor="#505050"
+        style="background-image:url(../images/disabled_btn_20.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;padding-bottom:5px;" />
+<asp:Button SkinID="SDisabledButton" 
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Height="26" width="80px" ForeColor="#505050"
+        style="background-image:url(../images/disabled_btn_80.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;" />
+<asp:Button SkinID="MDisabledButton"
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Height="26" width="100px" ForeColor="#505050"
+        style="background-image:url(../images/disabled_btn_100.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;" />
+<asp:Button SkinID="LDisabledButton"
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Height="26" width="120px" ForeColor="#505050"
+        style="background-image:url(../images/disabled_btn_120.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;"/>
+<asp:Button SkinID="XLDisabledButton"
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Height="26" width="150px" ForeColor="#505050"
+        style="background-image:url(../images/disabled_btn_150.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;"/>
+<asp:Button SkinID="XXLDisabledButton"
+        runat="server" Font-Bold="False" Font-Names="Verdana" Font-Size="8pt" Height="26" width="200px" ForeColor="#505050"
+        style="background-image:url(../images/disabled_btn_200.jpg);background-repeat:no-repeat;background-position:center;background-color:Transparent;border-style:none;" />
+
+<asp:Panel SkinID="sectionHeader1"  runat="server" 
+    Font-Bold="False" 
+    style="background:url(../images/t_2_bg.jpg) repeat-y; Color:White; padding-left:25px;"
+    />
+
+<asp:Panel SkinID="sectionHeader_Accounts_old"  runat="server" 
+    Font-Bold="False" 
+    Height="16"
+    style="background:url(../images/t_2_bg.jpg) repeat-y; Color:White; padding-left:25px;"
+    />
+
+<asp:Panel SkinID="sectionHeader_Report"  runat="server" 
+    Height="24" Width="700px" Font-Bold="False" Font-Size="8pt" 
+    style="background:url(../images/banner_report.gif) no-repeat; Color:Black;Font-Weight:600;
+        padding-left:80px;padding-top:5px;"
+    />
+
+<asp:Panel SkinID="SectionHeader_Shipping"  runat="server" 
+    Height="24" Width="700px" Font-Bold="False" Font-Size="8pt" 
+    style="background:url(../images/banner_shipping.gif) no-repeat; Color:Black;Font-Weight:600;
+        padding-left:90px;padding-top:5px;"
+    />
+
+<asp:Panel SkinID="sectionHeader_Accounts"  runat="server" 
+    Height="24" Width="700px" Font-Bold="False" Font-Size="8pt" 
+    style="background:url(../images/banner_accounts.gif) no-repeat; Color:Black;Font-Weight:600;
+        padding-left:100px;padding-top:5px;"
+    />
+
+<asp:Panel SkinID="sectionHeader_PersonalSettings"  runat="server" 
+    Height="24" Width="700px" Font-Bold="False" Font-Size="8pt" 
+    style="background:url(../images/banner_PersonalSettings.gif) no-repeat; Color:Black;Font-Weight:600;
+        padding-left:160px;padding-top:5px;"
+    />
+
+<asp:Panel SkinID="sectionHeader_MyWorkplace"  runat="server" 
+    Height="24" Width="700px" Font-Bold="False" Font-Size="8pt" 
+    style="background:url(../images/banner_MyWorkplace.gif) no-repeat; Color:Black;Font-Weight:600;
+        padding-left:135px;padding-top:5px;"
+    />
+
+<asp:Panel SkinID="sectionHeader2"  runat="server" 
+   Font-Bold="True" vertical-align="middle"
+    />
+
+<asp:LinkButton SkinId="style_btn_font" runat="server"
+	style="color: White;"
+    />

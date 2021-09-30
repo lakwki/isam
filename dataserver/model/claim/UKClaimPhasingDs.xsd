@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UKClaimPhasingDs" targetNamespace="http://tempuri.org/UKClaimPhasingDs.xsd" xmlns:mstns="http://tempuri.org/UKClaimPhasingDs.xsd" xmlns="http://tempuri.org/UKClaimPhasingDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UKClaimPhasingTableAdapter" GeneratorDataComponentClassName="UKClaimPhasingTableAdapter" Name="UKClaimPhasing" UserDataComponentName="UKClaimPhasingTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT OfficeId=0, VendorId=0, Name=convert(varchar(100),''), ClaimTypeId=0, ClaimReason=convert(varchar(100),''), CurrencyId=0, P01Amt=0.00, P02Amt=0.00, P03Amt=0.00, P04Amt=0.00, P05Amt=0.00, P06Amt=0.00, P07Amt=0.00, P08Amt=0.00, P09Amt=0.00, P10Amt=0.00, P11Amt=0.00, P12Amt=0.00, TotalAmt=0.00, 
+P01NSAmt=0.00, P02NSAmt=0.00, P03NSAmt=0.00, P04NSAmt=0.00, P05NSAmt=0.00, P06NSAmt=0.00, P07NSAmt=0.00, P08NSAmt=0.00,
+P09NSAmt=0.00, P10NSAmt=0.00, P11NSAmt=0.00, P12NSAmt=0.00, TotalNSAmt=0.00,
+P01VendorAmt=0.00, P02VendorAmt=0.00, P03VendorAmt=0.00, P04VendorAmt=0.00, P05VendorAmt=0.00, P06VendorAmt=0.00, P07VendorAmt=0.00, P08VendorAmt=0.00,
+P09VendorAmt=0.00, P10VendorAmt=0.00, P11VendorAmt=0.00, P12VendorAmt=0.00, TotalVendorAmt=0.00,
+
+P01AmtInUSD=0.00, P02AmtInUSD=0.00, P03AmtInUSD=0.00, P04AmtInUSD=0.00, P05AmtInUSD=0.00, P06AmtInUSD=0.00, P07AmtInUSD=0.00, P08AmtInUSD=0.00, P09AmtInUSD=0.00, P10AmtInUSD=0.00, P11AmtInUSD=0.00, P12AmtInUSD=0.00, TotalAmtInUSD=0.00, P01NSAmtInUSD=0.00, P02NSAmtInUSD=0.00, P03NSAmtInUSD=0.00, P04NSAmtInUSD=0.00, P05NSAmtInUSD=0.00, P06NSAmtInUSD=0.00, P07NSAmtInUSD=0.00, P08NSAmtInUSD=0.00, P09NSAmtInUSD=0.00, P10NSAmtInUSD=0.00, P11NSAmtInUSD=0.00, P12NSAmtInUSD=0.00, TotalNSAmtInUSD=0.00, P01VendorAmtInUSD=0.00, P02VendorAmtInUSD=0.00, P03VendorAmtInUSD=0.00, P04VendorAmtInUSD=0.00, P05VendorAmtInUSD=0.00, P06VendorAmtInUSD=0.00, P07VendorAmtInUSD=0.00, P08VendorAmtInUSD=0.00, P09VendorAmtInUSD=0.00, P10VendorAmtInUSD=0.00, P11VendorAmtInUSD=0.00, P12VendorAmtInUSD=0.00, TotalVendorAmtInUSD=0.00, LYP01AmtInUSD=0.00, LYP02AmtInUSD=0.00, LYP03AmtInUSD=0.00, LYP04AmtInUSD=0.00, LYP05AmtInUSD=0.00, LYP06AmtInUSD=0.00, LYP07AmtInUSD=0.00, LYP08AmtInUSD=0.00, LYP09AmtInUSD=0.00, LYP10AmtInUSD=0.00, LYP11AmtInUSD=0.00, LYP12AmtInUSD=0.00, LYTotalAmtInUSD=0.00, LYP01NSAmtInUSD=0.00, LYP02NSAmtInUSD=0.00, LYP03NSAmtInUSD=0.00, LYP04NSAmtInUSD=0.00, LYP05NSAmtInUSD=0.00, LYP06NSAmtInUSD=0.00, LYP07NSAmtInUSD=0.00, LYP08NSAmtInUSD=0.00, LYP09NSAmtInUSD=0.00, LYP10NSAmtInUSD=0.00, LYP11NSAmtInUSD=0.00, LYP12NSAmtInUSD=0.00, LYTotalNSAmtInUSD=0.00, LYP01VendorAmtInUSD=0.00, LYP02VendorAmtInUSD=0.00, LYP03VendorAmtInUSD=0.00, LYP04VendorAmtInUSD=0.00, LYP05VendorAmtInUSD=0.00, LYP06VendorAmtInUSD=0.00, LYP07VendorAmtInUSD=0.00, LYP08VendorAmtInUSD=0.00, LYP09VendorAmtInUSD=0.00, LYP10VendorAmtInUSD=0.00, LYP11VendorAmtInUSD=0.00, LYP12VendorAmtInUSD=0.00, LYTotalVendorAmtInUSD=0.00, LatestShipmentDate=getdate() 
+--FROM dbo.UKClaimPhasingReport</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OfficeId" DataSetColumn="OfficeId" />
+              <Mapping SourceColumn="VendorId" DataSetColumn="VendorId" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="ClaimTypeId" DataSetColumn="ClaimTypeId" />
+              <Mapping SourceColumn="CurrencyId" DataSetColumn="CurrencyId" />
+              <Mapping SourceColumn="P01Amt" DataSetColumn="P01Amt" />
+              <Mapping SourceColumn="P02Amt" DataSetColumn="P02Amt" />
+              <Mapping SourceColumn="P03Amt" DataSetColumn="P03Amt" />
+              <Mapping SourceColumn="P04Amt" DataSetColumn="P04Amt" />
+              <Mapping SourceColumn="P05Amt" DataSetColumn="P05Amt" />
+              <Mapping SourceColumn="P06Amt" DataSetColumn="P06Amt" />
+              <Mapping SourceColumn="P07Amt" DataSetColumn="P07Amt" />
+              <Mapping SourceColumn="P08Amt" DataSetColumn="P08Amt" />
+              <Mapping SourceColumn="P09Amt" DataSetColumn="P09Amt" />
+              <Mapping SourceColumn="P10Amt" DataSetColumn="P10Amt" />
+              <Mapping SourceColumn="P11Amt" DataSetColumn="P11Amt" />
+              <Mapping SourceColumn="P12Amt" DataSetColumn="P12Amt" />
+              <Mapping SourceColumn="TotalAmt" DataSetColumn="TotalAmt" />
+              <Mapping SourceColumn="P01AmtInUSD" DataSetColumn="P01AmtInUSD" />
+              <Mapping SourceColumn="P02AmtInUSD" DataSetColumn="P02AmtInUSD" />
+              <Mapping SourceColumn="P03AmtInUSD" DataSetColumn="P03AmtInUSD" />
+              <Mapping SourceColumn="P04AmtInUSD" DataSetColumn="P04AmtInUSD" />
+              <Mapping SourceColumn="P05AmtInUSD" DataSetColumn="P05AmtInUSD" />
+              <Mapping SourceColumn="P06AmtInUSD" DataSetColumn="P06AmtInUSD" />
+              <Mapping SourceColumn="P07AmtInUSD" DataSetColumn="P07AmtInUSD" />
+              <Mapping SourceColumn="P08AmtInUSD" DataSetColumn="P08AmtInUSD" />
+              <Mapping SourceColumn="P09AmtInUSD" DataSetColumn="P09AmtInUSD" />
+              <Mapping SourceColumn="P10AmtInUSD" DataSetColumn="P10AmtInUSD" />
+              <Mapping SourceColumn="P11AmtInUSD" DataSetColumn="P11AmtInUSD" />
+              <Mapping SourceColumn="P12AmtInUSD" DataSetColumn="P12AmtInUSD" />
+              <Mapping SourceColumn="TotalAmtInUSD" DataSetColumn="TotalAmtInUSD" />
+              <Mapping SourceColumn="P01NSAmtInUSD" DataSetColumn="P01NSAmtInUSD" />
+              <Mapping SourceColumn="P02NSAmtInUSD" DataSetColumn="P02NSAmtInUSD" />
+              <Mapping SourceColumn="P03NSAmtInUSD" DataSetColumn="P03NSAmtInUSD" />
+              <Mapping SourceColumn="P04NSAmtInUSD" DataSetColumn="P04NSAmtInUSD" />
+              <Mapping SourceColumn="P05NSAmtInUSD" DataSetColumn="P05NSAmtInUSD" />
+              <Mapping SourceColumn="P06NSAmtInUSD" DataSetColumn="P06NSAmtInUSD" />
+              <Mapping SourceColumn="P07NSAmtInUSD" DataSetColumn="P07NSAmtInUSD" />
+              <Mapping SourceColumn="P08NSAmtInUSD" DataSetColumn="P08NSAmtInUSD" />
+              <Mapping SourceColumn="P09NSAmtInUSD" DataSetColumn="P09NSAmtInUSD" />
+              <Mapping SourceColumn="P10NSAmtInUSD" DataSetColumn="P10NSAmtInUSD" />
+              <Mapping SourceColumn="P11NSAmtInUSD" DataSetColumn="P11NSAmtInUSD" />
+              <Mapping SourceColumn="P12NSAmtInUSD" DataSetColumn="P12NSAmtInUSD" />
+              <Mapping SourceColumn="TotalNSAmtInUSD" DataSetColumn="TotalNSAmtInUSD" />
+              <Mapping SourceColumn="P01VendorAmtInUSD" DataSetColumn="P01VendorAmtInUSD" />
+              <Mapping SourceColumn="P02VendorAmtInUSD" DataSetColumn="P02VendorAmtInUSD" />
+              <Mapping SourceColumn="P03VendorAmtInUSD" DataSetColumn="P03VendorAmtInUSD" />
+              <Mapping SourceColumn="P04VendorAmtInUSD" DataSetColumn="P04VendorAmtInUSD" />
+              <Mapping SourceColumn="P05VendorAmtInUSD" DataSetColumn="P05VendorAmtInUSD" />
+              <Mapping SourceColumn="P06VendorAmtInUSD" DataSetColumn="P06VendorAmtInUSD" />
+              <Mapping SourceColumn="P07VendorAmtInUSD" DataSetColumn="P07VendorAmtInUSD" />
+              <Mapping SourceColumn="P08VendorAmtInUSD" DataSetColumn="P08VendorAmtInUSD" />
+              <Mapping SourceColumn="P09VendorAmtInUSD" DataSetColumn="P09VendorAmtInUSD" />
+              <Mapping SourceColumn="P10VendorAmtInUSD" DataSetColumn="P10VendorAmtInUSD" />
+              <Mapping SourceColumn="P11VendorAmtInUSD" DataSetColumn="P11VendorAmtInUSD" />
+              <Mapping SourceColumn="P12VendorAmtInUSD" DataSetColumn="P12VendorAmtInUSD" />
+              <Mapping SourceColumn="TotalVendorAmtInUSD" DataSetColumn="TotalVendorAmtInUSD" />
+              <Mapping SourceColumn="LYP01AmtInUSD" DataSetColumn="LYP01AmtInUSD" />
+              <Mapping SourceColumn="LYP02AmtInUSD" DataSetColumn="LYP02AmtInUSD" />
+              <Mapping SourceColumn="LYP03AmtInUSD" DataSetColumn="LYP03AmtInUSD" />
+              <Mapping SourceColumn="LYP04AmtInUSD" DataSetColumn="LYP04AmtInUSD" />
+              <Mapping SourceColumn="LYP05AmtInUSD" DataSetColumn="LYP05AmtInUSD" />
+              <Mapping SourceColumn="LYP06AmtInUSD" DataSetColumn="LYP06AmtInUSD" />
+              <Mapping SourceColumn="LYP07AmtInUSD" DataSetColumn="LYP07AmtInUSD" />
+              <Mapping SourceColumn="LYP08AmtInUSD" DataSetColumn="LYP08AmtInUSD" />
+              <Mapping SourceColumn="LYP09AmtInUSD" DataSetColumn="LYP09AmtInUSD" />
+              <Mapping SourceColumn="LYP10AmtInUSD" DataSetColumn="LYP10AmtInUSD" />
+              <Mapping SourceColumn="LYP11AmtInUSD" DataSetColumn="LYP11AmtInUSD" />
+              <Mapping SourceColumn="LYP12AmtInUSD" DataSetColumn="LYP12AmtInUSD" />
+              <Mapping SourceColumn="LYTotalAmtInUSD" DataSetColumn="LYTotalAmtInUSD" />
+              <Mapping SourceColumn="LYP01NSAmtInUSD" DataSetColumn="LYP01NSAmtInUSD" />
+              <Mapping SourceColumn="LYP02NSAmtInUSD" DataSetColumn="LYP02NSAmtInUSD" />
+              <Mapping SourceColumn="LYP03NSAmtInUSD" DataSetColumn="LYP03NSAmtInUSD" />
+              <Mapping SourceColumn="LYP04NSAmtInUSD" DataSetColumn="LYP04NSAmtInUSD" />
+              <Mapping SourceColumn="LYP05NSAmtInUSD" DataSetColumn="LYP05NSAmtInUSD" />
+              <Mapping SourceColumn="LYP06NSAmtInUSD" DataSetColumn="LYP06NSAmtInUSD" />
+              <Mapping SourceColumn="LYP07NSAmtInUSD" DataSetColumn="LYP07NSAmtInUSD" />
+              <Mapping SourceColumn="LYP08NSAmtInUSD" DataSetColumn="LYP08NSAmtInUSD" />
+              <Mapping SourceColumn="LYP09NSAmtInUSD" DataSetColumn="LYP09NSAmtInUSD" />
+              <Mapping SourceColumn="LYP10NSAmtInUSD" DataSetColumn="LYP10NSAmtInUSD" />
+              <Mapping SourceColumn="LYP11NSAmtInUSD" DataSetColumn="LYP11NSAmtInUSD" />
+              <Mapping SourceColumn="LYP12NSAmtInUSD" DataSetColumn="LYP12NSAmtInUSD" />
+              <Mapping SourceColumn="LYTotalNSAmtInUSD" DataSetColumn="LYTotalNSAmtInUSD" />
+              <Mapping SourceColumn="LYP01VendorAmtInUSD" DataSetColumn="LYP01VendorAmtInUSD" />
+              <Mapping SourceColumn="LYP02VendorAmtInUSD" DataSetColumn="LYP02VendorAmtInUSD" />
+              <Mapping SourceColumn="LYP03VendorAmtInUSD" DataSetColumn="LYP03VendorAmtInUSD" />
+              <Mapping SourceColumn="LYP04VendorAmtInUSD" DataSetColumn="LYP04VendorAmtInUSD" />
+              <Mapping SourceColumn="LYP05VendorAmtInUSD" DataSetColumn="LYP05VendorAmtInUSD" />
+              <Mapping SourceColumn="LYP06VendorAmtInUSD" DataSetColumn="LYP06VendorAmtInUSD" />
+              <Mapping SourceColumn="LYP07VendorAmtInUSD" DataSetColumn="LYP07VendorAmtInUSD" />
+              <Mapping SourceColumn="LYP08VendorAmtInUSD" DataSetColumn="LYP08VendorAmtInUSD" />
+              <Mapping SourceColumn="LYP09VendorAmtInUSD" DataSetColumn="LYP09VendorAmtInUSD" />
+              <Mapping SourceColumn="LYP10VendorAmtInUSD" DataSetColumn="LYP10VendorAmtInUSD" />
+              <Mapping SourceColumn="LYP11VendorAmtInUSD" DataSetColumn="LYP11VendorAmtInUSD" />
+              <Mapping SourceColumn="LYP12VendorAmtInUSD" DataSetColumn="LYP12VendorAmtInUSD" />
+              <Mapping SourceColumn="LYTotalVendorAmtInUSD" DataSetColumn="LYTotalVendorAmtInUSD" />
+              <Mapping SourceColumn="LatestShipmentDate" DataSetColumn="LatestShipmentDate" />
+              <Mapping SourceColumn="P01NSAmt" DataSetColumn="P01NSAmt" />
+              <Mapping SourceColumn="P02NSAmt" DataSetColumn="P02NSAmt" />
+              <Mapping SourceColumn="P03NSAmt" DataSetColumn="P03NSAmt" />
+              <Mapping SourceColumn="P04NSAmt" DataSetColumn="P04NSAmt" />
+              <Mapping SourceColumn="P05NSAmt" DataSetColumn="P05NSAmt" />
+              <Mapping SourceColumn="P06NSAmt" DataSetColumn="P06NSAmt" />
+              <Mapping SourceColumn="P07NSAmt" DataSetColumn="P07NSAmt" />
+              <Mapping SourceColumn="P08NSAmt" DataSetColumn="P08NSAmt" />
+              <Mapping SourceColumn="P09NSAmt" DataSetColumn="P09NSAmt" />
+              <Mapping SourceColumn="P10NSAmt" DataSetColumn="P10NSAmt" />
+              <Mapping SourceColumn="P11NSAmt" DataSetColumn="P11NSAmt" />
+              <Mapping SourceColumn="P12NSAmt" DataSetColumn="P12NSAmt" />
+              <Mapping SourceColumn="TotalNSAmt" DataSetColumn="TotalNSAmt" />
+              <Mapping SourceColumn="P01VendorAmt" DataSetColumn="P01VendorAmt" />
+              <Mapping SourceColumn="P02VendorAmt" DataSetColumn="P02VendorAmt" />
+              <Mapping SourceColumn="P03VendorAmt" DataSetColumn="P03VendorAmt" />
+              <Mapping SourceColumn="P04VendorAmt" DataSetColumn="P04VendorAmt" />
+              <Mapping SourceColumn="P05VendorAmt" DataSetColumn="P05VendorAmt" />
+              <Mapping SourceColumn="P06VendorAmt" DataSetColumn="P06VendorAmt" />
+              <Mapping SourceColumn="P07VendorAmt" DataSetColumn="P07VendorAmt" />
+              <Mapping SourceColumn="P08VendorAmt" DataSetColumn="P08VendorAmt" />
+              <Mapping SourceColumn="P09VendorAmt" DataSetColumn="P09VendorAmt" />
+              <Mapping SourceColumn="P10VendorAmt" DataSetColumn="P10VendorAmt" />
+              <Mapping SourceColumn="P11VendorAmt" DataSetColumn="P11VendorAmt" />
+              <Mapping SourceColumn="P12VendorAmt" DataSetColumn="P12VendorAmt" />
+              <Mapping SourceColumn="TotalVendorAmt" DataSetColumn="TotalVendorAmt" />
+              <Mapping SourceColumn="ClaimReason" DataSetColumn="ClaimReason" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UKClaimPhasingDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="UKClaimPhasingDs" msprop:Generator_UserDSName="UKClaimPhasingDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UKClaimPhasing" msprop:Generator_TableClassName="UKClaimPhasingDataTable" msprop:Generator_TableVarName="tableUKClaimPhasing" msprop:Generator_TablePropName="UKClaimPhasing" msprop:Generator_RowDeletingName="UKClaimPhasingRowDeleting" msprop:Generator_UserTableName="UKClaimPhasing" msprop:Generator_RowChangingName="UKClaimPhasingRowChanging" msprop:Generator_RowEvHandlerName="UKClaimPhasingRowChangeEventHandler" msprop:Generator_RowDeletedName="UKClaimPhasingRowDeleted" msprop:Generator_RowEvArgName="UKClaimPhasingRowChangeEvent" msprop:Generator_RowChangedName="UKClaimPhasingRowChanged" msprop:Generator_RowClassName="UKClaimPhasingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OfficeId" msprop:Generator_ColumnVarNameInTable="columnOfficeId" msprop:Generator_ColumnPropNameInRow="OfficeId" msprop:Generator_ColumnPropNameInTable="OfficeIdColumn" msprop:Generator_UserColumnName="OfficeId" type="xs:int" minOccurs="0" />
+              <xs:element name="VendorId" msprop:Generator_ColumnVarNameInTable="columnVendorId" msprop:Generator_ColumnPropNameInRow="VendorId" msprop:Generator_ColumnPropNameInTable="VendorIdColumn" msprop:Generator_UserColumnName="VendorId" type="xs:int" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClaimTypeId" msprop:Generator_ColumnVarNameInTable="columnClaimTypeId" msprop:Generator_ColumnPropNameInRow="ClaimTypeId" msprop:Generator_ColumnPropNameInTable="ClaimTypeIdColumn" msprop:Generator_UserColumnName="ClaimTypeId" type="xs:int" minOccurs="0" />
+              <xs:element name="CurrencyId" msprop:Generator_ColumnVarNameInTable="columnCurrencyId" msprop:Generator_ColumnPropNameInRow="CurrencyId" msprop:Generator_ColumnPropNameInTable="CurrencyIdColumn" msprop:Generator_UserColumnName="CurrencyId" type="xs:int" minOccurs="0" />
+              <xs:element name="P01Amt" msprop:Generator_ColumnVarNameInTable="columnP01Amt" msprop:Generator_ColumnPropNameInRow="P01Amt" msprop:Generator_ColumnPropNameInTable="P01AmtColumn" msprop:Generator_UserColumnName="P01Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P02Amt" msprop:Generator_ColumnVarNameInTable="columnP02Amt" msprop:Generator_ColumnPropNameInRow="P02Amt" msprop:Generator_ColumnPropNameInTable="P02AmtColumn" msprop:Generator_UserColumnName="P02Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P03Amt" msprop:Generator_ColumnVarNameInTable="columnP03Amt" msprop:Generator_ColumnPropNameInRow="P03Amt" msprop:Generator_ColumnPropNameInTable="P03AmtColumn" msprop:Generator_UserColumnName="P03Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P04Amt" msprop:Generator_ColumnVarNameInTable="columnP04Amt" msprop:Generator_ColumnPropNameInRow="P04Amt" msprop:Generator_ColumnPropNameInTable="P04AmtColumn" msprop:Generator_UserColumnName="P04Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P05Amt" msprop:Generator_ColumnVarNameInTable="columnP05Amt" msprop:Generator_ColumnPropNameInRow="P05Amt" msprop:Generator_ColumnPropNameInTable="P05AmtColumn" msprop:Generator_UserColumnName="P05Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P06Amt" msprop:Generator_ColumnVarNameInTable="columnP06Amt" msprop:Generator_ColumnPropNameInRow="P06Amt" msprop:Generator_ColumnPropNameInTable="P06AmtColumn" msprop:Generator_UserColumnName="P06Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P07Amt" msprop:Generator_ColumnVarNameInTable="columnP07Amt" msprop:Generator_ColumnPropNameInRow="P07Amt" msprop:Generator_ColumnPropNameInTable="P07AmtColumn" msprop:Generator_UserColumnName="P07Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P08Amt" msprop:Generator_ColumnVarNameInTable="columnP08Amt" msprop:Generator_ColumnPropNameInRow="P08Amt" msprop:Generator_ColumnPropNameInTable="P08AmtColumn" msprop:Generator_UserColumnName="P08Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P09Amt" msprop:Generator_ColumnVarNameInTable="columnP09Amt" msprop:Generator_ColumnPropNameInRow="P09Amt" msprop:Generator_ColumnPropNameInTable="P09AmtColumn" msprop:Generator_UserColumnName="P09Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P10Amt" msprop:Generator_ColumnVarNameInTable="columnP10Amt" msprop:Generator_ColumnPropNameInRow="P10Amt" msprop:Generator_ColumnPropNameInTable="P10AmtColumn" msprop:Generator_UserColumnName="P10Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P11Amt" msprop:Generator_ColumnVarNameInTable="columnP11Amt" msprop:Generator_ColumnPropNameInRow="P11Amt" msprop:Generator_ColumnPropNameInTable="P11AmtColumn" msprop:Generator_UserColumnName="P11Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P12Amt" msprop:Generator_ColumnVarNameInTable="columnP12Amt" msprop:Generator_ColumnPropNameInRow="P12Amt" msprop:Generator_ColumnPropNameInTable="P12AmtColumn" msprop:Generator_UserColumnName="P12Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalAmt" msprop:Generator_ColumnVarNameInTable="columnTotalAmt" msprop:Generator_ColumnPropNameInRow="TotalAmt" msprop:Generator_ColumnPropNameInTable="TotalAmtColumn" msprop:Generator_UserColumnName="TotalAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P01AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP01AmtInUSD" msprop:Generator_ColumnPropNameInRow="P01AmtInUSD" msprop:Generator_ColumnPropNameInTable="P01AmtInUSDColumn" msprop:Generator_UserColumnName="P01AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P02AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP02AmtInUSD" msprop:Generator_ColumnPropNameInRow="P02AmtInUSD" msprop:Generator_ColumnPropNameInTable="P02AmtInUSDColumn" msprop:Generator_UserColumnName="P02AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P03AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP03AmtInUSD" msprop:Generator_ColumnPropNameInRow="P03AmtInUSD" msprop:Generator_ColumnPropNameInTable="P03AmtInUSDColumn" msprop:Generator_UserColumnName="P03AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P04AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP04AmtInUSD" msprop:Generator_ColumnPropNameInRow="P04AmtInUSD" msprop:Generator_ColumnPropNameInTable="P04AmtInUSDColumn" msprop:Generator_UserColumnName="P04AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P05AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP05AmtInUSD" msprop:Generator_ColumnPropNameInRow="P05AmtInUSD" msprop:Generator_ColumnPropNameInTable="P05AmtInUSDColumn" msprop:Generator_UserColumnName="P05AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P06AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP06AmtInUSD" msprop:Generator_ColumnPropNameInRow="P06AmtInUSD" msprop:Generator_ColumnPropNameInTable="P06AmtInUSDColumn" msprop:Generator_UserColumnName="P06AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P07AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP07AmtInUSD" msprop:Generator_ColumnPropNameInRow="P07AmtInUSD" msprop:Generator_ColumnPropNameInTable="P07AmtInUSDColumn" msprop:Generator_UserColumnName="P07AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P08AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP08AmtInUSD" msprop:Generator_ColumnPropNameInRow="P08AmtInUSD" msprop:Generator_ColumnPropNameInTable="P08AmtInUSDColumn" msprop:Generator_UserColumnName="P08AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P09AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP09AmtInUSD" msprop:Generator_ColumnPropNameInRow="P09AmtInUSD" msprop:Generator_ColumnPropNameInTable="P09AmtInUSDColumn" msprop:Generator_UserColumnName="P09AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P10AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP10AmtInUSD" msprop:Generator_ColumnPropNameInRow="P10AmtInUSD" msprop:Generator_ColumnPropNameInTable="P10AmtInUSDColumn" msprop:Generator_UserColumnName="P10AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P11AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP11AmtInUSD" msprop:Generator_ColumnPropNameInRow="P11AmtInUSD" msprop:Generator_ColumnPropNameInTable="P11AmtInUSDColumn" msprop:Generator_UserColumnName="P11AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P12AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP12AmtInUSD" msprop:Generator_ColumnPropNameInRow="P12AmtInUSD" msprop:Generator_ColumnPropNameInTable="P12AmtInUSDColumn" msprop:Generator_UserColumnName="P12AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnTotalAmtInUSD" msprop:Generator_ColumnPropNameInRow="TotalAmtInUSD" msprop:Generator_ColumnPropNameInTable="TotalAmtInUSDColumn" msprop:Generator_UserColumnName="TotalAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P01NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP01NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="P01NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="P01NSAmtInUSDColumn" msprop:Generator_UserColumnName="P01NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P02NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP02NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="P02NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="P02NSAmtInUSDColumn" msprop:Generator_UserColumnName="P02NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P03NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP03NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="P03NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="P03NSAmtInUSDColumn" msprop:Generator_UserColumnName="P03NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P04NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP04NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="P04NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="P04NSAmtInUSDColumn" msprop:Generator_UserColumnName="P04NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P05NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP05NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="P05NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="P05NSAmtInUSDColumn" msprop:Generator_UserColumnName="P05NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P06NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP06NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="P06NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="P06NSAmtInUSDColumn" msprop:Generator_UserColumnName="P06NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P07NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP07NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="P07NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="P07NSAmtInUSDColumn" msprop:Generator_UserColumnName="P07NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P08NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP08NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="P08NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="P08NSAmtInUSDColumn" msprop:Generator_UserColumnName="P08NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P09NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP09NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="P09NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="P09NSAmtInUSDColumn" msprop:Generator_UserColumnName="P09NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P10NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP10NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="P10NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="P10NSAmtInUSDColumn" msprop:Generator_UserColumnName="P10NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P11NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP11NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="P11NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="P11NSAmtInUSDColumn" msprop:Generator_UserColumnName="P11NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P12NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP12NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="P12NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="P12NSAmtInUSDColumn" msprop:Generator_UserColumnName="P12NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalNSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnTotalNSAmtInUSD" msprop:Generator_ColumnPropNameInRow="TotalNSAmtInUSD" msprop:Generator_ColumnPropNameInTable="TotalNSAmtInUSDColumn" msprop:Generator_UserColumnName="TotalNSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P01VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP01VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="P01VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="P01VendorAmtInUSDColumn" msprop:Generator_UserColumnName="P01VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P02VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP02VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="P02VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="P02VendorAmtInUSDColumn" msprop:Generator_UserColumnName="P02VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P03VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP03VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="P03VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="P03VendorAmtInUSDColumn" msprop:Generator_UserColumnName="P03VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P04VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP04VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="P04VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="P04VendorAmtInUSDColumn" msprop:Generator_UserColumnName="P04VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P05VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP05VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="P05VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="P05VendorAmtInUSDColumn" msprop:Generator_UserColumnName="P05VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P06VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP06VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="P06VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="P06VendorAmtInUSDColumn" msprop:Generator_UserColumnName="P06VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P07VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP07VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="P07VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="P07VendorAmtInUSDColumn" msprop:Generator_UserColumnName="P07VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P08VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP08VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="P08VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="P08VendorAmtInUSDColumn" msprop:Generator_UserColumnName="P08VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P09VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP09VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="P09VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="P09VendorAmtInUSDColumn" msprop:Generator_UserColumnName="P09VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P10VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP10VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="P10VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="P10VendorAmtInUSDColumn" msprop:Generator_UserColumnName="P10VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P11VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP11VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="P11VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="P11VendorAmtInUSDColumn" msprop:Generator_UserColumnName="P11VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P12VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnP12VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="P12VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="P12VendorAmtInUSDColumn" msprop:Generator_UserColumnName="P12VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalVendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnTotalVendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="TotalVendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="TotalVendorAmtInUSDColumn" msprop:Generator_UserColumnName="TotalVendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP01AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP01AmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP01AmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP01AmtInUSDColumn" msprop:Generator_UserColumnName="LYP01AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP02AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP02AmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP02AmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP02AmtInUSDColumn" msprop:Generator_UserColumnName="LYP02AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP03AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP03AmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP03AmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP03AmtInUSDColumn" msprop:Generator_UserColumnName="LYP03AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP04AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP04AmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP04AmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP04AmtInUSDColumn" msprop:Generator_UserColumnName="LYP04AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP05AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP05AmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP05AmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP05AmtInUSDColumn" msprop:Generator_UserColumnName="LYP05AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP06AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP06AmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP06AmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP06AmtInUSDColumn" msprop:Generator_UserColumnName="LYP06AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP07AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP07AmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP07AmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP07AmtInUSDColumn" msprop:Generator_UserColumnName="LYP07AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP08AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP08AmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP08AmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP08AmtInUSDColumn" msprop:Generator_UserColumnName="LYP08AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP09AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP09AmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP09AmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP09AmtInUSDColumn" msprop:Generator_UserColumnName="LYP09AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP10AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP10AmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP10AmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP10AmtInUSDColumn" msprop:Generator_UserColumnName="LYP10AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP11AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP11AmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP11AmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP11AmtInUSDColumn" msprop:Generator_UserColumnName="LYP11AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP12AmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP12AmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP12AmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP12AmtInUSDColumn" msprop:Generator_UserColumnName="LYP12AmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYTotalAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYTotalAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYTotalAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYTotalAmtInUSDColumn" msprop:Generator_UserColumnName="LYTotalAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP01NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP01NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP01NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP01NSAmtInUSDColumn" msprop:Generator_UserColumnName="LYP01NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP02NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP02NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP02NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP02NSAmtInUSDColumn" msprop:Generator_UserColumnName="LYP02NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP03NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP03NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP03NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP03NSAmtInUSDColumn" msprop:Generator_UserColumnName="LYP03NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP04NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP04NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP04NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP04NSAmtInUSDColumn" msprop:Generator_UserColumnName="LYP04NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP05NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP05NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP05NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP05NSAmtInUSDColumn" msprop:Generator_UserColumnName="LYP05NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP06NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP06NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP06NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP06NSAmtInUSDColumn" msprop:Generator_UserColumnName="LYP06NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP07NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP07NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP07NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP07NSAmtInUSDColumn" msprop:Generator_UserColumnName="LYP07NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP08NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP08NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP08NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP08NSAmtInUSDColumn" msprop:Generator_UserColumnName="LYP08NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP09NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP09NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP09NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP09NSAmtInUSDColumn" msprop:Generator_UserColumnName="LYP09NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP10NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP10NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP10NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP10NSAmtInUSDColumn" msprop:Generator_UserColumnName="LYP10NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP11NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP11NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP11NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP11NSAmtInUSDColumn" msprop:Generator_UserColumnName="LYP11NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP12NSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP12NSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP12NSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP12NSAmtInUSDColumn" msprop:Generator_UserColumnName="LYP12NSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYTotalNSAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYTotalNSAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYTotalNSAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYTotalNSAmtInUSDColumn" msprop:Generator_UserColumnName="LYTotalNSAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP01VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP01VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP01VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP01VendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYP01VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP02VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP02VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP02VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP02VendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYP02VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP03VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP03VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP03VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP03VendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYP03VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP04VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP04VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP04VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP04VendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYP04VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP05VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP05VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP05VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP05VendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYP05VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP06VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP06VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP06VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP06VendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYP06VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP07VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP07VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP07VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP07VendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYP07VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP08VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP08VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP08VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP08VendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYP08VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP09VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP09VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP09VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP09VendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYP09VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP10VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP10VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP10VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP10VendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYP10VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP11VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP11VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP11VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP11VendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYP11VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYP12VendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYP12VendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYP12VendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYP12VendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYP12VendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LYTotalVendorAmtInUSD" msprop:Generator_ColumnVarNameInTable="columnLYTotalVendorAmtInUSD" msprop:Generator_ColumnPropNameInRow="LYTotalVendorAmtInUSD" msprop:Generator_ColumnPropNameInTable="LYTotalVendorAmtInUSDColumn" msprop:Generator_UserColumnName="LYTotalVendorAmtInUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LatestShipmentDate" msprop:Generator_ColumnVarNameInTable="columnLatestShipmentDate" msprop:Generator_ColumnPropNameInRow="LatestShipmentDate" msprop:Generator_ColumnPropNameInTable="LatestShipmentDateColumn" msprop:Generator_UserColumnName="LatestShipmentDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="P01NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP01NSAmt" msprop:Generator_ColumnPropNameInRow="P01NSAmt" msprop:Generator_ColumnPropNameInTable="P01NSAmtColumn" msprop:Generator_UserColumnName="P01NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P02NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP02NSAmt" msprop:Generator_ColumnPropNameInRow="P02NSAmt" msprop:Generator_ColumnPropNameInTable="P02NSAmtColumn" msprop:Generator_UserColumnName="P02NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P03NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP03NSAmt" msprop:Generator_ColumnPropNameInRow="P03NSAmt" msprop:Generator_ColumnPropNameInTable="P03NSAmtColumn" msprop:Generator_UserColumnName="P03NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P04NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP04NSAmt" msprop:Generator_ColumnPropNameInRow="P04NSAmt" msprop:Generator_ColumnPropNameInTable="P04NSAmtColumn" msprop:Generator_UserColumnName="P04NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P05NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP05NSAmt" msprop:Generator_ColumnPropNameInRow="P05NSAmt" msprop:Generator_ColumnPropNameInTable="P05NSAmtColumn" msprop:Generator_UserColumnName="P05NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P06NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP06NSAmt" msprop:Generator_ColumnPropNameInRow="P06NSAmt" msprop:Generator_ColumnPropNameInTable="P06NSAmtColumn" msprop:Generator_UserColumnName="P06NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P07NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP07NSAmt" msprop:Generator_ColumnPropNameInRow="P07NSAmt" msprop:Generator_ColumnPropNameInTable="P07NSAmtColumn" msprop:Generator_UserColumnName="P07NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P08NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP08NSAmt" msprop:Generator_ColumnPropNameInRow="P08NSAmt" msprop:Generator_ColumnPropNameInTable="P08NSAmtColumn" msprop:Generator_UserColumnName="P08NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P09NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP09NSAmt" msprop:Generator_ColumnPropNameInRow="P09NSAmt" msprop:Generator_ColumnPropNameInTable="P09NSAmtColumn" msprop:Generator_UserColumnName="P09NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P10NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP10NSAmt" msprop:Generator_ColumnPropNameInRow="P10NSAmt" msprop:Generator_ColumnPropNameInTable="P10NSAmtColumn" msprop:Generator_UserColumnName="P10NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P11NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP11NSAmt" msprop:Generator_ColumnPropNameInRow="P11NSAmt" msprop:Generator_ColumnPropNameInTable="P11NSAmtColumn" msprop:Generator_UserColumnName="P11NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P12NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP12NSAmt" msprop:Generator_ColumnPropNameInRow="P12NSAmt" msprop:Generator_ColumnPropNameInTable="P12NSAmtColumn" msprop:Generator_UserColumnName="P12NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalNSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalNSAmt" msprop:Generator_ColumnPropNameInRow="TotalNSAmt" msprop:Generator_ColumnPropNameInTable="TotalNSAmtColumn" msprop:Generator_UserColumnName="TotalNSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P01VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP01VendorAmt" msprop:Generator_ColumnPropNameInRow="P01VendorAmt" msprop:Generator_ColumnPropNameInTable="P01VendorAmtColumn" msprop:Generator_UserColumnName="P01VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P02VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP02VendorAmt" msprop:Generator_ColumnPropNameInRow="P02VendorAmt" msprop:Generator_ColumnPropNameInTable="P02VendorAmtColumn" msprop:Generator_UserColumnName="P02VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P03VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP03VendorAmt" msprop:Generator_ColumnPropNameInRow="P03VendorAmt" msprop:Generator_ColumnPropNameInTable="P03VendorAmtColumn" msprop:Generator_UserColumnName="P03VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P04VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP04VendorAmt" msprop:Generator_ColumnPropNameInRow="P04VendorAmt" msprop:Generator_ColumnPropNameInTable="P04VendorAmtColumn" msprop:Generator_UserColumnName="P04VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P05VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP05VendorAmt" msprop:Generator_ColumnPropNameInRow="P05VendorAmt" msprop:Generator_ColumnPropNameInTable="P05VendorAmtColumn" msprop:Generator_UserColumnName="P05VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P06VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP06VendorAmt" msprop:Generator_ColumnPropNameInRow="P06VendorAmt" msprop:Generator_ColumnPropNameInTable="P06VendorAmtColumn" msprop:Generator_UserColumnName="P06VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P07VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP07VendorAmt" msprop:Generator_ColumnPropNameInRow="P07VendorAmt" msprop:Generator_ColumnPropNameInTable="P07VendorAmtColumn" msprop:Generator_UserColumnName="P07VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P08VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP08VendorAmt" msprop:Generator_ColumnPropNameInRow="P08VendorAmt" msprop:Generator_ColumnPropNameInTable="P08VendorAmtColumn" msprop:Generator_UserColumnName="P08VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P09VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP09VendorAmt" msprop:Generator_ColumnPropNameInRow="P09VendorAmt" msprop:Generator_ColumnPropNameInTable="P09VendorAmtColumn" msprop:Generator_UserColumnName="P09VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P10VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP10VendorAmt" msprop:Generator_ColumnPropNameInRow="P10VendorAmt" msprop:Generator_ColumnPropNameInTable="P10VendorAmtColumn" msprop:Generator_UserColumnName="P10VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P11VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP11VendorAmt" msprop:Generator_ColumnPropNameInRow="P11VendorAmt" msprop:Generator_ColumnPropNameInTable="P11VendorAmtColumn" msprop:Generator_UserColumnName="P11VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P12VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP12VendorAmt" msprop:Generator_ColumnPropNameInRow="P12VendorAmt" msprop:Generator_ColumnPropNameInTable="P12VendorAmtColumn" msprop:Generator_UserColumnName="P12VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalVendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalVendorAmt" msprop:Generator_ColumnPropNameInRow="TotalVendorAmt" msprop:Generator_ColumnPropNameInTable="TotalVendorAmtColumn" msprop:Generator_UserColumnName="TotalVendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ClaimReason" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnClaimReason" msprop:Generator_ColumnPropNameInRow="ClaimReason" msprop:Generator_ColumnPropNameInTable="ClaimReasonColumn" msprop:Generator_UserColumnName="ClaimReason" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

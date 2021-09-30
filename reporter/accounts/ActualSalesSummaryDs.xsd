@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ActualSalesSummaryDs" targetNamespace="http://tempuri.org/ActualSalesSummaryDs.xsd" xmlns:mstns="http://tempuri.org/ActualSalesSummaryDs.xsd" xmlns="http://tempuri.org/ActualSalesSummaryDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ActualSalesSummaryDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="ActualSalesSummaryDs" msprop:Generator_UserDSName="ActualSalesSummaryDs" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ActualSalesSummary" msprop:Generator_UserTableName="ActualSalesSummary" msprop:Generator_RowDeletedName="ActualSalesSummaryRowDeleted" msprop:Generator_TableClassName="ActualSalesSummaryDataTable" msprop:Generator_RowChangedName="ActualSalesSummaryRowChanged" msprop:Generator_RowClassName="ActualSalesSummaryRow" msprop:Generator_RowChangingName="ActualSalesSummaryRowChanging" msprop:Generator_RowEvArgName="ActualSalesSummaryRowChangeEvent" msprop:Generator_RowEvHandlerName="ActualSalesSummaryRowChangeEventHandler" msprop:Generator_TablePropName="ActualSalesSummary" msprop:Generator_TableVarName="tableActualSalesSummary" msprop:Generator_RowDeletingName="ActualSalesSummaryRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProductTeamCode" msprop:Generator_UserColumnName="ProductTeamCode" msprop:Generator_ColumnPropNameInRow="ProductTeamCode" msprop:Generator_ColumnVarNameInTable="columnProductTeamCode" msprop:Generator_ColumnPropNameInTable="ProductTeamCodeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductTeamDescription" msprop:Generator_UserColumnName="ProductTeamDescription" msprop:Generator_ColumnPropNameInRow="ProductTeamDescription" msprop:Generator_ColumnVarNameInTable="columnProductTeamDescription" msprop:Generator_ColumnPropNameInTable="ProductTeamDescriptionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Department" msprop:Generator_UserColumnName="Department" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalShippedQty" msprop:Generator_UserColumnName="TotalShippedQty" msprop:Generator_ColumnPropNameInRow="TotalShippedQty" msprop:Generator_ColumnVarNameInTable="columnTotalShippedQty" msprop:Generator_ColumnPropNameInTable="TotalShippedQtyColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="NoOfPieces" msprop:Generator_UserColumnName="NoOfPieces" msprop:Generator_ColumnPropNameInRow="NoOfPieces" msprop:Generator_ColumnVarNameInTable="columnNoOfPieces" msprop:Generator_ColumnPropNameInTable="NoOfPiecesColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalShippedAmt" msprop:Generator_UserColumnName="TotalShippedAmt" msprop:Generator_ColumnPropNameInRow="TotalShippedAmt" msprop:Generator_ColumnVarNameInTable="columnTotalShippedAmt" msprop:Generator_ColumnPropNameInTable="TotalShippedAmtColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalShippedSupplierGmtAmtAfterDiscount" msprop:Generator_UserColumnName="TotalShippedSupplierGmtAmtAfterDiscount" msprop:Generator_ColumnPropNameInRow="TotalShippedSupplierGmtAmtAfterDiscount" msprop:Generator_ColumnVarNameInTable="columnTotalShippedSupplierGmtAmtAfterDiscount" msprop:Generator_ColumnPropNameInTable="TotalShippedSupplierGmtAmtAfterDiscountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OfficeId" msprop:Generator_UserColumnName="OfficeId" msprop:Generator_ColumnPropNameInRow="OfficeId" msprop:Generator_ColumnVarNameInTable="columnOfficeId" msprop:Generator_ColumnPropNameInTable="OfficeIdColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

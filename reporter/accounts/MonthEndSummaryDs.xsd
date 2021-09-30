@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MonthEndSummaryDs" targetNamespace="http://tempuri.org/OtherCostSummaryDs.xsd" xmlns:mstns="http://tempuri.org/OtherCostSummaryDs.xsd" xmlns="http://tempuri.org/OtherCostSummaryDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MonthEndSummaryTableAdapter" GeneratorDataComponentClassName="MonthEndSummaryTableAdapter" Name="MonthEndSummary" UserDataComponentName="MonthEndSummaryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        c.OfficeId,
+                             (SELECT        Description 
+                               FROM            Office
+                               WHERE        (OfficeId = c.OfficeId)) AS OfficeName, 
+PurchaseTerm='',
+cs.IsAccrual, s.TotalShippedAmt AS InvoicedAmount, 
+                         s.TotalOrderAmt AS NonInvoicedOrderAmount, s.TotalOrderAmt AS RevisedToNextPeriodOrderAmount, 0 AS Sequence
+FROM            Invoice AS i INNER JOIN
+                         CutOffSales AS cs ON cs.ShipmentId = i.ShipmentId INNER JOIN
+                         NSLDB..AccountFinancialCalender AS ac ON ac.StartDate &lt;= i.InvoiceDate AND i.InvoiceDate &lt; ac.EndDate + 1 INNER JOIN
+                         Shipment AS s ON s.ShipmentId = i.ShipmentId INNER JOIN
+                         Contract AS c ON c.ContractId = s.ContractId INNER JOIN
+                         ExchangeRate AS er ON er.CurrencyId = s.SellCurrencyId AND er.ExchangeRateTypeId = 1 AND i.InvoiceDate BETWEEN er.EffectiveDateFrom AND 
+                         er.EffectiveDateTo INNER JOIN
+                         ExchangeRate AS br ON br.CurrencyId = 1 AND br.ExchangeRateTypeId = 1 AND i.InvoiceDate BETWEEN br.EffectiveDateFrom AND 
+                         br.EffectiveDateTo INNER JOIN
+                         ShipmentDetail AS sd ON sd.ShipmentId = i.ShipmentId AND sd.Status = 1
+WHERE        (ac.BudgetYear = 2009) AND (ac.Period BETWEEN 9 AND 9) AND (c.OfficeId IN (1, 2))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OfficeId" DataSetColumn="OfficeId" />
+              <Mapping SourceColumn="OfficeName" DataSetColumn="OfficeName" />
+              <Mapping SourceColumn="IsAccrual" DataSetColumn="IsAccrual" />
+              <Mapping SourceColumn="InvoicedAmount" DataSetColumn="InvoicedAmount" />
+              <Mapping SourceColumn="NonInvoicedOrderAmount" DataSetColumn="NonInvoicedOrderAmount" />
+              <Mapping SourceColumn="RevisedToNextPeriodOrderAmount" DataSetColumn="RevisedToNextPeriodAmount" />
+              <Mapping SourceColumn="Sequence" DataSetColumn="Sequence" />
+              <Mapping SourceColumn="PurchaseTerm" DataSetColumn="GroupType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MonthEndSummaryDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="MonthEndSummaryDs" msprop:Generator_DataSetName="MonthEndSummaryDs" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MonthEndSummary" msprop:Generator_UserTableName="MonthEndSummary" msprop:Generator_RowDeletedName="MonthEndSummaryRowDeleted" msprop:Generator_RowChangedName="MonthEndSummaryRowChanged" msprop:Generator_RowClassName="MonthEndSummaryRow" msprop:Generator_RowChangingName="MonthEndSummaryRowChanging" msprop:Generator_RowEvArgName="MonthEndSummaryRowChangeEvent" msprop:Generator_RowEvHandlerName="MonthEndSummaryRowChangeEventHandler" msprop:Generator_TableClassName="MonthEndSummaryDataTable" msprop:Generator_TableVarName="tableMonthEndSummary" msprop:Generator_RowDeletingName="MonthEndSummaryRowDeleting" msprop:Generator_TablePropName="MonthEndSummary">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OfficeId" msprop:Generator_UserColumnName="OfficeId" msprop:Generator_ColumnPropNameInRow="OfficeId" msprop:Generator_ColumnVarNameInTable="columnOfficeId" msprop:Generator_ColumnPropNameInTable="OfficeIdColumn" type="xs:int" />
+              <xs:element name="OfficeName" msdata:ReadOnly="true" msprop:Generator_UserColumnName="OfficeName" msprop:Generator_ColumnPropNameInRow="OfficeName" msprop:Generator_ColumnVarNameInTable="columnOfficeName" msprop:Generator_ColumnPropNameInTable="OfficeNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsAccrual" msprop:Generator_UserColumnName="IsAccrual" msprop:Generator_ColumnPropNameInRow="IsAccrual" msprop:Generator_ColumnVarNameInTable="columnIsAccrual" msprop:Generator_ColumnPropNameInTable="IsAccrualColumn" type="xs:boolean" />
+              <xs:element name="InvoicedAmount" msprop:Generator_UserColumnName="InvoicedAmount" msprop:Generator_ColumnPropNameInRow="InvoicedAmount" msprop:Generator_ColumnVarNameInTable="columnInvoicedAmount" msprop:Generator_ColumnPropNameInTable="InvoicedAmountColumn" type="xs:decimal" />
+              <xs:element name="NonInvoicedOrderAmount" msprop:Generator_UserColumnName="NonInvoicedOrderAmount" msprop:Generator_ColumnPropNameInRow="NonInvoicedOrderAmount" msprop:Generator_ColumnVarNameInTable="columnNonInvoicedOrderAmount" msprop:Generator_ColumnPropNameInTable="NonInvoicedOrderAmountColumn" type="xs:decimal" />
+              <xs:element name="RevisedToNextPeriodAmount" msprop:Generator_UserColumnName="RevisedToNextPeriodAmount" msprop:Generator_ColumnPropNameInRow="RevisedToNextPeriodAmount" msprop:Generator_ColumnVarNameInTable="columnRevisedToNextPeriodAmount" msprop:Generator_ColumnPropNameInTable="RevisedToNextPeriodAmountColumn" type="xs:decimal" />
+              <xs:element name="Sequence" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Sequence" msprop:Generator_ColumnPropNameInRow="Sequence" msprop:Generator_ColumnVarNameInTable="columnSequence" msprop:Generator_ColumnPropNameInTable="SequenceColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="GroupType" msdata:ReadOnly="true" msprop:Generator_UserColumnName="GroupType" msprop:Generator_ColumnVarNameInTable="columnGroupType" msprop:Generator_ColumnPropNameInRow="GroupType" msprop:Generator_ColumnPropNameInTable="GroupTypeColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

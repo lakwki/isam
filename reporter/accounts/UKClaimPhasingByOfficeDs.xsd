@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UKClaimPhasingByOfficeDs" targetNamespace="http://tempuri.org/UKClaimPhasingByOfficeDs.xsd" xmlns:mstns="http://tempuri.org/UKClaimPhasingByOfficeDs.xsd" xmlns="http://tempuri.org/UKClaimPhasingByOfficeDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UKClaimPhasingTableAdapter" GeneratorDataComponentClassName="UKClaimPhasingTableAdapter" Name="UKClaimPhasing" UserDataComponentName="UKClaimPhasingTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="SELECT afc.BudgetYear, afc.Period, cp.CurrencyId, cp.ReceivedDate, cp.OfficeId, OfficeNo = (CASE WHEN cp.OfficeId IN (1) AND uc.TermOfPurchaseId&lt;&gt;1 THEN 0 ELSE cp.OfficeId END), Amount = (CASE WHEN (pr.PayReceive='P' AND (CASE WHEN p.Party='N' THEN cp.NSAmt ELSE cp.VendorAmt END) &gt;=0) OR (pr.PayReceive='R' AND (CASE WHEN p.Party='N' THEN cp.NSAmt ELSE cp.VendorAmt END) &lt;0 ) THEN abs(CASE WHEN p.Party='N' THEN cp.NSAmt ELSE cp.VendorAmt END) ELSE 0 END), /*                     ReceiveAmount = (CASE WHEN cp.VendorAmount&lt;0 THEN (CASE WHEN p.PayBy='N' THEN cp.NSAmt ELSE cp.VendorAmt END) ELSE 0 END),*/ p.Party, PR.PayReceive FROM (SELECT Party='N' UNION SELECT Party='V') AS p INNER JOIN (SELECT PayReceive='P' UNION SELECT PayReceive='R') AS pr ON 1=1 /*INNER JOIN (SELECT PayReceive='P' UNION SELECT PayReceive='R') AS pr ON 1=1 --PayReceive = (CASE WHEN (CASE WHEN p.PayBy='N' THEN cp.NSAmt ELSE cp.VendorAmt END)&gt;=0 THEN 'P' ELSE 'R' END) */ INNER JOIN nsldb..AccountFinancialCalender AS afc WITH (NOLOCK) ON 1=1 LEFT JOIN vw_UKClaimPhasingQAIS AS cp ON cp.ReceivedDate BETWEEN afc.StartDate AND afc.EndDate LEFT JOIN UKClaim AS uc ON uc.ClaimId = cp.ClaimId AND uc.Status = 1 LEFT JOIN Contract AS c ON c.ContractNo = uc.ContractNo WHERE afc.AppId = 9 /*AND (@VendorId = -1 OR cp.VendorId = @VendorId)*/ AND 1=0" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>          SELECT FiscalYear = x.BudgetYear, x.Period,
+              PayReceive = (CASE WHEN x.PayReceive='P' THEN 'PAY' ELSE 'RECEIVE' END),
+              Party = (CASE WHEN x.Party='N' THEN 'NS' ELSE 'SUPPLIER' END),
+              SZAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 0  THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)), -- HK-VM (NMC)
+              HKAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 1  THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              SHAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 2  THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              LKAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 3  THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              THAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 4  THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              IDAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 5  THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              PHAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 6  THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              BDAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 7  THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              INAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 8  THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              TRAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 9  THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              UKAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 10 THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              FYAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 11 THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              NMAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 12 THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              NDAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 13 THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              PKAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 14 THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              MAAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 15 THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              VNAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 16 THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              DGAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 17 THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              EGAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 18 THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              CAAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo = 19 THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              TotalAmountUSD = SUM(ROUND(CASE WHEN x.OfficeNo BETWEEN 0 AND 19 THEN x.Amount * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0))
+          FROM
+              (
+                  SELECT afc.BudgetYear, afc.Period,
+                      cp.CurrencyId, cp.ReceivedDate, cp.OfficeId,
+                      OfficeNo = (CASE WHEN cp.OfficeId in (1) AND uc.TermOfPurchaseId&lt;&gt;1 THEN 0 ELSE cp.OfficeId END),
+                      Amount = (CASE WHEN (pr.PayReceive='P' and (CASE WHEN p.Party='N' THEN cp.NSAmt ELSE cp.VendorAmt END) &gt;=0) 
+                                        or (pr.PayReceive='R' and (CASE WHEN p.Party='N' THEN cp.NSAmt ELSE cp.VendorAmt END) &lt;0 )
+					                          THEN abs(CASE WHEN p.Party='N' THEN cp.NSAmt ELSE cp.VendorAmt END) 
+					                          ELSE 0 
+					                          END),
+--                     PayAmount = (CASE WHEN cp.VendorAmt&gt;=0 THEN (CASE WHEN p.PayBy='N' THEN cp.NSAmt ELSE cp.VendorAmt END) ELSE 0 END),
+--                     ReceiveAmount = (CASE WHEN cp.VendorAmount&lt;0 THEN (CASE WHEN p.PayBy='N' THEN cp.NSAmt ELSE cp.VendorAmt END) ELSE 0 END),
+                      p.Party, PR.PayReceive
+                  FROM
+                      (SELECT Party='N' UNION SELECT Party='V') AS p
+                      INNER JOIN (SELECT PayReceive='P' UNION SELECT PayReceive='R') AS pr ON 1=1 --PayReceive = (CASE WHEN (CASE WHEN p.PayBy='N' THEN cp.NSAmt ELSE cp.VendorAmt END)&gt;=0 THEN 'P' ELSE 'R' END) 
+                      --INNER JOIN (SELECT PayReceive='P' UNION SELECT PayReceive='R') AS pr ON 1=1 --PayReceive = (CASE WHEN (CASE WHEN p.PayBy='N' THEN cp.NSAmt ELSE cp.VendorAmt END)&gt;=0 THEN 'P' ELSE 'R' END) 
+                      INNER JOIN nsldb..AccountFinancialCalender AS afc WITH (NOLOCK) ON 1=1
+                      LEFT JOIN vw_UKClaimPhasingQAIS AS cp ON cp.ReceivedDate BETWEEN afc.StartDate AND afc.EndDate
+                      LEFT JOIN UKClaim AS uc ON uc.ClaimId = cp.ClaimId AND uc.Status = 1
+                      LEFT JOIN Contract AS c ON c.ContractNo = uc.ContractNo
+                  WHERE
+                      afc.AppId = 9
+                      --AND (@FiscalYear=-1 OR (afc.BudgetYear BETWEEN  @FiscalYear-1 AND @FiscalYear AND afc.Period BETWEEN @PeriodFrom AND @PeriodTo))
+                      --AND (@VendorId = -1 OR cp.VendorId = @VendorId)
+                      AND 1=0
+              ) as x
+              LEFT JOIN ExchangeRate xr  WITH (NOLOCK) ON xr.ExchangeRateTypeId = 2  and x.ReceivedDate between xr.EffectiveDateFrom  and xr.EffectiveDateTo  and xr.CurrencyId = x.CurrencyId
+              LEFT JOIN ExchangeRate xru WITH (NOLOCK) ON xru.ExchangeRateTypeId = 2 and x.ReceivedDate between xru.EffectiveDateFrom and xru.EffectiveDateTo and xru.CurrencyId = 3
+          GROUP BY
+              x.BudgetYear, x.Period, x.PayReceive, x.Party
+          ORDER BY
+            x.BudgetYear, x.Period, c.PayReceive, x.Party
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FiscalYear" DataSetColumn="FiscalYear" />
+              <Mapping SourceColumn="Period" DataSetColumn="Period" />
+              <Mapping SourceColumn="HKAmountUSD" DataSetColumn="HKAmountUSD" />
+              <Mapping SourceColumn="SHAmountUSD" DataSetColumn="SHAmountUSD" />
+              <Mapping SourceColumn="LKAmountUSD" DataSetColumn="LKAmountUSD" />
+              <Mapping SourceColumn="THAmountUSD" DataSetColumn="THAmountUSD" />
+              <Mapping SourceColumn="IDAmountUSD" DataSetColumn="IDAmountUSD" />
+              <Mapping SourceColumn="PHAmountUSD" DataSetColumn="PHAmountUSD" />
+              <Mapping SourceColumn="BDAmountUSD" DataSetColumn="BDAmountUSD" />
+              <Mapping SourceColumn="INAmountUSD" DataSetColumn="INAmountUSD" />
+              <Mapping SourceColumn="TRAmountUSD" DataSetColumn="TRAmountUSD" />
+              <Mapping SourceColumn="UKAmountUSD" DataSetColumn="UKAmountUSD" />
+              <Mapping SourceColumn="FYAmountUSD" DataSetColumn="FYAmountUSD" />
+              <Mapping SourceColumn="NMAmountUSD" DataSetColumn="NMAmountUSD" />
+              <Mapping SourceColumn="NDAmountUSD" DataSetColumn="NDAmountUSD" />
+              <Mapping SourceColumn="PKAmountUSD" DataSetColumn="PKAmountUSD" />
+              <Mapping SourceColumn="MAAmountUSD" DataSetColumn="MAAmountUSD" />
+              <Mapping SourceColumn="VNAmountUSD" DataSetColumn="VNAmountUSD" />
+              <Mapping SourceColumn="DGAmountUSD" DataSetColumn="DGAmountUSD" />
+              <Mapping SourceColumn="EGAmountUSD" DataSetColumn="EGAmountUSD" />
+              <Mapping SourceColumn="CAAmountUSD" DataSetColumn="CAAmountUSD" />
+              <Mapping SourceColumn="TotalAmountUSD" DataSetColumn="TotalAmountUSD" />
+              <Mapping SourceColumn="Party" DataSetColumn="Party" />
+              <Mapping SourceColumn="PayReceive" DataSetColumn="PayReceive" />
+              <Mapping SourceColumn="SZAmountUSD" DataSetColumn="SZAmountUSD" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UKClaimPhasingByOfficeDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="UKClaimPhasingByOfficeDs" msprop:Generator_UserDSName="UKClaimPhasingByOfficeDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UKClaimPhasing" msprop:Generator_TableClassName="UKClaimPhasingDataTable" msprop:Generator_TableVarName="tableUKClaimPhasing" msprop:Generator_TablePropName="UKClaimPhasing" msprop:Generator_RowDeletingName="UKClaimPhasingRowDeleting" msprop:Generator_UserTableName="UKClaimPhasing" msprop:Generator_RowChangingName="UKClaimPhasingRowChanging" msprop:Generator_RowEvHandlerName="UKClaimPhasingRowChangeEventHandler" msprop:Generator_RowDeletedName="UKClaimPhasingRowDeleted" msprop:Generator_RowEvArgName="UKClaimPhasingRowChangeEvent" msprop:Generator_RowChangedName="UKClaimPhasingRowChanged" msprop:Generator_RowClassName="UKClaimPhasingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FiscalYear" msprop:Generator_ColumnVarNameInTable="columnFiscalYear" msprop:Generator_ColumnPropNameInRow="FiscalYear" msprop:Generator_ColumnPropNameInTable="FiscalYearColumn" msprop:Generator_UserColumnName="FiscalYear" type="xs:int" />
+              <xs:element name="Period" msprop:Generator_ColumnVarNameInTable="columnPeriod" msprop:Generator_ColumnPropNameInRow="Period" msprop:Generator_ColumnPropNameInTable="PeriodColumn" msprop:Generator_UserColumnName="Period" type="xs:int" />
+              <xs:element name="HKAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHKAmountUSD" msprop:Generator_ColumnPropNameInRow="HKAmountUSD" msprop:Generator_ColumnPropNameInTable="HKAmountUSDColumn" msprop:Generator_UserColumnName="HKAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SHAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSHAmountUSD" msprop:Generator_ColumnPropNameInRow="SHAmountUSD" msprop:Generator_ColumnPropNameInTable="SHAmountUSDColumn" msprop:Generator_UserColumnName="SHAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LKAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLKAmountUSD" msprop:Generator_ColumnPropNameInRow="LKAmountUSD" msprop:Generator_ColumnPropNameInTable="LKAmountUSDColumn" msprop:Generator_UserColumnName="LKAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="THAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTHAmountUSD" msprop:Generator_ColumnPropNameInRow="THAmountUSD" msprop:Generator_ColumnPropNameInTable="THAmountUSDColumn" msprop:Generator_UserColumnName="THAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IDAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIDAmountUSD" msprop:Generator_ColumnPropNameInRow="IDAmountUSD" msprop:Generator_ColumnPropNameInTable="IDAmountUSDColumn" msprop:Generator_UserColumnName="IDAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PHAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPHAmountUSD" msprop:Generator_ColumnPropNameInRow="PHAmountUSD" msprop:Generator_ColumnPropNameInTable="PHAmountUSDColumn" msprop:Generator_UserColumnName="PHAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BDAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBDAmountUSD" msprop:Generator_ColumnPropNameInRow="BDAmountUSD" msprop:Generator_ColumnPropNameInTable="BDAmountUSDColumn" msprop:Generator_UserColumnName="BDAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnINAmountUSD" msprop:Generator_ColumnPropNameInRow="INAmountUSD" msprop:Generator_ColumnPropNameInTable="INAmountUSDColumn" msprop:Generator_UserColumnName="INAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TRAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTRAmountUSD" msprop:Generator_ColumnPropNameInRow="TRAmountUSD" msprop:Generator_ColumnPropNameInTable="TRAmountUSDColumn" msprop:Generator_UserColumnName="TRAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UKAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUKAmountUSD" msprop:Generator_ColumnPropNameInRow="UKAmountUSD" msprop:Generator_ColumnPropNameInTable="UKAmountUSDColumn" msprop:Generator_UserColumnName="UKAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FYAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFYAmountUSD" msprop:Generator_ColumnPropNameInRow="FYAmountUSD" msprop:Generator_ColumnPropNameInTable="FYAmountUSDColumn" msprop:Generator_UserColumnName="FYAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NMAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNMAmountUSD" msprop:Generator_ColumnPropNameInRow="NMAmountUSD" msprop:Generator_ColumnPropNameInTable="NMAmountUSDColumn" msprop:Generator_UserColumnName="NMAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NDAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNDAmountUSD" msprop:Generator_ColumnPropNameInRow="NDAmountUSD" msprop:Generator_ColumnPropNameInTable="NDAmountUSDColumn" msprop:Generator_UserColumnName="NDAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PKAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPKAmountUSD" msprop:Generator_ColumnPropNameInRow="PKAmountUSD" msprop:Generator_ColumnPropNameInTable="PKAmountUSDColumn" msprop:Generator_UserColumnName="PKAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MAAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMAAmountUSD" msprop:Generator_ColumnPropNameInRow="MAAmountUSD" msprop:Generator_ColumnPropNameInTable="MAAmountUSDColumn" msprop:Generator_UserColumnName="MAAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VNAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVNAmountUSD" msprop:Generator_ColumnPropNameInRow="VNAmountUSD" msprop:Generator_ColumnPropNameInTable="VNAmountUSDColumn" msprop:Generator_UserColumnName="VNAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DGAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDGAmountUSD" msprop:Generator_ColumnPropNameInRow="DGAmountUSD" msprop:Generator_ColumnPropNameInTable="DGAmountUSDColumn" msprop:Generator_UserColumnName="DGAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EGAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEGAmountUSD" msprop:Generator_ColumnPropNameInRow="EGAmountUSD" msprop:Generator_ColumnPropNameInTable="EGAmountUSDColumn" msprop:Generator_UserColumnName="EGAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CAAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCAAmountUSD" msprop:Generator_ColumnPropNameInRow="CAAmountUSD" msprop:Generator_ColumnPropNameInTable="CAAmountUSDColumn" msprop:Generator_UserColumnName="CAAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalAmountUSD" msprop:Generator_ColumnPropNameInRow="TotalAmountUSD" msprop:Generator_ColumnPropNameInTable="TotalAmountUSDColumn" msprop:Generator_UserColumnName="TotalAmountUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Party" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnParty" msprop:Generator_ColumnPropNameInRow="Party" msprop:Generator_ColumnPropNameInTable="PartyColumn" msprop:Generator_UserColumnName="Party" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PayReceive" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPayReceive" msprop:Generator_ColumnPropNameInRow="PayReceive" msprop:Generator_ColumnPropNameInTable="PayReceiveColumn" msprop:Generator_UserColumnName="PayReceive" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SZAmountUSD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSZAmountUSD" msprop:Generator_ColumnPropNameInRow="SZAmountUSD" msprop:Generator_ColumnPropNameInTable="SZAmountUSDColumn" msprop:Generator_UserColumnName="SZAmountUSD" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

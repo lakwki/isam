@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OutstandingTradeReportDs" targetNamespace="http://tempuri.org/OutstandingTradeReportDs.xsd" xmlns:mstns="http://tempuri.org/OutstandingTradeReportDs.xsd" xmlns="http://tempuri.org/OutstandingTradeReportDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="8" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAM3ConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAM3ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAM3ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAM_20100422ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAM_20100422ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAM_20100422ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAM_20101025ConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAM_20101025ConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAM_20101025ConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAM_20101026ConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAM_20101026ConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAM_20101026ConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString1 (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ConnectionString1" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString3 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMConnectionString3" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OutstandingTradeReportTableAdapter" GeneratorDataComponentClassName="OutstandingTradeReportTableAdapter" Name="OutstandingTradeReport" UserDataComponentName="OutstandingTradeReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMConnectionString2 (Settings)" DbObjectName="ISAM.dbo.outsta" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[outsta] ([InvoiceNo], [InvoiceDate], [Vendor], [AccountCode], [SupplierInvoiceNo], [SequenceNo], [OfficeCode], [TradingAgency], [TermOfPurchase], [ContractNo], [DeliveryNo], [CustomerCode], [PaymentTermDesc], [FiscalYear], [FiscalPeriod], [FiscalWeek], [ItemNo], [TotalShippedQty], [PackingUnit], [CurrencyCode], [OtherAmount], [BaseAmount], [CO], [DataType], [LabTestIncome], [ShippingDocReceiptDate], [AccountDocReceiptDate], [ShippingDocCheckedOn], [QACommissionAmount], [VendorPaymentDiscountAmount], [NetPaymentAmount], [LabTestIncomeBaseAmount], [QACommissionBaseAmount], [VendorPaymentDiscountBaseAmount], [LGDueDate], [LCBillRefNo], [LCPaymentCheckedDate], [ShipmentMethodDesc]) VALUES (@InvoiceNo, @InvoiceDate, @Vendor, @AccountCode, @SupplierInvoiceNo, @SequenceNo, @OfficeCode, @TradingAgency, @TermOfPurchase, @ContractNo, @DeliveryNo, @CustomerCode, @PaymentTermDesc, @FiscalYear, @FiscalPeriod, @FiscalWeek, @ItemNo, @TotalShippedQty, @PackingUnit, @CurrencyCode, @OtherAmount, @BaseAmount, @CO, @DataType, @LabTestIncome, @ShippingDocReceiptDate, @AccountDocReceiptDate, @ShippingDocCheckedOn, @QACommissionAmount, @VendorPaymentDiscountAmount, @NetPaymentAmount, @LabTestIncomeBaseAmount, @QACommissionBaseAmount, @VendorPaymentDiscountBaseAmount, @LGDueDate, @LCBillRefNo, @LCPaymentCheckedDate, @ShipmentMethodDesc)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@InvoiceNo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="InvoiceNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@InvoiceDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="InvoiceDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Vendor" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Vendor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@AccountCode" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="AccountCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SupplierInvoiceNo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SupplierInvoiceNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SequenceNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SequenceNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OfficeCode" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OfficeCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TradingAgency" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TradingAgency" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TermOfPurchase" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TermOfPurchase" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ContractNo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ContractNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@DeliveryNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DeliveryNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CustomerCode" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CustomerCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PaymentTermDesc" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PaymentTermDesc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FiscalYear" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FiscalYear" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@FiscalPeriod" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FiscalPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@FiscalWeek" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FiscalWeek" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ItemNo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ItemNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TotalShippedQty" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TotalShippedQty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PackingUnit" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PackingUnit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CurrencyCode" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CurrencyCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@OtherAmount" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="OtherAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@BaseAmount" Precision="38" ProviderType="Decimal" Scale="6" Size="0" SourceColumn="BaseAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@DataType" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DataType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@LabTestIncome" Precision="18" ProviderType="Decimal" Scale="4" Size="0" SourceColumn="LabTestIncome" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@ShippingDocReceiptDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ShippingDocReceiptDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@AccountDocReceiptDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="AccountDocReceiptDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@ShippingDocCheckedOn" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ShippingDocCheckedOn" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@QACommissionAmount" Precision="38" ProviderType="Decimal" Scale="6" Size="0" SourceColumn="QACommissionAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@VendorPaymentDiscountAmount" Precision="38" ProviderType="Decimal" Scale="6" Size="0" SourceColumn="VendorPaymentDiscountAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@NetPaymentAmount" Precision="38" ProviderType="Decimal" Scale="6" Size="0" SourceColumn="NetPaymentAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@LabTestIncomeBaseAmount" Precision="38" ProviderType="Decimal" Scale="6" Size="0" SourceColumn="LabTestIncomeBaseAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@QACommissionBaseAmount" Precision="38" ProviderType="Decimal" Scale="6" Size="0" SourceColumn="QACommissionBaseAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@VendorPaymentDiscountBaseAmount" Precision="38" ProviderType="Decimal" Scale="6" Size="0" SourceColumn="VendorPaymentDiscountBaseAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@LGDueDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LGDueDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LCBillRefNo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LCBillRefNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@LCPaymentCheckedDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LCPaymentCheckedDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ShipmentMethodDesc" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ShipmentMethodDesc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT InvoiceNo, InvoiceDate, Vendor, AccountCode, SupplierInvoiceNo, SequenceNo, OfficeCode, TradingAgency, TermOfPurchase, ContractNo, DeliveryNo, CustomerCode, PaymentTermDesc, FiscalYear, FiscalPeriod, FiscalWeek, ItemNo, TotalShippedQty, PackingUnit, CurrencyCode, OtherAmount, BaseAmount, CO, DataType, LabTestIncome, ShippingDocReceiptDate, AccountDocReceiptDate, ShippingDocCheckedOn, QACommissionAmount, VendorPaymentDiscountAmount, NetPaymentAmount, LabTestIncomeBaseAmount, QACommissionBaseAmount, VendorPaymentDiscountBaseAmount, LGDueDate, LCBillRefNo, LCPaymentCheckedDate, ShipmentMethodDesc FROM dbo.outsta</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="InvoiceNo" DataSetColumn="InvoiceNo" />
+              <Mapping SourceColumn="InvoiceDate" DataSetColumn="InvoiceDate" />
+              <Mapping SourceColumn="Vendor" DataSetColumn="Vendor" />
+              <Mapping SourceColumn="AccountCode" DataSetColumn="AccountCode" />
+              <Mapping SourceColumn="SupplierInvoiceNo" DataSetColumn="SupplierInvoiceNo" />
+              <Mapping SourceColumn="SequenceNo" DataSetColumn="SequenceNo" />
+              <Mapping SourceColumn="OfficeCode" DataSetColumn="OfficeCode" />
+              <Mapping SourceColumn="TradingAgency" DataSetColumn="TradingAgency" />
+              <Mapping SourceColumn="TermOfPurchase" DataSetColumn="TermOfPurchase" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="CustomerCode" DataSetColumn="CustomerCode" />
+              <Mapping SourceColumn="PaymentTermDesc" DataSetColumn="PaymentTermDesc" />
+              <Mapping SourceColumn="FiscalYear" DataSetColumn="FiscalYear" />
+              <Mapping SourceColumn="FiscalPeriod" DataSetColumn="FiscalPeriod" />
+              <Mapping SourceColumn="FiscalWeek" DataSetColumn="FiscalWeek" />
+              <Mapping SourceColumn="ItemNo" DataSetColumn="ItemNo" />
+              <Mapping SourceColumn="TotalShippedQty" DataSetColumn="TotalShippedQty" />
+              <Mapping SourceColumn="PackingUnit" DataSetColumn="PackingUnit" />
+              <Mapping SourceColumn="CurrencyCode" DataSetColumn="CurrencyCode" />
+              <Mapping SourceColumn="OtherAmount" DataSetColumn="OtherAmount" />
+              <Mapping SourceColumn="BaseAmount" DataSetColumn="BaseAmount" />
+              <Mapping SourceColumn="CO" DataSetColumn="CO" />
+              <Mapping SourceColumn="DataType" DataSetColumn="DataType" />
+              <Mapping SourceColumn="LabTestIncome" DataSetColumn="LabTestIncome" />
+              <Mapping SourceColumn="ShippingDocReceiptDate" DataSetColumn="ShippingDocReceiptDate" />
+              <Mapping SourceColumn="AccountDocReceiptDate" DataSetColumn="AccountDocReceiptDate" />
+              <Mapping SourceColumn="ShippingDocCheckedOn" DataSetColumn="ShippingDocCheckedOn" />
+              <Mapping SourceColumn="QACommissionAmount" DataSetColumn="QACommissionAmount" />
+              <Mapping SourceColumn="VendorPaymentDiscountAmount" DataSetColumn="VendorPaymentDiscountAmount" />
+              <Mapping SourceColumn="NetPaymentAmount" DataSetColumn="NetPaymentAmount" />
+              <Mapping SourceColumn="LabTestIncomeBaseAmount" DataSetColumn="LabTestIncomeBaseAmount" />
+              <Mapping SourceColumn="QACommissionBaseAmount" DataSetColumn="QACommissionBaseAmount" />
+              <Mapping SourceColumn="VendorPaymentDiscountBaseAmount" DataSetColumn="VendorPaymentDiscountBaseAmount" />
+              <Mapping SourceColumn="LGDueDate" DataSetColumn="LGDueDate" />
+              <Mapping SourceColumn="LCBillRefNo" DataSetColumn="LCBillRefNo" />
+              <Mapping SourceColumn="LCPaymentCheckedDate" DataSetColumn="LCPaymentCheckedDate" />
+              <Mapping SourceColumn="ShipmentMethodDesc" DataSetColumn="ShipmentMethodDesc" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OutstandingTradeReportDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OutstandingTradeReportDs" msprop:Generator_UserDSName="OutstandingTradeReportDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OutstandingTradeReport" msprop:Generator_TableClassName="OutstandingTradeReportDataTable" msprop:Generator_TableVarName="tableOutstandingTradeReport" msprop:Generator_RowChangedName="OutstandingTradeReportRowChanged" msprop:Generator_TablePropName="OutstandingTradeReport" msprop:Generator_RowDeletingName="OutstandingTradeReportRowDeleting" msprop:Generator_RowChangingName="OutstandingTradeReportRowChanging" msprop:Generator_RowEvHandlerName="OutstandingTradeReportRowChangeEventHandler" msprop:Generator_RowDeletedName="OutstandingTradeReportRowDeleted" msprop:Generator_RowClassName="OutstandingTradeReportRow" msprop:Generator_UserTableName="OutstandingTradeReport" msprop:Generator_RowEvArgName="OutstandingTradeReportRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InvoiceNo" msprop:Generator_ColumnVarNameInTable="columnInvoiceNo" msprop:Generator_ColumnPropNameInRow="InvoiceNo" msprop:Generator_ColumnPropNameInTable="InvoiceNoColumn" msprop:Generator_UserColumnName="InvoiceNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceDate" msprop:Generator_ColumnVarNameInTable="columnInvoiceDate" msprop:Generator_ColumnPropNameInRow="InvoiceDate" msprop:Generator_ColumnPropNameInTable="InvoiceDateColumn" msprop:Generator_UserColumnName="InvoiceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Vendor" msprop:Generator_ColumnVarNameInTable="columnVendor" msprop:Generator_ColumnPropNameInRow="Vendor" msprop:Generator_ColumnPropNameInTable="VendorColumn" msprop:Generator_UserColumnName="Vendor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AccountCode" msprop:Generator_ColumnVarNameInTable="columnAccountCode" msprop:Generator_ColumnPropNameInRow="AccountCode" msprop:Generator_ColumnPropNameInTable="AccountCodeColumn" msprop:Generator_UserColumnName="AccountCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SupplierInvoiceNo" msprop:Generator_ColumnVarNameInTable="columnSupplierInvoiceNo" msprop:Generator_ColumnPropNameInRow="SupplierInvoiceNo" msprop:Generator_ColumnPropNameInTable="SupplierInvoiceNoColumn" msprop:Generator_UserColumnName="SupplierInvoiceNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SequenceNo" msprop:Generator_ColumnVarNameInTable="columnSequenceNo" msprop:Generator_ColumnPropNameInRow="SequenceNo" msprop:Generator_ColumnPropNameInTable="SequenceNoColumn" msprop:Generator_UserColumnName="SequenceNo" type="xs:int" minOccurs="0" />
+              <xs:element name="OfficeCode" msprop:Generator_ColumnVarNameInTable="columnOfficeCode" msprop:Generator_ColumnPropNameInRow="OfficeCode" msprop:Generator_ColumnPropNameInTable="OfficeCodeColumn" msprop:Generator_UserColumnName="OfficeCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TradingAgency" msprop:Generator_ColumnVarNameInTable="columnTradingAgency" msprop:Generator_ColumnPropNameInRow="TradingAgency" msprop:Generator_ColumnPropNameInTable="TradingAgencyColumn" msprop:Generator_UserColumnName="TradingAgency" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TermOfPurchase" msprop:Generator_ColumnVarNameInTable="columnTermOfPurchase" msprop:Generator_ColumnPropNameInRow="TermOfPurchase" msprop:Generator_ColumnPropNameInTable="TermOfPurchaseColumn" msprop:Generator_UserColumnName="TermOfPurchase" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" type="xs:int" />
+              <xs:element name="CustomerCode" msprop:Generator_ColumnVarNameInTable="columnCustomerCode" msprop:Generator_ColumnPropNameInRow="CustomerCode" msprop:Generator_ColumnPropNameInTable="CustomerCodeColumn" msprop:Generator_UserColumnName="CustomerCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PaymentTermDesc" msprop:Generator_ColumnVarNameInTable="columnPaymentTermDesc" msprop:Generator_ColumnPropNameInRow="PaymentTermDesc" msprop:Generator_ColumnPropNameInTable="PaymentTermDescColumn" msprop:Generator_UserColumnName="PaymentTermDesc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FiscalYear" msprop:Generator_ColumnVarNameInTable="columnFiscalYear" msprop:Generator_ColumnPropNameInRow="FiscalYear" msprop:Generator_ColumnPropNameInTable="FiscalYearColumn" msprop:Generator_UserColumnName="FiscalYear" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FiscalPeriod" msprop:Generator_ColumnVarNameInTable="columnFiscalPeriod" msprop:Generator_ColumnPropNameInRow="FiscalPeriod" msprop:Generator_ColumnPropNameInTable="FiscalPeriodColumn" msprop:Generator_UserColumnName="FiscalPeriod" type="xs:int" minOccurs="0" />
+              <xs:element name="FiscalWeek" msprop:Generator_ColumnVarNameInTable="columnFiscalWeek" msprop:Generator_ColumnPropNameInRow="FiscalWeek" msprop:Generator_ColumnPropNameInTable="FiscalWeekColumn" msprop:Generator_UserColumnName="FiscalWeek" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemNo" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" msprop:Generator_UserColumnName="ItemNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalShippedQty" msprop:Generator_ColumnVarNameInTable="columnTotalShippedQty" msprop:Generator_ColumnPropNameInRow="TotalShippedQty" msprop:Generator_ColumnPropNameInTable="TotalShippedQtyColumn" msprop:Generator_UserColumnName="TotalShippedQty" type="xs:int" />
+              <xs:element name="PackingUnit" msprop:Generator_ColumnVarNameInTable="columnPackingUnit" msprop:Generator_ColumnPropNameInRow="PackingUnit" msprop:Generator_ColumnPropNameInTable="PackingUnitColumn" msprop:Generator_UserColumnName="PackingUnit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CurrencyCode" msprop:Generator_ColumnVarNameInTable="columnCurrencyCode" msprop:Generator_ColumnPropNameInRow="CurrencyCode" msprop:Generator_ColumnPropNameInTable="CurrencyCodeColumn" msprop:Generator_UserColumnName="CurrencyCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtherAmount" msprop:Generator_ColumnVarNameInTable="columnOtherAmount" msprop:Generator_ColumnPropNameInRow="OtherAmount" msprop:Generator_ColumnPropNameInTable="OtherAmountColumn" msprop:Generator_UserColumnName="OtherAmount" type="xs:decimal" />
+              <xs:element name="BaseAmount" msprop:Generator_ColumnVarNameInTable="columnBaseAmount" msprop:Generator_ColumnPropNameInRow="BaseAmount" msprop:Generator_ColumnPropNameInTable="BaseAmountColumn" msprop:Generator_UserColumnName="BaseAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CO" msprop:Generator_ColumnVarNameInTable="columnCO" msprop:Generator_ColumnPropNameInRow="CO" msprop:Generator_ColumnPropNameInTable="COColumn" msprop:Generator_UserColumnName="CO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataType" msprop:Generator_ColumnVarNameInTable="columnDataType" msprop:Generator_ColumnPropNameInRow="DataType" msprop:Generator_ColumnPropNameInTable="DataTypeColumn" msprop:Generator_UserColumnName="DataType" type="xs:int" />
+              <xs:element name="LabTestIncome" msprop:Generator_ColumnVarNameInTable="columnLabTestIncome" msprop:Generator_ColumnPropNameInRow="LabTestIncome" msprop:Generator_ColumnPropNameInTable="LabTestIncomeColumn" msprop:Generator_UserColumnName="LabTestIncome" type="xs:decimal" />
+              <xs:element name="ShippingDocReceiptDate" msprop:Generator_ColumnVarNameInTable="columnShippingDocReceiptDate" msprop:Generator_ColumnPropNameInRow="ShippingDocReceiptDate" msprop:Generator_ColumnPropNameInTable="ShippingDocReceiptDateColumn" msprop:Generator_UserColumnName="ShippingDocReceiptDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AccountDocReceiptDate" msprop:Generator_ColumnVarNameInTable="columnAccountDocReceiptDate" msprop:Generator_ColumnPropNameInRow="AccountDocReceiptDate" msprop:Generator_ColumnPropNameInTable="AccountDocReceiptDateColumn" msprop:Generator_UserColumnName="AccountDocReceiptDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ShippingDocCheckedOn" msprop:Generator_ColumnVarNameInTable="columnShippingDocCheckedOn" msprop:Generator_ColumnPropNameInRow="ShippingDocCheckedOn" msprop:Generator_ColumnPropNameInTable="ShippingDocCheckedOnColumn" msprop:Generator_UserColumnName="ShippingDocCheckedOn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="QACommissionAmount" msprop:Generator_ColumnVarNameInTable="columnQACommissionAmount" msprop:Generator_ColumnPropNameInRow="QACommissionAmount" msprop:Generator_ColumnPropNameInTable="QACommissionAmountColumn" msprop:Generator_UserColumnName="QACommissionAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VendorPaymentDiscountAmount" msprop:Generator_ColumnVarNameInTable="columnVendorPaymentDiscountAmount" msprop:Generator_ColumnPropNameInRow="VendorPaymentDiscountAmount" msprop:Generator_ColumnPropNameInTable="VendorPaymentDiscountAmountColumn" msprop:Generator_UserColumnName="VendorPaymentDiscountAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NetPaymentAmount" msprop:Generator_ColumnVarNameInTable="columnNetPaymentAmount" msprop:Generator_ColumnPropNameInRow="NetPaymentAmount" msprop:Generator_ColumnPropNameInTable="NetPaymentAmountColumn" msprop:Generator_UserColumnName="NetPaymentAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LabTestIncomeBaseAmount" msprop:Generator_ColumnVarNameInTable="columnLabTestIncomeBaseAmount" msprop:Generator_ColumnPropNameInRow="LabTestIncomeBaseAmount" msprop:Generator_ColumnPropNameInTable="LabTestIncomeBaseAmountColumn" msprop:Generator_UserColumnName="LabTestIncomeBaseAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QACommissionBaseAmount" msprop:Generator_ColumnVarNameInTable="columnQACommissionBaseAmount" msprop:Generator_ColumnPropNameInRow="QACommissionBaseAmount" msprop:Generator_ColumnPropNameInTable="QACommissionBaseAmountColumn" msprop:Generator_UserColumnName="QACommissionBaseAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VendorPaymentDiscountBaseAmount" msprop:Generator_ColumnVarNameInTable="columnVendorPaymentDiscountBaseAmount" msprop:Generator_ColumnPropNameInRow="VendorPaymentDiscountBaseAmount" msprop:Generator_ColumnPropNameInTable="VendorPaymentDiscountBaseAmountColumn" msprop:Generator_UserColumnName="VendorPaymentDiscountBaseAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LGDueDate" msprop:Generator_ColumnVarNameInTable="columnLGDueDate" msprop:Generator_ColumnPropNameInRow="LGDueDate" msprop:Generator_ColumnPropNameInTable="LGDueDateColumn" msprop:Generator_UserColumnName="LGDueDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LCBillRefNo" msprop:Generator_ColumnVarNameInTable="columnLCBillRefNo" msprop:Generator_ColumnPropNameInRow="LCBillRefNo" msprop:Generator_ColumnPropNameInTable="LCBillRefNoColumn" msprop:Generator_UserColumnName="LCBillRefNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LCPaymentCheckedDate" msprop:Generator_ColumnVarNameInTable="columnLCPaymentCheckedDate" msprop:Generator_ColumnPropNameInRow="LCPaymentCheckedDate" msprop:Generator_ColumnPropNameInTable="LCPaymentCheckedDateColumn" msprop:Generator_UserColumnName="LCPaymentCheckedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ShipmentMethodDesc" msprop:Generator_ColumnVarNameInTable="columnShipmentMethodDesc" msprop:Generator_ColumnPropNameInRow="ShipmentMethodDesc" msprop:Generator_ColumnPropNameInTable="ShipmentMethodDescColumn" msprop:Generator_UserColumnName="ShipmentMethodDesc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

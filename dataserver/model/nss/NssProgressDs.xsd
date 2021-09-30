@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NssProgressDs" targetNamespace="http://tempuri.org/ILSOrderCopyDetailDs.xsd" xmlns:mstns="http://tempuri.org/ILSOrderCopyDetailDs.xsd" xmlns="http://tempuri.org/ILSOrderCopyDetailDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.ISAMConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NSSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NSSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.dataserver.Properties.Settings.GlobalReference.Default.NSSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProgressTableAdapter" GeneratorDataComponentClassName="ProgressTableAdapter" Name="Progress" UserDataComponentName="ProgressTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NSSConnectionString (Settings)" DbObjectName="NSS.dbo.Progress" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        *
+FROM            Progress</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ProgressId" DataSetColumn="ProgressId" />
+              <Mapping SourceColumn="ShipmentTypeId" DataSetColumn="ShipmentTypeId" />
+              <Mapping SourceColumn="ShipmentId" DataSetColumn="ShipmentId" />
+              <Mapping SourceColumn="ProgressTemplateDetailId" DataSetColumn="ProgressTemplateDetailId" />
+              <Mapping SourceColumn="ProgressTypeId" DataSetColumn="ProgressTypeId" />
+              <Mapping SourceColumn="ProgressCode" DataSetColumn="ProgressCode" />
+              <Mapping SourceColumn="PlannedDate" DataSetColumn="PlannedDate" />
+              <Mapping SourceColumn="ActualDate" DataSetColumn="ActualDate" />
+              <Mapping SourceColumn="WarningPeriod" DataSetColumn="WarningPeriod" />
+              <Mapping SourceColumn="AlertCount" DataSetColumn="AlertCount" />
+              <Mapping SourceColumn="LastAlertDate" DataSetColumn="LastAlertDate" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="Remark" DataSetColumn="Remark" />
+              <Mapping SourceColumn="NoOfDayBeforeDelivery" DataSetColumn="NoOfDayBeforeDelivery" />
+              <Mapping SourceColumn="CreatedBy" DataSetColumn="CreatedBy" />
+              <Mapping SourceColumn="CreatedOn" DataSetColumn="CreatedOn" />
+              <Mapping SourceColumn="ModifiedBy" DataSetColumn="ModifiedBy" />
+              <Mapping SourceColumn="ModifiedOn" DataSetColumn="ModifiedOn" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NssProgressDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="NssProgressDs" msprop:Generator_DataSetName="NssProgressDs" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Progress" msprop:Generator_UserTableName="Progress" msprop:Generator_RowDeletedName="ProgressRowDeleted" msprop:Generator_RowChangedName="ProgressRowChanged" msprop:Generator_RowClassName="ProgressRow" msprop:Generator_RowChangingName="ProgressRowChanging" msprop:Generator_RowEvArgName="ProgressRowChangeEvent" msprop:Generator_RowEvHandlerName="ProgressRowChangeEventHandler" msprop:Generator_TableClassName="ProgressDataTable" msprop:Generator_TableVarName="tableProgress" msprop:Generator_RowDeletingName="ProgressRowDeleting" msprop:Generator_TablePropName="Progress">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProgressId" msprop:Generator_UserColumnName="ProgressId" msprop:Generator_ColumnVarNameInTable="columnProgressId" msprop:Generator_ColumnPropNameInRow="ProgressId" msprop:Generator_ColumnPropNameInTable="ProgressIdColumn" type="xs:int" />
+              <xs:element name="ShipmentTypeId" msprop:Generator_UserColumnName="ShipmentTypeId" msprop:Generator_ColumnVarNameInTable="columnShipmentTypeId" msprop:Generator_ColumnPropNameInRow="ShipmentTypeId" msprop:Generator_ColumnPropNameInTable="ShipmentTypeIdColumn" type="xs:int" />
+              <xs:element name="ShipmentId" msprop:Generator_UserColumnName="ShipmentId" msprop:Generator_ColumnVarNameInTable="columnShipmentId" msprop:Generator_ColumnPropNameInRow="ShipmentId" msprop:Generator_ColumnPropNameInTable="ShipmentIdColumn" type="xs:int" />
+              <xs:element name="ProgressTemplateDetailId" msprop:Generator_UserColumnName="ProgressTemplateDetailId" msprop:Generator_ColumnVarNameInTable="columnProgressTemplateDetailId" msprop:Generator_ColumnPropNameInRow="ProgressTemplateDetailId" msprop:Generator_ColumnPropNameInTable="ProgressTemplateDetailIdColumn" type="xs:int" />
+              <xs:element name="ProgressTypeId" msprop:Generator_UserColumnName="ProgressTypeId" msprop:Generator_ColumnVarNameInTable="columnProgressTypeId" msprop:Generator_ColumnPropNameInRow="ProgressTypeId" msprop:Generator_ColumnPropNameInTable="ProgressTypeIdColumn" type="xs:int" />
+              <xs:element name="ProgressCode" msprop:Generator_UserColumnName="ProgressCode" msprop:Generator_ColumnVarNameInTable="columnProgressCode" msprop:Generator_ColumnPropNameInRow="ProgressCode" msprop:Generator_ColumnPropNameInTable="ProgressCodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlannedDate" msprop:Generator_UserColumnName="PlannedDate" msprop:Generator_ColumnVarNameInTable="columnPlannedDate" msprop:Generator_ColumnPropNameInRow="PlannedDate" msprop:Generator_ColumnPropNameInTable="PlannedDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ActualDate" msprop:Generator_UserColumnName="ActualDate" msprop:Generator_ColumnVarNameInTable="columnActualDate" msprop:Generator_ColumnPropNameInRow="ActualDate" msprop:Generator_ColumnPropNameInTable="ActualDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="WarningPeriod" msprop:Generator_UserColumnName="WarningPeriod" msprop:Generator_ColumnVarNameInTable="columnWarningPeriod" msprop:Generator_ColumnPropNameInRow="WarningPeriod" msprop:Generator_ColumnPropNameInTable="WarningPeriodColumn" type="xs:int" />
+              <xs:element name="AlertCount" msprop:Generator_UserColumnName="AlertCount" msprop:Generator_ColumnVarNameInTable="columnAlertCount" msprop:Generator_ColumnPropNameInRow="AlertCount" msprop:Generator_ColumnPropNameInTable="AlertCountColumn" type="xs:int" />
+              <xs:element name="LastAlertDate" msprop:Generator_UserColumnName="LastAlertDate" msprop:Generator_ColumnVarNameInTable="columnLastAlertDate" msprop:Generator_ColumnPropNameInRow="LastAlertDate" msprop:Generator_ColumnPropNameInTable="LastAlertDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" type="xs:int" />
+              <xs:element name="Remark" msprop:Generator_UserColumnName="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NoOfDayBeforeDelivery" msprop:Generator_UserColumnName="NoOfDayBeforeDelivery" msprop:Generator_ColumnVarNameInTable="columnNoOfDayBeforeDelivery" msprop:Generator_ColumnPropNameInRow="NoOfDayBeforeDelivery" msprop:Generator_ColumnPropNameInTable="NoOfDayBeforeDeliveryColumn" type="xs:int" />
+              <xs:element name="CreatedBy" msprop:Generator_UserColumnName="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" type="xs:int" />
+              <xs:element name="CreatedOn" msprop:Generator_UserColumnName="CreatedOn" msprop:Generator_ColumnVarNameInTable="columnCreatedOn" msprop:Generator_ColumnPropNameInRow="CreatedOn" msprop:Generator_ColumnPropNameInTable="CreatedOnColumn" type="xs:dateTime" />
+              <xs:element name="ModifiedBy" msprop:Generator_UserColumnName="ModifiedBy" msprop:Generator_ColumnVarNameInTable="columnModifiedBy" msprop:Generator_ColumnPropNameInRow="ModifiedBy" msprop:Generator_ColumnPropNameInTable="ModifiedByColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ModifiedOn" msprop:Generator_UserColumnName="ModifiedOn" msprop:Generator_ColumnVarNameInTable="columnModifiedOn" msprop:Generator_ColumnPropNameInRow="ModifiedOn" msprop:Generator_ColumnPropNameInTable="ModifiedOnColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Progress" />
+      <xs:field xpath="mstns:ProgressId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

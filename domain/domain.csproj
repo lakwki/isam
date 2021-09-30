@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{316C3E10-5A1D-4F60-807D-CA23980060EE}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>com.next.isam.domain</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>com.next.isam.domain</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <PublishUrl>http://localhost/com.next.isam.domain/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="com.next.common, Version=1.0.7922.17894, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NSCommon\common\bin\Debug\com.next.common.dll</HintPath>
+    </Reference>
+    <Reference Include="com.next.infra, Version=1.0.7775.29088, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NSCommon\common\bin\Debug\com.next.infra.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="account\AdvancePaymentActionHistoryDef.cs" />
+    <Compile Include="account\AdvancePaymentInstalmentDetailDef.cs" />
+    <Compile Include="account\AdvancePaymentOrderDetailDef.cs" />
+    <Compile Include="account\ARCustomerDef.cs" />
+    <Compile Include="account\ClaimType.cs" />
+    <Compile Include="account\BankAccountDef.cs" />
+    <Compile Include="account\BankReconciliationRequestDef.cs" />
+    <Compile Include="account\BankReconciliationSummaryDef.cs" />
+    <Compile Include="account\ConvertPaymentFileRequestDef.cs" />
+    <Compile Include="account\AdjustmentDetailDef.cs" />
+    <Compile Include="account\AdjustmentNoteDef.cs" />
+    <Compile Include="account\AdvancePaymentDef.cs" />
+    <Compile Include="account\AdvancePaymentBalanceSettlementDef.cs" />
+    <Compile Include="account\NSLedFinanceReportCYValuesDef.cs" />
+    <Compile Include="account\NSLedCostDataByWeekDef.cs" />
+    <Compile Include="account\NSLedFinanceReportBFValuesDef.cs" />
+    <Compile Include="account\NSLedRepeatItemParamDef.cs" />
+    <Compile Include="account\DomainAdvancePaymentDef.cs" />
+    <Compile Include="account\EpicorGLExtractLogListDef.cs" />
+    <Compile Include="account\EpicorGLExtractLogDef.cs" />
+    <Compile Include="account\EpicorGLJournalDetailListDef.cs" />
+    <Compile Include="account\EpicorGLJournalDetailDef.cs" />
+    <Compile Include="account\EpicorVendorDef.cs" />
+    <Compile Include="account\GenericDCNoteDef.cs" />
+    <Compile Include="account\ILSDiffDCNoteDef.cs" />
+    <Compile Include="account\ILSDiffDCNoteShipmentDef.cs" />
+    <Compile Include="account\LetterOfGuaranteeDef.cs" />
+    <Compile Include="account\LGDetailDef.cs" />
+    <Compile Include="account\LogoInterfaceRequestDef.cs" />
+    <Compile Include="account\NSLedFPQtyDef.cs" />
+    <Compile Include="account\NSLedImportFileDef.cs" />
+    <Compile Include="account\NSLedItemSummaryDef.cs" />
+    <Compile Include="account\NSLedProfitabilitiesDef.cs" />
+    <Compile Include="account\NSLedRangePlanDef.cs" />
+    <Compile Include="account\NSLedSalesDef.cs" />
+    <Compile Include="account\NSLedSalesInfoDef.cs" />
+    <Compile Include="account\NSLedSelfBilledSupplierCodeDef.cs" />
+    <Compile Include="account\OtherChargesImportFileDef.cs" />
+    <Compile Include="account\QACommissionDNShipmentDef.cs" />
+    <Compile Include="account\QACommissionDNDef.cs" />
+    <Compile Include="account\StudioDCNoteDef.cs" />
+    <Compile Include="account\StudioDCNoteShipmentDef.cs" />
+    <Compile Include="account\StudioDCNoteShipmentDetailDef.cs" />
+    <Compile Include="account\ThirdPartyCustomerDNToUKDef.cs" />
+    <Compile Include="account\UTContractDCNoteDef.cs" />
+    <Compile Include="account\UTContractDCNoteShipmentDef.cs" />
+    <Compile Include="account\UKPaymentSupplierDef.cs" />
+    <Compile Include="account\NUKSalesDef.cs" />
+    <Compile Include="account\PaymentStatusEnquiryDef.cs" />
+    <Compile Include="account\DebitNoteToNUKParamDef.cs" />
+    <Compile Include="account\CutOffStatusRef.cs" />
+    <Compile Include="account\MockShopDCNoteDef.cs" />
+    <Compile Include="account\MockShopDCNoteShipmentDef.cs" />
+    <Compile Include="account\MockShopDCNoteShipmentDetailDef.cs" />
+    <Compile Include="account\SettlementBankDetailDef.cs" />
+    <Compile Include="account\TallyUploadHistoryDef.cs" />
+    <Compile Include="claim\BIAActionType.cs" />
+    <Compile Include="claim\DebitNoteVoidType.cs" />
+    <Compile Include="claim\DomainUKClaimDef.cs" />
+    <Compile Include="claim\UKClaimSettlementType.cs" />
+    <Compile Include="claim\MFRNUploadDef.cs" />
+    <Compile Include="claim\UKClaimBIADiscrepancyDef.cs" />
+    <Compile Include="claim\UKClaimDCNoteDetailDef.cs" />
+    <Compile Include="claim\UKClaimDCNoteDef.cs" />
+    <Compile Include="claim\UKClaimDCNoteRef.cs" />
+    <Compile Include="claim\UKClaimPhasingByProductTeamDef.cs" />
+    <Compile Include="claim\UKClaimPhasingDef.cs" />
+    <Compile Include="claim\UKClaimReasonDef.cs" />
+    <Compile Include="claim\UKClaimRefundDef.cs" />
+    <Compile Include="claim\UKClaimLogDef.cs" />
+    <Compile Include="claim\UKClaimType.cs" />
+    <Compile Include="claim\ClaimWFS.cs" />
+    <Compile Include="claim\UKClaimDef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="claim\UKDiscountClaimDef.cs" />
+    <Compile Include="claim\UKDiscountClaimLogDef.cs" />
+    <Compile Include="claim\UKDiscountClaimRefundDef.cs" />
+    <Compile Include="claim\UKDiscountClaimWFS.cs" />
+    <Compile Include="common\CarbonFootprintReportDataCategory.cs" />
+    <Compile Include="common\DomainUKItemDef.cs" />
+    <Compile Include="common\EpicorUploadImportLogDef.cs" />
+    <Compile Include="common\GenericDataSummaryDef.cs" />
+    <Compile Include="common\UKItemPartRef.cs" />
+    <Compile Include="common\UKItemRef.cs" />
+    <Compile Include="common\FileUploadLogDef.cs" />
+    <Compile Include="common\VendorConvertDef.cs" />
+    <Compile Include="common\ReportOfficeGroupRef.cs" />
+    <Compile Include="common\StandardMSCourierChargeDef.cs" />
+    <Compile Include="common\FileUploadDef.cs" />
+    <Compile Include="common\StaffRef.cs" />
+    <Compile Include="common\VendorBankMappingRef.cs" />
+    <Compile Include="common\WorkFlowStatusDef.cs" />
+    <Compile Include="ils\ILSPackingListMixedCartonDef.cs" />
+    <Compile Include="ils\DomainILSCommissionInvoiceDef.cs" />
+    <Compile Include="ils\ILSCommissionInvoiceDetailDef.cs" />
+    <Compile Include="ils\ILSCommissionInvoiceDef.cs" />
+    <Compile Include="ils\ILSMonthEndLogDef.cs" />
+    <Compile Include="ils\ILSMonthEndShipmentDef.cs" />
+    <Compile Include="ils\ILSUnitPriceMatrixDef.cs" />
+    <Compile Include="ils\ILSErrorRef.cs" />
+    <Compile Include="nontrade\ConsumptionUnit.cs" />
+    <Compile Include="nontrade\UtilityProviderType.cs" />
+    <Compile Include="nontrade\NTEpicorSegmentValueRef.cs" />
+    <Compile Include="nontrade\NTExpenseNatureRef.cs" />
+    <Compile Include="nontrade\NTUserRoleAccessDef.cs" />
+    <Compile Include="nontrade\NTRoleRef.cs" />
+    <Compile Include="nontrade\DomainNTInvoiceDef.cs" />
+    <Compile Include="nontrade\NSLBankAccountDef.cs" />
+    <Compile Include="nontrade\NTActionHistoryDef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="nontrade\NTApproverDef.cs" />
+    <Compile Include="nontrade\NTDevSampleCostType.cs" />
+    <Compile Include="nontrade\NTExpenseTypeRef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="nontrade\NTInvoiceDef.cs" />
+    <Compile Include="nontrade\NTInvoiceDetailDef.cs" />
+    <Compile Include="nontrade\NTInvoiceDetailType.cs" />
+    <Compile Include="nontrade\NTMonthEndStatusDef.cs" />
+    <Compile Include="nontrade\NTPaymentMethodRef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="nontrade\NTRechargeDCNoteDef.cs" />
+    <Compile Include="nontrade\NTRechargeDCNoteInvoiceRef.cs" />
+    <Compile Include="nontrade\NTRechargePartyDeptType.cs" />
+    <Compile Include="nontrade\NTVendorDef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="nontrade\NTVendorExpenseTypeMappingDef.cs" />
+    <Compile Include="nontrade\NTSunInterfaceQueueDef.cs" />
+    <Compile Include="order\GenericOrderSummaryRef.cs" />
+    <Compile Include="order\CustomerOrderCopyDef.cs" />
+    <Compile Include="order\VendorOrderSummaryRef.cs" />
+    <Compile Include="order\ShipmentProductDef.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\LCAdvancePaymentRef.cs" />
+    <Compile Include="shipping\ShipmentDeductionDef.cs" />
+    <Compile Include="shipping\CustomerSummaryRef.cs" />
+    <Compile Include="shipping\MultiShipmenInvoiceDef.cs" />
+    <Compile Include="shipping\ShipmentToDMSDef.cs" />
+    <Compile Include="shipping\ShipmentDetailUpdateLogDef.cs" />
+    <Compile Include="account\DailySunInterfaceDef.cs" />
+    <Compile Include="account\eBankingColumnMappingDef.cs" />
+    <Compile Include="account\EInvoiceBatchDef.cs" />
+    <Compile Include="account\GenerateFileRequestDef.cs" />
+    <Compile Include="account\PaymentAdviceDef.cs" />
+    <Compile Include="account\PaymentAdviceDetailDef.cs" />
+    <Compile Include="account\SAFDef.cs" />
+    <Compile Include="account\SunInterfaceLogDef.cs" />
+    <Compile Include="account\SunInterfaceQueueDef.cs" />
+    <Compile Include="account\SunInterfaceTypeRef.cs" />
+    <Compile Include="account\SunSALFLDGTblDef.cs" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="common\ActionHistoryTypeRef.cs" />
+    <Compile Include="common\AirFreightPaymentTypeRef.cs" />
+    <Compile Include="common\CartonTypeRef.cs" />
+    <Compile Include="common\BankRef.cs" />
+    <Compile Include="common\BankBranchRef.cs" />
+    <Compile Include="common\CustomerDef.cs" />
+    <Compile Include="common\CustomerDestinationDef.cs" />
+    <Compile Include="common\CustomerTypeRef.cs" />
+    <Compile Include="common\OtherCostTypeRef.cs" />
+    <Compile Include="common\PackingMethodRef.cs" />
+    <Compile Include="common\PackingUnitRef.cs" />
+    <Compile Include="common\PurchaseLocationRef.cs" />
+    <Compile Include="common\QuotaCategoryGroupRef.cs" />
+    <Compile Include="common\QuotaCategoryRef.cs" />
+    <Compile Include="common\ShipmentCountryRef.cs" />
+    <Compile Include="common\ShipmentMethodRef.cs" />
+    <Compile Include="common\ShipmentPortRef.cs" />
+    <Compile Include="common\SizeOptionRef.cs" />
+    <Compile Include="common\SystemParameterRef.cs" />
+    <Compile Include="common\TermOfPurchaseRef.cs" />
+    <Compile Include="common\ThirdPartyAgencyRef.cs" />
+    <Compile Include="common\TradingAgencyDef.cs" />
+    <Compile Include="common\UKDiscountReasonRef.cs" />
+    <Compile Include="common\UKFinalDestinationDef.cs" />
+    <Compile Include="ils\ILSCancelledOrderDef.cs" />
+    <Compile Include="ils\DomainILSInvoiceDef.cs" />
+    <Compile Include="ils\ILSFileSentLogDef.cs" />
+    <Compile Include="ils\ILSInvoiceDetailDef.cs" />
+    <Compile Include="ils\ILSInvoiceDef.cs" />
+    <Compile Include="ils\DomainILSPackingListDef.cs" />
+    <Compile Include="ils\DomainILSOrderCopyDef.cs" />
+    <Compile Include="ils\ILSMessageResultDef.cs" />
+    <Compile Include="ils\ILSPackingListCartonDetailDef.cs" />
+    <Compile Include="ils\ILSPackingListDetailDef.cs" />
+    <Compile Include="ils\ILSPackingListDef.cs" />
+    <Compile Include="ils\ILSOrderCopyDetailDef.cs" />
+    <Compile Include="ils\ILSOrderCopyDef.cs" />
+    <Compile Include="ils\ILSManifestDetailDef.cs" />
+    <Compile Include="ils\ILSManifestDef.cs" />
+    <Compile Include="ils\ILSDocumentDef.cs" />
+    <Compile Include="ils\ILSOrderRefDef.cs" />
+    <Compile Include="ils\ILSOrderCopyDiscrepancyDef.cs" />
+    <Compile Include="ils\ILSQCCApprovalDef.cs" />
+    <Compile Include="ils\ILSOrderCopyOriginDef.cs" />
+    <Compile Include="order\ContractDef.cs" />
+    <Compile Include="order\ContractShipmentListJDef.cs" />
+    <Compile Include="order\ILSManifestDetailShipmentDef.cs" />
+    <Compile Include="shipping\ActionHistoryDef.cs" />
+    <Compile Include="shipping\AlertNotificationRef.cs" />
+    <Compile Include="shipping\DomainSplitShipmentDef.cs" />
+    <Compile Include="shipping\ILSSummaryRef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="shipping\LCApplicationRef.cs" />
+    <Compile Include="shipping\LCApplicationDef.cs" />
+    <Compile Include="shipping\LCApplicationShipmentDetailDef.cs" />
+    <Compile Include="shipping\LCBatchDetailRef.cs" />
+    <Compile Include="shipping\LCBatchRef.cs" />
+    <Compile Include="shipping\LCBatchSummaryRef.cs" />
+    <Compile Include="shipping\LCShipmentRef.cs" />
+    <Compile Include="shipping\ManifestDef.cs" />
+    <Compile Include="shipping\DocumentDef.cs" />
+    <Compile Include="order\OtherCostDef.cs" />
+    <Compile Include="order\ShipmentDef.cs" />
+    <Compile Include="order\ShipmentDetailDef.cs" />
+    <Compile Include="order\ShipmentRef.cs" />
+    <Compile Include="order\ShipmentSyncRef.cs" />
+    <Compile Include="order\SplitOtherCostDef.cs" />
+    <Compile Include="order\SplitShipmentDef.cs" />
+    <Compile Include="order\SplitShipmentDetailDef.cs" />
+    <Compile Include="order\SplitShipmentRef.cs" />
+    <Compile Include="order\UTurnOrderParameter.cs" />
+    <Compile Include="product\ProductDef.cs" />
+    <Compile Include="product\ProductRef.cs" />
+    <Compile Include="product\SplitProductDef.cs" />
+    <Compile Include="shipping\DomainShipmentDef.cs" />
+    <Compile Include="shipping\InvoiceDef.cs" />
+    <Compile Include="shipping\InvoiceNoParamDef.cs" />
+    <Compile Include="shipping\UTForcastDef.cs" />
+    <Compile Include="types\AdvancePaymentWFS.cs" />
+    <Compile Include="types\AmendmentType.cs" />
+    <Compile Include="ils\ILSInvoiceUploadStatus.cs" />
+    <Compile Include="types\AdjustmentType.cs" />
+    <Compile Include="types\NextRetailDivision.cs" />
+    <Compile Include="types\ExpenseNature.cs" />
+    <Compile Include="types\MonthEndStatus.cs" />
+    <Compile Include="types\NSSAdvancePaymentWFS.cs" />
+    <Compile Include="types\NTFuelType.cs" />
+    <Compile Include="types\NTRechageDCNoteMailCase.cs" />
+    <Compile Include="types\NTRoleType.cs" />
+    <Compile Include="types\NTVendorWFS.cs" />
+    <Compile Include="types\NTWFS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="types\PaymentDeductionType.cs" />
+    <Compile Include="types\PaymentType.cs" />
+    <Compile Include="types\RejectPaymentReason.cs" />
+    <Compile Include="types\ShippingDocWFS.cs" />
+    <Compile Include="types\CutOffStatus.cs" />
+    <Compile Include="types\IssuingBank.cs" />
+    <Compile Include="types\RequestStatus.cs" />
+    <Compile Include="types\CategoryType.cs" />
+    <Compile Include="types\ContractWFS.cs" />
+    <Compile Include="types\ActionHistoryType.cs" />
+    <Compile Include="types\DocumentType.cs" />
+    <Compile Include="types\ExistType.cs" />
+    <Compile Include="types\LCWFS.cs" />
+    <Compile Include="types\GSPFormType.cs" />
+    <Compile Include="types\OPRFabricType.cs" />
+    <Compile Include="types\OrderType.cs" />
+    <Compile Include="types\PriceUnitType.cs" />
+    <Compile Include="types\ShipmentType.cs" />
+    <Compile Include="types\TradingAgencyId.cs" />
+    <Compile Include="Web References\QAIS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ns-s02/qais/webservices/ClaimRequestService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\QAIS\</RelPath>
+      <UpdateFromURL>http://ns-s02/qais/webservices/ClaimRequestService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>com_next_isam_domain_QAIS_ClaimRequestService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\QAIS\ClaimRequestDef.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\QAIS\ClaimRequestService.wsdl" />
+    <None Include="Web References\QAIS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\QAIS\ClaimRequestService.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NSLedRangePlanPictureDs" targetNamespace="http://tempuri.org/NSLedRangePlanPictureDs.xsd" xmlns:mstns="http://tempuri.org/NSLedRangePlanPictureDs.xsd" xmlns="http://tempuri.org/NSLedRangePlanPictureDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NSLedRangePlanPictureDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NSLedRangePlanPictureDs" msprop:Generator_UserDSName="NSLedRangePlanPictureDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NSLedRangePlanPicture" msprop:Generator_TableClassName="NSLedRangePlanPictureDataTable" msprop:Generator_TableVarName="tableNSLedRangePlanPicture" msprop:Generator_TablePropName="NSLedRangePlanPicture" msprop:Generator_RowDeletingName="NSLedRangePlanPictureRowDeleting" msprop:Generator_RowChangingName="NSLedRangePlanPictureRowChanging" msprop:Generator_RowEvHandlerName="NSLedRangePlanPictureRowChangeEventHandler" msprop:Generator_RowDeletedName="NSLedRangePlanPictureRowDeleted" msprop:Generator_UserTableName="NSLedRangePlanPicture" msprop:Generator_RowChangedName="NSLedRangePlanPictureRowChanged" msprop:Generator_RowEvArgName="NSLedRangePlanPictureRowChangeEvent" msprop:Generator_RowClassName="NSLedRangePlanPictureRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Picture" msprop:Generator_ColumnVarNameInTable="columnPicture" msprop:Generator_ColumnPropNameInRow="Picture" msprop:Generator_ColumnPropNameInTable="PictureColumn" msprop:Generator_UserColumnName="Picture" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

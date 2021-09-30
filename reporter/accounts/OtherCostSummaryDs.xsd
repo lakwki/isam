@@ -1,0 +1,727 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OtherCostSummaryDs" targetNamespace="http://tempuri.org/OtherCostSummaryDs.xsd" xmlns:mstns="http://tempuri.org/OtherCostSummaryDs.xsd" xmlns="http://tempuri.org/OtherCostSummaryDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="6" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString2 (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ConnectionString2" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString1 (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ConnectionString1" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAM_20111110ConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAM_20111110ConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAM_20111110ConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMNSS04" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMNSS04 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMNSS04" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString3 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMConnectionString3" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OtherCostSummaryTableAdapter" GeneratorDataComponentClassName="OtherCostSummaryTableAdapter" Name="OtherCostSummary" UserDataComponentName="OtherCostSummaryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMConnectionString3 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT	i.ShipmentId, i.InvoicePrefix, i.InvoiceSeq, i.InvoiceYear, 
+	CONVERT(varchar(15), i.InvoicePrefix + '/' + RIGHT('00000' + CONVERT(varchar, i.InvoiceSeq), 5) + '/' + CONVERT(varchar, i.InvoiceYear)) AS InvoiceNo, 
+	i.InvoiceDate, c.ContractNo, s.DeliveryNo, i.SupplierInvoiceNo, 
+	ISNULL(i.InvoiceDate, s.CustomerAtWarehouseDate) AS DeliveryDatae,
+	(SELECT Code FROM NSLDB01.NSLDB.dbo.Season AS Season_1 WHERE (SeasonId = c.SeasonId)) AS SeasonCode,
+	(SELECT Name FROM CountryOfOrigin WHERE (CountryOfOriginId = s.CountryOfOriginId)) AS CoName,
+	(SELECT OfficeCode FROM NSLDB01.NSLDB.dbo.Office AS Office_1 WHERE (OfficeId = c.OfficeId)) AS OfficeCode,
+	(SELECT Name FROM NSLDB01.NSLIndustry.dbo.Vendor AS Vendor WHERE (VendorId = s.VendorId)) AS Supplier,
+	(SELECT Code FROM NSLDB01.NSLDB.dbo.OfficeStructure AS OfficeStructure WHERE (OfficeStructureId = c.ProductTeamId)) AS ProductCode,
+	(SELECT ItemNo FROM Product WHERE (ProductId = c.ProductId)) AS ItemNo,
+	(SELECT PackingUnitDesc FROM PackingUnit WHERE (PackingUnitId = c.PackingUnitId)) AS UNIT, 
+	s.TotalShippedQty, c.PiecesPerPack, s.TotalShippedAmt AS SalesAmount, 
+	s.TotalShippedSupplierGmtAmtAfterDiscount AS SupplierAmountDiscount, s.TotalShippedNetFOBAmt AS FOBAmount, 
+	s.TotalShippedAmtAfterDiscount AS UKAmountDiscount, s.TotalShippedSupplierGmtAmt AS SupplierAmount,
+	(SELECT CurrencyCode FROM Currency WHERE (CurrencyId = s.SellCurrencyId)) AS CurrencyCode, er.ExchangeRate,
+	(SELECT CurrencyCode FROM Currency AS Currency_1 WHERE (CurrencyId = 3)) AS BaseCurrencyCode, br.ExchangeRate AS BaseExchangeRate, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 1 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS PackagingCost, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 2 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS ImportQuotaCharge, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 4 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS RepairCost, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 5 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS OutsideLabTestCost, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 6 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS OtherFabricCost, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 7 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS SellingPriceDiscount, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 8 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS FactoryPriceDiscount, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 9 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS PrintAndDevelopmentCost, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 10 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS FreightCost, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 11 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS DutyCost, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 12 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS TransportationCost, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 13 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS FragranceCost, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 14 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS ToolingCost, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 21 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS KitDevelopment, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 22 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS FabricLiabProvision, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 23 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS RepeatDiscount, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 24 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS DevelopmentSampleCost, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 25 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS SampleLengthCost, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 26 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS FreightForBodycare, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 27 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS CourierCostForSample, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 28 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS MarginDifference, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 29 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS RecoveryHomeAndHard, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 30 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS NTNRecovery, 
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 31 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS CoverForQuenbyFabric,
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 32 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS ClaimRecovery,
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 33 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS QCCentre,
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 34 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS MailOrderBoxCost,
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 35 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS ForwarderCharge,
+	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 36 THEN oc.OtherCostAmt ELSE 0 END), 0) * sd.ShippedQty) AS LicenceCost,
+                TradingAirFreight=	SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 37 THEN oc.OtherCostAmt ELSE 0 END),0) * sd.ShippedQty),
+                ClaimsRecovery=SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 38 THEN oc.OtherCostAmt ELSE 0 END),0) * sd.ShippedQty),
+                CoatingCost = SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 39 THEN oc.OtherCostAmt ELSE 0 END),0) * sd.ShippedQty),
+                Slippage = SUM(ISNULL((CASE WHEN oc.OtherCostTypeId = 42 THEN oc.OtherCostAmt ELSE 0 END),0) * sd.ShippedQty)
+
+FROM            Invoice AS i INNER JOIN
+                         NSLDB.dbo.AccountFinancialCalender AS ac ON ac.StartDate &lt;= i.InvoiceDate AND ac.EndDate + 1 &gt; i.InvoiceDate INNER JOIN
+                         Shipment AS s ON s.ShipmentId = i.ShipmentId INNER JOIN
+                         Contract AS c ON c.ContractId = s.ContractId INNER JOIN
+                         ExchangeRate AS er ON er.CurrencyId = s.SellCurrencyId AND er.ExchangeRateTypeId = 1 AND i.InvoiceDate BETWEEN er.EffectiveDateFrom AND 
+                         er.EffectiveDateTo INNER JOIN
+                         ExchangeRate AS br ON br.CurrencyId = 1 AND br.ExchangeRateTypeId = 1 AND i.InvoiceDate BETWEEN br.EffectiveDateFrom AND br.EffectiveDateTo INNER JOIN
+                         ShipmentDetail AS sd ON sd.ShipmentId = i.ShipmentId AND sd.Status = 1 INNER JOIN
+                         OtherCost AS oc ON oc.ShipmentDetailId = sd.ShipmentDetailId AND oc.Status = 1
+WHERE        (ac.BudgetYear = 2009) AND (ac.Period BETWEEN 5 AND 5) AND (c.OfficeId IN (1, 2))
+GROUP BY i.ShipmentId, i.InvoicePrefix, i.InvoiceSeq, i.InvoiceYear, i.InvoiceDate, i.SupplierInvoiceNo, c.ProductTeamId, c.ProductId, c.PackingUnitId, c.SeasonId, c.OfficeId, 
+                         c.PiecesPerPack, c.ContractNo, s.DeliveryNo, s.CountryOfOriginId, s.VendorId, s.TotalShippedQty, s.SellCurrencyId, s.TotalShippedAmt, 
+                         s.TotalShippedSupplierGmtAmt, s.TotalShippedSupplierGmtAmtAfterDiscount, s.TotalShippedNetFOBAmt, s.TotalShippedAmtAfterDiscount, er.ExchangeRate, 
+                         br.ExchangeRate, s.CustomerAtWarehouseDate</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="InvoicePrefix" DataSetColumn="InvoicePrefix" />
+              <Mapping SourceColumn="InvoiceSeq" DataSetColumn="InvoiceSeq" />
+              <Mapping SourceColumn="InvoiceYear" DataSetColumn="InvoiceYear" />
+              <Mapping SourceColumn="InvoiceDate" DataSetColumn="InvoiceDate" />
+              <Mapping SourceColumn="SupplierInvoiceNo" DataSetColumn="SupplierInvoiceNo" />
+              <Mapping SourceColumn="PiecesPerPack" DataSetColumn="PiecesPerPack" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="TotalShippedQty" DataSetColumn="TotalShippedQty" />
+              <Mapping SourceColumn="ExchangeRate" DataSetColumn="ExchangeRate" />
+              <Mapping SourceColumn="RepairCost" DataSetColumn="RepairCost" />
+              <Mapping SourceColumn="FreightCost" DataSetColumn="FreightCost" />
+              <Mapping SourceColumn="DutyCost" DataSetColumn="DutyCost" />
+              <Mapping SourceColumn="BaseExchangeRate" DataSetColumn="BaseExchangeRate" />
+              <Mapping SourceColumn="InvoiceNo" DataSetColumn="InvoiceNo" />
+              <Mapping SourceColumn="Supplier" DataSetColumn="Supplier" />
+              <Mapping SourceColumn="ProductCode" DataSetColumn="ProductCode" />
+              <Mapping SourceColumn="ItemNo" DataSetColumn="ItemNo" />
+              <Mapping SourceColumn="UNIT" DataSetColumn="UNIT" />
+              <Mapping SourceColumn="CurrencyCode" DataSetColumn="CurrencyCode" />
+              <Mapping SourceColumn="SalesAmount" DataSetColumn="SalesAmount" />
+              <Mapping SourceColumn="SupplierAmount" DataSetColumn="SupplierAmount" />
+              <Mapping SourceColumn="PackagingCost" DataSetColumn="PackagingCost" />
+              <Mapping SourceColumn="ImportQuotaCharge" DataSetColumn="ImportQuotaCharge" />
+              <Mapping SourceColumn="OutsideLabTestCost" DataSetColumn="OutsideLabTestCost" />
+              <Mapping SourceColumn="OtherFabricCost" DataSetColumn="OtherFabricCost" />
+              <Mapping SourceColumn="SellingPriceDiscount" DataSetColumn="SellingPriceDiscount" />
+              <Mapping SourceColumn="FactoryPriceDiscount" DataSetColumn="FactoryPriceDiscount" />
+              <Mapping SourceColumn="PrintAndDevelopmentCost" DataSetColumn="WashPrintAndDevelopCost" />
+              <Mapping SourceColumn="TransportationCost" DataSetColumn="TransportationCost" />
+              <Mapping SourceColumn="FragranceCost" DataSetColumn="FragranceCost" />
+              <Mapping SourceColumn="ToolingCost" DataSetColumn="ToolingCost" />
+              <Mapping SourceColumn="BaseCurrencyCode" DataSetColumn="BaseCurrencyCode" />
+              <Mapping SourceColumn="ShipmentId" DataSetColumn="ShipmentId" />
+              <Mapping SourceColumn="SeasonCode" DataSetColumn="SeasonCode" />
+              <Mapping SourceColumn="CoName" DataSetColumn="CoName" />
+              <Mapping SourceColumn="OfficeCode" DataSetColumn="OfficeCode" />
+              <Mapping SourceColumn="DeliveryDatae" DataSetColumn="DeliveryDatae" />
+              <Mapping SourceColumn="SupplierAmountDiscount" DataSetColumn="SupplierAmountDiscount" />
+              <Mapping SourceColumn="FOBAmount" DataSetColumn="FOBAmount" />
+              <Mapping SourceColumn="UKAmountDiscount" DataSetColumn="UKAmountDiscount" />
+              <Mapping SourceColumn="KitDevelopment" DataSetColumn="KitDevelopment" />
+              <Mapping SourceColumn="RepeatDiscount" DataSetColumn="RepeatDiscount" />
+              <Mapping SourceColumn="DevelopmentSampleCost" DataSetColumn="DevelopmentSampleCost" />
+              <Mapping SourceColumn="SampleLengthCost" DataSetColumn="SampleLengthCost" />
+              <Mapping SourceColumn="FreightForBodycare" DataSetColumn="FreightForBodycare" />
+              <Mapping SourceColumn="CourierCostForSample" DataSetColumn="CourierCostForSample" />
+              <Mapping SourceColumn="FabricLiabProvision" DataSetColumn="FabricLiabProvision" />
+              <Mapping SourceColumn="MarginDifference" DataSetColumn="MarginDifference" />
+              <Mapping SourceColumn="RecoveryHomeAndHard" DataSetColumn="RecoveryHomeAndHard" />
+              <Mapping SourceColumn="NTNRecovery" DataSetColumn="NTNRecovery" />
+              <Mapping SourceColumn="CoverForQuenbyFabric" DataSetColumn="CoverForQuenbyFabric" />
+              <Mapping SourceColumn="ClaimRecovery" DataSetColumn="ClaimRecovery" />
+              <Mapping SourceColumn="QCCentre" DataSetColumn="QCCentre" />
+              <Mapping SourceColumn="MailOrderBoxCost" DataSetColumn="MailOrderBoxCost" />
+              <Mapping SourceColumn="ForwarderCharge" DataSetColumn="ForwarderCharge" />
+              <Mapping SourceColumn="LicenceCost" DataSetColumn="LicenceCost" />
+              <Mapping SourceColumn="TradingAirFreight" DataSetColumn="TradingAirFreight" />
+              <Mapping SourceColumn="ClaimsRecovery" DataSetColumn="ClaimsRecovery" />
+              <Mapping SourceColumn="CoatingCost" DataSetColumn="CoatingCost" />
+              <Mapping SourceColumn="Slippage" DataSetColumn="Slippage" />
+              <Mapping SourceColumn="QCCenterMyanmar" DataSetColumn="QCCenterMyanmar" />
+              <Mapping SourceColumn="CMPHandling" DataSetColumn="CMPHandling" />
+              <Mapping SourceColumn="CMPQAComm" DataSetColumn="CMPQAComm" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OtherCostSunAccountCodeTableAdapter" GeneratorDataComponentClassName="OtherCostSunAccountCodeTableAdapter" Name="OtherCostSunAccountCode" UserDataComponentName="OtherCostSunAccountCodeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ISAMConnectionString3 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+	PackagingCost		= max(case when OtherCostTypeId = 1  then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	ImportQuotaCharge	= max(case when OtherCostTypeId = 2  then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	ExportQuotaCharge	= max(case when OtherCostTypeId = 3  then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	RepairCost		= max(case when OtherCostTypeId = 4  then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	OutsideLabTestCost	= max(case when OtherCostTypeId = 5  then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	OtherFabricCost		= max(case when OtherCostTypeId = 6  then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	SellingPrxDiscount		= max(case when OtherCostTypeId = 7  then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	FtyPrxDiscount		= max(case when OtherCostTypeId = 8  then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	WashingPrintAndDevCost	= max(case when OtherCostTypeId = 9  then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	FreightCost		= max(case when OtherCostTypeId = 10 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	DutyCost			= max(case when OtherCostTypeId = 11 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	TransportationCost		= max(case when OtherCostTypeId = 12 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	FragranceCost		= max(case when OtherCostTypeId = 13 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	ToolingCost		= max(case when OtherCostTypeId = 14 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	DesignFee		= max(case when OtherCostTypeId = 15 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	AgencyCommission	= max(case when OtherCostTypeId = 16 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	iNetActualMarginDiff	= max(case when OtherCostTypeId = 17 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	ProvisionOfClaims		= max(case when OtherCostTypeId = 18 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	FinanceCost		= max(case when OtherCostTypeId = 19 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	AirFreightCost		= max(case when OtherCostTypeId = 20 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	KitDevelopment		= max(case when OtherCostTypeId = 21 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	FabricLiabProvision	= max(case when OtherCostTypeId = 22 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	RepeatDiscount		= max(case when OtherCostTypeId = 23 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	DevelopmentSampleCost	= max(case when OtherCostTypeId = 24 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	SampleLengthCost		= max(case when OtherCostTypeId = 25 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	FreightForBodycare	= max(case when OtherCostTypeId = 26 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	CourierCostsForSample	= max(case when OtherCostTypeId = 27 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end),
+	MarginDifference		= max(case when OtherCostTypeId = 28 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end), 
+	RecoveryHomeAndHard	= max(case when OtherCostTypeId = 29 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end),
+	NTNRecovery		= max(case when OtherCostTypeId = 30 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end),
+	CoverForQuenbyFabric	= max(case when OtherCostTypeId = 31 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end),
+	ClaimRecovery		= max(case when OtherCostTypeId = 32 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end),
+	QCCentre			= max(case when OtherCostTypeId = 33 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end),
+	MailOrderBoxCost		= max(case when OtherCostTypeId = 34 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end),
+	ForwarderCharge		= max(case when OtherCostTypeId = 35 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end),
+	LicenceCost		= max(case when OtherCostTypeId = 36 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end),
+	TradingAirFreight		= max(case when OtherCostTypeId = 37 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end),
+	ClaimsRecovery		= max(case when OtherCostTypeId = 38 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end),
+	CoatingCost		= max(case when OtherCostTypeId = 39 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end),
+	Slippage		= max(case when OtherCostTypeId = 42 then ISNULL(Convert(Varchar,SunAccountCode),'') else '' end)
+from OtherCostType
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PackagingCost" DataSetColumn="PackagingCost" />
+              <Mapping SourceColumn="ImportQuotaCharge" DataSetColumn="ImportQuotaCharge" />
+              <Mapping SourceColumn="ExportQuotaCharge" DataSetColumn="ExportQuotaCharge" />
+              <Mapping SourceColumn="RepairCost" DataSetColumn="RepairCost" />
+              <Mapping SourceColumn="OutsideLabTestCost" DataSetColumn="OutsideLabTestCost" />
+              <Mapping SourceColumn="OtherFabricCost" DataSetColumn="OtherFabricCost" />
+              <Mapping SourceColumn="SellingPrxDiscount" DataSetColumn="SellingPrxDiscount" />
+              <Mapping SourceColumn="FtyPrxDiscount" DataSetColumn="FtyPrxDiscount" />
+              <Mapping SourceColumn="WashingPrintAndDevCost" DataSetColumn="WashingPrintAndDevCost" />
+              <Mapping SourceColumn="FreightCost" DataSetColumn="FreightCost" />
+              <Mapping SourceColumn="DutyCost" DataSetColumn="DutyCost" />
+              <Mapping SourceColumn="TransportationCost" DataSetColumn="TransportationCost" />
+              <Mapping SourceColumn="FragranceCost" DataSetColumn="FragranceCost" />
+              <Mapping SourceColumn="ToolingCost" DataSetColumn="ToolingCost" />
+              <Mapping SourceColumn="DesignFee" DataSetColumn="DesignFee" />
+              <Mapping SourceColumn="AgencyCommission" DataSetColumn="AgencyCommission" />
+              <Mapping SourceColumn="iNetActualMarginDiff" DataSetColumn="iNetActualMarginDiff" />
+              <Mapping SourceColumn="ProvisionOfClaims" DataSetColumn="ProvisionOfClaims" />
+              <Mapping SourceColumn="FinanceCost" DataSetColumn="FinanceCost" />
+              <Mapping SourceColumn="AirFreightCost" DataSetColumn="AirFreightCost" />
+              <Mapping SourceColumn="KitDevelopment" DataSetColumn="KitDevelopment" />
+              <Mapping SourceColumn="FabricLiabProvision" DataSetColumn="FabricLiabProvision" />
+              <Mapping SourceColumn="RepeatDiscount" DataSetColumn="RepeatDiscount" />
+              <Mapping SourceColumn="DevelopmentSampleCost" DataSetColumn="DevelopmentSampleCost" />
+              <Mapping SourceColumn="SampleLengthCost" DataSetColumn="SampleLengthCost" />
+              <Mapping SourceColumn="FreightForBodycare" DataSetColumn="FreightForBodycare" />
+              <Mapping SourceColumn="CourierCostsForSample" DataSetColumn="CourierCostsForSample" />
+              <Mapping SourceColumn="MarginDifference" DataSetColumn="MarginDifference" />
+              <Mapping SourceColumn="RecoveryHomeAndHard" DataSetColumn="RecoveryHomeAndHard" />
+              <Mapping SourceColumn="NTNRecovery" DataSetColumn="NTNRecovery" />
+              <Mapping SourceColumn="CoverForQuenbyFabric" DataSetColumn="CoverForQuenbyFabric" />
+              <Mapping SourceColumn="ClaimRecovery" DataSetColumn="ClaimRecovery" />
+              <Mapping SourceColumn="QCCentre" DataSetColumn="QCCentre" />
+              <Mapping SourceColumn="MailOrderBoxCost" DataSetColumn="MailOrderBoxCost" />
+              <Mapping SourceColumn="ForwarderCharge" DataSetColumn="ForwarderCharge" />
+              <Mapping SourceColumn="LicenceCost" DataSetColumn="LicenceCost" />
+              <Mapping SourceColumn="TradingAirFreight" DataSetColumn="TradingAirFreight" />
+              <Mapping SourceColumn="ClaimsRecovery" DataSetColumn="ClaimsRecovery" />
+              <Mapping SourceColumn="CoatingCost" DataSetColumn="CoatingCost" />
+              <Mapping SourceColumn="Slippage" DataSetColumn="Slippage" />
+              <Mapping SourceColumn="QCCenterMyanmar" DataSetColumn="QCCenterMyanmar" />
+              <Mapping SourceColumn="CMPHandling" DataSetColumn="CMPHandling" />
+              <Mapping SourceColumn="CMPQAComm" DataSetColumn="CMPQAComm" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OtherCostSummaryDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OtherCostSummaryDs" msprop:Generator_UserDSName="OtherCostSummaryDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OtherCostSummary" msprop:Generator_UserTableName="OtherCostSummary" msprop:Generator_RowEvArgName="OtherCostSummaryRowChangeEvent" msprop:Generator_TableVarName="tableOtherCostSummary" msprop:Generator_TablePropName="OtherCostSummary" msprop:Generator_RowDeletingName="OtherCostSummaryRowDeleting" msprop:Generator_RowChangingName="OtherCostSummaryRowChanging" msprop:Generator_RowDeletedName="OtherCostSummaryRowDeleted" msprop:Generator_RowEvHandlerName="OtherCostSummaryRowChangeEventHandler" msprop:Generator_TableClassName="OtherCostSummaryDataTable" msprop:Generator_RowChangedName="OtherCostSummaryRowChanged" msprop:Generator_RowClassName="OtherCostSummaryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InvoicePrefix" msprop:Generator_ColumnVarNameInTable="columnInvoicePrefix" msprop:Generator_ColumnPropNameInRow="InvoicePrefix" msprop:Generator_ColumnPropNameInTable="InvoicePrefixColumn" msprop:Generator_UserColumnName="InvoicePrefix" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InvoiceSeq" msprop:Generator_ColumnVarNameInTable="columnInvoiceSeq" msprop:Generator_ColumnPropNameInRow="InvoiceSeq" msprop:Generator_ColumnPropNameInTable="InvoiceSeqColumn" msprop:Generator_UserColumnName="InvoiceSeq" type="xs:int" minOccurs="0" />
+              <xs:element name="InvoiceYear" msprop:Generator_ColumnVarNameInTable="columnInvoiceYear" msprop:Generator_ColumnPropNameInRow="InvoiceYear" msprop:Generator_ColumnPropNameInTable="InvoiceYearColumn" msprop:Generator_UserColumnName="InvoiceYear" type="xs:int" minOccurs="0" />
+              <xs:element name="InvoiceDate" msprop:Generator_ColumnVarNameInTable="columnInvoiceDate" msprop:Generator_ColumnPropNameInRow="InvoiceDate" msprop:Generator_ColumnPropNameInTable="InvoiceDateColumn" msprop:Generator_UserColumnName="InvoiceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SupplierInvoiceNo" msprop:Generator_ColumnVarNameInTable="columnSupplierInvoiceNo" msprop:Generator_ColumnPropNameInRow="SupplierInvoiceNo" msprop:Generator_ColumnPropNameInTable="SupplierInvoiceNoColumn" msprop:Generator_UserColumnName="SupplierInvoiceNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PiecesPerPack" msprop:Generator_ColumnVarNameInTable="columnPiecesPerPack" msprop:Generator_ColumnPropNameInRow="PiecesPerPack" msprop:Generator_ColumnPropNameInTable="PiecesPerPackColumn" msprop:Generator_UserColumnName="PiecesPerPack" type="xs:int" />
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" type="xs:int" />
+              <xs:element name="TotalShippedQty" msprop:Generator_ColumnVarNameInTable="columnTotalShippedQty" msprop:Generator_ColumnPropNameInRow="TotalShippedQty" msprop:Generator_ColumnPropNameInTable="TotalShippedQtyColumn" msprop:Generator_UserColumnName="TotalShippedQty" type="xs:int" />
+              <xs:element name="ExchangeRate" msprop:Generator_ColumnVarNameInTable="columnExchangeRate" msprop:Generator_ColumnPropNameInRow="ExchangeRate" msprop:Generator_ColumnPropNameInTable="ExchangeRateColumn" msprop:Generator_UserColumnName="ExchangeRate" type="xs:decimal" />
+              <xs:element name="RepairCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRepairCost" msprop:Generator_ColumnPropNameInRow="RepairCost" msprop:Generator_ColumnPropNameInTable="RepairCostColumn" msprop:Generator_UserColumnName="RepairCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FreightCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFreightCost" msprop:Generator_ColumnPropNameInRow="FreightCost" msprop:Generator_ColumnPropNameInTable="FreightCostColumn" msprop:Generator_UserColumnName="FreightCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DutyCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDutyCost" msprop:Generator_ColumnPropNameInRow="DutyCost" msprop:Generator_ColumnPropNameInTable="DutyCostColumn" msprop:Generator_UserColumnName="DutyCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BaseExchangeRate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBaseExchangeRate" msprop:Generator_ColumnPropNameInRow="BaseExchangeRate" msprop:Generator_ColumnPropNameInTable="BaseExchangeRateColumn" msprop:Generator_UserColumnName="BaseExchangeRate" type="xs:decimal" />
+              <xs:element name="InvoiceNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInvoiceNo" msprop:Generator_ColumnPropNameInRow="InvoiceNo" msprop:Generator_ColumnPropNameInTable="InvoiceNoColumn" msprop:Generator_UserColumnName="InvoiceNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Supplier" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSupplier" msprop:Generator_ColumnPropNameInRow="Supplier" msprop:Generator_ColumnPropNameInTable="SupplierColumn" msprop:Generator_UserColumnName="Supplier" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProductCode" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnProductCode" msprop:Generator_ColumnPropNameInRow="ProductCode" msprop:Generator_ColumnPropNameInTable="ProductCodeColumn" msprop:Generator_UserColumnName="ProductCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemNo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" msprop:Generator_UserColumnName="ItemNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UNIT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUNIT" msprop:Generator_ColumnPropNameInRow="UNIT" msprop:Generator_ColumnPropNameInTable="UNITColumn" msprop:Generator_UserColumnName="UNIT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CurrencyCode" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCurrencyCode" msprop:Generator_ColumnPropNameInRow="CurrencyCode" msprop:Generator_ColumnPropNameInTable="CurrencyCodeColumn" msprop:Generator_UserColumnName="CurrencyCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SalesAmount" msprop:Generator_ColumnVarNameInTable="columnSalesAmount" msprop:Generator_ColumnPropNameInRow="SalesAmount" msprop:Generator_ColumnPropNameInTable="SalesAmountColumn" msprop:Generator_UserColumnName="SalesAmount" type="xs:decimal" />
+              <xs:element name="SupplierAmount" msprop:Generator_ColumnVarNameInTable="columnSupplierAmount" msprop:Generator_ColumnPropNameInRow="SupplierAmount" msprop:Generator_ColumnPropNameInTable="SupplierAmountColumn" msprop:Generator_UserColumnName="SupplierAmount" type="xs:decimal" />
+              <xs:element name="PackagingCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPackagingCost" msprop:Generator_ColumnPropNameInRow="PackagingCost" msprop:Generator_ColumnPropNameInTable="PackagingCostColumn" msprop:Generator_UserColumnName="PackagingCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ImportQuotaCharge" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnImportQuotaCharge" msprop:Generator_ColumnPropNameInRow="ImportQuotaCharge" msprop:Generator_ColumnPropNameInTable="ImportQuotaChargeColumn" msprop:Generator_UserColumnName="ImportQuotaCharge" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OutsideLabTestCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOutsideLabTestCost" msprop:Generator_ColumnPropNameInRow="OutsideLabTestCost" msprop:Generator_ColumnPropNameInTable="OutsideLabTestCostColumn" msprop:Generator_UserColumnName="OutsideLabTestCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OtherFabricCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOtherFabricCost" msprop:Generator_ColumnPropNameInRow="OtherFabricCost" msprop:Generator_ColumnPropNameInTable="OtherFabricCostColumn" msprop:Generator_UserColumnName="OtherFabricCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SellingPriceDiscount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSellingPriceDiscount" msprop:Generator_ColumnPropNameInRow="SellingPriceDiscount" msprop:Generator_ColumnPropNameInTable="SellingPriceDiscountColumn" msprop:Generator_UserColumnName="SellingPriceDiscount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FactoryPriceDiscount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFactoryPriceDiscount" msprop:Generator_ColumnPropNameInRow="FactoryPriceDiscount" msprop:Generator_ColumnPropNameInTable="FactoryPriceDiscountColumn" msprop:Generator_UserColumnName="FactoryPriceDiscount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="WashPrintAndDevelopCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWashPrintAndDevelopCost" msprop:Generator_ColumnPropNameInRow="WashPrintAndDevelopCost" msprop:Generator_ColumnPropNameInTable="WashPrintAndDevelopCostColumn" msprop:Generator_UserColumnName="WashPrintAndDevelopCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TransportationCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTransportationCost" msprop:Generator_ColumnPropNameInRow="TransportationCost" msprop:Generator_ColumnPropNameInTable="TransportationCostColumn" msprop:Generator_UserColumnName="TransportationCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FragranceCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFragranceCost" msprop:Generator_ColumnPropNameInRow="FragranceCost" msprop:Generator_ColumnPropNameInTable="FragranceCostColumn" msprop:Generator_UserColumnName="FragranceCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ToolingCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnToolingCost" msprop:Generator_ColumnPropNameInRow="ToolingCost" msprop:Generator_ColumnPropNameInTable="ToolingCostColumn" msprop:Generator_UserColumnName="ToolingCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BaseCurrencyCode" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBaseCurrencyCode" msprop:Generator_ColumnPropNameInRow="BaseCurrencyCode" msprop:Generator_ColumnPropNameInTable="BaseCurrencyCodeColumn" msprop:Generator_UserColumnName="BaseCurrencyCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShipmentId" msprop:Generator_ColumnVarNameInTable="columnShipmentId" msprop:Generator_ColumnPropNameInRow="ShipmentId" msprop:Generator_ColumnPropNameInTable="ShipmentIdColumn" msprop:Generator_UserColumnName="ShipmentId" type="xs:int" />
+              <xs:element name="SeasonCode" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSeasonCode" msprop:Generator_ColumnPropNameInRow="SeasonCode" msprop:Generator_ColumnPropNameInTable="SeasonCodeColumn" msprop:Generator_UserColumnName="SeasonCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CoName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCoName" msprop:Generator_ColumnPropNameInRow="CoName" msprop:Generator_ColumnPropNameInTable="CoNameColumn" msprop:Generator_UserColumnName="CoName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OfficeCode" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOfficeCode" msprop:Generator_ColumnPropNameInRow="OfficeCode" msprop:Generator_ColumnPropNameInTable="OfficeCodeColumn" msprop:Generator_UserColumnName="OfficeCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryDatae" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDeliveryDatae" msprop:Generator_ColumnPropNameInRow="DeliveryDatae" msprop:Generator_ColumnPropNameInTable="DeliveryDataeColumn" msprop:Generator_UserColumnName="DeliveryDatae" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SupplierAmountDiscount" msprop:Generator_ColumnVarNameInTable="columnSupplierAmountDiscount" msprop:Generator_ColumnPropNameInRow="SupplierAmountDiscount" msprop:Generator_ColumnPropNameInTable="SupplierAmountDiscountColumn" msprop:Generator_UserColumnName="SupplierAmountDiscount" type="xs:decimal" />
+              <xs:element name="FOBAmount" msprop:Generator_ColumnVarNameInTable="columnFOBAmount" msprop:Generator_ColumnPropNameInRow="FOBAmount" msprop:Generator_ColumnPropNameInTable="FOBAmountColumn" msprop:Generator_UserColumnName="FOBAmount" type="xs:decimal" />
+              <xs:element name="DesignFee" msprop:Generator_ColumnVarNameInTable="columnDesignFee" msprop:Generator_ColumnPropNameInRow="DesignFee" msprop:Generator_ColumnPropNameInTable="DesignFeeColumn" msprop:Generator_UserColumnName="DesignFee" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UKAmountDiscount" msprop:Generator_ColumnVarNameInTable="columnUKAmountDiscount" msprop:Generator_ColumnPropNameInRow="UKAmountDiscount" msprop:Generator_ColumnPropNameInTable="UKAmountDiscountColumn" msprop:Generator_UserColumnName="UKAmountDiscount" type="xs:decimal" />
+              <xs:element name="AgencyCommission" msprop:Generator_ColumnVarNameInTable="columnAgencyCommission" msprop:Generator_ColumnPropNameInRow="AgencyCommission" msprop:Generator_ColumnPropNameInTable="AgencyCommissionColumn" msprop:Generator_UserColumnName="AgencyCommission" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FinanceCost" msprop:Generator_ColumnVarNameInTable="columnFinanceCost" msprop:Generator_ColumnPropNameInRow="FinanceCost" msprop:Generator_ColumnPropNameInTable="FinanceCostColumn" msprop:Generator_UserColumnName="FinanceCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AirFreightCost" msprop:Generator_ColumnVarNameInTable="columnAirFreightCost" msprop:Generator_ColumnPropNameInRow="AirFreightCost" msprop:Generator_ColumnPropNameInTable="AirFreightCostColumn" msprop:Generator_UserColumnName="AirFreightCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="iNetActualMarginDiff" msprop:Generator_ColumnVarNameInTable="columniNetActualMarginDiff" msprop:Generator_ColumnPropNameInRow="iNetActualMarginDiff" msprop:Generator_ColumnPropNameInTable="iNetActualMarginDiffColumn" msprop:Generator_UserColumnName="iNetActualMarginDiff" type="xs:decimal" minOccurs="0" />
+              <xs:element name="KitDevelopment" msprop:Generator_ColumnVarNameInTable="columnKitDevelopment" msprop:Generator_ColumnPropNameInRow="KitDevelopment" msprop:Generator_ColumnPropNameInTable="KitDevelopmentColumn" msprop:Generator_UserColumnName="KitDevelopment" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RepeatDiscount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRepeatDiscount" msprop:Generator_ColumnPropNameInRow="RepeatDiscount" msprop:Generator_ColumnPropNameInTable="RepeatDiscountColumn" msprop:Generator_UserColumnName="RepeatDiscount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DevelopmentSampleCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDevelopmentSampleCost" msprop:Generator_ColumnPropNameInRow="DevelopmentSampleCost" msprop:Generator_ColumnPropNameInTable="DevelopmentSampleCostColumn" msprop:Generator_UserColumnName="DevelopmentSampleCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SampleLengthCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSampleLengthCost" msprop:Generator_ColumnPropNameInRow="SampleLengthCost" msprop:Generator_ColumnPropNameInTable="SampleLengthCostColumn" msprop:Generator_UserColumnName="SampleLengthCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FreightForBodycare" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFreightForBodycare" msprop:Generator_ColumnPropNameInRow="FreightForBodycare" msprop:Generator_ColumnPropNameInTable="FreightForBodycareColumn" msprop:Generator_UserColumnName="FreightForBodycare" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CourierCostForSample" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCourierCostForSample" msprop:Generator_ColumnPropNameInRow="CourierCostForSample" msprop:Generator_ColumnPropNameInTable="CourierCostForSampleColumn" msprop:Generator_UserColumnName="CourierCostForSample" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FabricLiabProvision" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFabricLiabProvision" msprop:Generator_ColumnPropNameInRow="FabricLiabProvision" msprop:Generator_ColumnPropNameInTable="FabricLiabProvisionColumn" msprop:Generator_UserColumnName="FabricLiabProvision" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MarginDifference" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMarginDifference" msprop:Generator_ColumnPropNameInRow="MarginDifference" msprop:Generator_ColumnPropNameInTable="MarginDifferenceColumn" msprop:Generator_UserColumnName="MarginDifference" type="xs:decimal" minOccurs="0" />
+              <xs:element name="RecoveryHomeAndHard" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRecoveryHomeAndHard" msprop:Generator_ColumnPropNameInRow="RecoveryHomeAndHard" msprop:Generator_ColumnPropNameInTable="RecoveryHomeAndHardColumn" msprop:Generator_UserColumnName="RecoveryHomeAndHard" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NTNRecovery" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNTNRecovery" msprop:Generator_ColumnPropNameInRow="NTNRecovery" msprop:Generator_ColumnPropNameInTable="NTNRecoveryColumn" msprop:Generator_UserColumnName="NTNRecovery" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CoverForQuenbyFabric" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCoverForQuenbyFabric" msprop:Generator_ColumnPropNameInRow="CoverForQuenbyFabric" msprop:Generator_ColumnPropNameInTable="CoverForQuenbyFabricColumn" msprop:Generator_UserColumnName="CoverForQuenbyFabric" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ClaimRecovery" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnClaimRecovery" msprop:Generator_ColumnPropNameInRow="ClaimRecovery" msprop:Generator_ColumnPropNameInTable="ClaimRecoveryColumn" msprop:Generator_UserColumnName="ClaimRecovery" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QCCentre" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnQCCentre" msprop:Generator_ColumnPropNameInRow="QCCentre" msprop:Generator_ColumnPropNameInTable="QCCentreColumn" msprop:Generator_UserColumnName="QCCentre" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MailOrderBoxCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMailOrderBoxCost" msprop:Generator_ColumnPropNameInRow="MailOrderBoxCost" msprop:Generator_ColumnPropNameInTable="MailOrderBoxCostColumn" msprop:Generator_UserColumnName="MailOrderBoxCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ForwarderCharge" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnForwarderCharge" msprop:Generator_ColumnPropNameInRow="ForwarderCharge" msprop:Generator_ColumnPropNameInTable="ForwarderChargeColumn" msprop:Generator_UserColumnName="ForwarderCharge" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LicenceCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLicenceCost" msprop:Generator_ColumnPropNameInRow="LicenceCost" msprop:Generator_ColumnPropNameInTable="LicenceCostColumn" msprop:Generator_UserColumnName="LicenceCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TradingAirFreight" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTradingAirFreight" msprop:Generator_ColumnPropNameInRow="TradingAirFreight" msprop:Generator_ColumnPropNameInTable="TradingAirFreightColumn" msprop:Generator_UserColumnName="TradingAirFreight" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ClaimsRecovery" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnClaimsRecovery" msprop:Generator_ColumnPropNameInRow="ClaimsRecovery" msprop:Generator_ColumnPropNameInTable="ClaimsRecoveryColumn" msprop:Generator_UserColumnName="ClaimsRecovery" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CoatingCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCoatingCost" msprop:Generator_ColumnPropNameInRow="CoatingCost" msprop:Generator_ColumnPropNameInTable="CoatingCostColumn" msprop:Generator_UserColumnName="CoatingCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Slippage" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSlippage" msprop:Generator_ColumnPropNameInRow="Slippage" msprop:Generator_ColumnPropNameInTable="SlippageColumn" msprop:Generator_UserColumnName="Slippage" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QCCenterMyanmar" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnQCCenterMyanmar" msprop:Generator_ColumnPropNameInRow="QCCenterMyanmar" msprop:Generator_ColumnPropNameInTable="QCCenterMyanmarColumn" msprop:Generator_UserColumnName="QCCenterMyanmar" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CMPHandling" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCMPHandling" msprop:Generator_ColumnPropNameInRow="CMPHandling" msprop:Generator_ColumnPropNameInTable="CMPHandlingColumn" msprop:Generator_UserColumnName="CMPHandling" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CMPQAComm" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCMPQAComm" msprop:Generator_ColumnPropNameInRow="CMPQAComm" msprop:Generator_ColumnPropNameInTable="CMPQACommColumn" msprop:Generator_UserColumnName="CMPQAComm" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OtherCostSunAccountCode" msprop:Generator_TableClassName="OtherCostSunAccountCodeDataTable" msprop:Generator_TableVarName="tableOtherCostSunAccountCode" msprop:Generator_RowChangedName="OtherCostSunAccountCodeRowChanged" msprop:Generator_TablePropName="OtherCostSunAccountCode" msprop:Generator_RowDeletingName="OtherCostSunAccountCodeRowDeleting" msprop:Generator_RowChangingName="OtherCostSunAccountCodeRowChanging" msprop:Generator_RowEvHandlerName="OtherCostSunAccountCodeRowChangeEventHandler" msprop:Generator_RowDeletedName="OtherCostSunAccountCodeRowDeleted" msprop:Generator_RowClassName="OtherCostSunAccountCodeRow" msprop:Generator_UserTableName="OtherCostSunAccountCode" msprop:Generator_RowEvArgName="OtherCostSunAccountCodeRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PackagingCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPackagingCost" msprop:Generator_ColumnPropNameInRow="PackagingCost" msprop:Generator_ColumnPropNameInTable="PackagingCostColumn" msprop:Generator_UserColumnName="PackagingCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ImportQuotaCharge" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnImportQuotaCharge" msprop:Generator_ColumnPropNameInRow="ImportQuotaCharge" msprop:Generator_ColumnPropNameInTable="ImportQuotaChargeColumn" msprop:Generator_UserColumnName="ImportQuotaCharge" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExportQuotaCharge" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExportQuotaCharge" msprop:Generator_ColumnPropNameInRow="ExportQuotaCharge" msprop:Generator_ColumnPropNameInTable="ExportQuotaChargeColumn" msprop:Generator_UserColumnName="ExportQuotaCharge" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RepairCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRepairCost" msprop:Generator_ColumnPropNameInRow="RepairCost" msprop:Generator_ColumnPropNameInTable="RepairCostColumn" msprop:Generator_UserColumnName="RepairCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OutsideLabTestCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOutsideLabTestCost" msprop:Generator_ColumnPropNameInRow="OutsideLabTestCost" msprop:Generator_ColumnPropNameInTable="OutsideLabTestCostColumn" msprop:Generator_UserColumnName="OutsideLabTestCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OtherFabricCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOtherFabricCost" msprop:Generator_ColumnPropNameInRow="OtherFabricCost" msprop:Generator_ColumnPropNameInTable="OtherFabricCostColumn" msprop:Generator_UserColumnName="OtherFabricCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SellingPrxDiscount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSellingPrxDiscount" msprop:Generator_ColumnPropNameInRow="SellingPrxDiscount" msprop:Generator_ColumnPropNameInTable="SellingPrxDiscountColumn" msprop:Generator_UserColumnName="SellingPrxDiscount" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FtyPrxDiscount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFtyPrxDiscount" msprop:Generator_ColumnPropNameInRow="FtyPrxDiscount" msprop:Generator_ColumnPropNameInTable="FtyPrxDiscountColumn" msprop:Generator_UserColumnName="FtyPrxDiscount" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WashingPrintAndDevCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWashingPrintAndDevCost" msprop:Generator_ColumnPropNameInRow="WashingPrintAndDevCost" msprop:Generator_ColumnPropNameInTable="WashingPrintAndDevCostColumn" msprop:Generator_UserColumnName="WashingPrintAndDevCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FreightCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFreightCost" msprop:Generator_ColumnPropNameInRow="FreightCost" msprop:Generator_ColumnPropNameInTable="FreightCostColumn" msprop:Generator_UserColumnName="FreightCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DutyCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDutyCost" msprop:Generator_ColumnPropNameInRow="DutyCost" msprop:Generator_ColumnPropNameInTable="DutyCostColumn" msprop:Generator_UserColumnName="DutyCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransportationCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTransportationCost" msprop:Generator_ColumnPropNameInRow="TransportationCost" msprop:Generator_ColumnPropNameInTable="TransportationCostColumn" msprop:Generator_UserColumnName="TransportationCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FragranceCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFragranceCost" msprop:Generator_ColumnPropNameInRow="FragranceCost" msprop:Generator_ColumnPropNameInTable="FragranceCostColumn" msprop:Generator_UserColumnName="FragranceCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ToolingCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnToolingCost" msprop:Generator_ColumnPropNameInRow="ToolingCost" msprop:Generator_ColumnPropNameInTable="ToolingCostColumn" msprop:Generator_UserColumnName="ToolingCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DesignFee" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDesignFee" msprop:Generator_ColumnPropNameInRow="DesignFee" msprop:Generator_ColumnPropNameInTable="DesignFeeColumn" msprop:Generator_UserColumnName="DesignFee" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AgencyCommission" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAgencyCommission" msprop:Generator_ColumnPropNameInRow="AgencyCommission" msprop:Generator_ColumnPropNameInTable="AgencyCommissionColumn" msprop:Generator_UserColumnName="AgencyCommission" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="iNetActualMarginDiff" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columniNetActualMarginDiff" msprop:Generator_ColumnPropNameInRow="iNetActualMarginDiff" msprop:Generator_ColumnPropNameInTable="iNetActualMarginDiffColumn" msprop:Generator_UserColumnName="iNetActualMarginDiff" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProvisionOfClaims" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnProvisionOfClaims" msprop:Generator_ColumnPropNameInRow="ProvisionOfClaims" msprop:Generator_ColumnPropNameInTable="ProvisionOfClaimsColumn" msprop:Generator_UserColumnName="ProvisionOfClaims" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FinanceCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFinanceCost" msprop:Generator_ColumnPropNameInRow="FinanceCost" msprop:Generator_ColumnPropNameInTable="FinanceCostColumn" msprop:Generator_UserColumnName="FinanceCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AirFreightCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAirFreightCost" msprop:Generator_ColumnPropNameInRow="AirFreightCost" msprop:Generator_ColumnPropNameInTable="AirFreightCostColumn" msprop:Generator_UserColumnName="AirFreightCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KitDevelopment" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnKitDevelopment" msprop:Generator_ColumnPropNameInRow="KitDevelopment" msprop:Generator_ColumnPropNameInTable="KitDevelopmentColumn" msprop:Generator_UserColumnName="KitDevelopment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FabricLiabProvision" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFabricLiabProvision" msprop:Generator_ColumnPropNameInRow="FabricLiabProvision" msprop:Generator_ColumnPropNameInTable="FabricLiabProvisionColumn" msprop:Generator_UserColumnName="FabricLiabProvision" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RepeatDiscount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRepeatDiscount" msprop:Generator_ColumnPropNameInRow="RepeatDiscount" msprop:Generator_ColumnPropNameInTable="RepeatDiscountColumn" msprop:Generator_UserColumnName="RepeatDiscount" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DevelopmentSampleCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDevelopmentSampleCost" msprop:Generator_ColumnPropNameInRow="DevelopmentSampleCost" msprop:Generator_ColumnPropNameInTable="DevelopmentSampleCostColumn" msprop:Generator_UserColumnName="DevelopmentSampleCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SampleLengthCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSampleLengthCost" msprop:Generator_ColumnPropNameInRow="SampleLengthCost" msprop:Generator_ColumnPropNameInTable="SampleLengthCostColumn" msprop:Generator_UserColumnName="SampleLengthCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FreightForBodycare" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFreightForBodycare" msprop:Generator_ColumnPropNameInRow="FreightForBodycare" msprop:Generator_ColumnPropNameInTable="FreightForBodycareColumn" msprop:Generator_UserColumnName="FreightForBodycare" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CourierCostsForSample" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCourierCostsForSample" msprop:Generator_ColumnPropNameInRow="CourierCostsForSample" msprop:Generator_ColumnPropNameInTable="CourierCostsForSampleColumn" msprop:Generator_UserColumnName="CourierCostsForSample" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MarginDifference" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMarginDifference" msprop:Generator_ColumnPropNameInRow="MarginDifference" msprop:Generator_ColumnPropNameInTable="MarginDifferenceColumn" msprop:Generator_UserColumnName="MarginDifference" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RecoveryHomeAndHard" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRecoveryHomeAndHard" msprop:Generator_ColumnPropNameInRow="RecoveryHomeAndHard" msprop:Generator_ColumnPropNameInTable="RecoveryHomeAndHardColumn" msprop:Generator_UserColumnName="RecoveryHomeAndHard" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NTNRecovery" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNTNRecovery" msprop:Generator_ColumnPropNameInRow="NTNRecovery" msprop:Generator_ColumnPropNameInTable="NTNRecoveryColumn" msprop:Generator_UserColumnName="NTNRecovery" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CoverForQuenbyFabric" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCoverForQuenbyFabric" msprop:Generator_ColumnPropNameInRow="CoverForQuenbyFabric" msprop:Generator_ColumnPropNameInTable="CoverForQuenbyFabricColumn" msprop:Generator_UserColumnName="CoverForQuenbyFabric" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClaimRecovery" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnClaimRecovery" msprop:Generator_ColumnPropNameInRow="ClaimRecovery" msprop:Generator_ColumnPropNameInTable="ClaimRecoveryColumn" msprop:Generator_UserColumnName="ClaimRecovery" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QCCentre" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnQCCentre" msprop:Generator_ColumnPropNameInRow="QCCentre" msprop:Generator_ColumnPropNameInTable="QCCentreColumn" msprop:Generator_UserColumnName="QCCentre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MailOrderBoxCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMailOrderBoxCost" msprop:Generator_ColumnPropNameInRow="MailOrderBoxCost" msprop:Generator_ColumnPropNameInTable="MailOrderBoxCostColumn" msprop:Generator_UserColumnName="MailOrderBoxCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ForwarderCharge" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnForwarderCharge" msprop:Generator_ColumnPropNameInRow="ForwarderCharge" msprop:Generator_ColumnPropNameInTable="ForwarderChargeColumn" msprop:Generator_UserColumnName="ForwarderCharge" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LicenceCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLicenceCost" msprop:Generator_ColumnPropNameInRow="LicenceCost" msprop:Generator_ColumnPropNameInTable="LicenceCostColumn" msprop:Generator_UserColumnName="LicenceCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TradingAirFreight" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTradingAirFreight" msprop:Generator_ColumnPropNameInRow="TradingAirFreight" msprop:Generator_ColumnPropNameInTable="TradingAirFreightColumn" msprop:Generator_UserColumnName="TradingAirFreight" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClaimsRecovery" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnClaimsRecovery" msprop:Generator_ColumnPropNameInRow="ClaimsRecovery" msprop:Generator_ColumnPropNameInTable="ClaimsRecoveryColumn" msprop:Generator_UserColumnName="ClaimsRecovery" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CoatingCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCoatingCost" msprop:Generator_ColumnPropNameInRow="CoatingCost" msprop:Generator_ColumnPropNameInTable="CoatingCostColumn" msprop:Generator_UserColumnName="CoatingCost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Slippage" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSlippage" msprop:Generator_ColumnPropNameInRow="Slippage" msprop:Generator_ColumnPropNameInTable="SlippageColumn" msprop:Generator_UserColumnName="Slippage" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QCCenterMyanmar" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnQCCenterMyanmar" msprop:Generator_ColumnPropNameInRow="QCCenterMyanmar" msprop:Generator_ColumnPropNameInTable="QCCenterMyanmarColumn" msprop:Generator_UserColumnName="QCCenterMyanmar" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CMPHandling" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCMPHandling" msprop:Generator_ColumnPropNameInRow="CMPHandling" msprop:Generator_ColumnPropNameInTable="CMPHandlingColumn" msprop:Generator_UserColumnName="CMPHandling" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CMPQAComm" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCMPQAComm" msprop:Generator_ColumnPropNameInRow="CMPQAComm" msprop:Generator_ColumnPropNameInTable="CMPQACommColumn" msprop:Generator_UserColumnName="CMPQAComm" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:OtherCostSummary" />
+      <xs:field xpath="mstns:ShipmentId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FutureOrderSummaryBySupplierReportDs" targetNamespace="http://tempuri.org/FutureOrderSummaryBySupplierReportDs.xsd" xmlns:mstns="http://tempuri.org/FutureOrderSummaryBySupplierReportDs.xsd" xmlns="http://tempuri.org/FutureOrderSummaryBySupplierReportDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ISAMConnectionString3" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISAMConnectionString3 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ISAMConnectionString3" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FutureOrderSummaryBySupplierReportTableAdapter" GeneratorDataComponentClassName="FutureOrderSummaryBySupplierReportTableAdapter" Name="FutureOrderSummaryBySupplierReport" UserDataComponentName="FutureOrderSummaryBySupplierReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="ISAM.dbo.FutureOrderSummaryBySupplierReport" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT OfficeId, VendorId, VendorName, ContractNo, DeliveryNo, SupplierAtWarehouseDate, CurrencyId, SupplierNetAmt, SupplierNetAmt_5_Pct, WorkflowStatusId, DeductionAmt, SplitSuffix='' FROM dbo.FutureOrderSummaryBySupplierReport</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OfficeId" DataSetColumn="OfficeId" />
+              <Mapping SourceColumn="VendorId" DataSetColumn="VendorId" />
+              <Mapping SourceColumn="VendorName" DataSetColumn="VendorName" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="DeliveryNo" DataSetColumn="DeliveryNo" />
+              <Mapping SourceColumn="SupplierAtWarehouseDate" DataSetColumn="SupplierAtWarehouseDate" />
+              <Mapping SourceColumn="CurrencyId" DataSetColumn="CurrencyId" />
+              <Mapping SourceColumn="SupplierNetAmt" DataSetColumn="SupplierNetAmt" />
+              <Mapping SourceColumn="SupplierNetAmt_5_Pct" DataSetColumn="SupplierNetAmt_5_Pct" />
+              <Mapping SourceColumn="WorkflowStatusId" DataSetColumn="WorkflowStatusId" />
+              <Mapping SourceColumn="DeductionAmt" DataSetColumn="DeductionAmt" />
+              <Mapping SourceColumn="SplitSuffix" DataSetColumn="SplitSuffix" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="FutureOrderSummaryBySupplierReportDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="FutureOrderSummaryBySupplierReportDs" msprop:Generator_UserDSName="FutureOrderSummaryBySupplierReportDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FutureOrderSummaryBySupplierReport" msprop:Generator_TableClassName="FutureOrderSummaryBySupplierReportDataTable" msprop:Generator_TableVarName="tableFutureOrderSummaryBySupplierReport" msprop:Generator_RowChangedName="FutureOrderSummaryBySupplierReportRowChanged" msprop:Generator_TablePropName="FutureOrderSummaryBySupplierReport" msprop:Generator_RowDeletingName="FutureOrderSummaryBySupplierReportRowDeleting" msprop:Generator_RowChangingName="FutureOrderSummaryBySupplierReportRowChanging" msprop:Generator_RowEvHandlerName="FutureOrderSummaryBySupplierReportRowChangeEventHandler" msprop:Generator_RowDeletedName="FutureOrderSummaryBySupplierReportRowDeleted" msprop:Generator_RowClassName="FutureOrderSummaryBySupplierReportRow" msprop:Generator_UserTableName="FutureOrderSummaryBySupplierReport" msprop:Generator_RowEvArgName="FutureOrderSummaryBySupplierReportRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OfficeId" msprop:Generator_ColumnVarNameInTable="columnOfficeId" msprop:Generator_ColumnPropNameInRow="OfficeId" msprop:Generator_ColumnPropNameInTable="OfficeIdColumn" msprop:Generator_UserColumnName="OfficeId" type="xs:int" />
+              <xs:element name="VendorId" msprop:Generator_ColumnVarNameInTable="columnVendorId" msprop:Generator_ColumnPropNameInRow="VendorId" msprop:Generator_ColumnPropNameInTable="VendorIdColumn" msprop:Generator_UserColumnName="VendorId" type="xs:int" minOccurs="0" />
+              <xs:element name="VendorName" msprop:Generator_ColumnVarNameInTable="columnVendorName" msprop:Generator_ColumnPropNameInRow="VendorName" msprop:Generator_ColumnPropNameInTable="VendorNameColumn" msprop:Generator_UserColumnName="VendorName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" msprop:Generator_UserColumnName="DeliveryNo" type="xs:int" />
+              <xs:element name="SupplierAtWarehouseDate" msprop:Generator_ColumnVarNameInTable="columnSupplierAtWarehouseDate" msprop:Generator_ColumnPropNameInRow="SupplierAtWarehouseDate" msprop:Generator_ColumnPropNameInTable="SupplierAtWarehouseDateColumn" msprop:Generator_UserColumnName="SupplierAtWarehouseDate" type="xs:dateTime" />
+              <xs:element name="CurrencyId" msprop:Generator_ColumnVarNameInTable="columnCurrencyId" msprop:Generator_ColumnPropNameInRow="CurrencyId" msprop:Generator_ColumnPropNameInTable="CurrencyIdColumn" msprop:Generator_UserColumnName="CurrencyId" type="xs:int" />
+              <xs:element name="SupplierNetAmt" msprop:Generator_ColumnVarNameInTable="columnSupplierNetAmt" msprop:Generator_ColumnPropNameInRow="SupplierNetAmt" msprop:Generator_ColumnPropNameInTable="SupplierNetAmtColumn" msprop:Generator_UserColumnName="SupplierNetAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SupplierNetAmt_5_Pct" msprop:Generator_ColumnVarNameInTable="columnSupplierNetAmt_5_Pct" msprop:Generator_ColumnPropNameInRow="SupplierNetAmt_5_Pct" msprop:Generator_ColumnPropNameInTable="SupplierNetAmt_5_PctColumn" msprop:Generator_UserColumnName="SupplierNetAmt_5_Pct" type="xs:decimal" minOccurs="0" />
+              <xs:element name="WorkflowStatusId" msprop:Generator_ColumnVarNameInTable="columnWorkflowStatusId" msprop:Generator_ColumnPropNameInRow="WorkflowStatusId" msprop:Generator_ColumnPropNameInTable="WorkflowStatusIdColumn" msprop:Generator_UserColumnName="WorkflowStatusId" type="xs:int" />
+              <xs:element name="DeductionAmt" msprop:Generator_ColumnVarNameInTable="columnDeductionAmt" msprop:Generator_ColumnPropNameInRow="DeductionAmt" msprop:Generator_ColumnPropNameInTable="DeductionAmtColumn" msprop:Generator_UserColumnName="DeductionAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SplitSuffix" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSplitSuffix" msprop:Generator_ColumnPropNameInRow="SplitSuffix" msprop:Generator_ColumnPropNameInTable="SplitSuffixColumn" msprop:Generator_UserColumnName="SplitSuffix" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

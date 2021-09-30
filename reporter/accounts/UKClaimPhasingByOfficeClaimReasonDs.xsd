@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UKClaimPhasingByOfficeClaimReasonDs" targetNamespace="http://tempuri.org/UKClaimPhasingByOfficeClaimReasonDs.xsd" xmlns:mstns="http://tempuri.org/UKClaimPhasingByOfficeClaimReasonDs.xsd" xmlns="http://tempuri.org/UKClaimPhasingByOfficeClaimReasonDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UKClaimPhasingTableAdapter" GeneratorDataComponentClassName="UKClaimPhasingTableAdapter" Name="UKClaimPhasing" UserDataComponentName="UKClaimPhasingTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="SELECT afc.BudgetYear, afc.Period, cp.ClaimTypeId, cp.NSAmt, cp.VendorAmt, cp.CurrencyId, cp.ReceivedDate, Office = (CASE WHEN cp.OfficeId IN (1) AND uc.TermOfPurchaseId&lt;&gt;1 THEN 'NMC' ELSE (SELECT OfficeCode FROM Office WHERE OfficeId=cp.OfficeId) END), r.ReasonDesc FROM vw_UKClaimPhasingQAIS AS cp LEFT JOIN nsldb..AccountFinancialCalender AS afc WITH (NOLOCK)ON cp.ReceivedDate BETWEEN afc.StartDate AND afc.EndDate LEFT JOIN UKClaim AS uc ON uc.ClaimId = cp.ClaimId AND uc.Status = 1 LEFT JOIN Contract AS c ON c.ContractNo = uc.ContractNo LEFT JOIN nsldb01.qcis.dbo.ClaimRequest AS cr ON cr.RequestId = uc.ClaimRequestId LEFT JOIN nsldb01.qcis.dbo.ClaimReason AS r ON r.ReasonId=cr.FaultReasonId WHERE 1=0" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>          SELECT FiscalYear = x.BudgetYear, x.Office, x.ReasonDesc,
+              P1VendorAmt = SUM(ROUND(CASE WHEN x.Period = 1  THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P2VendorAmt = SUM(ROUND(CASE WHEN x.Period = 2  THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P3VendorAmt = SUM(ROUND(CASE WHEN x.Period = 3  THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P4VendorAmt = SUM(ROUND(CASE WHEN x.Period = 4  THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P5VendorAmt = SUM(ROUND(CASE WHEN x.Period = 5  THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P6VendorAmt = SUM(ROUND(CASE WHEN x.Period = 6  THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P7VendorAmt = SUM(ROUND(CASE WHEN x.Period = 7  THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P8VendorAmt = SUM(ROUND(CASE WHEN x.Period = 8  THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P9VendorAmt = SUM(ROUND(CASE WHEN x.Period = 9  THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P10VendorAmt = SUM(ROUND(CASE WHEN x.Period = 10 THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P11VendorAmt = SUM(ROUND(CASE WHEN x.Period = 11 THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P12VendorAmt = SUM(ROUND(CASE WHEN x.Period = 12 THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              TotalVendorAmt = SUM(ROUND(CASE WHEN x.Period BETWEEN 1 AND 12 THEN x.VendorAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P1NSAmt = SUM(ROUND(CASE WHEN x.Period = 1  THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P2NSAmt = SUM(ROUND(CASE WHEN x.Period = 2  THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P3NSAmt = SUM(ROUND(CASE WHEN x.Period = 3  THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P4NSAmt = SUM(ROUND(CASE WHEN x.Period = 4  THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P5NSAmt = SUM(ROUND(CASE WHEN x.Period = 5  THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P6NSAmt = SUM(ROUND(CASE WHEN x.Period = 6  THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P7NSAmt = SUM(ROUND(CASE WHEN x.Period = 7  THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P8NSAmt = SUM(ROUND(CASE WHEN x.Period = 8  THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P9NSAmt = SUM(ROUND(CASE WHEN x.Period = 9  THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P10NSAmt = SUM(ROUND(CASE WHEN x.Period = 10 THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P11NSAmt = SUM(ROUND(CASE WHEN x.Period = 11 THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              P12NSAmt = SUM(ROUND(CASE WHEN x.Period = 12 THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)),
+              TotalNSAmt = SUM(ROUND(CASE WHEN x.Period BETWEEN 1 AND 12 THEN x.NSAmt * xr.ExchangeRate / xru.ExchangeRate ELSE 0 END, 0)), OfficeTotalAmt = 0.0
+          FROM
+              (
+                  SELECT afc.BudgetYear, afc.Period, cp.ClaimTypeId,
+                      cp.NSAmt, cp.VendorAmt, cp.CurrencyId, cp.ReceivedDate, 
+                      Office = (CASE WHEN cp.OfficeId in (1) AND uc.TermOfPurchaseId&lt;&gt;1 THEN 'NMC' ELSE  (SELECT OfficeCode FROM Office WHERE OfficeId=cp.OfficeId) END),
+                      r.ReasonDesc
+                  FROM
+                      vw_UKClaimPhasingQAIS AS cp 
+                      LEFT JOIN  nsldb..AccountFinancialCalender AS afc WITH (NOLOCK)ON cp.ReceivedDate BETWEEN afc.StartDate AND afc.EndDate
+                      LEFT JOIN UKClaim AS uc ON uc.ClaimId = cp.ClaimId AND uc.Status = 1
+                      LEFT JOIN Contract AS c ON c.ContractNo = uc.ContractNo
+			LEFT JOIN nsldb01.qcis.dbo.ClaimRequest AS cr ON cr.RequestId = uc.ClaimRequestId
+			LEFT JOIN nsldb01.qcis.dbo.ClaimReason AS r ON r.ReasonId=cr.FaultReasonId
+                  WHERE 1=0
+              ) as x
+              LEFT JOIN ExchangeRate xr  WITH (NOLOCK) ON xr.ExchangeRateTypeId = 2  and x.ReceivedDate between xr.EffectiveDateFrom  and xr.EffectiveDateTo  and xr.CurrencyId = x.CurrencyId
+              LEFT JOIN ExchangeRate xru WITH (NOLOCK) ON xru.ExchangeRateTypeId = 2 and x.ReceivedDate between xru.EffectiveDateFrom and xru.EffectiveDateTo and xru.CurrencyId = 3
+          GROUP BY
+              x.BudgetYear, x.Office, x.ReasonDesc, x.ClaimTypeId
+          ORDER BY
+            x.BudgetYear, x.Office, x.ReasonDesc
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FiscalYear" DataSetColumn="FiscalYear" />
+              <Mapping SourceColumn="Office" DataSetColumn="Office" />
+              <Mapping SourceColumn="ReasonDesc" DataSetColumn="ReasonDesc" />
+              <Mapping SourceColumn="P1VendorAmt" DataSetColumn="P1VendorAmt" />
+              <Mapping SourceColumn="P2VendorAmt" DataSetColumn="P2VendorAmt" />
+              <Mapping SourceColumn="P3VendorAmt" DataSetColumn="P3VendorAmt" />
+              <Mapping SourceColumn="P4VendorAmt" DataSetColumn="P4VendorAmt" />
+              <Mapping SourceColumn="P5VendorAmt" DataSetColumn="P5VendorAmt" />
+              <Mapping SourceColumn="P6VendorAmt" DataSetColumn="P6VendorAmt" />
+              <Mapping SourceColumn="P7VendorAmt" DataSetColumn="P7VendorAmt" />
+              <Mapping SourceColumn="P8VendorAmt" DataSetColumn="P8VendorAmt" />
+              <Mapping SourceColumn="P9VendorAmt" DataSetColumn="P9VendorAmt" />
+              <Mapping SourceColumn="P10VendorAmt" DataSetColumn="P10VendorAmt" />
+              <Mapping SourceColumn="P11VendorAmt" DataSetColumn="P11VendorAmt" />
+              <Mapping SourceColumn="P12VendorAmt" DataSetColumn="P12VendorAmt" />
+              <Mapping SourceColumn="TotalVendorAmt" DataSetColumn="TotalVendorAmt" />
+              <Mapping SourceColumn="P1NSAmt" DataSetColumn="P1NSAmt" />
+              <Mapping SourceColumn="P2NSAmt" DataSetColumn="P2NSAmt" />
+              <Mapping SourceColumn="P3NSAmt" DataSetColumn="P3NSAmt" />
+              <Mapping SourceColumn="P4NSAmt" DataSetColumn="P4NSAmt" />
+              <Mapping SourceColumn="P5NSAmt" DataSetColumn="P5NSAmt" />
+              <Mapping SourceColumn="P6NSAmt" DataSetColumn="P6NSAmt" />
+              <Mapping SourceColumn="P7NSAmt" DataSetColumn="P7NSAmt" />
+              <Mapping SourceColumn="P8NSAmt" DataSetColumn="P8NSAmt" />
+              <Mapping SourceColumn="P9NSAmt" DataSetColumn="P9NSAmt" />
+              <Mapping SourceColumn="P10NSAmt" DataSetColumn="P10NSAmt" />
+              <Mapping SourceColumn="P11NSAmt" DataSetColumn="P11NSAmt" />
+              <Mapping SourceColumn="P12NSAmt" DataSetColumn="P12NSAmt" />
+              <Mapping SourceColumn="TotalNSAmt" DataSetColumn="TotalNSAmt" />
+              <Mapping SourceColumn="OfficeTotalAmt" DataSetColumn="OfficeTotalAmt" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UKClaimPhasingByOfficeClaimReasonDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="UKClaimPhasingByOfficeClaimReasonDs" msprop:Generator_UserDSName="UKClaimPhasingByOfficeClaimReasonDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UKClaimPhasing" msprop:Generator_TableClassName="UKClaimPhasingDataTable" msprop:Generator_TableVarName="tableUKClaimPhasing" msprop:Generator_TablePropName="UKClaimPhasing" msprop:Generator_RowDeletingName="UKClaimPhasingRowDeleting" msprop:Generator_UserTableName="UKClaimPhasing" msprop:Generator_RowChangingName="UKClaimPhasingRowChanging" msprop:Generator_RowEvHandlerName="UKClaimPhasingRowChangeEventHandler" msprop:Generator_RowDeletedName="UKClaimPhasingRowDeleted" msprop:Generator_RowEvArgName="UKClaimPhasingRowChangeEvent" msprop:Generator_RowChangedName="UKClaimPhasingRowChanged" msprop:Generator_RowClassName="UKClaimPhasingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FiscalYear" msprop:Generator_ColumnVarNameInTable="columnFiscalYear" msprop:Generator_ColumnPropNameInRow="FiscalYear" msprop:Generator_ColumnPropNameInTable="FiscalYearColumn" msprop:Generator_UserColumnName="FiscalYear" type="xs:int" minOccurs="0" />
+              <xs:element name="Office" msprop:Generator_ColumnVarNameInTable="columnOffice" msprop:Generator_ColumnPropNameInRow="Office" msprop:Generator_ColumnPropNameInTable="OfficeColumn" msprop:Generator_UserColumnName="Office" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReasonDesc" msprop:Generator_ColumnVarNameInTable="columnReasonDesc" msprop:Generator_ColumnPropNameInRow="ReasonDesc" msprop:Generator_ColumnPropNameInTable="ReasonDescColumn" msprop:Generator_UserColumnName="ReasonDesc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="P1VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP1VendorAmt" msprop:Generator_ColumnPropNameInRow="P1VendorAmt" msprop:Generator_ColumnPropNameInTable="P1VendorAmtColumn" msprop:Generator_UserColumnName="P1VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P2VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP2VendorAmt" msprop:Generator_ColumnPropNameInRow="P2VendorAmt" msprop:Generator_ColumnPropNameInTable="P2VendorAmtColumn" msprop:Generator_UserColumnName="P2VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P3VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP3VendorAmt" msprop:Generator_ColumnPropNameInRow="P3VendorAmt" msprop:Generator_ColumnPropNameInTable="P3VendorAmtColumn" msprop:Generator_UserColumnName="P3VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P4VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP4VendorAmt" msprop:Generator_ColumnPropNameInRow="P4VendorAmt" msprop:Generator_ColumnPropNameInTable="P4VendorAmtColumn" msprop:Generator_UserColumnName="P4VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P5VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP5VendorAmt" msprop:Generator_ColumnPropNameInRow="P5VendorAmt" msprop:Generator_ColumnPropNameInTable="P5VendorAmtColumn" msprop:Generator_UserColumnName="P5VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P6VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP6VendorAmt" msprop:Generator_ColumnPropNameInRow="P6VendorAmt" msprop:Generator_ColumnPropNameInTable="P6VendorAmtColumn" msprop:Generator_UserColumnName="P6VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P7VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP7VendorAmt" msprop:Generator_ColumnPropNameInRow="P7VendorAmt" msprop:Generator_ColumnPropNameInTable="P7VendorAmtColumn" msprop:Generator_UserColumnName="P7VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P8VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP8VendorAmt" msprop:Generator_ColumnPropNameInRow="P8VendorAmt" msprop:Generator_ColumnPropNameInTable="P8VendorAmtColumn" msprop:Generator_UserColumnName="P8VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P9VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP9VendorAmt" msprop:Generator_ColumnPropNameInRow="P9VendorAmt" msprop:Generator_ColumnPropNameInTable="P9VendorAmtColumn" msprop:Generator_UserColumnName="P9VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P10VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP10VendorAmt" msprop:Generator_ColumnPropNameInRow="P10VendorAmt" msprop:Generator_ColumnPropNameInTable="P10VendorAmtColumn" msprop:Generator_UserColumnName="P10VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P11VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP11VendorAmt" msprop:Generator_ColumnPropNameInRow="P11VendorAmt" msprop:Generator_ColumnPropNameInTable="P11VendorAmtColumn" msprop:Generator_UserColumnName="P11VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P12VendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP12VendorAmt" msprop:Generator_ColumnPropNameInRow="P12VendorAmt" msprop:Generator_ColumnPropNameInTable="P12VendorAmtColumn" msprop:Generator_UserColumnName="P12VendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalVendorAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalVendorAmt" msprop:Generator_ColumnPropNameInRow="TotalVendorAmt" msprop:Generator_ColumnPropNameInTable="TotalVendorAmtColumn" msprop:Generator_UserColumnName="TotalVendorAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P1NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP1NSAmt" msprop:Generator_ColumnPropNameInRow="P1NSAmt" msprop:Generator_ColumnPropNameInTable="P1NSAmtColumn" msprop:Generator_UserColumnName="P1NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P2NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP2NSAmt" msprop:Generator_ColumnPropNameInRow="P2NSAmt" msprop:Generator_ColumnPropNameInTable="P2NSAmtColumn" msprop:Generator_UserColumnName="P2NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P3NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP3NSAmt" msprop:Generator_ColumnPropNameInRow="P3NSAmt" msprop:Generator_ColumnPropNameInTable="P3NSAmtColumn" msprop:Generator_UserColumnName="P3NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P4NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP4NSAmt" msprop:Generator_ColumnPropNameInRow="P4NSAmt" msprop:Generator_ColumnPropNameInTable="P4NSAmtColumn" msprop:Generator_UserColumnName="P4NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P5NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP5NSAmt" msprop:Generator_ColumnPropNameInRow="P5NSAmt" msprop:Generator_ColumnPropNameInTable="P5NSAmtColumn" msprop:Generator_UserColumnName="P5NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P6NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP6NSAmt" msprop:Generator_ColumnPropNameInRow="P6NSAmt" msprop:Generator_ColumnPropNameInTable="P6NSAmtColumn" msprop:Generator_UserColumnName="P6NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P7NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP7NSAmt" msprop:Generator_ColumnPropNameInRow="P7NSAmt" msprop:Generator_ColumnPropNameInTable="P7NSAmtColumn" msprop:Generator_UserColumnName="P7NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P8NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP8NSAmt" msprop:Generator_ColumnPropNameInRow="P8NSAmt" msprop:Generator_ColumnPropNameInTable="P8NSAmtColumn" msprop:Generator_UserColumnName="P8NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P9NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP9NSAmt" msprop:Generator_ColumnPropNameInRow="P9NSAmt" msprop:Generator_ColumnPropNameInTable="P9NSAmtColumn" msprop:Generator_UserColumnName="P9NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P10NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP10NSAmt" msprop:Generator_ColumnPropNameInRow="P10NSAmt" msprop:Generator_ColumnPropNameInTable="P10NSAmtColumn" msprop:Generator_UserColumnName="P10NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P11NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP11NSAmt" msprop:Generator_ColumnPropNameInRow="P11NSAmt" msprop:Generator_ColumnPropNameInTable="P11NSAmtColumn" msprop:Generator_UserColumnName="P11NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="P12NSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP12NSAmt" msprop:Generator_ColumnPropNameInRow="P12NSAmt" msprop:Generator_ColumnPropNameInTable="P12NSAmtColumn" msprop:Generator_UserColumnName="P12NSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalNSAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalNSAmt" msprop:Generator_ColumnPropNameInRow="TotalNSAmt" msprop:Generator_ColumnPropNameInTable="TotalNSAmtColumn" msprop:Generator_UserColumnName="TotalNSAmt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OfficeTotalAmt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOfficeTotalAmt" msprop:Generator_ColumnPropNameInRow="OfficeTotalAmt" msprop:Generator_ColumnPropNameInTable="OfficeTotalAmtColumn" msprop:Generator_UserColumnName="OfficeTotalAmt" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

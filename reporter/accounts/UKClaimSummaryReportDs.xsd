@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UKClaimSummaryReportDs" targetNamespace="http://tempuri.org/UKClaimSummaryReportDs.xsd" xmlns:mstns="http://tempuri.org/UKClaimSummaryReportDs.xsd" xmlns="http://tempuri.org/UKClaimSummaryReportDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString1 (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ConnectionString1" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.com.next.isam.reporter.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ClaimRequestReportTableAdapter" GeneratorDataComponentClassName="ClaimRequestReportTableAdapter" Name="ClaimRequestReport" UserDataComponentName="ClaimRequestReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString1 (Settings)" DbObjectName="QCIS.dbo.ClaimRequest" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+        RequestId,IssueDate, 
+        ClaimTypeId, ClaimTypeDesc = (SELECT TypeDesc FROM ClaimType WHERE TypeId=cr.ClaimTypeId),
+        ReasonId=FaultReasonId, ReasonDesc = (SELECT ReasonDesc FROM ClaimReason WHERE ReasonId=FaultReasonId),
+        VendorId, VendorName = (SELECT Name FROM NSLINDUSTRY..Vendor WHERE VendorId=cr.VendorId),
+        VendorRechargePercent, NSRechargePercent, FaultQty, Amount,
+        WorkflowStatusId
+FROM ClaimRequest AS cr WITH (NOLOCK)
+WHERE 1=0
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RequestId" DataSetColumn="RequestId" />
+              <Mapping SourceColumn="ClaimTypeId" DataSetColumn="ClaimTypeId" />
+              <Mapping SourceColumn="IssueDate" DataSetColumn="IssueDate" />
+              <Mapping SourceColumn="VendorId" DataSetColumn="VendorId" />
+              <Mapping SourceColumn="VendorRechargePercent" DataSetColumn="VendorRechargePercent" />
+              <Mapping SourceColumn="NSRechargePercent" DataSetColumn="NSRechargePercent" />
+              <Mapping SourceColumn="FaultQty" DataSetColumn="FaultQty" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="WorkflowStatusId" DataSetColumn="WorkflowStatusId" />
+              <Mapping SourceColumn="ClaimTypeDesc" DataSetColumn="ClaimTypeDesc" />
+              <Mapping SourceColumn="ReasonId" DataSetColumn="ReasonId" />
+              <Mapping SourceColumn="ReasonDesc" DataSetColumn="ReasonDesc" />
+              <Mapping SourceColumn="VendorName" DataSetColumn="VendorName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UKClaimReportTableAdapter" GeneratorDataComponentClassName="UKClaimReportTableAdapter" Name="UKClaimReport" UserDataComponentName="UKClaimReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="ISAM.dbo.UKClaim" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ClaimId=ClaimId+0, ClaimTypeId, ItemNo, ContractNo, OfficeId, VendorId, ProductTeamId, Qty, CurrencyId, Amount, HasUKDN, UKDebitNoteNo, UKDebitNoteDate, UKDebitNoteReceivedDate, Remark, ClaimRequestId, DebitNoteNo, DebitNoteDate, DebitNoteAmt, IsInterfaced, IsRechargeInterfaced, WorkflowStatusId, 
+	OfficeName = (SELECT RTRIM(REPLACE(Description,'Office','')) FROM Office AS o WHERE o.OfficeId=c.OfficeId),
+	ProductTeam = (SELECT Description FROM NSLDB..OfficeStructure WHERE OfficeStructureId=c.ProductTeamId),
+	CurrencyCode = (SELECT CurrencyCode FROM Currency WHERE CurrencyId=c.CurrencyId),
+	USDExchangeRate = (CASE WHEN c.CurrencyId=3 THEN 1 ELSE 
+				(SELECT TOP 1 ExchangeRate FROM ExchangeRate WHERE CurrencyId=c.CurrencyId AND ExchangeRateTypeId=2 AND (EffectiveTypeId=0 OR (c.UKDebitNoteReceivedDate BETWEEN EffectiveDateFrom AND EffectiveDateTo)) ORDER BY EffectiveTypeId DESC)
+				/ (SELECT TOP 1 ExchangeRate FROM ExchangeRate WHERE CurrencyId=3 AND ExchangeRateTypeId=2 AND (EffectiveTypeId=0 OR (c.UKDebitNoteReceivedDate BETWEEN EffectiveDateFrom AND EffectiveDateTo)) ORDER BY EffectiveTypeId DESC) END), VendorName = (SELECT Name FROM NSLINDUSTRY..Vendor WHERE VendorId=c.VendorId)
+
+ FROM dbo.UKClaim AS c
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ClaimId" DataSetColumn="ClaimId" />
+              <Mapping SourceColumn="ClaimTypeId" DataSetColumn="ClaimTypeId" />
+              <Mapping SourceColumn="ItemNo" DataSetColumn="ItemNo" />
+              <Mapping SourceColumn="ContractNo" DataSetColumn="ContractNo" />
+              <Mapping SourceColumn="OfficeId" DataSetColumn="OfficeId" />
+              <Mapping SourceColumn="VendorId" DataSetColumn="VendorId" />
+              <Mapping SourceColumn="ProductTeamId" DataSetColumn="ProductTeamId" />
+              <Mapping SourceColumn="Qty" DataSetColumn="Qty" />
+              <Mapping SourceColumn="CurrencyId" DataSetColumn="CurrencyId" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="HasUKDN" DataSetColumn="HasUKDN" />
+              <Mapping SourceColumn="UKDebitNoteNo" DataSetColumn="UKDebitNoteNo" />
+              <Mapping SourceColumn="UKDebitNoteDate" DataSetColumn="UKDebitNoteDate" />
+              <Mapping SourceColumn="UKDebitNoteReceivedDate" DataSetColumn="UKDebitNoteReceivedDate" />
+              <Mapping SourceColumn="Remark" DataSetColumn="Remark" />
+              <Mapping SourceColumn="ClaimRequestId" DataSetColumn="ClaimRequestId" />
+              <Mapping SourceColumn="DebitNoteNo" DataSetColumn="DebitNoteNo" />
+              <Mapping SourceColumn="DebitNoteDate" DataSetColumn="DebitNoteDate" />
+              <Mapping SourceColumn="DebitNoteAmt" DataSetColumn="DebitNoteAmt" />
+              <Mapping SourceColumn="IsInterfaced" DataSetColumn="IsInterfaced" />
+              <Mapping SourceColumn="IsRechargeInterfaced" DataSetColumn="IsRechargeInterfaced" />
+              <Mapping SourceColumn="WorkflowStatusId" DataSetColumn="WorkflowStatusId" />
+              <Mapping SourceColumn="OfficeName" DataSetColumn="OfficeName" />
+              <Mapping SourceColumn="ProductTeam" DataSetColumn="ProductTeam" />
+              <Mapping SourceColumn="CurrencyCode" DataSetColumn="CurrencyCode" />
+              <Mapping SourceColumn="USDExchangeRate" DataSetColumn="USDExchangeRate" />
+              <Mapping SourceColumn="VendorName" DataSetColumn="VendorName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UKClaimSummaryReportDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="UKClaimSummaryReportDs" msprop:Generator_UserDSName="UKClaimSummaryReportDs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ClaimRequestReport" msprop:Generator_TableClassName="ClaimRequestReportDataTable" msprop:Generator_TableVarName="tableClaimRequestReport" msprop:Generator_TablePropName="ClaimRequestReport" msprop:Generator_RowDeletingName="ClaimRequestReportRowDeleting" msprop:Generator_UserTableName="ClaimRequestReport" msprop:Generator_RowChangingName="ClaimRequestReportRowChanging" msprop:Generator_RowEvHandlerName="ClaimRequestReportRowChangeEventHandler" msprop:Generator_RowDeletedName="ClaimRequestReportRowDeleted" msprop:Generator_RowEvArgName="ClaimRequestReportRowChangeEvent" msprop:Generator_RowChangedName="ClaimRequestReportRowChanged" msprop:Generator_RowClassName="ClaimRequestReportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RequestId" msprop:Generator_ColumnVarNameInTable="columnRequestId" msprop:Generator_ColumnPropNameInRow="RequestId" msprop:Generator_ColumnPropNameInTable="RequestIdColumn" msprop:Generator_UserColumnName="RequestId" type="xs:int" />
+              <xs:element name="ClaimTypeId" msprop:Generator_ColumnVarNameInTable="columnClaimTypeId" msprop:Generator_ColumnPropNameInRow="ClaimTypeId" msprop:Generator_ColumnPropNameInTable="ClaimTypeIdColumn" msprop:Generator_UserColumnName="ClaimTypeId" type="xs:int" />
+              <xs:element name="IssueDate" msprop:Generator_ColumnVarNameInTable="columnIssueDate" msprop:Generator_ColumnPropNameInRow="IssueDate" msprop:Generator_ColumnPropNameInTable="IssueDateColumn" msprop:Generator_UserColumnName="IssueDate" type="xs:dateTime" />
+              <xs:element name="VendorId" msprop:Generator_ColumnVarNameInTable="columnVendorId" msprop:Generator_ColumnPropNameInRow="VendorId" msprop:Generator_ColumnPropNameInTable="VendorIdColumn" msprop:Generator_UserColumnName="VendorId" type="xs:int" />
+              <xs:element name="VendorRechargePercent" msprop:Generator_ColumnVarNameInTable="columnVendorRechargePercent" msprop:Generator_ColumnPropNameInRow="VendorRechargePercent" msprop:Generator_ColumnPropNameInTable="VendorRechargePercentColumn" msprop:Generator_UserColumnName="VendorRechargePercent" type="xs:decimal" />
+              <xs:element name="NSRechargePercent" msprop:Generator_ColumnVarNameInTable="columnNSRechargePercent" msprop:Generator_ColumnPropNameInRow="NSRechargePercent" msprop:Generator_ColumnPropNameInTable="NSRechargePercentColumn" msprop:Generator_UserColumnName="NSRechargePercent" type="xs:decimal" />
+              <xs:element name="FaultQty" msprop:Generator_ColumnVarNameInTable="columnFaultQty" msprop:Generator_ColumnPropNameInRow="FaultQty" msprop:Generator_ColumnPropNameInTable="FaultQtyColumn" msprop:Generator_UserColumnName="FaultQty" type="xs:int" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="WorkflowStatusId" msprop:Generator_ColumnVarNameInTable="columnWorkflowStatusId" msprop:Generator_ColumnPropNameInRow="WorkflowStatusId" msprop:Generator_ColumnPropNameInTable="WorkflowStatusIdColumn" msprop:Generator_UserColumnName="WorkflowStatusId" type="xs:int" />
+              <xs:element name="ClaimTypeDesc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnClaimTypeDesc" msprop:Generator_ColumnPropNameInRow="ClaimTypeDesc" msprop:Generator_ColumnPropNameInTable="ClaimTypeDescColumn" msprop:Generator_UserColumnName="ClaimTypeDesc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReasonId" msprop:Generator_ColumnVarNameInTable="columnReasonId" msprop:Generator_ColumnPropNameInRow="ReasonId" msprop:Generator_ColumnPropNameInTable="ReasonIdColumn" msprop:Generator_UserColumnName="ReasonId" type="xs:int" minOccurs="0" />
+              <xs:element name="ReasonDesc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnReasonDesc" msprop:Generator_ColumnPropNameInRow="ReasonDesc" msprop:Generator_ColumnPropNameInTable="ReasonDescColumn" msprop:Generator_UserColumnName="ReasonDesc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VendorName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVendorName" msprop:Generator_ColumnPropNameInRow="VendorName" msprop:Generator_ColumnPropNameInTable="VendorNameColumn" msprop:Generator_UserColumnName="VendorName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UKClaimReport" msprop:Generator_TableClassName="UKClaimReportDataTable" msprop:Generator_TableVarName="tableUKClaimReport" msprop:Generator_TablePropName="UKClaimReport" msprop:Generator_RowDeletingName="UKClaimReportRowDeleting" msprop:Generator_UserTableName="UKClaimReport" msprop:Generator_RowChangingName="UKClaimReportRowChanging" msprop:Generator_RowEvHandlerName="UKClaimReportRowChangeEventHandler" msprop:Generator_RowDeletedName="UKClaimReportRowDeleted" msprop:Generator_RowEvArgName="UKClaimReportRowChangeEvent" msprop:Generator_RowChangedName="UKClaimReportRowChanged" msprop:Generator_RowClassName="UKClaimReportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClaimId" msprop:Generator_ColumnVarNameInTable="columnClaimId" msprop:Generator_ColumnPropNameInRow="ClaimId" msprop:Generator_ColumnPropNameInTable="ClaimIdColumn" msprop:Generator_UserColumnName="ClaimId" type="xs:int" minOccurs="0" />
+              <xs:element name="ClaimTypeId" msprop:Generator_ColumnVarNameInTable="columnClaimTypeId" msprop:Generator_ColumnPropNameInRow="ClaimTypeId" msprop:Generator_ColumnPropNameInTable="ClaimTypeIdColumn" msprop:Generator_UserColumnName="ClaimTypeId" type="xs:int" />
+              <xs:element name="ItemNo" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" msprop:Generator_UserColumnName="ItemNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" msprop:Generator_UserColumnName="ContractNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OfficeId" msprop:Generator_ColumnVarNameInTable="columnOfficeId" msprop:Generator_ColumnPropNameInRow="OfficeId" msprop:Generator_ColumnPropNameInTable="OfficeIdColumn" msprop:Generator_UserColumnName="OfficeId" type="xs:int" />
+              <xs:element name="VendorId" msprop:Generator_ColumnVarNameInTable="columnVendorId" msprop:Generator_ColumnPropNameInRow="VendorId" msprop:Generator_ColumnPropNameInTable="VendorIdColumn" msprop:Generator_UserColumnName="VendorId" type="xs:int" />
+              <xs:element name="ProductTeamId" msprop:Generator_ColumnVarNameInTable="columnProductTeamId" msprop:Generator_ColumnPropNameInRow="ProductTeamId" msprop:Generator_ColumnPropNameInTable="ProductTeamIdColumn" msprop:Generator_UserColumnName="ProductTeamId" type="xs:int" minOccurs="0" />
+              <xs:element name="Qty" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_UserColumnName="Qty" type="xs:int" />
+              <xs:element name="CurrencyId" msprop:Generator_ColumnVarNameInTable="columnCurrencyId" msprop:Generator_ColumnPropNameInRow="CurrencyId" msprop:Generator_ColumnPropNameInTable="CurrencyIdColumn" msprop:Generator_UserColumnName="CurrencyId" type="xs:int" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="HasUKDN" msprop:Generator_ColumnVarNameInTable="columnHasUKDN" msprop:Generator_ColumnPropNameInRow="HasUKDN" msprop:Generator_ColumnPropNameInTable="HasUKDNColumn" msprop:Generator_UserColumnName="HasUKDN" type="xs:boolean" />
+              <xs:element name="UKDebitNoteNo" msprop:Generator_ColumnVarNameInTable="columnUKDebitNoteNo" msprop:Generator_ColumnPropNameInRow="UKDebitNoteNo" msprop:Generator_ColumnPropNameInTable="UKDebitNoteNoColumn" msprop:Generator_UserColumnName="UKDebitNoteNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UKDebitNoteDate" msprop:Generator_ColumnVarNameInTable="columnUKDebitNoteDate" msprop:Generator_ColumnPropNameInRow="UKDebitNoteDate" msprop:Generator_ColumnPropNameInTable="UKDebitNoteDateColumn" msprop:Generator_UserColumnName="UKDebitNoteDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UKDebitNoteReceivedDate" msprop:Generator_ColumnVarNameInTable="columnUKDebitNoteReceivedDate" msprop:Generator_ColumnPropNameInRow="UKDebitNoteReceivedDate" msprop:Generator_ColumnPropNameInTable="UKDebitNoteReceivedDateColumn" msprop:Generator_UserColumnName="UKDebitNoteReceivedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" msprop:Generator_UserColumnName="Remark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClaimRequestId" msprop:Generator_ColumnVarNameInTable="columnClaimRequestId" msprop:Generator_ColumnPropNameInRow="ClaimRequestId" msprop:Generator_ColumnPropNameInTable="ClaimRequestIdColumn" msprop:Generator_UserColumnName="ClaimRequestId" type="xs:int" minOccurs="0" />
+              <xs:element name="DebitNoteNo" msprop:Generator_ColumnVarNameInTable="columnDebitNoteNo" msprop:Generator_ColumnPropNameInRow="DebitNoteNo" msprop:Generator_ColumnPropNameInTable="DebitNoteNoColumn" msprop:Generator_UserColumnName="DebitNoteNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DebitNoteDate" msprop:Generator_ColumnVarNameInTable="columnDebitNoteDate" msprop:Generator_ColumnPropNameInRow="DebitNoteDate" msprop:Generator_ColumnPropNameInTable="DebitNoteDateColumn" msprop:Generator_UserColumnName="DebitNoteDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DebitNoteAmt" msprop:Generator_ColumnVarNameInTable="columnDebitNoteAmt" msprop:Generator_ColumnPropNameInRow="DebitNoteAmt" msprop:Generator_ColumnPropNameInTable="DebitNoteAmtColumn" msprop:Generator_UserColumnName="DebitNoteAmt" type="xs:decimal" />
+              <xs:element name="IsInterfaced" msprop:Generator_ColumnVarNameInTable="columnIsInterfaced" msprop:Generator_ColumnPropNameInRow="IsInterfaced" msprop:Generator_ColumnPropNameInTable="IsInterfacedColumn" msprop:Generator_UserColumnName="IsInterfaced" type="xs:boolean" />
+              <xs:element name="IsRechargeInterfaced" msprop:Generator_ColumnVarNameInTable="columnIsRechargeInterfaced" msprop:Generator_ColumnPropNameInRow="IsRechargeInterfaced" msprop:Generator_ColumnPropNameInTable="IsRechargeInterfacedColumn" msprop:Generator_UserColumnName="IsRechargeInterfaced" type="xs:boolean" />
+              <xs:element name="WorkflowStatusId" msprop:Generator_ColumnVarNameInTable="columnWorkflowStatusId" msprop:Generator_ColumnPropNameInRow="WorkflowStatusId" msprop:Generator_ColumnPropNameInTable="WorkflowStatusIdColumn" msprop:Generator_UserColumnName="WorkflowStatusId" type="xs:int" />
+              <xs:element name="OfficeName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOfficeName" msprop:Generator_ColumnPropNameInRow="OfficeName" msprop:Generator_ColumnPropNameInTable="OfficeNameColumn" msprop:Generator_UserColumnName="OfficeName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProductTeam" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnProductTeam" msprop:Generator_ColumnPropNameInRow="ProductTeam" msprop:Generator_ColumnPropNameInTable="ProductTeamColumn" msprop:Generator_UserColumnName="ProductTeam" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CurrencyCode" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCurrencyCode" msprop:Generator_ColumnPropNameInRow="CurrencyCode" msprop:Generator_ColumnPropNameInTable="CurrencyCodeColumn" msprop:Generator_UserColumnName="CurrencyCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="USDExchangeRate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUSDExchangeRate" msprop:Generator_ColumnPropNameInRow="USDExchangeRate" msprop:Generator_ColumnPropNameInTable="USDExchangeRateColumn" msprop:Generator_UserColumnName="USDExchangeRate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VendorName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVendorName" msprop:Generator_ColumnPropNameInRow="VendorName" msprop:Generator_ColumnPropNameInTable="VendorNameColumn" msprop:Generator_UserColumnName="VendorName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

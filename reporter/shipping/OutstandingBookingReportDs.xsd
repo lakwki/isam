@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OutstandingBookingReportDs" targetNamespace="http://tempuri.org/OutstandingBookingReportDs.xsd" xmlns:mstns="http://tempuri.org/OutstandingBookingReportDs.xsd" xmlns="http://tempuri.org/OutstandingBookingReportDs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OutstandingBookingReportDs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="OutstandingBookingReportDs" msprop:Generator_DataSetName="OutstandingBookingReportDs" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OutstandingBookingReport" msprop:Generator_UserTableName="OutstandingBookingReport" msprop:Generator_RowDeletedName="OutstandingBookingReportRowDeleted" msprop:Generator_RowChangedName="OutstandingBookingReportRowChanged" msprop:Generator_RowClassName="OutstandingBookingReportRow" msprop:Generator_RowChangingName="OutstandingBookingReportRowChanging" msprop:Generator_RowEvArgName="OutstandingBookingReportRowChangeEvent" msprop:Generator_RowEvHandlerName="OutstandingBookingReportRowChangeEventHandler" msprop:Generator_TableClassName="OutstandingBookingReportDataTable" msprop:Generator_TableVarName="tableOutstandingBookingReport" msprop:Generator_RowDeletingName="OutstandingBookingReportRowDeleting" msprop:Generator_TablePropName="OutstandingBookingReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Customer" msprop:Generator_UserColumnName="Customer" msprop:Generator_ColumnPropNameInRow="Customer" msprop:Generator_ColumnVarNameInTable="columnCustomer" msprop:Generator_ColumnPropNameInTable="CustomerColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Season" msprop:Generator_UserColumnName="Season" msprop:Generator_ColumnPropNameInRow="Season" msprop:Generator_ColumnVarNameInTable="columnSeason" msprop:Generator_ColumnPropNameInTable="SeasonColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductTeam" msprop:Generator_UserColumnName="ProductTeam" msprop:Generator_ColumnPropNameInRow="ProductTeam" msprop:Generator_ColumnVarNameInTable="columnProductTeam" msprop:Generator_ColumnPropNameInTable="ProductTeamColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Supplier" msprop:Generator_UserColumnName="Supplier" msprop:Generator_ColumnPropNameInRow="Supplier" msprop:Generator_ColumnVarNameInTable="columnSupplier" msprop:Generator_ColumnPropNameInTable="SupplierColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemNo" msprop:Generator_UserColumnName="ItemNo" msprop:Generator_ColumnPropNameInRow="ItemNo" msprop:Generator_ColumnVarNameInTable="columnItemNo" msprop:Generator_ColumnPropNameInTable="ItemNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ContractNo" msprop:Generator_UserColumnName="ContractNo" msprop:Generator_ColumnPropNameInRow="ContractNo" msprop:Generator_ColumnVarNameInTable="columnContractNo" msprop:Generator_ColumnPropNameInTable="ContractNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DeliveryNo" msprop:Generator_UserColumnName="DeliveryNo" msprop:Generator_ColumnPropNameInRow="DeliveryNo" msprop:Generator_ColumnVarNameInTable="columnDeliveryNo" msprop:Generator_ColumnPropNameInTable="DeliveryNoColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalPOQty" msprop:Generator_UserColumnName="TotalPOQty" msprop:Generator_ColumnPropNameInRow="TotalPOQty" msprop:Generator_ColumnVarNameInTable="columnTotalPOQty" msprop:Generator_ColumnPropNameInTable="TotalPOQtyColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Unit" msprop:Generator_UserColumnName="Unit" msprop:Generator_ColumnPropNameInRow="Unit" msprop:Generator_ColumnVarNameInTable="columnUnit" msprop:Generator_ColumnPropNameInTable="UnitColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="POAmountUSD" msprop:Generator_UserColumnName="POAmountUSD" msprop:Generator_ColumnPropNameInRow="POAmountUSD" msprop:Generator_ColumnVarNameInTable="columnPOAmountUSD" msprop:Generator_ColumnPropNameInTable="POAmountUSDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CustomerAtWarehouseDate" msprop:Generator_UserColumnName="CustomerAtWarehouseDate" msprop:Generator_ColumnPropNameInRow="CustomerAtWarehouseDate" msprop:Generator_ColumnVarNameInTable="columnCustomerAtWarehouseDate" msprop:Generator_ColumnPropNameInTable="CustomerAtWarehouseDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CountryOfOrigin" msprop:Generator_UserColumnName="CountryOfOrigin" msprop:Generator_ColumnPropNameInRow="CountryOfOrigin" msprop:Generator_ColumnVarNameInTable="columnCountryOfOrigin" msprop:Generator_ColumnPropNameInTable="CountryOfOriginColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LoadingPort" msprop:Generator_UserColumnName="LoadingPort" msprop:Generator_ColumnPropNameInRow="LoadingPort" msprop:Generator_ColumnVarNameInTable="columnLoadingPort" msprop:Generator_ColumnPropNameInTable="LoadingPortColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ShipmentMode" msprop:Generator_UserColumnName="ShipmentMode" msprop:Generator_ColumnPropNameInRow="ShipmentMode" msprop:Generator_ColumnVarNameInTable="columnShipmentMode" msprop:Generator_ColumnPropNameInTable="ShipmentModeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PackingMethod" msprop:Generator_UserColumnName="PackingMethod" msprop:Generator_ColumnPropNameInRow="PackingMethod" msprop:Generator_ColumnVarNameInTable="columnPackingMethod" msprop:Generator_ColumnPropNameInTable="PackingMethodColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DocNo" msprop:Generator_UserColumnName="DocNo" msprop:Generator_ColumnPropNameInRow="DocNo" msprop:Generator_ColumnVarNameInTable="columnDocNo" msprop:Generator_ColumnPropNameInTable="DocNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DocType" msprop:Generator_UserColumnName="DocType" msprop:Generator_ColumnPropNameInRow="DocType" msprop:Generator_ColumnVarNameInTable="columnDocType" msprop:Generator_ColumnPropNameInTable="DocTypeColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
